@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Leaf, Recycle, Shield, Award, Printer, Package, FileText, Users, Phone, Mail, MapPin, CheckCircle, ArrowRight } from 'lucide-react';
+import { Leaf, Recycle, Shield, Award, Printer, Package, FileText, Users, Phone, Mail, MapPin, CheckCircle, ArrowRight, Wrench, RotateCcw, Headphones, Zap } from 'lucide-react';
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -37,25 +37,25 @@ const Index = () => {
       icon: <Recycle className="w-16 h-16" />,
       titulo: "Gestión de Residuos",
       descripcion: "Recolección y transformación responsable de todos los residuos de impresión.",
-      position: { top: '10%', left: '10%' }
+      angle: 0
     },
     {
       icon: <Shield className="w-16 h-16" />,
       titulo: "Trazabilidad",
       descripcion: "Productos con origen responsable y seguimiento completo del ciclo de vida.",
-      position: { top: '10%', right: '10%' }
+      angle: 90
     },
     {
       icon: <CheckCircle className="w-16 h-16" />,
       titulo: "Gestión Final Positiva",
       descripcion: "Únicos en Paraguay con gestión final ambientalmente responsable de residuos.",
-      position: { bottom: '10%', left: '10%' }
+      angle: 180
     },
     {
       icon: <Award className="w-16 h-16" />,
       titulo: "ISO 14001",
       descripcion: "Ayudamos a nuestros clientes a alcanzar esta certificación ambiental.",
-      position: { bottom: '10%', right: '10%' }
+      angle: 270
     }
   ];
 
@@ -64,25 +64,27 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-900 via-green-800 to-emerald-900">
+    <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #0f3d2e 0%, #2f9e44 50%, #3d7b4f 100%)' }}>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-green-800/90 via-emerald-700/80 to-teal-800/90"></div>
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(15,61,46,0.9) 0%, rgba(47,158,68,0.8) 50%, rgba(61,123,79,0.9) 100%)' }}></div>
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518495973542-4542c06a5843')] bg-cover bg-center opacity-20"></div>
         
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div 
-            className="absolute w-96 h-96 bg-green-400/10 rounded-full blur-3xl animate-pulse"
+            className="absolute w-96 h-96 rounded-full blur-3xl animate-pulse"
             style={{ 
+              background: 'rgba(195,232,164,0.1)',
               transform: `translateY(${scrollY * 0.5}px)`,
               top: '20%',
               left: '10%'
             }}
           ></div>
           <div 
-            className="absolute w-64 h-64 bg-emerald-300/10 rounded-full blur-2xl animate-pulse"
+            className="absolute w-64 h-64 rounded-full blur-2xl animate-pulse"
             style={{ 
+              background: 'rgba(215,242,219,0.1)',
               transform: `translateY(${scrollY * -0.3}px)`,
               top: '60%',
               right: '15%'
@@ -94,21 +96,31 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <h1 
-                className="text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in"
-                style={{ transform: `translateY(${Math.max(0, 50 - scrollY * 0.1)}px)` }}
+                className="text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-fade-in"
+                style={{ 
+                  color: '#d7f2db',
+                  transform: `translateY(${Math.max(0, 50 - scrollY * 0.1)}px)` 
+                }}
               >
-                Black Colors: <span className="text-green-300 bg-gradient-to-r from-green-300 to-emerald-400 bg-clip-text text-transparent">Impresión Sustentable</span> para un Futuro Verde
+                Black Colors: <span style={{ background: 'linear-gradient(135deg, #c3e8a4, #2f9e44)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Impresión Sustentable</span> para un Futuro Verde
               </h1>
               <p 
-                className="text-2xl text-green-100 mb-8 leading-relaxed"
-                style={{ transform: `translateY(${Math.max(0, 30 - scrollY * 0.08)}px)` }}
+                className="text-2xl mb-8 leading-relaxed"
+                style={{ 
+                  color: '#c3e8a4',
+                  transform: `translateY(${Math.max(0, 30 - scrollY * 0.08)}px)` 
+                }}
               >
                 Convertí tu impresión en una acción por el planeta con nuestras soluciones integrales de impresión sustentable y economía circular.
               </p>
               <div className="flex flex-col sm:flex-row gap-6">
                 <Button 
                   size="lg" 
-                  className="bg-green-500 hover:bg-green-400 text-white px-10 py-4 text-xl border-0 shadow-2xl hover:shadow-green-400/25 transition-all duration-300 transform hover:scale-105 group"
+                  className="px-10 py-4 text-xl border-0 shadow-2xl transition-all duration-300 transform hover:scale-105 group"
+                  style={{ 
+                    background: 'linear-gradient(135deg, #2f9e44, #3d7b4f)',
+                    color: '#d7f2db'
+                  }}
                 >
                   Conocer Productos
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -116,7 +128,12 @@ const Index = () => {
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="border-2 border-green-300 text-green-100 hover:bg-green-700/30 hover:border-green-200 px-10 py-4 text-xl backdrop-blur-sm transition-all duration-300 transform hover:scale-105"
+                  className="px-10 py-4 text-xl backdrop-blur-sm transition-all duration-300 transform hover:scale-105"
+                  style={{ 
+                    borderColor: '#c3e8a4',
+                    color: '#c3e8a4',
+                    background: 'rgba(61,123,79,0.3)'
+                  }}
                 >
                   Servicio de Leasing
                 </Button>
@@ -126,7 +143,7 @@ const Index = () => {
               className="relative"
               style={{ transform: `translateY(${scrollY * -0.2}px)` }}
             >
-              <div className="absolute inset-0 bg-green-400/20 rounded-full opacity-30 animate-pulse blur-xl"></div>
+              <div className="absolute inset-0 rounded-full opacity-30 animate-pulse blur-xl" style={{ background: 'rgba(195,232,164,0.2)' }}></div>
               <img 
                 src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" 
                 alt="Sostenibilidad y tecnología"
@@ -138,37 +155,40 @@ const Index = () => {
       </section>
 
       {/* Quiénes Somos */}
-      <section className="py-20 bg-gradient-to-r from-green-800 to-emerald-800 relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #3d7b4f 0%, #2f9e44 100%)' }}>
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523712999610-f77fbcfc3843')] bg-cover bg-center opacity-10"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 
-                className="text-5xl font-bold text-white mb-8"
-                style={{ transform: `scale(${Math.min(1.2, 1 + scrollY * 0.0005)})` }}
+                className="text-5xl font-bold mb-8"
+                style={{ 
+                  color: '#d7f2db',
+                  transform: `scale(${Math.min(1.2, 1 + scrollY * 0.0005)})` 
+                }}
               >
                 Quiénes Somos
               </h2>
-              <div className="space-y-6 text-xl text-green-100 leading-relaxed">
+              <div className="space-y-6 text-xl leading-relaxed" style={{ color: '#c3e8a4' }}>
                 <p className="animate-fade-in">
-                  Con <span className="font-semibold text-green-300 text-2xl">18 años de experiencia</span> en el mercado, Black Colors se ha consolidado como líder en soluciones de impresión. Nuestra filosofía es clara:
+                  Con <span className="font-semibold text-2xl" style={{ color: '#d7f2db' }}>18 años de experiencia</span> en el mercado, Black Colors se ha consolidado como líder en soluciones de impresión. Nuestra filosofía es clara:
                 </p>
-                <blockquote className="text-3xl font-medium text-green-200 italic border-l-4 border-green-400 pl-6 my-8 transform hover:scale-105 transition-transform duration-300">
+                <blockquote className="text-3xl font-medium italic border-l-4 pl-6 my-8 transform hover:scale-105 transition-transform duration-300" style={{ color: '#d7f2db', borderColor: '#2f9e44' }}>
                   "Nunca damos un no, resolvemos lo que el cliente necesita"
                 </blockquote>
                 <p>
-                  Grandes empresas como <span className="font-semibold text-green-300">Garden, Cavallaro, Inpaco</span> y muchas más confían en nuestra trayectoria y compromiso con la excelencia.
+                  Grandes empresas como <span className="font-semibold" style={{ color: '#d7f2db' }}>Garden, Cavallaro, Inpaco</span> y muchas más confían en nuestra trayectoria y compromiso con la excelencia.
                 </p>
               </div>
             </div>
             <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-green-400/20 to-emerald-400/20 rounded-2xl blur-xl"></div>
+              <div className="absolute -inset-4 rounded-2xl blur-xl" style={{ background: 'linear-gradient(135deg, rgba(195,232,164,0.2), rgba(47,158,68,0.2))' }}></div>
               <img 
                 src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86" 
                 alt="Equipo Black Colors"
                 className="rounded-2xl shadow-2xl relative z-10 transform hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute -bottom-8 -right-8 bg-gradient-to-r from-green-500 to-emerald-500 text-white p-8 rounded-2xl shadow-2xl z-20">
+              <div className="absolute -bottom-8 -right-8 p-8 rounded-2xl shadow-2xl z-20" style={{ background: 'linear-gradient(135deg, #2f9e44, #3d7b4f)', color: '#d7f2db' }}>
                 <div className="text-4xl font-bold">18</div>
                 <div className="text-lg">Años de experiencia</div>
               </div>
@@ -178,13 +198,13 @@ const Index = () => {
       </section>
 
       {/* Nuestros Productos - Angular Design */}
-      <section className="py-20 bg-gradient-to-bl from-emerald-800 via-green-700 to-teal-800 relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #2f9e44 0%, #0f3d2e 100%)' }}>
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9')] bg-cover bg-center opacity-15"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-5 gap-8 items-center">
             {/* Left side - Large image */}
             <div className="lg:col-span-3 relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-green-400/20 to-emerald-400/20 rounded-3xl blur-2xl"></div>
+              <div className="absolute inset-0 rounded-3xl blur-2xl" style={{ background: 'linear-gradient(135deg, rgba(195,232,164,0.2), rgba(47,158,68,0.2))' }}></div>
               <img 
                 src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b" 
                 alt="Tecnología sustentable"
@@ -195,8 +215,11 @@ const Index = () => {
             {/* Right side - Angular product blocks */}
             <div className="lg:col-span-2 space-y-8">
               <h2 
-                className="text-5xl font-bold text-white mb-12 text-center lg:text-left"
-                style={{ transform: `translateX(${Math.min(0, -50 + scrollY * 0.1)}px)` }}
+                className="text-5xl font-bold mb-12 text-center lg:text-left"
+                style={{ 
+                  color: '#d7f2db',
+                  transform: `translateX(${Math.min(0, -50 + scrollY * 0.1)}px)` 
+                }}
               >
                 Nuestros Productos
               </h2>
@@ -205,22 +228,23 @@ const Index = () => {
                 {productos.map((producto, index) => (
                   <div 
                     key={index}
-                    className={`bg-gradient-to-r from-green-600/80 to-emerald-600/80 backdrop-blur-sm p-6 rounded-2xl shadow-xl transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-green-400/25 group ${
+                    className={`backdrop-blur-sm p-6 rounded-2xl shadow-xl transform transition-all duration-500 hover:scale-105 hover:shadow-2xl group ${
                       index === 1 ? 'ml-8' : index === 2 ? 'ml-16' : ''
                     }`}
                     style={{ 
+                      background: `linear-gradient(135deg, rgba(61,123,79,0.8), rgba(47,158,68,0.8))`,
                       transform: `translateX(${index * 20}px) translateY(${Math.max(0, 30 - scrollY * 0.05)}px)` 
                     }}
                   >
                     <div className="flex items-start space-x-4">
-                      <div className="bg-green-500/30 p-4 rounded-xl group-hover:bg-green-400/40 transition-colors">
+                      <div className="p-4 rounded-xl group-hover:bg-green-400/40 transition-colors" style={{ background: 'rgba(47,158,68,0.3)' }}>
                         {producto.icon}
                       </div>
                       <div>
-                        <h3 className="text-2xl font-semibold text-white mb-3 group-hover:text-green-200 transition-colors">
+                        <h3 className="text-2xl font-semibold mb-3 group-hover:text-green-200 transition-colors" style={{ color: '#d7f2db' }}>
                           {producto.titulo}
                         </h3>
-                        <p className="text-green-100 leading-relaxed">
+                        <p className="leading-relaxed" style={{ color: '#c3e8a4' }}>
                           {producto.descripcion}
                         </p>
                       </div>
@@ -233,109 +257,151 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Servicio de Leasing */}
-      <section className="py-20 bg-gradient-to-r from-green-700 to-emerald-700 relative">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1615729947596-a598e5de0ab3')] bg-cover bg-center opacity-10"></div>
+      {/* Servicio de Leasing - Redesigned */}
+      <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f3d2e 0%, #3d7b4f 100%)' }}>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1615729947596-a598e5de0ab3')] bg-cover bg-center opacity-15"></div>
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-5xl font-bold text-white mb-8">Servicio de Leasing Sustentable</h2>
-            <p className="text-2xl text-green-100 mb-12 leading-relaxed">
-              Nuestro servicio de leasing incluye alquiler de equipos con mantenimiento completo y reposición de insumos.
-            </p>
-            <div className="grid md:grid-cols-4 gap-8">
-              {[
-                { icon: CheckCircle, title: "Mantenimiento Incluido" },
-                { icon: Package, title: "Reposición de Insumos" },
-                { icon: Shield, title: "Garantía Total" },
-                { icon: Leaf, title: "Sustentable" }
-              ].map((item, index) => (
-                <div 
-                  key={index}
-                  className="group transform hover:scale-110 transition-all duration-300"
-                >
-                  <div className="bg-green-500/30 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-green-400/40 group-hover:rotate-12 transition-all duration-300">
-                    <item.icon className="w-10 h-10 text-green-200" />
-                  </div>
-                  <h4 className="font-semibold text-white text-lg">{item.title}</h4>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <h2 className="text-5xl font-bold mb-8 animate-fade-in" style={{ color: '#d7f2db' }}>
+                Servicio de Leasing Sustentable
+              </h2>
+              <p className="text-2xl mb-12 leading-relaxed" style={{ color: '#c3e8a4' }}>
+                Nuestro servicio de leasing incluye alquiler de equipos con mantenimiento completo y reposición de insumos.
+              </p>
+              
+              <div>
+                <h3 className="text-2xl font-semibold mb-8" style={{ color: '#d7f2db' }}>Beneficios principales:</h3>
+                <div className="space-y-6">
+                  {[
+                    { icon: Wrench, text: "Mantenimiento incluido." },
+                    { icon: RotateCcw, text: "Reposición automática de insumos." },
+                    { icon: Headphones, text: "Seguimiento técnico y soporte al cliente." },
+                    { icon: Zap, text: "Equipos actualizados según necesidad del cliente." }
+                  ].map((item, index) => (
+                    <div 
+                      key={index}
+                      className="flex items-center space-x-4 group transform hover:translate-x-2 transition-all duration-300"
+                      style={{ 
+                        animationDelay: `${index * 0.2}s`,
+                        animation: `fade-in 0.8s ease-out forwards`
+                      }}
+                    >
+                      <div className="p-3 rounded-xl transition-all duration-300 group-hover:scale-110" style={{ background: 'rgba(47,158,68,0.3)' }}>
+                        <item.icon className="w-6 h-6" style={{ color: '#c3e8a4' }} />
+                      </div>
+                      <p className="text-xl font-medium" style={{ color: '#d7f2db' }}>
+                        {item.text}
+                      </p>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="absolute -inset-4 rounded-3xl blur-2xl" style={{ background: 'linear-gradient(135deg, rgba(195,232,164,0.2), rgba(47,158,68,0.2))' }}></div>
+              <img 
+                src="https://images.unsplash.com/photo-1497366216548-37526070297c" 
+                alt="Oficina moderna con equipos de impresión"
+                className="w-full h-96 lg:h-[500px] object-cover rounded-3xl shadow-2xl relative z-10 transform hover:scale-105 transition-transform duration-500"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Compromiso con la Sustentabilidad - Círculo Dinámico */}
-      <section className="py-32 bg-gradient-to-br from-green-900 via-emerald-800 to-teal-900 relative overflow-hidden">
+      {/* Compromiso con la Sustentabilidad - Circular Puzzle Design */}
+      <section className="py-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #2f9e44 0%, #0f3d2e 100%)' }}>
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1501854140801-50d01698950b')] bg-cover bg-center opacity-10"></div>
         
         {/* Animated background elements */}
         <div className="absolute inset-0">
-          <div className="absolute w-96 h-96 bg-green-400/5 rounded-full animate-pulse top-10 left-10"></div>
-          <div className="absolute w-64 h-64 bg-emerald-300/5 rounded-full animate-pulse bottom-10 right-10"></div>
+          <div className="absolute w-96 h-96 rounded-full animate-pulse top-10 left-10" style={{ background: 'rgba(195,232,164,0.05)' }}></div>
+          <div className="absolute w-64 h-64 rounded-full animate-pulse bottom-10 right-10" style={{ background: 'rgba(215,242,219,0.05)' }}></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-20">
-            <h2 className="text-6xl font-bold text-white mb-4">Compromiso con la Sustentabilidad</h2>
-            <div className="w-32 h-2 bg-gradient-to-r from-green-400 to-emerald-400 mx-auto rounded-full"></div>
+            <h2 className="text-6xl font-bold mb-4" style={{ color: '#d7f2db' }}>Compromiso con la Sustentabilidad</h2>
+            <div className="w-32 h-2 mx-auto rounded-full" style={{ background: 'linear-gradient(135deg, #c3e8a4, #2f9e44)' }}></div>
           </div>
 
-          {/* Círculo dinámico central */}
+          {/* Círculo dinámico - Puzzle de 4 piezas */}
           <div className="flex justify-center items-center">
-            <div className="relative w-96 h-96 lg:w-[500px] lg:h-[500px]">
-              {/* Círculo central */}
-              <div className="absolute inset-8 bg-gradient-to-br from-green-600/40 to-emerald-600/40 rounded-full backdrop-blur-sm border-4 border-green-400/30 shadow-2xl">
-                <div className="absolute inset-4 bg-gradient-to-tr from-green-500/20 to-emerald-500/20 rounded-full animate-pulse"></div>
-              </div>
-
-              {/* Cuadrantes del círculo */}
-              {compromisosData.map((compromiso, index) => (
-                <div
-                  key={index}
-                  className={`absolute w-40 h-40 lg:w-48 lg:h-48 cursor-pointer group transition-all duration-500 ${
-                    activeQuadrant === index ? 'scale-110 z-20' : 'hover:scale-105'
-                  }`}
-                  style={compromiso.position}
-                  onMouseEnter={() => setActiveQuadrant(index)}
-                  onMouseLeave={() => setActiveQuadrant(-1)}
-                >
-                  <div className={`w-full h-full bg-gradient-to-br from-green-500/80 to-emerald-600/80 rounded-2xl shadow-2xl backdrop-blur-sm border-2 border-green-400/40 p-6 text-center flex flex-col items-center justify-center transition-all duration-500 ${
-                    activeQuadrant === index 
-                      ? 'shadow-green-400/50 border-green-300 bg-gradient-to-br from-green-400/90 to-emerald-500/90' 
-                      : 'group-hover:shadow-green-400/30'
-                  }`}>
-                    <div className={`text-white mb-3 transition-all duration-300 ${
-                      activeQuadrant === index ? 'scale-110' : ''
-                    }`}>
-                      {compromiso.icon}
-                    </div>
-                    <h3 className="text-white font-bold text-lg mb-2 leading-tight">
-                      {compromiso.titulo}
-                    </h3>
-                    <p className={`text-green-100 text-sm leading-tight transition-all duration-300 ${
-                      activeQuadrant === index ? 'opacity-100' : 'opacity-80'
-                    }`}>
-                      {compromiso.descripcion}
-                    </p>
-                  </div>
-                </div>
-              ))}
-
+            <div className="relative w-[600px] h-[600px]">
               {/* Centro del círculo */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full shadow-2xl flex items-center justify-center">
-                <Leaf className="w-12 h-12 text-white animate-pulse" />
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full shadow-2xl flex items-center justify-center z-30" style={{ background: 'linear-gradient(135deg, #c3e8a4, #2f9e44)' }}>
+                <Leaf className="w-16 h-16 animate-pulse" style={{ color: '#0f3d2e' }} />
               </div>
+
+              {/* Piezas del puzzle circular */}
+              {compromisosData.map((compromiso, index) => {
+                const isActive = activeQuadrant === index;
+                const pieceStyles = {
+                  0: { clipPath: "polygon(50% 50%, 100% 0%, 100% 50%)", top: '0%', right: '0%' }, // Top-right
+                  1: { clipPath: "polygon(50% 50%, 100% 50%, 100% 100%)", bottom: '0%', right: '0%' }, // Bottom-right
+                  2: { clipPath: "polygon(50% 50%, 50% 100%, 0% 100%)", bottom: '0%', left: '0%' }, // Bottom-left
+                  3: { clipPath: "polygon(50% 50%, 0% 50%, 0% 0%)", top: '0%', left: '0%' } // Top-left
+                };
+
+                return (
+                  <div
+                    key={index}
+                    className={`absolute w-80 h-80 cursor-pointer group transition-all duration-700 ${
+                      isActive ? 'scale-110 z-20' : 'hover:scale-105'
+                    }`}
+                    style={{
+                      ...pieceStyles[index],
+                      transform: `rotate(${isActive ? compromiso.angle + 5 : compromiso.angle}deg) ${isActive ? 'scale(1.1)' : 'scale(1)'}`,
+                      transformOrigin: 'center center'
+                    }}
+                    onMouseEnter={() => setActiveQuadrant(index)}
+                    onMouseLeave={() => setActiveQuadrant(-1)}
+                  >
+                    <div 
+                      className={`w-full h-full rounded-full shadow-2xl backdrop-blur-sm border-4 transition-all duration-700 ${
+                        isActive 
+                          ? 'shadow-green-400/50' 
+                          : 'group-hover:shadow-green-400/30'
+                      }`}
+                      style={{ 
+                        background: isActive 
+                          ? 'linear-gradient(135deg, rgba(195,232,164,0.9), rgba(47,158,68,0.9))' 
+                          : 'linear-gradient(135deg, rgba(61,123,79,0.8), rgba(47,158,68,0.8))',
+                        borderColor: isActive ? '#c3e8a4' : 'rgba(195,232,164,0.4)'
+                      }}
+                    >
+                      <div className="absolute inset-8 flex flex-col items-center justify-center text-center">
+                        <div className={`mb-4 transition-all duration-300 ${
+                          isActive ? 'scale-125' : ''
+                        }`} style={{ color: '#d7f2db' }}>
+                          {compromiso.icon}
+                        </div>
+                        <h3 className="font-bold text-xl mb-3 leading-tight" style={{ color: '#d7f2db' }}>
+                          {compromiso.titulo}
+                        </h3>
+                        <p className={`text-sm leading-tight transition-all duration-300 ${
+                          isActive ? 'opacity-100' : 'opacity-90'
+                        }`} style={{ color: '#c3e8a4' }}>
+                          {compromiso.descripcion}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
       </section>
 
       {/* Clientes - Carrusel */}
-      <section className="py-20 bg-gradient-to-r from-green-800 to-emerald-900">
+      <section className="py-20" style={{ background: 'linear-gradient(135deg, #3d7b4f 0%, #0f3d2e 100%)' }}>
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-white mb-4">Clientes que Confían en Nosotros</h2>
-            <p className="text-xl text-green-200">
+            <h2 className="text-5xl font-bold mb-4" style={{ color: '#d7f2db' }}>Clientes que Confían en Nosotros</h2>
+            <p className="text-xl" style={{ color: '#c3e8a4' }}>
               Grandes empresas confían en nuestras soluciones de impresión sustentable. Algunos de nuestros clientes más destacados:
             </p>
           </div>
@@ -345,8 +411,8 @@ const Index = () => {
             <div className="flex animate-[scroll_20s_linear_infinite] space-x-8">
               {[...clientes, ...clientes].map((cliente, index) => (
                 <div key={index} className="flex-shrink-0">
-                  <div className="bg-gradient-to-r from-green-600/60 to-emerald-600/60 backdrop-blur-sm rounded-2xl p-8 min-w-[200px] text-center hover:scale-105 transition-transform duration-300 shadow-xl">
-                    <div className="text-3xl font-bold text-white">{cliente}</div>
+                  <div className="backdrop-blur-sm rounded-2xl p-8 min-w-[200px] text-center hover:scale-105 transition-transform duration-300 shadow-xl" style={{ background: 'linear-gradient(135deg, rgba(61,123,79,0.6), rgba(47,158,68,0.6))' }}>
+                    <div className="text-3xl font-bold" style={{ color: '#d7f2db' }}>{cliente}</div>
                   </div>
                 </div>
               ))}
@@ -356,24 +422,24 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-br from-green-900 to-black py-16">
+      <footer className="py-16" style={{ background: 'linear-gradient(135deg, #0f3d2e 0%, #000000 100%)' }}>
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
-              <h3 className="text-3xl font-bold mb-4 text-white">Black Colors</h3>
-              <p className="text-green-300 mb-6 leading-relaxed text-lg">
+              <h3 className="text-3xl font-bold mb-4" style={{ color: '#d7f2db' }}>Black Colors</h3>
+              <p className="mb-6 leading-relaxed text-lg" style={{ color: '#c3e8a4' }}>
                 Líderes en soluciones de impresión sustentable con 18 años de experiencia en el mercado.
               </p>
               <div className="flex space-x-4">
                 {['FB', 'IG', 'LI'].map((social, index) => (
-                  <div key={index} className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer shadow-lg">
-                    <span className="text-white font-bold">{social}</span>
+                  <div key={index} className="w-12 h-12 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer shadow-lg" style={{ background: 'linear-gradient(135deg, #2f9e44, #3d7b4f)' }}>
+                    <span className="font-bold" style={{ color: '#d7f2db' }}>{social}</span>
                   </div>
                 ))}
               </div>
             </div>
             <div>
-              <h4 className="text-xl font-semibold mb-4 text-white">Contacto</h4>
+              <h4 className="text-xl font-semibold mb-4" style={{ color: '#d7f2db' }}>Contacto</h4>
               <div className="space-y-3">
                 {[
                   { icon: Phone, text: "+595 21 123-456" },
@@ -381,18 +447,18 @@ const Index = () => {
                   { icon: MapPin, text: "Asunción, Paraguay" }
                 ].map((item, index) => (
                   <div key={index} className="flex items-center group hover:text-green-300 transition-colors cursor-pointer">
-                    <item.icon className="w-5 h-5 mr-3 text-green-400 group-hover:scale-110 transition-transform" />
-                    <span className="text-green-200">{item.text}</span>
+                    <item.icon className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" style={{ color: '#c3e8a4' }} />
+                    <span style={{ color: '#c3e8a4' }}>{item.text}</span>
                   </div>
                 ))}
               </div>
             </div>
             <div>
-              <h4 className="text-xl font-semibold mb-4 text-white">Enlaces</h4>
+              <h4 className="text-xl font-semibold mb-4" style={{ color: '#d7f2db' }}>Enlaces</h4>
               <ul className="space-y-2">
                 {['Productos', 'Leasing', 'Sustentabilidad', 'Contacto'].map((link, index) => (
                   <li key={index}>
-                    <a href="#" className="text-green-200 hover:text-green-300 transition-colors duration-300 hover:translate-x-2 transform inline-block">
+                    <a href="#" className="transition-colors duration-300 hover:translate-x-2 transform inline-block" style={{ color: '#c3e8a4' }}>
                       {link}
                     </a>
                   </li>
@@ -400,7 +466,7 @@ const Index = () => {
               </ul>
             </div>
           </div>
-          <div className="border-t border-green-700 mt-12 pt-8 text-center text-green-300">
+          <div className="border-t mt-12 pt-8 text-center" style={{ borderColor: '#3d7b4f', color: '#c3e8a4' }}>
             <p>&copy; 2024 Black Colors. Todos los derechos reservados.</p>
           </div>
         </div>

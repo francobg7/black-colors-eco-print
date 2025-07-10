@@ -212,3 +212,12 @@ All colors MUST be HSL.
     transform: translateY(0);
   }
 }
+
+/* Custom Green Color Palette */
+:root {
+  --green-dark: #0f3d2e;
+  --green-medium: #3d7b4f;
+  --green-lime: #c3e8a4;
+  --green-mint: #d7f2db;
+  --green-emerald: #2f9e44;
+}
