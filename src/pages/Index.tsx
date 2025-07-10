@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -37,25 +36,25 @@ const Index = () => {
       icon: <Recycle className="w-16 h-16" />,
       titulo: "Gestión de Residuos",
       descripcion: "Recolección y transformación responsable de todos los residuos de impresión.",
-      angle: 0
+      color: "rgba(47,158,68,0.9)"
     },
     {
       icon: <Shield className="w-16 h-16" />,
       titulo: "Trazabilidad",
       descripcion: "Productos con origen responsable y seguimiento completo del ciclo de vida.",
-      angle: 90
+      color: "rgba(195,232,164,0.9)"
     },
     {
       icon: <CheckCircle className="w-16 h-16" />,
       titulo: "Gestión Final Positiva",
       descripcion: "Únicos en Paraguay con gestión final ambientalmente responsable de residuos.",
-      angle: 180
+      color: "rgba(61,123,79,0.9)"
     },
     {
       icon: <Award className="w-16 h-16" />,
       titulo: "ISO 14001",
       descripcion: "Ayudamos a nuestros clientes a alcanzar esta certificación ambiental.",
-      angle: 270
+      color: "rgba(215,242,219,0.9)"
     }
   ];
 
@@ -311,7 +310,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Compromiso con la Sustentabilidad - Circular Puzzle Design */}
+      {/* Compromiso con la Sustentabilidad - Circular Infographic */}
       <section className="py-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #2f9e44 0%, #0f3d2e 100%)' }}>
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1501854140801-50d01698950b')] bg-cover bg-center opacity-10"></div>
         
@@ -327,63 +326,70 @@ const Index = () => {
             <div className="w-32 h-2 mx-auto rounded-full" style={{ background: 'linear-gradient(135deg, #c3e8a4, #2f9e44)' }}></div>
           </div>
 
-          {/* Círculo dinámico - Puzzle de 4 piezas */}
+          {/* Circular Infographic - Puzzle Pieces */}
           <div className="flex justify-center items-center">
-            <div className="relative w-[600px] h-[600px]">
-              {/* Centro del círculo */}
+            <div className="relative w-[700px] h-[700px]">
+              {/* Central icon */}
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full shadow-2xl flex items-center justify-center z-30" style={{ background: 'linear-gradient(135deg, #c3e8a4, #2f9e44)' }}>
                 <Leaf className="w-16 h-16 animate-pulse" style={{ color: '#0f3d2e' }} />
               </div>
 
-              {/* Piezas del puzzle circular */}
+              {/* Puzzle pieces */}
               {compromisosData.map((compromiso, index) => {
                 const isActive = activeQuadrant === index;
-                const pieceStyles = {
-                  0: { clipPath: "polygon(50% 50%, 100% 0%, 100% 50%)", top: '0%', right: '0%' }, // Top-right
-                  1: { clipPath: "polygon(50% 50%, 100% 50%, 100% 100%)", bottom: '0%', right: '0%' }, // Bottom-right
-                  2: { clipPath: "polygon(50% 50%, 50% 100%, 0% 100%)", bottom: '0%', left: '0%' }, // Bottom-left
-                  3: { clipPath: "polygon(50% 50%, 0% 50%, 0% 0%)", top: '0%', left: '0%' } // Top-left
-                };
-
+                const rotation = index * 90;
+                
                 return (
                   <div
                     key={index}
-                    className={`absolute w-80 h-80 cursor-pointer group transition-all duration-700 ${
+                    className={`absolute w-80 h-80 cursor-pointer transition-all duration-700 ease-out ${
                       isActive ? 'scale-110 z-20' : 'hover:scale-105'
                     }`}
                     style={{
-                      ...pieceStyles[index],
-                      transform: `rotate(${isActive ? compromiso.angle + 5 : compromiso.angle}deg) ${isActive ? 'scale(1.1)' : 'scale(1)'}`,
-                      transformOrigin: 'center center'
+                      transform: `rotate(${rotation}deg) ${isActive ? 'scale(1.1)' : 'scale(1)'}`,
+                      transformOrigin: 'center center',
+                      top: '50%',
+                      left: '50%',
+                      marginTop: '-160px',
+                      marginLeft: '-160px'
                     }}
                     onMouseEnter={() => setActiveQuadrant(index)}
                     onMouseLeave={() => setActiveQuadrant(-1)}
                   >
+                    {/* Puzzle piece shape */}
                     <div 
-                      className={`w-full h-full rounded-full shadow-2xl backdrop-blur-sm border-4 transition-all duration-700 ${
-                        isActive 
-                          ? 'shadow-green-400/50' 
-                          : 'group-hover:shadow-green-400/30'
-                      }`}
-                      style={{ 
+                      className="w-full h-full relative transition-all duration-700"
+                      style={{
+                        clipPath: index === 0 ? 'polygon(50% 50%, 100% 0%, 100% 50%)' :
+                                  index === 1 ? 'polygon(50% 50%, 100% 50%, 100% 100%)' :
+                                  index === 2 ? 'polygon(50% 50%, 50% 100%, 0% 100%)' :
+                                  'polygon(50% 50%, 0% 50%, 0% 0%)',
                         background: isActive 
-                          ? 'linear-gradient(135deg, rgba(195,232,164,0.9), rgba(47,158,68,0.9))' 
-                          : 'linear-gradient(135deg, rgba(61,123,79,0.8), rgba(47,158,68,0.8))',
-                        borderColor: isActive ? '#c3e8a4' : 'rgba(195,232,164,0.4)'
+                          ? `linear-gradient(135deg, ${compromiso.color}, rgba(195,232,164,0.8))` 
+                          : `linear-gradient(135deg, ${compromiso.color}, rgba(61,123,79,0.7))`,
+                        filter: isActive ? 'brightness(1.2)' : 'brightness(1)',
+                        boxShadow: isActive ? '0 20px 40px rgba(47,158,68,0.3)' : '0 10px 20px rgba(0,0,0,0.2)'
                       }}
                     >
-                      <div className="absolute inset-8 flex flex-col items-center justify-center text-center">
+                      {/* Content container */}
+                      <div 
+                        className="absolute inset-0 flex flex-col items-center justify-center text-center p-8"
+                        style={{
+                          transform: `rotate(-${rotation}deg)`,
+                          transformOrigin: 'center center'
+                        }}
+                      >
                         <div className={`mb-4 transition-all duration-300 ${
                           isActive ? 'scale-125' : ''
-                        }`} style={{ color: '#d7f2db' }}>
+                        }`} style={{ color: '#0f3d2e' }}>
                           {compromiso.icon}
                         </div>
-                        <h3 className="font-bold text-xl mb-3 leading-tight" style={{ color: '#d7f2db' }}>
+                        <h3 className="font-bold text-xl mb-3 leading-tight" style={{ color: '#0f3d2e' }}>
                           {compromiso.titulo}
                         </h3>
                         <p className={`text-sm leading-tight transition-all duration-300 ${
                           isActive ? 'opacity-100' : 'opacity-90'
-                        }`} style={{ color: '#c3e8a4' }}>
+                        }`} style={{ color: '#0f3d2e' }}>
                           {compromiso.descripcion}
                         </p>
                       </div>
