@@ -5,7 +5,7 @@ import { Leaf, Recycle, Shield, Award, Printer, Package, FileText, Users, Phone,
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
-  const [activeQuadrant, setActiveQuadrant] = useState(0);
+  const [activeSection, setActiveSection] = useState(-1);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -31,30 +31,30 @@ const Index = () => {
     }
   ];
 
-  const compromisosData = [
+  const pilaresSustentabilidad = [
     {
-      icon: <Recycle className="w-16 h-16" />,
+      icon: <Recycle className="w-12 h-12" />,
       titulo: "Gestión de Residuos",
       descripcion: "Recolección y transformación responsable de todos los residuos de impresión.",
-      color: "rgba(47,158,68,0.9)"
+      color: "#3d7b4f"
     },
     {
-      icon: <Shield className="w-16 h-16" />,
-      titulo: "Trazabilidad",
+      icon: <Shield className="w-12 h-12" />,
+      titulo: "Trazabilidad", 
       descripcion: "Productos con origen responsable y seguimiento completo del ciclo de vida.",
-      color: "rgba(195,232,164,0.9)"
+      color: "#c3e8a4"
     },
     {
-      icon: <CheckCircle className="w-16 h-16" />,
+      icon: <CheckCircle className="w-12 h-12" />,
       titulo: "Gestión Final Positiva",
       descripcion: "Únicos en Paraguay con gestión final ambientalmente responsable de residuos.",
-      color: "rgba(61,123,79,0.9)"
+      color: "#d7f2db"
     },
     {
-      icon: <Award className="w-16 h-16" />,
+      icon: <Award className="w-12 h-12" />,
       titulo: "ISO 14001",
       descripcion: "Ayudamos a nuestros clientes a alcanzar esta certificación ambiental.",
-      color: "rgba(215,242,219,0.9)"
+      color: "#2f9e44"
     }
   ];
 
@@ -69,7 +69,6 @@ const Index = () => {
         <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(15,61,46,0.9) 0%, rgba(47,158,68,0.8) 50%, rgba(61,123,79,0.9) 100%)' }}></div>
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518495973542-4542c06a5843')] bg-cover bg-center opacity-20"></div>
         
-        {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div 
             className="absolute w-96 h-96 rounded-full blur-3xl animate-pulse"
@@ -201,7 +200,6 @@ const Index = () => {
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9')] bg-cover bg-center opacity-15"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-5 gap-8 items-center">
-            {/* Left side - Large image */}
             <div className="lg:col-span-3 relative">
               <div className="absolute inset-0 rounded-3xl blur-2xl" style={{ background: 'linear-gradient(135deg, rgba(195,232,164,0.2), rgba(47,158,68,0.2))' }}></div>
               <img 
@@ -211,7 +209,6 @@ const Index = () => {
               />
             </div>
             
-            {/* Right side - Angular product blocks */}
             <div className="lg:col-span-2 space-y-8">
               <h2 
                 className="text-5xl font-bold mb-12 text-center lg:text-left"
@@ -256,7 +253,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Servicio de Leasing - Redesigned */}
+      {/* Servicio de Leasing - Clean Design */}
       <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f3d2e 0%, #3d7b4f 100%)' }}>
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1615729947596-a598e5de0ab3')] bg-cover bg-center opacity-15"></div>
         <div className="container mx-auto px-6 relative z-10">
@@ -310,89 +307,67 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Compromiso con la Sustentabilidad - Circular Infographic */}
-      <section className="py-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #2f9e44 0%, #0f3d2e 100%)' }}>
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1501854140801-50d01698950b')] bg-cover bg-center opacity-10"></div>
-        
-        {/* Animated background elements */}
-        <div className="absolute inset-0">
-          <div className="absolute w-96 h-96 rounded-full animate-pulse top-10 left-10" style={{ background: 'rgba(195,232,164,0.05)' }}></div>
-          <div className="absolute w-64 h-64 rounded-full animate-pulse bottom-10 right-10" style={{ background: 'rgba(215,242,219,0.05)' }}></div>
-        </div>
-
+      {/* Compromiso con la Sustentabilidad - Clean Circle Design */}
+      <section className="py-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f3d2e 0%, #2f9e44 100%)' }}>
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-20">
-            <h2 className="text-6xl font-bold mb-4" style={{ color: '#d7f2db' }}>Compromiso con la Sustentabilidad</h2>
+            <h2 className="text-6xl font-bold mb-8" style={{ color: '#d7f2db' }}>
+              Compromiso con la Sustentabilidad
+            </h2>
             <div className="w-32 h-2 mx-auto rounded-full" style={{ background: 'linear-gradient(135deg, #c3e8a4, #2f9e44)' }}></div>
           </div>
 
-          {/* Circular Infographic - Puzzle Pieces */}
+          {/* Clean Circular Design */}
           <div className="flex justify-center items-center">
-            <div className="relative w-[700px] h-[700px]">
-              {/* Central icon */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full shadow-2xl flex items-center justify-center z-30" style={{ background: 'linear-gradient(135deg, #c3e8a4, #2f9e44)' }}>
-                <Leaf className="w-16 h-16 animate-pulse" style={{ color: '#0f3d2e' }} />
+            <div className="relative w-[600px] h-[600px]">
+              {/* Central Logo */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full flex items-center justify-center z-30 shadow-2xl" style={{ background: 'linear-gradient(135deg, #2f9e44, #3d7b4f)' }}>
+                <Leaf className="w-16 h-16 animate-pulse" style={{ color: '#d7f2db' }} />
               </div>
 
-              {/* Puzzle pieces */}
-              {compromisosData.map((compromiso, index) => {
-                const isActive = activeQuadrant === index;
-                const rotation = index * 90;
+              {/* 4 Circular Sections */}
+              {pilaresSustentabilidad.map((pilar, index) => {
+                const isActive = activeSection === index;
+                const angle = (index * 90) - 45; // Start from top-right
+                const radius = 200;
+                const x = Math.cos((angle * Math.PI) / 180) * radius;
+                const y = Math.sin((angle * Math.PI) / 180) * radius;
                 
                 return (
                   <div
                     key={index}
-                    className={`absolute w-80 h-80 cursor-pointer transition-all duration-700 ease-out ${
-                      isActive ? 'scale-110 z-20' : 'hover:scale-105'
-                    }`}
+                    className="absolute w-72 h-72 cursor-pointer transition-all duration-700 ease-out"
                     style={{
-                      transform: `rotate(${rotation}deg) ${isActive ? 'scale(1.1)' : 'scale(1)'}`,
-                      transformOrigin: 'center center',
-                      top: '50%',
                       left: '50%',
-                      marginTop: '-160px',
-                      marginLeft: '-160px'
+                      top: '50%',
+                      transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) ${isActive ? 'scale(1.1)' : 'scale(1)'}`,
+                      zIndex: isActive ? 20 : 10
                     }}
-                    onMouseEnter={() => setActiveQuadrant(index)}
-                    onMouseLeave={() => setActiveQuadrant(-1)}
+                    onMouseEnter={() => setActiveSection(index)}
+                    onMouseLeave={() => setActiveSection(-1)}
                   >
-                    {/* Puzzle piece shape */}
                     <div 
-                      className="w-full h-full relative transition-all duration-700"
+                      className="w-full h-full rounded-full flex flex-col items-center justify-center text-center p-8 shadow-2xl transition-all duration-700 backdrop-blur-sm border-2"
                       style={{
-                        clipPath: index === 0 ? 'polygon(50% 50%, 100% 0%, 100% 50%)' :
-                                  index === 1 ? 'polygon(50% 50%, 100% 50%, 100% 100%)' :
-                                  index === 2 ? 'polygon(50% 50%, 50% 100%, 0% 100%)' :
-                                  'polygon(50% 50%, 0% 50%, 0% 0%)',
                         background: isActive 
-                          ? `linear-gradient(135deg, ${compromiso.color}, rgba(195,232,164,0.8))` 
-                          : `linear-gradient(135deg, ${compromiso.color}, rgba(61,123,79,0.7))`,
-                        filter: isActive ? 'brightness(1.2)' : 'brightness(1)',
-                        boxShadow: isActive ? '0 20px 40px rgba(47,158,68,0.3)' : '0 10px 20px rgba(0,0,0,0.2)'
+                          ? `linear-gradient(135deg, ${pilar.color}ee, rgba(47,158,68,0.9))` 
+                          : `linear-gradient(135deg, ${pilar.color}cc, rgba(61,123,79,0.8))`,
+                        borderColor: isActive ? '#d7f2db' : 'transparent',
+                        boxShadow: isActive 
+                          ? `0 20px 40px ${pilar.color}66, 0 0 40px ${pilar.color}44` 
+                          : '0 10px 30px rgba(0,0,0,0.3)',
+                        filter: isActive ? 'brightness(1.2)' : 'brightness(1)'
                       }}
                     >
-                      {/* Content container */}
-                      <div 
-                        className="absolute inset-0 flex flex-col items-center justify-center text-center p-8"
-                        style={{
-                          transform: `rotate(-${rotation}deg)`,
-                          transformOrigin: 'center center'
-                        }}
-                      >
-                        <div className={`mb-4 transition-all duration-300 ${
-                          isActive ? 'scale-125' : ''
-                        }`} style={{ color: '#0f3d2e' }}>
-                          {compromiso.icon}
-                        </div>
-                        <h3 className="font-bold text-xl mb-3 leading-tight" style={{ color: '#0f3d2e' }}>
-                          {compromiso.titulo}
-                        </h3>
-                        <p className={`text-sm leading-tight transition-all duration-300 ${
-                          isActive ? 'opacity-100' : 'opacity-90'
-                        }`} style={{ color: '#0f3d2e' }}>
-                          {compromiso.descripcion}
-                        </p>
+                      <div className={`mb-6 transition-all duration-300 ${isActive ? 'scale-125' : ''}`} style={{ color: index === 1 || index === 2 ? '#0f3d2e' : '#d7f2db' }}>
+                        {pilar.icon}
                       </div>
+                      <h3 className={`font-bold text-xl mb-4 leading-tight transition-all duration-300 ${isActive ? 'scale-105' : ''}`} style={{ color: index === 1 || index === 2 ? '#0f3d2e' : '#d7f2db' }}>
+                        {pilar.titulo}
+                      </h3>
+                      <p className={`text-sm leading-relaxed transition-all duration-300 ${isActive ? 'opacity-100' : 'opacity-85'}`} style={{ color: index === 1 || index === 2 ? '#0f3d2e' : '#c3e8a4' }}>
+                        {pilar.descripcion}
+                      </p>
                     </div>
                   </div>
                 );
@@ -402,22 +377,23 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Clientes - Carrusel */}
-      <section className="py-20" style={{ background: 'linear-gradient(135deg, #3d7b4f 0%, #0f3d2e 100%)' }}>
+      {/* Clientes - Light Background */}
+      <section className="py-20" style={{ background: 'linear-gradient(135deg, #c3e8a4 0%, #d7f2db 50%, #c3e8a4 100%)' }}>
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-4" style={{ color: '#d7f2db' }}>Clientes que Confían en Nosotros</h2>
-            <p className="text-xl" style={{ color: '#c3e8a4' }}>
+            <h2 className="text-5xl font-bold mb-4" style={{ color: '#0f3d2e' }}>
+              Clientes que Confían en Nosotros
+            </h2>
+            <p className="text-xl" style={{ color: '#3d7b4f' }}>
               Grandes empresas confían en nuestras soluciones de impresión sustentable. Algunos de nuestros clientes más destacados:
             </p>
           </div>
           
-          {/* Carrusel animado */}
           <div className="relative overflow-hidden">
             <div className="flex animate-[scroll_20s_linear_infinite] space-x-8">
               {[...clientes, ...clientes].map((cliente, index) => (
                 <div key={index} className="flex-shrink-0">
-                  <div className="backdrop-blur-sm rounded-2xl p-8 min-w-[200px] text-center hover:scale-105 transition-transform duration-300 shadow-xl" style={{ background: 'linear-gradient(135deg, rgba(61,123,79,0.6), rgba(47,158,68,0.6))' }}>
+                  <div className="rounded-2xl p-8 min-w-[200px] text-center hover:scale-105 transition-transform duration-300 shadow-xl backdrop-blur-sm" style={{ background: 'rgba(47,158,68,0.8)' }}>
                     <div className="text-3xl font-bold" style={{ color: '#d7f2db' }}>{cliente}</div>
                   </div>
                 </div>
@@ -427,44 +403,44 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-16" style={{ background: 'linear-gradient(135deg, #0f3d2e 0%, #000000 100%)' }}>
+      {/* Footer - Dark Background */}
+      <footer className="py-16 bg-black">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
-              <h3 className="text-3xl font-bold mb-4" style={{ color: '#d7f2db' }}>Black Colors</h3>
-              <p className="mb-6 leading-relaxed text-lg" style={{ color: '#c3e8a4' }}>
+              <h3 className="text-3xl font-bold mb-4 text-white">Black Colors</h3>
+              <p className="mb-6 leading-relaxed text-lg text-gray-300">
                 Líderes en soluciones de impresión sustentable con 18 años de experiencia en el mercado.
               </p>
               <div className="flex space-x-4">
-                {['FB', 'IG', 'LI'].map((social, index) => (
-                  <div key={index} className="w-12 h-12 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer shadow-lg" style={{ background: 'linear-gradient(135deg, #2f9e44, #3d7b4f)' }}>
-                    <span className="font-bold" style={{ color: '#d7f2db' }}>{social}</span>
+                {['FB', 'IG', 'LI', 'WA'].map((social, index) => (
+                  <div key={index} className="w-12 h-12 rounded-full bg-green-600 hover:bg-green-500 flex items-center justify-center hover:scale-110 transition-all duration-300 cursor-pointer shadow-lg">
+                    <span className="font-bold text-white">{social}</span>
                   </div>
                 ))}
               </div>
             </div>
             <div>
-              <h4 className="text-xl font-semibold mb-4" style={{ color: '#d7f2db' }}>Contacto</h4>
+              <h4 className="text-xl font-semibold mb-4 text-white">Contacto</h4>
               <div className="space-y-3">
                 {[
                   { icon: Phone, text: "+595 21 123-456" },
                   { icon: Mail, text: "info@blackcolors.py" },
                   { icon: MapPin, text: "Asunción, Paraguay" }
                 ].map((item, index) => (
-                  <div key={index} className="flex items-center group hover:text-green-300 transition-colors cursor-pointer">
-                    <item.icon className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" style={{ color: '#c3e8a4' }} />
-                    <span style={{ color: '#c3e8a4' }}>{item.text}</span>
+                  <div key={index} className="flex items-center group hover:text-green-400 transition-colors cursor-pointer">
+                    <item.icon className="w-5 h-5 mr-3 text-gray-400 group-hover:text-green-400 group-hover:scale-110 transition-all" />
+                    <span className="text-gray-300 group-hover:text-green-400">{item.text}</span>
                   </div>
                 ))}
               </div>
             </div>
             <div>
-              <h4 className="text-xl font-semibold mb-4" style={{ color: '#d7f2db' }}>Enlaces</h4>
+              <h4 className="text-xl font-semibold mb-4 text-white">Enlaces</h4>
               <ul className="space-y-2">
                 {['Productos', 'Leasing', 'Sustentabilidad', 'Contacto'].map((link, index) => (
                   <li key={index}>
-                    <a href="#" className="transition-colors duration-300 hover:translate-x-2 transform inline-block" style={{ color: '#c3e8a4' }}>
+                    <a href="#" className="text-gray-300 hover:text-green-400 transition-colors duration-300 hover:translate-x-2 transform inline-block">
                       {link}
                     </a>
                   </li>
@@ -472,8 +448,8 @@ const Index = () => {
               </ul>
             </div>
           </div>
-          <div className="border-t mt-12 pt-8 text-center" style={{ borderColor: '#3d7b4f', color: '#c3e8a4' }}>
-            <p>&copy; 2024 Black Colors. Todos los derechos reservados.</p>
+          <div className="border-t border-gray-800 mt-12 pt-8 text-center">
+            <p className="text-gray-400">&copy; 2024 Black Colors. Todos los derechos reservados.</p>
           </div>
         </div>
       </footer>
