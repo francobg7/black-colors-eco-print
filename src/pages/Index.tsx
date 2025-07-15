@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Leaf, Recycle, Shield, Award, Printer, Package, FileText, Users, Phone, Mail, MapPin, CheckCircle, ArrowRight, Wrench, RotateCcw, Headphones, Zap } from 'lucide-react';
@@ -6,10 +7,15 @@ import { Leaf, Recycle, Shield, Award, Printer, Package, FileText, Users, Phone,
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
   const [activeSection, setActiveSection] = useState(-1);
+  const [heroLoaded, setHeroLoaded] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', handleScroll);
+    
+    // Trigger hero animation on load
+    setTimeout(() => setHeroLoaded(true), 200);
+    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -64,7 +70,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #0f3d2e 0%, #2f9e44 50%, #3d7b4f 100%)' }}>
-      {/* Hero Section */}
+      {/* Hero Section - Enhanced with animations */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(15,61,46,0.9) 0%, rgba(47,158,68,0.8) 50%, rgba(61,123,79,0.9) 100%)' }}></div>
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518495973542-4542c06a5843')] bg-cover bg-center opacity-20"></div>
@@ -94,16 +100,32 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <h1 
-                className="text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-fade-in"
+                className={`text-6xl lg:text-7xl font-bold mb-6 leading-tight transition-all duration-1500 ease-out ${
+                  heroLoaded ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'
+                }`}
                 style={{ 
                   color: '#d7f2db',
                   transform: `translateY(${Math.max(0, 50 - scrollY * 0.1)}px)` 
                 }}
               >
-                Black Colors: <span style={{ background: 'linear-gradient(135deg, #c3e8a4, #2f9e44)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Impresión Sustentable</span> para un Futuro Verde
+                Black Colors: <span 
+                  className={`transition-all duration-1800 delay-300 ease-out ${
+                    heroLoaded ? 'translate-x-0 opacity-100' : '-translate-x-16 opacity-0'
+                  }`}
+                  style={{ 
+                    background: 'linear-gradient(135deg, #c3e8a4, #2f9e44)', 
+                    WebkitBackgroundClip: 'text', 
+                    WebkitTextFillColor: 'transparent',
+                    display: 'inline-block'
+                  }}
+                >
+                  Impresión Sustentable
+                </span> para un Futuro Verde
               </h1>
               <p 
-                className="text-2xl mb-8 leading-relaxed"
+                className={`text-2xl mb-8 leading-relaxed transition-all duration-1200 delay-500 ease-out ${
+                  heroLoaded ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'
+                }`}
                 style={{ 
                   color: '#c3e8a4',
                   transform: `translateY(${Math.max(0, 30 - scrollY * 0.08)}px)` 
@@ -111,34 +133,42 @@ const Index = () => {
               >
                 Convertí tu impresión en una acción por el planeta con nuestras soluciones integrales de impresión sustentable y economía circular.
               </p>
-              <div className="flex flex-col sm:flex-row gap-6">
-                <Button 
-                  size="lg" 
-                  className="px-10 py-4 text-xl border-0 shadow-2xl transition-all duration-300 transform hover:scale-105 group"
-                  style={{ 
-                    background: 'linear-gradient(135deg, #2f9e44, #3d7b4f)',
-                    color: '#d7f2db'
-                  }}
-                >
-                  Conocer Productos
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="px-10 py-4 text-xl backdrop-blur-sm transition-all duration-300 transform hover:scale-105"
-                  style={{ 
-                    borderColor: '#c3e8a4',
-                    color: '#c3e8a4',
-                    background: 'rgba(61,123,79,0.3)'
-                  }}
-                >
-                  Servicio de Leasing
-                </Button>
+              <div className={`flex flex-col sm:flex-row gap-6 transition-all duration-1000 delay-700 ease-out ${
+                heroLoaded ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'
+              }`}>
+                <Link to="/productos">
+                  <Button 
+                    size="lg" 
+                    className="px-10 py-4 text-xl border-0 shadow-2xl transition-all duration-300 transform hover:scale-105 group"
+                    style={{ 
+                      background: 'linear-gradient(135deg, #2f9e44, #3d7b4f)',
+                      color: '#d7f2db'
+                    }}
+                  >
+                    Conocer Productos
+                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+                <Link to="/leasing">
+                  <Button 
+                    size="lg" 
+                    variant="outline" 
+                    className="px-10 py-4 text-xl backdrop-blur-sm transition-all duration-300 transform hover:scale-105"
+                    style={{ 
+                      borderColor: '#c3e8a4',
+                      color: '#c3e8a4',
+                      background: 'rgba(61,123,79,0.3)'
+                    }}
+                  >
+                    Servicio de Leasing
+                  </Button>
+                </Link>
               </div>
             </div>
             <div 
-              className="relative"
+              className={`relative transition-all duration-1300 delay-400 ease-out ${
+                heroLoaded ? 'translate-x-0 opacity-100' : 'translate-x-16 opacity-0'
+              }`}
               style={{ transform: `translateY(${scrollY * -0.2}px)` }}
             >
               <div className="absolute inset-0 rounded-full opacity-30 animate-pulse blur-xl" style={{ background: 'rgba(195,232,164,0.2)' }}></div>
@@ -195,7 +225,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Nuestros Productos - Angular Design */}
+      {/* Nuestros Productos - Updated with new image */}
       <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #2f9e44 0%, #0f3d2e 100%)' }}>
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9')] bg-cover bg-center opacity-15"></div>
         <div className="container mx-auto px-6 relative z-10">
@@ -203,8 +233,8 @@ const Index = () => {
             <div className="lg:col-span-3 relative">
               <div className="absolute inset-0 rounded-3xl blur-2xl" style={{ background: 'linear-gradient(135deg, rgba(195,232,164,0.2), rgba(47,158,68,0.2))' }}></div>
               <img 
-                src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b" 
-                alt="Tecnología sustentable"
+                src="/lovable-uploads/162745a0-e4d1-4bb2-b084-cd30a6b156c5.png" 
+                alt="Productos Black Colors - Impresora Brother y papel sustentable NAT"
                 className="w-full h-96 lg:h-[600px] object-cover rounded-3xl shadow-2xl relative z-10"
               />
             </div>
@@ -253,7 +283,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Servicio de Leasing - Clean Design */}
+      {/* Servicio de Leasing */}
       <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f3d2e 0%, #3d7b4f 100%)' }}>
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1615729947596-a598e5de0ab3')] bg-cover bg-center opacity-15"></div>
         <div className="container mx-auto px-6 relative z-10">
@@ -307,7 +337,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Compromiso con la Sustentabilidad - Clean Circle Design */}
+      {/* Compromiso con la Sustentabilidad */}
       <section className="py-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f3d2e 0%, #2f9e44 100%)' }}>
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-20">
@@ -377,7 +407,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Clientes - Light Background */}
+      {/* Clientes */}
       <section className="py-20" style={{ background: 'linear-gradient(135deg, #c3e8a4 0%, #d7f2db 50%, #c3e8a4 100%)' }}>
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
@@ -403,7 +433,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer - Dark Background */}
+      {/* Footer */}
       <footer className="py-16 bg-black">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-8">
