@@ -71,10 +71,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #0f3d2e 0%, #2f9e44 50%, #3d7b4f 100%)' }}>
-      {/* Hero Section - Enhanced with new background image */}
+      {/* Hero Section - Updated with new background image */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/lovable-uploads/e49012a3-687c-4380-9c99-b0d0b727e0b1.png')] bg-cover bg-center"></div>
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(15,61,46,0.85) 0%, rgba(47,158,68,0.75) 50%, rgba(61,123,79,0.85) 100%)' }}></div>
+        <div className="absolute inset-0 bg-[url('/lovable-uploads/b4283771-cdb1-46e0-b155-6c875cc58ee8.png')] bg-cover bg-center"></div>
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(15,61,46,0.7) 0%, rgba(47,158,68,0.6) 50%, rgba(61,123,79,0.7) 100%)' }}></div>
         
         <div className="absolute inset-0 overflow-hidden">
           <div 
@@ -106,7 +106,7 @@ const Index = () => {
                 }`}
                 style={{ 
                   color: '#ffffff',
-                  textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
+                  textShadow: '3px 3px 6px rgba(0,0,0,0.8)',
                   transform: `translateY(${Math.max(0, 50 - scrollY * 0.1)}px)` 
                 }}
               >
@@ -116,7 +116,7 @@ const Index = () => {
                   }`}
                   style={{ 
                     color: '#c3e8a4',
-                    textShadow: '2px 2px 4px rgba(0,0,0,0.7)',
+                    textShadow: '3px 3px 6px rgba(0,0,0,0.9)',
                     display: 'inline-block'
                   }}
                 >
@@ -129,7 +129,7 @@ const Index = () => {
                 }`}
                 style={{ 
                   color: '#ffffff',
-                  textShadow: '1px 1px 3px rgba(0,0,0,0.6)',
+                  textShadow: '2px 2px 4px rgba(0,0,0,0.8)',
                   transform: `translateY(${Math.max(0, 30 - scrollY * 0.08)}px)` 
                 }}
               >
@@ -160,7 +160,7 @@ const Index = () => {
                       borderColor: '#ffffff',
                       color: '#ffffff',
                       background: 'rgba(255,255,255,0.1)',
-                      textShadow: '1px 1px 2px rgba(0,0,0,0.5)'
+                      textShadow: '2px 2px 4px rgba(0,0,0,0.7)'
                     }}
                   >
                     Servicio de Leasing
@@ -176,8 +176,8 @@ const Index = () => {
             >
               <div className="absolute inset-0 rounded-full opacity-30 animate-pulse blur-xl" style={{ background: 'rgba(195,232,164,0.2)' }}></div>
               <img 
-                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" 
-                alt="Sostenibilidad y tecnología"
+                src="/lovable-uploads/72de27c2-3aa1-4618-b56a-22fb1b450fa3.png" 
+                alt="Productos Black Colors - Impresoras, tinta, toner y resmas sustentables"
                 className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500 relative z-10"
               />
             </div>
@@ -286,8 +286,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Servicio de Leasing - Updated with solid green background */}
-      <section className="py-20 relative overflow-hidden" style={{ background: '#7dd3fc' }}>
+      {/* Servicio de Leasing - Updated with light green background */}
+      <section className="py-20 relative overflow-hidden" style={{ background: '#a7f3d0' }}>
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
