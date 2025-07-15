@@ -7,7 +7,7 @@ const Leasing = () => {
       <div className="container mx-auto px-6 py-20">
         {/* Hero Section */}
         <div className="text-center mb-20">
-          <h1 className="text-6xl font-bold mb-8 animate-fade-in" style={{ color: '#d7f2db' }}>
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold mb-8 animate-fade-in" style={{ color: '#d7f2db' }}>
             SERVICIO DE LEASING SUSTENTABLE
           </h1>
         </div>
@@ -16,7 +16,7 @@ const Leasing = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
             <div className="space-y-8 animate-slide-up">
-              <h2 className="text-4xl font-bold" style={{ color: '#c3e8a4' }}>
+              <h2 className="text-xl sm:text-2xl lg:text-4xl font-bold" style={{ color: '#c3e8a4' }}>
                 Innovación sin límites
               </h2>
               <p className="text-xl leading-relaxed" style={{ color: '#d7f2db' }}>
@@ -53,7 +53,7 @@ const Leasing = () => {
                   borderColor: 'rgba(195, 232, 164, 0.3)'
                 }}
               >
-                <h3 className="text-3xl font-bold mb-6" style={{ color: '#c3e8a4' }}>
+                <h3 className="text-xl sm:text-3xl font-bold mb-6" style={{ color: '#c3e8a4' }}>
                   ¿Por qué elegir leasing?
                 </h3>
                 <div className="space-y-4 text-left">
@@ -76,7 +76,7 @@ const Leasing = () => {
 
           {/* Benefits Section */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-12" style={{ color: '#c3e8a4' }}>
+            <h2 className="text-xl sm:text-2xl lg:text-4xl font-bold mb-12" style={{ color: '#c3e8a4' }}>
               Beneficios del Leasing Sustentable
             </h2>
             <div className="grid md:grid-cols-3 gap-8">

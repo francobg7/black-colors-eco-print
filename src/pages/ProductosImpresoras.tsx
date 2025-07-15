@@ -18,10 +18,10 @@ const ProductosImpresoras = () => {
         </div>
         
         <div className="text-center">
-          <h1 className="text-6xl font-bold mb-8" style={{ color: '#d7f2db' }}>
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold mb-8" style={{ color: '#d7f2db' }}>
             IMPRESORAS
           </h1>
-          <p className="text-2xl mb-12" style={{ color: '#c3e8a4' }}>
+          <p className="text-xl sm:text-2xl lg:text-4xl mb-12" style={{ color: '#c3e8a4' }}>
             Contenido próximamente
           </p>
           <div className="text-lg" style={{ color: '#c3e8a4' }}>

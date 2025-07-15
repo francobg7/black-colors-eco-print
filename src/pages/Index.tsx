@@ -101,7 +101,7 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <h1 
-                className={`text-6xl lg:text-7xl font-bold mb-6 leading-tight transition-all duration-1500 ease-out ${
+                className={`text-3xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight transition-all duration-1500 ease-out ${
                   heroLoaded ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'
                 }`}
                 style={{ 
@@ -186,13 +186,13 @@ const Index = () => {
       </section>
 
       {/* Quiénes Somos */}
-      <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #3d7b4f 0%, #2f9e44 100%)' }}>
+      <section className="py-10 md:py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #3d7b4f 0%, #2f9e44 100%)' }}>
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523712999610-f77fbcfc3843')] bg-cover bg-center opacity-10"></div>
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 
-                className="text-5xl font-bold mb-8"
+                className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-8"
                 style={{ 
                   color: '#d7f2db',
                   transform: `scale(${Math.min(1.2, 1 + scrollY * 0.0005)})` 
@@ -229,22 +229,22 @@ const Index = () => {
       </section>
 
       {/* Nuestros Productos - Updated with new image */}
-      <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #2f9e44 0%, #0f3d2e 100%)' }}>
+      <section className="py-10 md:py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #2f9e44 0%, #0f3d2e 100%)' }}>
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9')] bg-cover bg-center opacity-15"></div>
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-5 gap-8 items-center">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+          <div className="grid lg:grid-cols-1 lg:grid-cols-5 gap-8 items-center">
             <div className="lg:col-span-3 relative">
               <div className="absolute inset-0 rounded-3xl blur-2xl" style={{ background: 'linear-gradient(135deg, rgba(195,232,164,0.2), rgba(47,158,68,0.2))' }}></div>
               <img 
                 src="/lovable-uploads/162745a0-e4d1-4bb2-b084-cd30a6b156c5.png" 
                 alt="Productos Black Colors - Impresora Brother y papel sustentable NAT"
-                className="w-full h-96 lg:h-[600px] object-cover rounded-3xl shadow-2xl relative z-10"
+                className="w-full h-48 sm:h-72 md:h-96 lg:h-[600px] object-cover rounded-3xl shadow-2xl relative z-10"
               />
             </div>
             
             <div className="lg:col-span-2 space-y-8">
               <h2 
-                className="text-5xl font-bold mb-12 text-center lg:text-left"
+                className="text-2xl sm:text-4xl lg:text-4xl font-bold mb-12 text-center lg:text-left"
                 style={{ 
                   color: '#d7f2db',
                   transform: `translateX(${Math.min(0, -50 + scrollY * 0.1)}px)` 
@@ -258,7 +258,7 @@ const Index = () => {
                   <div 
                     key={index}
                     className={`backdrop-blur-sm p-6 rounded-2xl shadow-xl transform transition-all duration-500 hover:scale-105 hover:shadow-2xl group ${
-                      index === 1 ? 'ml-8' : index === 2 ? 'ml-16' : ''
+                      index === 1 ? 'ml-0 md:ml-8' : index === 2 ? 'ml-0 md:ml-16' : ''
                     }`}
                     style={{ 
                       background: `linear-gradient(135deg, rgba(61,123,79,0.8), rgba(47,158,68,0.8))`,
@@ -287,11 +287,11 @@ const Index = () => {
       </section>
 
       {/* Servicio de Leasing - Updated with light green background */}
-      <section className="py-20 relative overflow-hidden" style={{ background: '#a7f3d0' }}>
-        <div className="container mx-auto px-6 relative z-10">
+      <section className="py-10 md:py-20 relative overflow-hidden" style={{ background: '#a7f3d0' }}>
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              <h2 className="text-5xl font-bold mb-8 animate-fade-in" style={{ color: '#0f3d2e' }}>
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-8 animate-fade-in" style={{ color: '#0f3d2e' }}>
                 Servicio de Leasing Sustentable
               </h2>
               <p className="text-2xl mb-12 leading-relaxed" style={{ color: '#1f2937' }}>
@@ -332,7 +332,7 @@ const Index = () => {
               <img 
                 src="https://images.unsplash.com/photo-1497366216548-37526070297c" 
                 alt="Oficina moderna con equipos de impresión"
-                className="w-full h-96 lg:h-[500px] object-cover rounded-3xl shadow-2xl relative z-10 transform hover:scale-105 transition-transform duration-500"
+                className="w-full h-48 sm:h-72 md:h-96 lg:h-[500px] object-cover rounded-3xl shadow-2xl relative z-10 transform hover:scale-105 transition-transform duration-500"
               />
             </div>
           </div>
@@ -341,9 +341,9 @@ const Index = () => {
 
       {/* Compromiso con la Sustentabilidad */}
       <section className="py-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f3d2e 0%, #2f9e44 100%)' }}>
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="text-6xl font-bold mb-8" style={{ color: '#d7f2db' }}>
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+          <div className="text-center mb-8 md:mb-20">
+            <h2 className="text-3xl sm:text-5xl lg:text-7xl font-bold mb-8" style={{ color: '#d7f2db' }}>
               Compromiso con la Sustentabilidad
             </h2>
             <div className="w-32 h-2 mx-auto rounded-full" style={{ background: 'linear-gradient(135deg, #c3e8a4, #2f9e44)' }}></div>
@@ -410,10 +410,10 @@ const Index = () => {
       </section>
 
       {/* Clientes */}
-      <section className="py-20" style={{ background: 'linear-gradient(135deg, #c3e8a4 0%, #d7f2db 50%, #c3e8a4 100%)' }}>
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-4" style={{ color: '#0f3d2e' }}>
+      <section className="py-10 md:py-20" style={{ background: 'linear-gradient(135deg, #c3e8a4 0%, #d7f2db 50%, #c3e8a4 100%)' }}>
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
+          <div className="text-center mb-8 md:mb-16">
+            <h2 className="text-2xl sm:text-4xl lg:text-4xl font-bold mb-4" style={{ color: '#0f3d2e' }}>
               Clientes que Confían en Nosotros
             </h2>
             <p className="text-xl" style={{ color: '#3d7b4f' }}>
@@ -437,7 +437,7 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="py-16 bg-black">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
               <h3 className="text-3xl font-bold mb-4 text-white">Black Colors</h3>

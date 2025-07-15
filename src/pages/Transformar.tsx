@@ -17,7 +17,7 @@ const Transformar = () => {
       <div className="container mx-auto px-6 py-20">
         {/* Title */}
         <div className="text-center mb-16">
-          <h1 className="text-6xl font-bold mb-8 animate-fade-in" style={{ color: '#d7f2db' }}>
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold mb-8 animate-fade-in" style={{ color: '#d7f2db' }}>
             PROYECTO TRANSFORMAR
           </h1>
         </div>
@@ -65,7 +65,7 @@ const Transformar = () => {
         <div className="max-w-4xl mx-auto">
           <div className="space-y-6 text-lg leading-relaxed animate-slide-up" style={{ color: '#c3e8a4' }}>
             {/* List of transformations */}
-            <div className="grid md:grid-cols-2 gap-6 my-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
               <div className="p-6 rounded-xl backdrop-blur-sm border" style={{ 
                 background: 'rgba(195,232,164,0.1)',
                 borderColor: 'rgba(195,232,164,0.3)'
@@ -109,13 +109,13 @@ const Transformar = () => {
               borderColor: 'rgba(215,242,219,0.3)'
             }}>
               <div className="space-y-4">
-                <h2 className="text-3xl font-bold" style={{ color: '#d7f2db' }}>
+                <h2 className="text-xl sm:text-3xl font-bold" style={{ color: '#d7f2db' }}>
                   En Black Colors no solo imprimimos.
                 </h2>
-                <p className="text-2xl font-semibold" style={{ color: '#c3e8a4' }}>
+                <p className="text-lg sm:text-xl font-semibold" style={{ color: '#c3e8a4' }}>
                   Transformamos residuos en energía.
                 </p>
-                <p className="text-xl" style={{ color: '#d7f2db' }}>
+                <p className="text-base sm:text-lg" style={{ color: '#d7f2db' }}>
                   Impulsamos un futuro donde cada impresión tenga un propósito más grande.
                 </p>
               </div>
