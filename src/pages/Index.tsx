@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -70,10 +71,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #0f3d2e 0%, #2f9e44 50%, #3d7b4f 100%)' }}>
-      {/* Hero Section - Enhanced with animations */}
+      {/* Hero Section - Enhanced with new background image */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(15,61,46,0.9) 0%, rgba(47,158,68,0.8) 50%, rgba(61,123,79,0.9) 100%)' }}></div>
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518495973542-4542c06a5843')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('/lovable-uploads/e49012a3-687c-4380-9c99-b0d0b727e0b1.png')] bg-cover bg-center"></div>
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(15,61,46,0.85) 0%, rgba(47,158,68,0.75) 50%, rgba(61,123,79,0.85) 100%)' }}></div>
         
         <div className="absolute inset-0 overflow-hidden">
           <div 
@@ -104,7 +105,8 @@ const Index = () => {
                   heroLoaded ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'
                 }`}
                 style={{ 
-                  color: '#d7f2db',
+                  color: '#ffffff',
+                  textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
                   transform: `translateY(${Math.max(0, 50 - scrollY * 0.1)}px)` 
                 }}
               >
@@ -113,9 +115,8 @@ const Index = () => {
                     heroLoaded ? 'translate-x-0 opacity-100' : '-translate-x-16 opacity-0'
                   }`}
                   style={{ 
-                    background: 'linear-gradient(135deg, #c3e8a4, #2f9e44)', 
-                    WebkitBackgroundClip: 'text', 
-                    WebkitTextFillColor: 'transparent',
+                    color: '#c3e8a4',
+                    textShadow: '2px 2px 4px rgba(0,0,0,0.7)',
                     display: 'inline-block'
                   }}
                 >
@@ -127,7 +128,8 @@ const Index = () => {
                   heroLoaded ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'
                 }`}
                 style={{ 
-                  color: '#c3e8a4',
+                  color: '#ffffff',
+                  textShadow: '1px 1px 3px rgba(0,0,0,0.6)',
                   transform: `translateY(${Math.max(0, 30 - scrollY * 0.08)}px)` 
                 }}
               >
@@ -142,7 +144,7 @@ const Index = () => {
                     className="px-10 py-4 text-xl border-0 shadow-2xl transition-all duration-300 transform hover:scale-105 group"
                     style={{ 
                       background: 'linear-gradient(135deg, #2f9e44, #3d7b4f)',
-                      color: '#d7f2db'
+                      color: '#ffffff'
                     }}
                   >
                     Conocer Productos
@@ -155,9 +157,10 @@ const Index = () => {
                     variant="outline" 
                     className="px-10 py-4 text-xl backdrop-blur-sm transition-all duration-300 transform hover:scale-105"
                     style={{ 
-                      borderColor: '#c3e8a4',
-                      color: '#c3e8a4',
-                      background: 'rgba(61,123,79,0.3)'
+                      borderColor: '#ffffff',
+                      color: '#ffffff',
+                      background: 'rgba(255,255,255,0.1)',
+                      textShadow: '1px 1px 2px rgba(0,0,0,0.5)'
                     }}
                   >
                     Servicio de Leasing
@@ -283,21 +286,20 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Servicio de Leasing */}
-      <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f3d2e 0%, #3d7b4f 100%)' }}>
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1615729947596-a598e5de0ab3')] bg-cover bg-center opacity-15"></div>
+      {/* Servicio de Leasing - Updated with solid green background */}
+      <section className="py-20 relative overflow-hidden" style={{ background: '#7dd3fc' }}>
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              <h2 className="text-5xl font-bold mb-8 animate-fade-in" style={{ color: '#d7f2db' }}>
+              <h2 className="text-5xl font-bold mb-8 animate-fade-in" style={{ color: '#0f3d2e' }}>
                 Servicio de Leasing Sustentable
               </h2>
-              <p className="text-2xl mb-12 leading-relaxed" style={{ color: '#c3e8a4' }}>
+              <p className="text-2xl mb-12 leading-relaxed" style={{ color: '#1f2937' }}>
                 Nuestro servicio de leasing incluye alquiler de equipos con mantenimiento completo y reposición de insumos.
               </p>
               
               <div>
-                <h3 className="text-2xl font-semibold mb-8" style={{ color: '#d7f2db' }}>Beneficios principales:</h3>
+                <h3 className="text-2xl font-semibold mb-8" style={{ color: '#0f3d2e' }}>Beneficios principales:</h3>
                 <div className="space-y-6">
                   {[
                     { icon: Wrench, text: "Mantenimiento incluido." },
@@ -313,10 +315,10 @@ const Index = () => {
                         animation: `fade-in 0.8s ease-out forwards`
                       }}
                     >
-                      <div className="p-3 rounded-xl transition-all duration-300 group-hover:scale-110" style={{ background: 'rgba(47,158,68,0.3)' }}>
-                        <item.icon className="w-6 h-6" style={{ color: '#c3e8a4' }} />
+                      <div className="p-3 rounded-xl transition-all duration-300 group-hover:scale-110" style={{ background: 'rgba(15,61,46,0.2)' }}>
+                        <item.icon className="w-6 h-6" style={{ color: '#0f3d2e' }} />
                       </div>
-                      <p className="text-xl font-medium" style={{ color: '#d7f2db' }}>
+                      <p className="text-xl font-medium" style={{ color: '#1f2937' }}>
                         {item.text}
                       </p>
                     </div>
@@ -326,7 +328,7 @@ const Index = () => {
             </div>
 
             <div className="relative">
-              <div className="absolute -inset-4 rounded-3xl blur-2xl" style={{ background: 'linear-gradient(135deg, rgba(195,232,164,0.2), rgba(47,158,68,0.2))' }}></div>
+              <div className="absolute -inset-4 rounded-3xl blur-2xl" style={{ background: 'rgba(15,61,46,0.1)' }}></div>
               <img 
                 src="https://images.unsplash.com/photo-1497366216548-37526070297c" 
                 alt="Oficina moderna con equipos de impresión"
