@@ -73,7 +73,7 @@ const Index = () => {
     <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #0f3d2e 0%, #2f9e44 50%, #3d7b4f 100%)' }}>
       {/* Hero Section - Updated with new background image */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/lovable-uploads/b4283771-cdb1-46e0-b155-6c875cc58ee8.png')] bg-cover bg-center"></div>
+        <div className="absolute inset-0 bg-[url('/images/heor-pic.jpeg')] bg-cover bg-center"></div>
         <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(15,61,46,0.7) 0%, rgba(47,158,68,0.6) 50%, rgba(61,123,79,0.7) 100%)' }}></div>
         
         <div className="absolute inset-0 overflow-hidden">
@@ -176,7 +176,7 @@ const Index = () => {
             >
               <div className="absolute inset-0 rounded-full opacity-30 animate-pulse blur-xl" style={{ background: 'rgba(195,232,164,0.2)' }}></div>
               <img 
-                src="/lovable-uploads/72de27c2-3aa1-4618-b56a-22fb1b450fa3.png" 
+                src="/images/productos.png" 
                 alt="Productos Black Colors - Impresoras, tinta, toner y resmas sustentables"
                 className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500 relative z-10"
               />
@@ -215,7 +215,7 @@ const Index = () => {
             <div className="relative">
               <div className="absolute -inset-4 rounded-2xl blur-xl" style={{ background: 'linear-gradient(135deg, rgba(195,232,164,0.2), rgba(47,158,68,0.2))' }}></div>
               <img 
-                src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86" 
+                src="/images/nostros.jpg"
                 alt="Equipo Black Colors"
                 className="rounded-2xl shadow-2xl relative z-10 transform hover:scale-105 transition-transform duration-500"
               />
@@ -236,7 +236,7 @@ const Index = () => {
             <div className="lg:col-span-3 relative">
               <div className="absolute inset-0 rounded-3xl blur-2xl" style={{ background: 'linear-gradient(135deg, rgba(195,232,164,0.2), rgba(47,158,68,0.2))' }}></div>
               <img 
-                src="/lovable-uploads/162745a0-e4d1-4bb2-b084-cd30a6b156c5.png" 
+                src="/images/MAPSArtboard 2.jpg" 
                 alt="Productos Black Colors - Impresora Brother y papel sustentable NAT"
                 className="w-full h-48 sm:h-72 md:h-96 lg:h-[600px] object-cover rounded-3xl shadow-2xl relative z-10"
               />
@@ -289,8 +289,8 @@ const Index = () => {
       {/* Servicio de Leasing - Updated with light green background */}
       <section className="py-10 md:py-20 relative overflow-hidden" style={{ background: '#a7f3d0' }}>
         <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
+          <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
+            <div className="space-y-8 animate-slide-up">
               <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-8 animate-fade-in" style={{ color: '#0f3d2e' }}>
                 Servicio de Leasing Sustentable
               </h2>
@@ -326,13 +326,11 @@ const Index = () => {
                 </div>
               </div>
             </div>
-
-            <div className="relative">
-              <div className="absolute -inset-4 rounded-3xl blur-2xl" style={{ background: 'rgba(15,61,46,0.1)' }}></div>
-              <img 
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c" 
-                alt="Oficina moderna con equipos de impresión"
-                className="w-full h-48 sm:h-72 md:h-96 lg:h-[500px] object-cover rounded-3xl shadow-2xl relative z-10 transform hover:scale-105 transition-transform duration-500"
+            <div className="flex justify-center">
+              <img
+                src="/images/leasing.jpg"
+                alt="Servicio de Leasing"
+                className="rounded-2xl shadow-2xl w-full max-w-md h-auto"
               />
             </div>
           </div>
