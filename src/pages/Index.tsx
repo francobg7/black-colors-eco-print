@@ -73,80 +73,29 @@ const Index = () => {
     <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #0f3d2e 0%, #2f9e44 50%, #3d7b4f 100%)' }}>
       {/* Hero Section - Updated with new background image */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/heor-pic.jpeg')] bg-cover bg-center"></div>
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(15,61,46,0.7) 0%, rgba(47,158,68,0.6) 50%, rgba(61,123,79,0.7) 100%)' }}></div>
-        
-        <div className="absolute inset-0 overflow-hidden">
-          <div 
-            className="absolute w-96 h-96 rounded-full blur-3xl animate-pulse"
-            style={{ 
-              background: 'rgba(195,232,164,0.1)',
-              transform: `translateY(${scrollY * 0.5}px)`,
-              top: '20%',
-              left: '10%'
-            }}
-          ></div>
-          <div 
-            className="absolute w-64 h-64 rounded-full blur-2xl animate-pulse"
-            style={{ 
-              background: 'rgba(215,242,219,0.1)',
-              transform: `translateY(${scrollY * -0.3}px)`,
-              top: '60%',
-              right: '15%'
-            }}
-          ></div>
-        </div>
-
+        <div className="absolute inset-0 bg-[url('/images/heroclean.jpg')] bg-cover bg-center"></div>
+        {/* Overlay eliminado para mostrar la foto original */}
         <div className="container mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <h1 
-                className={`text-3xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight transition-all duration-1500 ease-out ${
-                  heroLoaded ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'
-                }`}
-                style={{ 
-                  color: '#ffffff',
-                  textShadow: '3px 3px 6px rgba(0,0,0,0.8)',
-                  transform: `translateY(${Math.max(0, 50 - scrollY * 0.1)}px)` 
-                }}
-              >
-                Black Colors: <span 
-                  className={`transition-all duration-1800 delay-300 ease-out ${
-                    heroLoaded ? 'translate-x-0 opacity-100' : '-translate-x-16 opacity-0'
-                  }`}
-                  style={{ 
-                    color: '#c3e8a4',
-                    textShadow: '3px 3px 6px rgba(0,0,0,0.9)',
-                    display: 'inline-block'
-                  }}
-                >
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[60vh]">
+            <div className="hidden lg:block"></div>
+            <div className="space-y-8 flex flex-col items-center lg:items-end text-center lg:text-right">
+              <h1 className={`text-3xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight transition-all duration-1500 ease-out ${heroLoaded ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'}`}
+                style={{ color: '#ffffff', textShadow: '3px 3px 6px rgba(0,0,0,0.8)', transform: `translateY(${Math.max(0, 50 - scrollY * 0.1)}px)` }}>
+                Black Colors: <span className={`transition-all duration-1800 delay-300 ease-out ${heroLoaded ? 'translate-x-0 opacity-100' : '-translate-x-16 opacity-0'}`}
+                  style={{ color: '#c3e8a4', textShadow: '3px 3px 6px rgba(0,0,0,0.9)', display: 'inline-block' }}>
                   Impresión Sustentable
                 </span> para un Futuro Verde
               </h1>
-              <p 
-                className={`text-2xl mb-8 leading-relaxed transition-all duration-1200 delay-500 ease-out ${
-                  heroLoaded ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'
-                }`}
-                style={{ 
-                  color: '#ffffff',
-                  textShadow: '2px 2px 4px rgba(0,0,0,0.8)',
-                  transform: `translateY(${Math.max(0, 30 - scrollY * 0.08)}px)` 
-                }}
-              >
+              <p className={`text-2xl mb-8 leading-relaxed transition-all duration-1200 delay-500 ease-out ${heroLoaded ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'}`}
+                style={{ color: '#ffffff', textShadow: '2px 2px 4px rgba(0,0,0,0.8)', transform: `translateY(${Math.max(0, 30 - scrollY * 0.08)}px)` }}>
                 Convertí tu impresión en una acción por el planeta con nuestras soluciones integrales de impresión sustentable y economía circular.
               </p>
-              <div className={`flex flex-col sm:flex-row gap-6 transition-all duration-1000 delay-700 ease-out ${
-                heroLoaded ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'
-              }`}>
+              <div className={`flex flex-col sm:flex-row gap-6 transition-all duration-1000 delay-700 ease-out ${heroLoaded ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'}` + ' justify-center lg:justify-end'}>
                 <Link to="/productos">
                   <Button 
                     size="lg" 
                     className="px-10 py-4 text-xl border-0 shadow-2xl transition-all duration-300 transform hover:scale-105 group"
-                    style={{ 
-                      background: 'linear-gradient(135deg, #2f9e44, #3d7b4f)',
-                      color: '#ffffff'
-                    }}
-                  >
+                    style={{ background: 'linear-gradient(135deg, #2f9e44, #3d7b4f)', color: '#ffffff' }}>
                     Conocer Productos
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
@@ -156,30 +105,11 @@ const Index = () => {
                     size="lg" 
                     variant="outline" 
                     className="px-10 py-4 text-xl backdrop-blur-sm transition-all duration-300 transform hover:scale-105"
-                    style={{ 
-                      borderColor: '#ffffff',
-                      color: '#ffffff',
-                      background: 'rgba(255,255,255,0.1)',
-                      textShadow: '2px 2px 4px rgba(0,0,0,0.7)'
-                    }}
-                  >
+                    style={{ borderColor: '#ffffff', color: '#ffffff', background: 'rgba(255,255,255,0.1)', textShadow: '2px 2px 4px rgba(0,0,0,0.7)' }}>
                     Servicio de Leasing
                   </Button>
                 </Link>
               </div>
-            </div>
-            <div 
-              className={`relative transition-all duration-1300 delay-400 ease-out ${
-                heroLoaded ? 'translate-x-0 opacity-100' : 'translate-x-16 opacity-0'
-              }`}
-              style={{ transform: `translateY(${scrollY * -0.2}px)` }}
-            >
-              <div className="absolute inset-0 rounded-full opacity-30 animate-pulse blur-xl" style={{ background: 'rgba(195,232,164,0.2)' }}></div>
-              <img 
-                src="/images/productos.png" 
-                alt="Productos Black Colors - Impresoras, tinta, toner y resmas sustentables"
-                className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500 relative z-10"
-              />
             </div>
           </div>
         </div>
