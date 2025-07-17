@@ -5,11 +5,12 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 const Transformar = () => {
   // Placeholder images for the carousel
   const carouselImages = [
-    "https://images.unsplash.com/photo-1518495973542-4542c06a5843",
-    "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9",
-    "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-    "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86",
-    "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843"
+    "/images/transformar2.jpg",
+    "/images/transformar3.jpg",
+    "/images/transformar4.jpg",
+    "/images/transformar5.jpg",
+    "/images/trasnformar6.jpg",
+    "/images/transformar1.jpg",
   ];
 
   return (
@@ -48,7 +49,7 @@ const Transformar = () => {
                       <img 
                         src={image} 
                         alt={`Transformación sustentable ${index + 1}`}
-                        className="w-full h-[400px] object-cover transition-transform duration-500 hover:scale-105"
+                        className="w-full h-48 sm:h-72 md:h-96 lg:h-[500px] object-cover object-center transition-transform duration-500 hover:scale-105 max-h-[500px] max-w-full"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                     </div>
