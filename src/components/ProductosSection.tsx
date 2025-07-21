@@ -22,7 +22,7 @@ const productos = [
 const ProductosSection = () => (
   <section className="py-10 md:py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #2f9e44 0%, #0f3d2e 100%)' }}>
     <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
-      <div className="grid lg:grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+      <div className="grid lg:grid-cols-5 gap-8 items-center">
         <div className="lg:col-span-3 relative">
           <div className="absolute inset-0 rounded-3xl blur-2xl" style={{ background: 'linear-gradient(135deg, rgba(195,232,164,0.2), rgba(47,158,68,0.2))' }}></div>
           <img 
