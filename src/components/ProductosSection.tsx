@@ -21,7 +21,6 @@ const productos = [
 
 const ProductosSection = () => (
   <section className="py-10 md:py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #2f9e44 0%, #0f3d2e 100%)' }}>
-    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9')] bg-cover bg-center opacity-15"></div>
     <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
       <div className="grid lg:grid-cols-1 lg:grid-cols-5 gap-8 items-center">
         <div className="lg:col-span-3 relative">
