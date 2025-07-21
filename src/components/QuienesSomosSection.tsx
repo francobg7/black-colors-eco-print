@@ -1,7 +1,7 @@
 import React from 'react';
 
 const QuienesSomosSection = () => (
-  <section className="py-10 md:py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #3d7b4f 0%, #2f9e44 100%)' }}>
+  <section className="py-10 md:py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #388E3C  0%, #388E3C 100%)' }}>
     <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
       <div className="grid lg:grid-cols-2 gap-16 items-center">
         <div>
