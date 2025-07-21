@@ -2,7 +2,6 @@ import React from 'react';
 
 const QuienesSomosSection = () => (
   <section className="py-10 md:py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #3d7b4f 0%, #2f9e44 100%)' }}>
-    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523712999610-f77fbcfc3843')] bg-cover bg-center opacity-10"></div>
     <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
       <div className="grid lg:grid-cols-2 gap-16 items-center">
         <div>
@@ -24,7 +23,7 @@ const QuienesSomosSection = () => (
         <div className="relative">
           <div className="absolute -inset-4 rounded-2xl blur-xl" style={{ background: 'linear-gradient(135deg, rgba(195,232,164,0.2), rgba(47,158,68,0.2))' }}></div>
           <img 
-            src="/images/nosotros.jpg"
+            src="/images/nosotros2.jpg"
             alt="Equipo Black Colors"
             className="rounded-2xl shadow-2xl relative z-10 transform hover:scale-105 transition-transform duration-500"
           />
