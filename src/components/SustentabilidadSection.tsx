@@ -50,24 +50,24 @@ const SustentabilidadSection = () => {
             {pilaresSustentabilidad.map((pilar, index) => {
               const isActive = activeSection === index;
               const angle = (index * 90) - 45; // Start from top-right
-              const radius = 200;
+              const radius = 250; // Más grande
               const x = Math.cos((angle * Math.PI) / 180) * radius;
               const y = Math.sin((angle * Math.PI) / 180) * radius;
               return (
                 <div
                   key={index}
-                  className="absolute w-72 h-72 cursor-pointer transition-all duration-700 ease-out"
+                  className="absolute w-96 h-96 cursor-pointer transition-all duration-700 ease-out"
                   style={{
                     left: '50%',
                     top: '50%',
-                    transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) ${isActive ? 'scale(1.1)' : 'scale(1)'}`,
+                    transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) ${isActive ? 'scale(1.12)' : 'scale(1)'}`,
                     zIndex: isActive ? 20 : 10
                   }}
                   onMouseEnter={() => setActiveSection(index)}
                   onMouseLeave={() => setActiveSection(-1)}
                 >
                   <div 
-                    className="w-full h-full rounded-full flex flex-col items-center justify-center text-center p-8 shadow-2xl transition-all duration-700 backdrop-blur-sm border-2"
+                    className="w-full h-full rounded-full flex flex-col items-center justify-center text-center p-12 shadow-2xl transition-all duration-700 backdrop-blur-sm border-2"
                     style={{
                       background: isActive 
                         ? `linear-gradient(135deg, ${pilar.color}ee, rgba(47,158,68,0.9))` 
@@ -79,13 +79,13 @@ const SustentabilidadSection = () => {
                       filter: isActive ? 'brightness(1.2)' : 'brightness(1)'
                     }}
                   >
-                    <div className={`mb-6 transition-all duration-300 ${isActive ? 'scale-125' : ''}`} style={{ color: index === 1 || index === 2 ? '#0f3d2e' : '#d7f2db' }}>
-                      {pilar.icon}
+                    <div className={`mb-8 transition-all duration-300 ${isActive ? 'scale-150' : 'scale-125'}`} style={{ color: index === 1 || index === 2 ? '#0f3d2e' : '#d7f2db' }}>
+                      {React.cloneElement(pilar.icon, { className: 'w-20 h-20' })}
                     </div>
-                    <h3 className={`font-bold text-xl mb-4 leading-tight transition-all duration-300 ${isActive ? 'scale-105' : ''}`} style={{ color: index === 1 || index === 2 ? '#0f3d2e' : '#d7f2db' }}>
+                    <h3 className={`font-bold text-3xl mb-6 leading-tight transition-all duration-300 ${isActive ? 'scale-110' : ''}`} style={{ color: index === 1 || index === 2 ? '#0f3d2e' : '#d7f2db' }}>
                       {pilar.titulo}
                     </h3>
-                    <p className={`text-sm leading-relaxed transition-all duration-300 ${isActive ? 'opacity-100' : 'opacity-85'}`} style={{ color: index === 1 || index === 2 ? '#0f3d2e' : '#c3e8a4' }}>
+                    <p className={`text-lg leading-relaxed transition-all duration-300 ${isActive ? 'opacity-100' : 'opacity-85'}`} style={{ color: index === 1 || index === 2 ? '#0f3d2e' : '#c3e8a4' }}>
                       {pilar.descripcion}
                     </p>
                   </div>
