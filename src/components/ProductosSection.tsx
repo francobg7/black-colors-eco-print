@@ -26,7 +26,7 @@ const ProductosSection = () => (
         <div className="lg:col-span-3 relative">
           <div className="absolute inset-0 rounded-3xl blur-2xl" style={{ background: 'linear-gradient(135deg, rgba(195,232,164,0.2), rgba(47,158,68,0.2))' }}></div>
           <img 
-            src="/images/MAPSArtboard 2.jpg" 
+            src="/images/productos.png" 
             alt="Productos Black Colors - Impresora Brother y papel sustentable NAT"
             className="w-full h-48 sm:h-72 md:h-96 lg:h-[600px] object-cover rounded-3xl shadow-2xl relative z-10"
           />
