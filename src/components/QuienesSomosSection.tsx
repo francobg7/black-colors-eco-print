@@ -28,7 +28,7 @@ const QuienesSomosSection = () => (
             className="rounded-2xl shadow-2xl relative z-10 transform hover:scale-105 transition-transform duration-500"
           />
           <div className="absolute -bottom-8 -right-8 p-8 rounded-2xl shadow-2xl z-20" style={{ background: 'linear-gradient(135deg, #2f9e44, #3d7b4f)', color: '#d7f2db' }}>
-            <div className="text-4xl font-bold">18</div>
+            <div className="text-4xl font-bold">+18</div>
             <div className="text-lg">Años de experiencia</div>
           </div>
         </div>
