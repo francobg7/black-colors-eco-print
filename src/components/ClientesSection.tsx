@@ -15,13 +15,23 @@ const ClientesSection = () => (
           Empresas líderes que han confiado en Black Colors para transformar su impresión en una acción sustentable.
         </p>
       </div>
-      <div className="flex flex-wrap justify-center gap-8">
-        {clientes.map((cliente, idx) => (
-          <div key={idx} className="bg-white/80 rounded-xl shadow p-6 text-xl font-semibold" style={{ color: '#2f9e44', minWidth: '160px' }}>
-            {cliente}
-          </div>
-        ))}
+      <div className="relative overflow-hidden">
+        <div className="flex animate-[scroll_20s_linear_infinite] space-x-8">
+          {[...clientes, ...clientes].map((cliente, index) => (
+            <div key={index} className="flex-shrink-0">
+              <div className="rounded-2xl p-8 min-w-[200px] text-center hover:scale-105 transition-transform duration-300 shadow-xl backdrop-blur-sm" style={{ background: 'rgba(47,158,68,0.8)' }}>
+                <div className="text-3xl font-bold" style={{ color: '#d7f2db' }}>{cliente}</div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
+      <style>{`
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+      `}</style>
     </div>
   </section>
 );
