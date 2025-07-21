@@ -42,7 +42,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center hover:scale-105 transition-transform duration-300">
             <img
-              src="/images/logo-black-colors.png"
+              src="/images/logo-mejorado-removebg-preview.png"
               alt="Black Colors Logo"
               className="h-12 w-auto"
             />
