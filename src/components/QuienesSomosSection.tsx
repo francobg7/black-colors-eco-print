@@ -1,8 +1,11 @@
 import React from 'react';
 
 const QuienesSomosSection = () => (
-  <section className="py-10 md:py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #388E3C  0%, #388E3C 100%)' }}>
-    <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+  <section className="py-10 md:py-20 relative overflow-hidden bg-white">
+    <svg className="absolute left-0 top-0 w-full h-40 z-0" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon fill="#fff" points="0,0 100,0 100,70 70,20 0,30" />
+    </svg>
+    <div className="relative z-10 container mx-auto px-4 sm:px-6 md:px-8">
       <div className="grid lg:grid-cols-2 gap-16 items-center">
         <div>
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-8" style={{ color: '#d7f2db' }}>
@@ -34,6 +37,9 @@ const QuienesSomosSection = () => (
         </div>
       </div>
     </div>
+    <svg className="absolute left-0 bottom-0 w-full h-40 z-0" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon fill="#fff" points="0,100 0,30 30,80 100,60 100,100" />
+    </svg>
   </section>
 );
 

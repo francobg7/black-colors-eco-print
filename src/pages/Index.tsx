@@ -20,7 +20,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #0f3d2e 0%, #2f9e44 50%, #3d7b4f 100%)' }}>
+    <>
       <HeroSection heroLoaded={heroLoaded} scrollY={scrollY} />
       <QuienesSomosSection />
       <ProductosSection />
@@ -28,7 +28,7 @@ const Index = () => {
       <SustentabilidadSection />
       <ClientesSection />
       <Footer />
-    </div>
+    </>
   );
 };
 
