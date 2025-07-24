@@ -20,14 +20,16 @@ const productos = [
 ];
 
 const ProductosSection = () => (
-  <section className="py-10 md:py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #2f9e44 0%, #0f3d2e 100%)' }}>
-    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9')] bg-cover bg-center opacity-15"></div>
-    <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
-      <div className="grid lg:grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+  <section className="py-10 md:py-20 relative overflow-hidden" style={{ background: '#4b6d3b' }}>
+    <svg className="absolute left-0 top-0 w-full h-40 z-0" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon fill="#4b6d3b" points="0,0 100,0 100,70 70,20 0,30" />
+    </svg>
+    <div className="relative z-10 container mx-auto px-4 sm:px-6 md:px-8">
+      <div className="grid lg:grid-cols-5 gap-8 items-center">
         <div className="lg:col-span-3 relative">
           <div className="absolute inset-0 rounded-3xl blur-2xl" style={{ background: 'linear-gradient(135deg, rgba(195,232,164,0.2), rgba(47,158,68,0.2))' }}></div>
           <img 
-            src="/images/MAPSArtboard 2.jpg" 
+            src="/images/productos.png" 
             alt="Productos Black Colors - Impresora Brother y papel sustentable NAT"
             className="w-full h-48 sm:h-72 md:h-96 lg:h-[600px] object-cover rounded-3xl shadow-2xl relative z-10"
           />
@@ -65,6 +67,9 @@ const ProductosSection = () => (
         </div>
       </div>
     </div>
+    <svg className="absolute left-0 bottom-0 w-full h-40 z-0" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon fill="#4b6d3b" points="0,100 0,30 30,80 100,60 100,100" />
+    </svg>
   </section>
 );
 
