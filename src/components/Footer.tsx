@@ -11,7 +11,7 @@ const Footer = () => (
             Líderes en soluciones de impresión sustentable con 18 años de experiencia en el mercado.
           </p>
           <div className="flex space-x-4">
-            {['FB', 'IG', 'LI', 'WA'].map((social, index) => (
+            {['FB', 'IG', 'WA'].map((social, index) => (
               <div key={index} className="w-12 h-12 rounded-full bg-green-600 hover:bg-green-500 flex items-center justify-center hover:scale-110 transition-all duration-300 cursor-pointer shadow-lg">
                 <span className="font-bold text-white">{social}</span>
               </div>
@@ -47,7 +47,7 @@ const Footer = () => (
         </div>
       </div>
       <div className="border-t border-gray-800 mt-12 pt-8 text-center">
-        <p className="text-gray-400">&copy; 2024 Black Colors. Todos los derechos reservados.</p>
+        <p className="text-gray-400">&copy; 2025 Black Colors. Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
