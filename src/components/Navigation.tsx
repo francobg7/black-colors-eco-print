@@ -8,6 +8,7 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = React.useState(false);
 
   const navItems = [
+    { name: 'INICIO', path: '/' },
     { name: 'PRODUCTOS', path: '/productos' },
     { name: 'LEASING', path: '/leasing' },
     { name: 'TRANSFORMAR', path: '/transformar' },
@@ -46,7 +47,7 @@ const Navigation = () => {
       isScrolled ? 'backdrop-blur-md shadow-lg' : 'bg-white/10 backdrop-blur-sm'
     }`}
     style={{
-      backgroundColor: isScrolled ? 'rgba(214,223,196,1)' : 'transparent'
+      backgroundColor: isScrolled ? '#2d472f' : 'transparent'
     }}>
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
@@ -77,7 +78,7 @@ const Navigation = () => {
                       }`}
                       style={{
                         color: isScrolled 
-                          ? (isActive(item.path) ? '#0d9488' : '#6b7280')
+                          ? (isActive(item.path) ? '#d7f2db' : '#c3e8a4')
                           : (isActive(item.path) ? '#ffffff' : '#f3f4f6'),
                         textShadow: isScrolled ? 'none' : '1px 1px 2px rgba(0,0,0,0.3)'
                       }}
@@ -90,11 +91,10 @@ const Navigation = () => {
             </nav>
 
             {/* Mobile Menu Button */}
-            <div className="block md:hidden">
-              <button 
+            <div className="block md:hidden">                <button 
                 className={`rounded p-2 transition-all duration-300 ${
                   isScrolled
-                    ? 'bg-gray-100 text-gray-600 hover:text-gray-600/75'
+                    ? 'bg-green-600/20 text-green-100 hover:bg-green-600/30'
                     : 'bg-white/20 text-white hover:bg-white/30'
                 }`}
                 onClick={() => setMenuOpen((open) => !open)}
@@ -123,8 +123,8 @@ const Navigation = () => {
           className="md:hidden fixed inset-0 z-50 flex flex-col items-center justify-start pt-16 backdrop-blur-lg animate-fade-in"
           style={{
             background: isScrolled 
-              ? 'rgba(214,223,196,255)'
-              : 'rgba(214,223,196,255)'
+              ? '#2d472f'
+              : '#2d472f'
           }}
         >
           <div className="w-full max-w-sm px-4 mt-8">
@@ -135,11 +135,12 @@ const Navigation = () => {
                 onClick={handleNavClick}
                 className={`block w-full text-center py-4 text-lg font-medium border-b transition-all duration-200 ${
                   isActive(item.path) 
-                    ? 'text-teal-600 bg-teal-50 font-semibold' 
-                    : 'text-gray-600 hover:text-teal-600 hover:bg-gray-50'
+                    ? 'bg-green-600/30 font-semibold' 
+                    : 'hover:bg-green-600/20'
                 }`}
                 style={{
-                  borderColor: 'rgba(107,114,128,0.2)'
+                  color: isActive(item.path) ? '#d7f2db' : '#c3e8a4',
+                  borderColor: 'rgba(195,232,164,0.3)'
                 }}
               >
                 {item.name}
