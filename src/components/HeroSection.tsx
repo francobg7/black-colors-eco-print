@@ -34,10 +34,10 @@ const HeroSection = ({ heroLoaded, scrollY }: { heroLoaded: boolean, scrollY: nu
             <Link to="/leasing">
               <Button 
                 size="lg" 
-                variant="outline" 
                 className="px-10 py-4 text-xl backdrop-blur-sm transition-all duration-300 transform hover:scale-105"
-                style={{ borderColor: '#ffffff', color: '#ffffff', background: 'rgba(255,255,255,0.1)', textShadow: '2px 2px 4px rgba(0,0,0,0.7)' }}>
+                style={{ background: 'linear-gradient(135deg, #2f9e44, #3d7b4f)', color: '#ffffff' }}>
                 Servicio de Leasing
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
           </div>
