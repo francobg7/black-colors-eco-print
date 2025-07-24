@@ -59,7 +59,7 @@ const Footer = () => (
         </div>
       </div>
       <div className="border-t mt-12 pt-8 text-center" style={{ borderColor: '#3d7b4f' }}>
-        <p style={{ color: '#c3e8a4' }}>&copy; 2024 Black Colors. Todos los derechos reservados.</p>
+        <p style={{ color: '#c3e8a4' }}>&copy; 2025 Black Colors. Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
