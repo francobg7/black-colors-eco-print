@@ -17,7 +17,7 @@ const Footer = () => (
             Líderes en soluciones de impresión sustentable con 18 años de experiencia en el mercado.
           </p>
           <div className="flex space-x-4">
-            {['FB', 'IG', 'LI', 'WA'].map((social, index) => (
+            {['FB', 'IG', 'WA'].map((social, index) => (
               <div key={index} className="w-12 h-12 rounded-full hover:scale-110 transition-all duration-300 cursor-pointer shadow-lg flex items-center justify-center"
                    style={{ backgroundColor: '#3d7b4f' }}
                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#2f9e44'}
