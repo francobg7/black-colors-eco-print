@@ -1,8 +1,8 @@
-# BLACK COLORS 
+# BLACK COLORS ECO PRINT
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/1ed84b97-a202-4a20-9599-716167efc5d3
+**Description**: Soluciones ecológicas en impresión y cartuchos remanufacturados
 
 ## How can I edit this code?
 

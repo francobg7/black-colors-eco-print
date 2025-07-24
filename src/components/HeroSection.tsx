@@ -1,11 +1,10 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 
 const HeroSection = ({ heroLoaded, scrollY }: { heroLoaded: boolean, scrollY: number }) => (
   <section className="relative min-h-screen flex items-center overflow-hidden">
-    <div className="absolute inset-0 bg-[url('/images/upscalemedia-transformed.png')] bg-cover bg-center"></div>
+    <div className="absolute inset-0 bg-[url('/images/hero-printer2.jpg')] bg-cover bg-center"></div>
     <div className="container mx-auto px-6 relative z-10">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[60vh]">
         <div className="hidden lg:block"></div>
