@@ -20,7 +20,7 @@ const productos = [
 ];
 
 const ProductosSection = () => (
-  <section className="py-10 md:py-20 relative overflow-hidden" style={{ background: '#4b6d3b' }}>
+  <section className="py-10 md:py-20 relative overflow-hidden" style={{ background: '#2d472f' }}>
     <svg className="absolute left-0 top-0 w-full h-40 z-0" viewBox="0 0 100 100" preserveAspectRatio="none">
       <polygon fill="#fff" points="0,0 100,0 100,70 70,20 0,30" />
     </svg>
