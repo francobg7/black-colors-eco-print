@@ -4,20 +4,19 @@ import { ArrowRight } from 'lucide-react';
 
 const HeroSection = ({ heroLoaded, scrollY }: { heroLoaded: boolean, scrollY: number }) => (
   <section className="relative min-h-screen flex items-center overflow-hidden">
-    <div className="absolute inset-0 bg-[url('/images/gota2.jpg')] bg-cover bg-center"></div>
+    <div className="absolute inset-0 bg-[url('/images/giro.jpg')] bg-cover bg-center"></div>
     <div className="container mx-auto px-6 relative z-10">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[60vh]">
         <div className="hidden lg:block"></div>
         <div className="space-y-8 flex flex-col items-center lg:items-end text-center lg:text-right">
-          <h1 className={`text-3xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight transition-all duration-1500 ease-out ${heroLoaded ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'}`}
-            style={{ color: '#ffffff', textShadow: '3px 3px 6px rgba(0,0,0,0.8)', transform: `translateY(${Math.max(0, 50 - scrollY * 0.1)}px)` }}>
-            Black Colors: <span className={`transition-all duration-1800 delay-300 ease-out ${heroLoaded ? 'translate-x-0 opacity-100' : '-translate-x-16 opacity-0'}`}
-              style={{ color: '#c3e8a4', textShadow: '3px 3px 6px rgba(0,0,0,0.9)', display: 'inline-block' }}>
+          <h1 className={`text-3xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight transition-all duration-1500 ease-out bg-gradient-to-r from-[#4b6d3b] to-[#111] bg-clip-text text-transparent ${heroLoaded ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'}`}
+            style={{ textShadow: '3px 3px 6px rgba(0,0,0,0.08)', transform: `translateY(${Math.max(0, 50 - scrollY * 0.1)}px)` }}>
+            Black Colors: <span className={`transition-all duration-1800 delay-300 ease-out`} style={{ display: 'inline-block' }}>
               Impresión Sustentable
             </span> para un Futuro Verde
           </h1>
-          <p className={`text-2xl mb-8 leading-relaxed transition-all duration-1200 delay-500 ease-out ${heroLoaded ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'}`}
-            style={{ color: '#ffffff', textShadow: '2px 2px 4px rgba(0,0,0,0.8)', transform: `translateY(${Math.max(0, 30 - scrollY * 0.08)}px)` }}>
+          <p className={`text-2xl mb-8 leading-relaxed transition-all duration-1200 delay-500 ease-out bg-gradient-to-r from-[#4b6d3b] to-[#111] bg-clip-text text-transparent ${heroLoaded ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'}`}
+            style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.08)', transform: `translateY(${Math.max(0, 30 - scrollY * 0.08)}px)` }}>
             Convertí tu impresión en una acción por el planeta con nuestras soluciones integrales de impresión sustentable y economía circular.
           </p>
           <div className={`flex flex-col sm:flex-row gap-6 transition-all duration-1000 delay-700 ease-out ${heroLoaded ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'}` + ' justify-center lg:justify-end'}>
