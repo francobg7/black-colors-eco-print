@@ -10,7 +10,15 @@ const clientes = [
 ];
 
 const ClientesSection = () => (
-  <section className="py-16 bg-gray-200 overflow-hidden">
+  <section className="py-16 bg-white overflow-hidden">
+    <div className="max-w-2xl mx-auto text-center mb-10">
+      <h2 className="text-4xl sm:text-5xl lg:text-4xl font-bold mb-8 text-[#174C3C] text-center">
+        Clientes que Confían en Nosotros
+      </h2>
+      <p className="text-xl text-[#388E3C] text-center mb-8">
+        Empresas líderes que han confiado en Black Colors para transformar su impresión en una acción sustentable.
+      </p>
+    </div>
     <div className="relative">
       <div className="flex animate-marquee">
         {[...clientes, ...clientes].map((cliente, index) => (
@@ -19,7 +27,7 @@ const ClientesSection = () => (
             <img 
               src={cliente.logo} 
               alt={`${cliente.name} logo`}
-              className="max-w-full max-h-full object-contain filter grayscale opacity-70 hover:opacity-100 transition-all duration-300"
+              className="max-w-full max-h-full object-contain transition-all duration-300"
               onError={(e) => {
                 // Fallback to company name if image fails to load
                 const target = e.target as HTMLImageElement;
