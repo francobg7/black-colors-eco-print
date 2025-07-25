@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
-import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 const Footer = () => (
   <footer className="py-16 bg-black">
@@ -17,9 +17,6 @@ const Footer = () => (
             </a>
             <a href="#" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-green-600 hover:bg-green-500 flex items-center justify-center hover:scale-110 transition-all duration-300 cursor-pointer shadow-lg">
               <FaInstagram className="text-white text-2xl" />
-            </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-green-600 hover:bg-green-500 flex items-center justify-center hover:scale-110 transition-all duration-300 cursor-pointer shadow-lg">
-              <FaLinkedin className="text-white text-2xl" />
             </a>
             <a href="#" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-green-600 hover:bg-green-500 flex items-center justify-center hover:scale-110 transition-all duration-300 cursor-pointer shadow-lg">
               <FaWhatsapp className="text-white text-2xl" />
