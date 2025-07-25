@@ -20,24 +20,14 @@ const ClientesSection = () => (
       </p>
     </div>
     <div className="relative">
-      <div className="flex animate-marquee">
-        {[...clientes, ...clientes].map((cliente, index) => (
-          <div key={index} className="flex-shrink-0 mx-8 w-32 h-16 flex items-center justify-center">
-            <span className="sr-only">{cliente.name} logo.</span>
-            <img 
-              src={cliente.logo} 
-              alt={`${cliente.name} logo`}
-              className="max-w-full max-h-full object-contain transition-all duration-300"
-              onError={(e) => {
-                // Fallback to company name if image fails to load
-                const target = e.target as HTMLImageElement;
-                target.style.display = 'none';
-                target.nextElementSibling!.classList.remove('hidden');
-              }}
+      <div className="flex animate-[scroll_20s_linear_infinite]">
+        {clientes.map((cliente, index) => (
+          <div key={index} className="flex-shrink-0 mx-8">
+            <img
+              src={cliente.logo}
+              alt={cliente.name}
+              className="h-16 w-auto filter grayscale opacity-70 hover:opacity-100 transition-opacity"
             />
-            <span className="hidden text-gray-600 font-medium text-sm">
-              {cliente.name}
-            </span>
           </div>
         ))}
       </div>
