@@ -1,5 +1,3 @@
-import React from 'react';
-
 const clientes = [
   { name: "Garden", logo: "/images/garden-logo.png" },
   { name: "Cavallaro", logo: "/images/cavallaro-logo.png" },
@@ -12,12 +10,12 @@ const clientes = [
 ];
 
 const ClientesSection = () => (
-  <section className="py-16 bg-gray-200">
-    <div className="grid gap-8 grid-cols-4 px-4 place-items-center">
-      {clientes.map((cliente, index) => (
-        <span key={index} className="w-full flex items-center justify-center">
-          <span className="sr-only">{cliente.name} logo.</span>
-          <div aria-hidden="true" className="w-full h-16 flex items-center justify-center">
+  <section className="py-16 bg-gray-200 overflow-hidden">
+    <div className="relative">
+      <div className="flex animate-marquee">
+        {[...clientes, ...clientes].map((cliente, index) => (
+          <div key={index} className="flex-shrink-0 mx-8 w-32 h-16 flex items-center justify-center">
+            <span className="sr-only">{cliente.name} logo.</span>
             <img 
               src={cliente.logo} 
               alt={`${cliente.name} logo`}
@@ -33,9 +31,25 @@ const ClientesSection = () => (
               {cliente.name}
             </span>
           </div>
-        </span>
-      ))}
+        ))}
+      </div>
     </div>
+    <style>
+      {`
+        @keyframes marquee {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        
+        .animate-marquee {
+          animation: marquee 20s linear infinite;
+        }
+      `}
+    </style>
   </section>
 );
 

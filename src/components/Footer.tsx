@@ -3,11 +3,17 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 const Footer = () => (
-  <footer className="py-16 bg-black">
+  <footer className="py-16" style={{ backgroundColor: '#2d472f' }}>
     <div className="container mx-auto px-4 sm:px-6 md:px-8">
       <div className="grid md:grid-cols-4 gap-8">
         <div className="md:col-span-2">
-          <h3 className="text-3xl font-bold mb-4 text-white">Black Colors</h3>
+          <div className="mb-4">
+            <img
+              src="/images/logo-mejorado-removebg-preview.png"
+              alt="Black Colors Logo"
+              className="h-24 w-auto"
+            />
+          </div>
           <p className="mb-6 leading-relaxed text-lg text-gray-300">
             Líderes en soluciones de impresión sustentable con 18 años de experiencia en el mercado.
           </p>
