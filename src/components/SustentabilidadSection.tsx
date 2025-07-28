@@ -57,7 +57,10 @@ const SustentabilidadSection = () => {
 	}, []);
 
 	return (
-		<section className="py-16 md:py-24 lg:py-32 relative overflow-hidden">
+		<section className="py-16 md:py-24 lg:py-32 relative overflow-hidden bg-[#2d472f]">
+      <svg className="absolute left-0 top-0 w-full h-40 z-10" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <polygon fill="#2d472f" points="0,0 100,0 100,70 70,20 0,30" />
+      </svg>
 			{/* Imagen de fondo - sin superposición verde */}
 			<div 
 				className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
@@ -163,6 +166,9 @@ const SustentabilidadSection = () => {
 					)}
 				</div>
 			</div>
+      <svg className="absolute left-0 bottom-0 w-full h-32" viewBox="0 0 100 100" preserveAspectRatio="none" style={{ zIndex: 2 }}>
+      <polygon fill="#fff" points="0,100 0,30 30,80 100,60 100,100" />
+    </svg>
 		</section>
 	);
 };
