@@ -10,8 +10,11 @@ const clientes = [
 ];
 
 const ClientesSection = () => (
-  <section className="py-16 bg-white overflow-hidden">
-    <div className="max-w-2xl mx-auto text-center mb-10">
+  <section className="py-16 bg-white overflow-hidden relative">
+    <svg className="absolute left-0 top-0 w-full h-40 z-0" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon fill="#fff" points="0,0 100,0 100,70 70,20 0,30" />
+    </svg>
+    <div className="max-w-2xl mx-auto text-center mb-10 relative z-10">
       <h2 className="text-4xl sm:text-5xl lg:text-4xl font-bold mb-8 text-[#174C3C] text-center">
         Clientes que Confían en Nosotros
       </h2>
