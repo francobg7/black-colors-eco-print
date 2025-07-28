@@ -1,108 +1,170 @@
-import React, { useState } from 'react';
-import { Recycle, Shield, CheckCircle, Award, Leaf } from 'lucide-react';
+import React, { useEffect } from 'react';
+import { useWindowSize } from '../hooks/useWindowSize'; // Asegúrate de crear este hook
 
 const pilaresSustentabilidad = [
-  {
-    icon: <Recycle className="w-12 h-12" />, 
-    titulo: "Gestión de Residuos",
-    descripcion: "Recolección y transformación responsable de todos los residuos de impresión.",
-    color: "#3d7b4f"
-  },
-  {
-    icon: <Shield className="w-12 h-12" />, 
-    titulo: "Trazabilidad", 
-    descripcion: "Productos con origen responsable y seguimiento completo del ciclo de vida.",
-    color: "#c3e8a4"
-  },
-  {
-    icon: <CheckCircle className="w-12 h-12" />, 
-    titulo: "Gestión Final Positiva",
-    descripcion: "Únicos en Paraguay con gestión final ambientalmente responsable de residuos.",
-    color: "#d7f2db"
-  },
-  {
-    icon: <Award className="w-12 h-12" />, 
-    titulo: "ISO 14001",
-    descripcion: "Ayudamos a nuestros clientes a alcanzar esta certificación ambiental.",
-    color: "#2f9e44"
-  }
+	{
+		titulo: 'Gestión de Residuos',
+		descripcion: 'Recolección y transformación responsable de todos los residuos de impresión.',
+		img: '/images/pieza-1.png',
+		posicion: { x: '-50%', y: '-52%' },
+		textoPos: { top: '-20%', left: '-45%' }
+	},
+	{
+		titulo: 'Trazabilidad',
+		descripcion: 'Productos con origen responsable y seguimiento completo del ciclo de vida.',
+		img: '/images/pieza-2.png',
+		posicion: { x: '50%', y: '-52%' },
+		textoPos: { top: '-20%', right: '-55%' }
+	},
+	{
+		titulo: 'Gestión Final Positiva',
+		descripcion: 'Únicos en Paraguay con gestión final ambientalmente responsable de residuos.',
+		img: '/images/pieza-3.png',
+		posicion: { x: '-50%', y: '52%' },
+		textoPos: { bottom: '-30%', left: '-40%' }
+	},
+	{
+		titulo: 'ISO 14001',
+		descripcion: 'Ayudamos a nuestros clientes a alcanzar esta certificación ambiental.',
+		img: '/images/pieza-4.png',
+		posicion: { x: '50%', y: '52%' },
+		textoPos: { bottom: '-15%', right: '-55%' }
+	}
 ];
 
 const SustentabilidadSection = () => {
-  const [activeSection, setActiveSection] = useState(-1);
+	const { width } = useWindowSize();
+	const isMobile = width < 768;
+	
+	// Añadir una clase personalizada de animación lenta al tailwind
+	useEffect(() => {
+		const style = document.createElement('style');
+		style.innerHTML = `
+			@keyframes pulse-slow {
+				0%, 100% { opacity: 0.7; }
+				50% { opacity: 0.3; }
+			}
+			.animate-pulse-slow {
+				animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+			}
+		`;
+		document.head.appendChild(style);
+		
+		// Cleanup function
+		return () => {
+			document.head.removeChild(style);
+		};
+	}, []);
 
-  return (
-    <section className="py-32 relative overflow-hidden" style={{ background: '#2d472f' }}>
-      <svg className="absolute left-0 top-0 w-full h-40 z-0" viewBox="0 0 100 100" preserveAspectRatio="none">
-      <polygon fill="#fff" points="0,0 100,0 100,70 70,20 0,30" />
-    </svg>
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
-        <div className="text-center mb-8 md:mb-20">
-          <h2 className="text-3xl sm:text-5xl lg:text-7xl font-bold mb-8" style={{ color: '#d7f2db' }}>
-            Compromiso con la Sustentabilidad
-          </h2>
-          <div className="w-32 h-2 mx-auto rounded-full" style={{ background: 'linear-gradient(135deg, #c3e8a4, #2f9e44)' }}></div>
-        </div>
-        <div className="flex justify-center items-center">
-          <div className="relative w-[600px] h-[600px] max-w-full max-h-[70vw]">
-            {/* Central Logo */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full flex items-center justify-center z-30 shadow-2xl bg-white/80">
-              <img src="/images/logo-mejorado-removebg-preview.png" alt="Logo Black Colors" className="w-24 h-24 object-contain" />
-            </div>
-            {/* 4 Circular Sections */}
-            {pilaresSustentabilidad.map((pilar, index) => {
-              const isActive = activeSection === index;
-              const angle = (index * 90) - 45; // Start from top-right
-              const radius = 250;
-              const x = Math.cos((angle * Math.PI) / 180) * radius;
-              const y = Math.sin((angle * Math.PI) / 180) * radius;
-              return (
-                <div
-                  key={index}
-                  className="absolute w-96 h-96 cursor-pointer transition-all duration-700 ease-out"
-                  style={{
-                    left: '50%',
-                    top: '50%',
-                    transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) ${isActive ? 'scale(1.12)' : 'scale(1)'}`,
-                    zIndex: isActive ? 20 : 10
-                  }}
-                  onMouseEnter={() => setActiveSection(index)}
-                  onMouseLeave={() => setActiveSection(-1)}
-                >
-                  <div 
-                    className="w-full h-full rounded-full flex flex-col items-center justify-center text-center p-12 shadow-2xl transition-all duration-700 backdrop-blur-sm border-2"
-                    style={{
-                      background: isActive 
-                        ? `linear-gradient(135deg, ${pilar.color}ee, rgba(47,158,68,0.9))` 
-                        : `linear-gradient(135deg, ${pilar.color}cc, rgba(61,123,79,0.8))`,
-                      borderColor: isActive ? '#d7f2db' : 'transparent',
-                      boxShadow: isActive 
-                        ? `0 20px 40px ${pilar.color}66, 0 0 40px ${pilar.color}44` 
-                        : '0 10px 30px rgba(0,0,0,0.3)',
-                      filter: isActive ? 'brightness(1.2)' : 'brightness(1)'
-                    }}
-                  >
-                    <div className={`mb-8 transition-all duration-300 ${isActive ? 'scale-150' : 'scale-125'}`} style={{ color: index === 1 || index === 2 ? '#0f3d2e' : '#d7f2db' }}>
-                      {React.cloneElement(pilar.icon, { className: 'w-20 h-20' })}
-                    </div>
-                    <h3 className={`font-bold text-3xl mb-6 leading-tight transition-all duration-300 ${isActive ? 'scale-110' : ''}`} style={{ color: index === 1 || index === 2 ? '#0f3d2e' : '#d7f2db' }}>
-                      {pilar.titulo}
-                    </h3>
-                    <p className={`text-lg leading-relaxed transition-all duration-300 ${isActive ? 'opacity-100' : 'opacity-85'}`} style={{ color: index === 1 || index === 2 ? '#0f3d2e' : '#c3e8a4' }}>
-                      {pilar.descripcion}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-      <svg className="absolute left-0 bottom-0 w-full h-40 z-0" viewBox="0 0 100 100" preserveAspectRatio="none">
-      <polygon fill="#fff" points="0,100 0,30 30,80 100,60 100,100" />
-    </svg>
-    </section>
-  );
+	return (
+		<section className="py-16 md:py-24 lg:py-32 relative overflow-hidden">
+			{/* Imagen de fondo - sin superposición verde */}
+			<div 
+				className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+				style={{ 
+					backgroundImage: 'url(/images/background-1.jpg)',
+					backgroundAttachment: 'fixed', // Efecto de paralaje para mayor impacto visual
+				}}
+			>
+				{/* Superposición neutra para mejorar la legibilidad sin alterar los colores */}
+				<div className="absolute inset-0 bg-black/20"></div>
+			</div>
+			
+			{/* Elementos decorativos - reducir opacidad para que no compitan con la imagen */}
+			<div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-5">
+				<div className="absolute w-64 h-64 rounded-full bg-green-500/20 -top-20 -left-20"></div>
+				<div className="absolute w-96 h-96 rounded-full bg-green-500/10 bottom-10 right-10"></div>
+				<div className="absolute w-40 h-40 rounded-full bg-green-500/20 top-1/2 left-1/4"></div>
+			</div>
+			
+			<div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 max-w-7xl">
+				<div className="flex flex-col lg:flex-row items-center lg:items-center justify-center gap-6 md:gap-8">
+					{/* Columna izquierda: Título grande y contenido */}
+					<div className="w-full md:w-2/5 lg:w-2/5  flex-col items-center lg:items-start text-center lg:text-left pl-0 mb-8 lg:mb-12">
+						<h2 className="text-4xl md:text-5xl lg:text-5xl font-bold mb-4 text-green-950">
+							Compromiso con la <span className="text-green-700">Sustentabilidad</span>
+						</h2>
+						<div className="w-24 h-1 bg-green-700 mb-6 mx-auto lg:mx-0"></div>
+						<p className="text-xl md:text-2xl lg:text-2xl text-green-800 leading-relaxed max-w-md mb-6">
+							En Black Colors nos comprometemos con prácticas sostenibles para cuidar el medio ambiente. Nuestro enfoque integral asegura que cada etapa de nuestro proceso sea ambientalmente responsable.
+						</p>
+						<p className="text-xl md:text-2xl lg:text-2xl text-green-800 leading-relaxed max-w-md">
+							Trabajamos con nuestros clientes para implementar soluciones que reducen el impacto ambiental y promueven un futuro más verde para todos.
+						</p>
+					</div>
+
+					{/* Columna derecha: Mostrar círculo en desktop, cards en mobile */}
+					{isMobile ? (
+						// Mobile: Mostrar cards en grid
+						<div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+							{pilaresSustentabilidad.map((pilar, index) => (
+								<div key={index} className="bg-white/70 rounded-lg p-4 shadow-md hover:shadow-lg transition-all">
+									<div className="flex items-center mb-3">
+										<div className="w-12 h-12 mr-3 flex-shrink-0">
+											<img src={pilar.img} alt={pilar.titulo} className="w-full h-full object-contain" />
+										</div>
+										<h3 className="text-lg font-bold text-green-800">{pilar.titulo}</h3>
+									</div>
+									<p className="text-sm text-green-700">{pilar.descripcion}</p>
+								</div>
+							))}
+						</div>
+					) : (
+						// Desktop: Mantener el círculo
+						<div className="relative w-full md:w-[550px] lg:w-[600px] h-[500px] md:h-[550px] lg:h-[600px] max-w-full mx-auto md:mx-0 md:-mt-12">
+							{/* Círculo decorativo de fondo */}
+							<div className="absolute w-[85%] h-[85%] md:w-[90%] md:h-[90%] rounded-full border-4 border-green-200/30 top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-pulse-slow"></div>
+							
+							{/* Círculo central */}
+							<div className="absolute top-[57%] left-[70%] w-26 h-26 md:w-28 md:h-28 lg:w-42 lg:h-42 transform -translate-x-1/2 -translate-y-1/2 z-20 bg-white/80 rounded-full p-3 shadow-lg transition-all duration-300 hover:shadow-xl hover:bg-white">
+								<img
+									src="/images/reciclaje-icon.png"
+									alt="Logo central"
+									className="w-full h-full object-contain"
+								/>
+							</div>
+
+							{/* Piezas del círculo */}
+							{pilaresSustentabilidad.map((pilar, index) => (
+								<React.Fragment key={index}>
+									<div
+										className="absolute cursor-pointer group"
+										style={{
+											left: '48%',
+											top: '36%',
+											transform: `translate(${pilar.posicion.x}, ${pilar.posicion.y})`,
+											width: '44%',
+											height: '42%',
+											zIndex: 10
+										}}
+									>
+										<img
+											src={pilar.img}
+											alt={pilar.titulo}
+											className="w-full h-full object-contain transition-all duration-300 filter hover:brightness-110 hover:drop-shadow-lg hover:scale-110 group-hover:scale-110"
+										/>
+										
+										{/* Texto externo */}
+										<div
+											className="absolute w-full md:w-48 max-w-[80%] md:max-w-[70%] transition-all duration-300 opacity-90 group-hover:opacity-100 group-hover:transform group-hover:scale-105"
+											style={{
+												...pilar.textoPos,
+												color: '#0f3d2e',
+												zIndex: 30
+											}}
+										>
+											<h3 className="text-base md:text-lg font-bold mb-0 md:mb-1 group-hover:text-green-700 transition-colors drop-shadow-lg">{pilar.titulo}</h3>
+											<p className="text-[19px] md:text-m leading-tight md:leading-snug text-green-800 drop-shadow-lg hidden md:block">{pilar.descripcion}</p>
+										</div>
+									</div>
+								</React.Fragment>
+							))}
+						</div>
+					)}
+				</div>
+			</div>
+		</section>
+	);
 };
 
 export default SustentabilidadSection;
