@@ -11,7 +11,7 @@ const QuienesSomosSection = () => (
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-8" style={{ color: '#4b6d3b' }}>
             Quiénes Somos
           </h2>
-          <div className="space-y-6 text-xl leading-relaxed" style={{ color: '#c3e8a4' }}>
+          <div className="space-y-6 text-xl leading-relaxed" style={{ color: '#4b6d3b' }}>
             <p>
               Con <span className="font-semibold text-2xl" style={{ color: '#4b6d3b' }}>18 años de experiencia</span> en el mercado, Black Colors se ha consolidado como líder en soluciones de impresión. Nuestra filosofía es clara:
             </p>
