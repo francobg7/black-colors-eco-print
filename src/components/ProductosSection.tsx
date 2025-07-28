@@ -115,7 +115,7 @@ const ProductosSection = () => (
 			viewBox="0 0 100 100"
 			preserveAspectRatio="none"
 		>
-			<polygon fill="#fff" points="0,100 0,30 30,80 100,60 100,100" />
+			<polygon fill="#2d472f" points="0,100 0,30 30,80 100,60 100,100" />
 		</svg>
 	</section>
 );
