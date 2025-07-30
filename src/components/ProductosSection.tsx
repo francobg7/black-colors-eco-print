@@ -63,7 +63,7 @@ const ProductosSection = () => (
 				<div className="lg:col-span-2 space-y-8">
 					<h2
 						className="text-2xl sm:text-4xl lg:text-4xl font-bold mb-12 text-center lg:text-left"
-						style={{ color: '#d7f2db' }}
+						style={{ color: '#2d472f' }}
 					>
 						Nuestros Productos
 					</h2>
