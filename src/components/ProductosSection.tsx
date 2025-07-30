@@ -75,7 +75,7 @@ const ProductosSection = () => (
 									index === 1 ? 'ml-0 md:ml-8' : index === 2 ? 'ml-0 md:ml-16' : ''
 								}`}
 								style={{
-									background: `linear-gradient(135deg, rgba(61,123,79,0.8), rgba(47,158,68,0.8))`,
+									background: '#2d472f',
 									transform: `translateX(${index * 20}px)`,
 								}}
 							>
@@ -83,21 +83,19 @@ const ProductosSection = () => (
 									<div
 										className="p-4 rounded-xl group-hover:bg-green-400/40 transition-colors"
 										style={{
-											background: 'rgba(47,158,68,0.3)',
+											background: 'rgba(255,255,255,0.1)',
 										}}
 									>
 										{producto.icon}
 									</div>
 									<div>
 										<h3
-											className="text-2xl font-semibold mb-3 group-hover:text-green-200 transition-colors"
-											style={{ color: '#d7f2db' }}
+											className="text-2xl font-semibold mb-3 group-hover:text-green-200 transition-colors text-white"
 										>
 											{producto.titulo}
 										</h3>
 										<p
-											className="leading-relaxed"
-											style={{ color: '#c3e8a4' }}
+											className="leading-relaxed text-green-100"
 										>
 											{producto.descripcion}
 										</p>
