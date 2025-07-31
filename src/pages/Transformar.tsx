@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import Footer from '@/components/Footer';
 
 const Transformar = () => {
   // Placeholder images for the carousel
@@ -124,6 +125,7 @@ const Transformar = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
