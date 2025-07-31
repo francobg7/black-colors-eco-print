@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Footer from '@/components/Footer';
 
 const Productos = () => {
   const productLines = [
@@ -84,6 +85,7 @@ const Productos = () => {
           </div>
         </div>
       ))}
+      <Footer />
     </div>
   );
 };
