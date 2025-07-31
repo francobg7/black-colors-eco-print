@@ -1,5 +1,6 @@
 
 import React from 'react';
+import Footer from '@/components/Footer';
 
 const Leasing = () => {
   return (
@@ -116,6 +117,7 @@ const Leasing = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
