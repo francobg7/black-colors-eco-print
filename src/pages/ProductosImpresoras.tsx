@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Wifi, Usb, Monitor, Printer } from 'lucide-react';
+import Footer from '@/components/Footer';
 
 // Datos de impresoras Top Sales
 const topSalesImpresoras = [
@@ -348,6 +349,7 @@ const ProductosImpresoras = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </div>
   );
 };
