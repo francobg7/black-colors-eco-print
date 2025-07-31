@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
+import Footer from '@/components/Footer';
 
 const ProductosResmas = () => {
   return (
@@ -29,6 +30,7 @@ const ProductosResmas = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
