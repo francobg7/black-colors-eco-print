@@ -9,7 +9,6 @@ const topSalesImpresoras = [
   {
     id: 1,
     nombre: 'Brother HL-L2350DW',
-    imagen: '/images/impresoras/brother-hl-l2350dw.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '32 ppm',
@@ -21,7 +20,6 @@ const topSalesImpresoras = [
   {
     id: 2,
     nombre: 'Brother MFC-L2710DW',
-    imagen: '/images/impresoras/brother-mfc-l2710dw.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '30 ppm',
@@ -33,7 +31,6 @@ const topSalesImpresoras = [
   {
     id: 3,
     nombre: 'Brother HL-L2370DW',
-    imagen: '/images/impresoras/brother-hl-l2370dw.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '32 ppm',
@@ -49,7 +46,7 @@ const todasImpresoras = [
   {
     id: 1,
     nombre: 'Brother HL-L2350DW',
-    imagen: '/images/impresoras/brother-hl-l2350dw.jpg',
+    imagen: '/images/impresoras/4.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '32 ppm',
@@ -59,7 +56,7 @@ const todasImpresoras = [
   {
     id: 2,
     nombre: 'Brother MFC-L2710DW',
-    imagen: '/images/impresoras/brother-mfc-l2710dw.jpg',
+    imagen: '/images/impresoras/9.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '30 ppm',
@@ -69,7 +66,7 @@ const todasImpresoras = [
   {
     id: 3,
     nombre: 'Brother DCP-L2550DW',
-    imagen: '/images/impresoras/brother-dcp-l2550dw.jpg',
+    imagen: '/images/impresoras/13.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '30 ppm',
@@ -79,7 +76,7 @@ const todasImpresoras = [
   {
     id: 4,
     nombre: 'Brother HL-L2370DW',
-    imagen: '/images/impresoras/brother-hl-l2370dw.jpg',
+    imagen: '/images/impresoras/7.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '32 ppm',
@@ -89,7 +86,7 @@ const todasImpresoras = [
   {
     id: 5,
     nombre: 'Brother MFC-L2750DW',
-    imagen: '/images/impresoras/brother-mfc-l2750dw.jpg',
+    imagen: '/images/impresoras/8.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '30 ppm',
@@ -99,7 +96,7 @@ const todasImpresoras = [
   {
     id: 6,
     nombre: 'Brother DCP-L2570DW',
-    imagen: '/images/impresoras/brother-dcp-l2570dw.jpg',
+    imagen: '/images/impresoras/5.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '30 ppm',
@@ -109,7 +106,7 @@ const todasImpresoras = [
   {
     id: 7,
     nombre: 'Brother HL-L2390DW',
-    imagen: '/images/impresoras/brother-hl-l2390dw.jpg',
+    imagen: '/images/impresoras/10.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '32 ppm',
@@ -119,7 +116,7 @@ const todasImpresoras = [
   {
     id: 8,
     nombre: 'Brother MFC-L2770DW',
-    imagen: '/images/impresoras/brother-mfc-l2770dw.jpg',
+    imagen: '/images/impresoras/14.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '30 ppm',
@@ -129,7 +126,7 @@ const todasImpresoras = [
   {
     id: 9,
     nombre: 'Brother DCP-L2590DW',
-    imagen: '/images/impresoras/brother-dcp-l2590dw.jpg',
+    imagen: '/images/impresoras/16.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '30 ppm',
@@ -139,7 +136,7 @@ const todasImpresoras = [
   {
     id: 10,
     nombre: 'Brother HL-L2395DW',
-    imagen: '/images/impresoras/brother-hl-l2395dw.jpg',
+    imagen: '/images/impresoras/11.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '32 ppm',
@@ -149,7 +146,7 @@ const todasImpresoras = [
   {
     id: 11,
     nombre: 'Brother MFC-L2775DW',
-    imagen: '/images/impresoras/brother-mfc-l2775dw.jpg',
+    imagen: '/images/impresoras/12.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '30 ppm',
@@ -159,7 +156,7 @@ const todasImpresoras = [
   {
     id: 12,
     nombre: 'Brother DCP-L2595DW',
-    imagen: '/images/impresoras/brother-dcp-l2595dw.jpg',
+    imagen: '/images/impresoras/15.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '30 ppm',
