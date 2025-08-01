@@ -12,7 +12,7 @@ const topSalesImpresoras = [
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '32 ppm',
-    conectividad: ['Wi-Fi', 'USB', 'Ethernet'],
+    precio: '850.000 Gs',
     compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria'],
     destacado: 'Más vendida del año',
     posicion: 'grande-izquierda'
@@ -23,7 +23,7 @@ const topSalesImpresoras = [
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '30 ppm',
-    conectividad: ['Wi-Fi', 'USB', 'Ethernet'],
+    precio: '720.000 Gs',
     compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria'],
     destacado: 'Todo en uno más popular',
     posicion: 'pequena-derecha-superior'
@@ -34,7 +34,7 @@ const topSalesImpresoras = [
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '32 ppm',
-    conectividad: ['Wi-Fi', 'USB', 'Ethernet'],
+    precio: '680.000 Gs',
     compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria'],
     destacado: 'Alta eficiencia',
     posicion: 'pequena-derecha-inferior'
@@ -50,27 +50,27 @@ const todasImpresoras = [
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '32 ppm',
-    conectividad: ['Wi-Fi', 'USB', 'Ethernet'],
+    precio: '850.000 Gs',
     compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria']
   },
   {
     id: 2,
     nombre: 'Brother MFC-L2710DW',
-    imagen: '/images/impresoras/9.jpg',
+    imagen: '/images/impresoras/5.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '30 ppm',
-    conectividad: ['Wi-Fi', 'USB', 'Ethernet'],
+    precio: '720.000 Gs',
     compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria']
   },
   {
     id: 3,
     nombre: 'Brother DCP-L2550DW',
-    imagen: '/images/impresoras/13.jpg',
+    imagen: '/images/impresoras/6.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '30 ppm',
-    conectividad: ['Wi-Fi', 'USB', 'Ethernet'],
+    precio: '650.000 Gs',
     compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria']
   },
   {
@@ -80,7 +80,7 @@ const todasImpresoras = [
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '32 ppm',
-    conectividad: ['Wi-Fi', 'USB', 'Ethernet'],
+    precio: '680.000 Gs',
     compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria']
   },
   {
@@ -90,17 +90,17 @@ const todasImpresoras = [
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '30 ppm',
-    conectividad: ['Wi-Fi', 'USB', 'Ethernet'],
+    precio: '780.000 Gs',
     compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria']
   },
   {
     id: 6,
     nombre: 'Brother DCP-L2570DW',
-    imagen: '/images/impresoras/5.jpg',
+    imagen: '/images/impresoras/9.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '30 ppm',
-    conectividad: ['Wi-Fi', 'USB', 'Ethernet'],
+    precio: '590.000 Gs',
     compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria']
   },
   {
@@ -110,7 +110,7 @@ const todasImpresoras = [
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '32 ppm',
-    conectividad: ['Wi-Fi', 'USB', 'Ethernet'],
+    precio: '920.000 Gs',
     compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria']
   },
   {
@@ -120,47 +120,47 @@ const todasImpresoras = [
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '30 ppm',
-    conectividad: ['Wi-Fi', 'USB', 'Ethernet'],
+    precio: '890.000 Gs',
     compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria']
   },
   {
     id: 9,
     nombre: 'Brother DCP-L2590DW',
-    imagen: '/images/impresoras/16.jpg',
+    imagen: '/images/impresoras/.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '30 ppm',
-    conectividad: ['Wi-Fi', 'USB', 'Ethernet'],
+    precio: '450.000 Gs',
     compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria']
   },
   {
     id: 10,
     nombre: 'Brother HL-L2395DW',
-    imagen: '/images/impresoras/11.jpg',
+    imagen: '/images/impresoras/brother-hl-l2395dw.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '32 ppm',
-    conectividad: ['Wi-Fi', 'USB', 'Ethernet'],
+    precio: '950.000 Gs',
     compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria']
   },
   {
     id: 11,
     nombre: 'Brother MFC-L2775DW',
-    imagen: '/images/impresoras/12.jpg',
+    imagen: '/images/impresoras/brother-mfc-l2775dw.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '30 ppm',
-    conectividad: ['Wi-Fi', 'USB', 'Ethernet'],
+    precio: '980.000 Gs',
     compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria']
   },
   {
     id: 12,
     nombre: 'Brother DCP-L2595DW',
-    imagen: '/images/impresoras/15.jpg',
+    imagen: '/images/impresoras/brother-dcp-l2595dw.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '30 ppm',
-    conectividad: ['Wi-Fi', 'USB', 'Ethernet'],
+    precio: '520.000 Gs',
     compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria']
   }
 ];
@@ -240,18 +240,11 @@ const ProductosImpresoras = () => {
                         <div className="font-semibold">Velocidad: {topSalesImpresoras[0].velocidad}</div>
                       </div>
 
-                      {/* Conectividad */}
+                      {/* Precio */}
                       <div className="flex items-center space-x-3">
-                        <span className="text-sm font-semibold text-green-200">Conectividad:</span>
+                        <span className="text-sm font-semibold text-green-200">Precio:</span>
                         <div className="flex space-x-2">
-                          {topSalesImpresoras[0].conectividad.map((conn, idx) => (
-                            <div key={idx} className="flex items-center space-x-1">
-                              {conn === 'Wi-Fi' && <Wifi className="w-4 h-4 text-green-300" />}
-                              {conn === 'USB' && <Usb className="w-4 h-4 text-green-300" />}
-                              {conn === 'Ethernet' && <Monitor className="w-4 h-4 text-green-300" />}
-                              <span className="text-xs text-green-200">{conn}</span>
-                            </div>
-                          ))}
+                          <span className="text-lg font-bold text-green-300">{topSalesImpresoras[0].precio}</span>
                         </div>
                       </div>
 
@@ -400,16 +393,11 @@ const ProductosImpresoras = () => {
                       <div className="font-semibold">Velocidad: {impresora.velocidad}</div>
                     </div>
 
-                    {/* Conectividad */}
+                    {/* Precio */}
                     <div className="flex items-center space-x-1">
-                      <span className="text-xs font-semibold text-[#2d472f]">Conectividad:</span>
+                      <span className="text-xs font-semibold text-[#2d472f]">Precio:</span>
                       <div className="flex space-x-1">
-                        {impresora.conectividad.slice(0, 2).map((conn, idx) => (
-                          <span key={idx} className="text-xs text-[#4b6d3b]">{conn}</span>
-                        ))}
-                        {impresora.conectividad.length > 2 && (
-                          <span className="text-xs text-[#4b6d3b]">+{impresora.conectividad.length - 2}</span>
-                        )}
+                        <span className="text-sm font-bold text-[#4b6d3b]">{impresora.precio}</span>
                       </div>
                     </div>
 
