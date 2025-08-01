@@ -15,7 +15,8 @@ const topSalesImpresoras = [
     velocidad: '32 ppm',
     conectividad: ['Wi-Fi', 'USB', 'Ethernet'],
     compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria'],
-    destacado: 'Más vendida del año'
+    destacado: 'Más vendida del año',
+    posicion: 'grande-izquierda'
   },
   {
     id: 2,
@@ -26,18 +27,20 @@ const topSalesImpresoras = [
     velocidad: '30 ppm',
     conectividad: ['Wi-Fi', 'USB', 'Ethernet'],
     compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria'],
-    destacado: 'Todo en uno más popular'
+    destacado: 'Todo en uno más popular',
+    posicion: 'pequena-derecha-superior'
   },
   {
     id: 3,
-    nombre: 'Brother DCP-L2550DW',
-    imagen: '/images/impresoras/brother-dcp-l2550dw.jpg',
+    nombre: 'Brother HL-L2370DW',
+    imagen: '/images/impresoras/brother-hl-l2370dw.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
-    velocidad: '30 ppm',
+    velocidad: '32 ppm',
     conectividad: ['Wi-Fi', 'USB', 'Ethernet'],
     compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria'],
-    destacado: 'Mejor relación calidad-precio'
+    destacado: 'Alta eficiencia',
+    posicion: 'pequena-derecha-inferior'
   }
 ];
 
@@ -190,7 +193,7 @@ const ProductosImpresoras = () => {
           </p>
         </div>
 
-        {/* Sección 1: Top Sales */}
+        {/* Sección 1: Top Sales - Layout de dos columnas asimétricas */}
         <section className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#2d472f] mb-4">
@@ -201,77 +204,162 @@ const ProductosImpresoras = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {topSalesImpresoras.map((impresora) => (
-              <div 
-                key={impresora.id}
-                className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
-              >
-                {/* Badge destacado */}
-                <div className="relative">
-                  <div className="absolute top-4 right-4 z-10">
-                    <span className="bg-[#2d472f] text-white px-3 py-1 rounded-full text-sm font-bold">
-                      {impresora.destacado}
+          {/* Layout de dos columnas asimétricas */}
+          <div className="w-full max-w-7xl mx-auto">
+            <div className="grid grid-cols-3 gap-6 h-[800px]">
+              {/* Columna izquierda - Tarjeta grande */}
+              <div className="col-span-2 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden group">
+                <div className="relative h-full">
+                  {/* Badge destacado */}
+                  <div className="absolute top-6 right-6 z-20">
+                    <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                      {topSalesImpresoras[0].destacado}
                     </span>
                   </div>
-                  
-                  {/* Imagen */}
-                  <div className="h-48 overflow-hidden">
+
+                  {/* Imagen de fondo */}
+                  <div className="absolute inset-0">
                     <img 
-                      src={impresora.imagen} 
-                      alt={impresora.nombre}
-                      className="w-full h-full object-cover"
+                      src={topSalesImpresoras[0].imagen} 
+                      alt={topSalesImpresoras[0].nombre}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                   </div>
-                </div>
 
-                {/* Contenido */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-[#2d472f] mb-4">
-                    {impresora.nombre}
-                  </h3>
+                  {/* Contenido */}
+                  <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                    <h3 className="text-3xl font-bold mb-4 group-hover:text-green-300 transition-colors">
+                      {topSalesImpresoras[0].nombre}
+                    </h3>
 
-                  <div className="space-y-3">
-                    <div className="flex items-center space-x-2">
-                      <Printer className="w-4 h-4 text-[#4b6d3b]" />
-                      <span className="text-sm text-[#4b6d3b] font-medium">{impresora.tecnologia}</span>
-                    </div>
-                    
-                    <div className="text-sm text-gray-600">
-                      <div className="font-semibold">Resolución: {impresora.resolucion}</div>
-                      <div className="font-semibold">Velocidad: {impresora.velocidad}</div>
-                    </div>
-
-                    {/* Conectividad */}
-                    <div className="flex items-center space-x-2">
-                      <span className="text-sm font-semibold text-[#2d472f]">Conectividad:</span>
-                      <div className="flex space-x-1">
-                        {impresora.conectividad.map((conn, idx) => (
-                          <div key={idx} className="flex items-center space-x-1">
-                            {conn === 'Wi-Fi' && <Wifi className="w-3 h-3 text-[#4b6d3b]" />}
-                            {conn === 'USB' && <Usb className="w-3 h-3 text-[#4b6d3b]" />}
-                            {conn === 'Ethernet' && <Monitor className="w-3 h-3 text-[#4b6d3b]" />}
-                            <span className="text-xs text-[#4b6d3b]">{conn}</span>
-                          </div>
-                        ))}
+                    <div className="space-y-3 mb-6">
+                      <div className="flex items-center space-x-3">
+                        <Printer className="w-5 h-5 text-green-300" />
+                        <span className="text-green-200 font-medium">{topSalesImpresoras[0].tecnologia}</span>
                       </div>
-                    </div>
+                      
+                      <div className="text-green-100">
+                        <div className="font-semibold">Resolución: {topSalesImpresoras[0].resolucion}</div>
+                        <div className="font-semibold">Velocidad: {topSalesImpresoras[0].velocidad}</div>
+                      </div>
 
-                    {/* Compatibilidad */}
-                    <div className="flex items-center space-x-2">
-                      <span className="text-sm font-semibold text-[#2d472f]">Compatibilidad:</span>
-                      <div className="flex flex-wrap gap-1">
-                        {impresora.compatibilidad.map((comp, idx) => (
-                          <span key={idx} className="text-xs bg-[#2d472f] text-white px-2 py-1 rounded-full">
-                            {comp}
-                          </span>
-                        ))}
+                      {/* Conectividad */}
+                      <div className="flex items-center space-x-3">
+                        <span className="text-sm font-semibold text-green-200">Conectividad:</span>
+                        <div className="flex space-x-2">
+                          {topSalesImpresoras[0].conectividad.map((conn, idx) => (
+                            <div key={idx} className="flex items-center space-x-1">
+                              {conn === 'Wi-Fi' && <Wifi className="w-4 h-4 text-green-300" />}
+                              {conn === 'USB' && <Usb className="w-4 h-4 text-green-300" />}
+                              {conn === 'Ethernet' && <Monitor className="w-4 h-4 text-green-300" />}
+                              <span className="text-xs text-green-200">{conn}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Compatibilidad */}
+                      <div className="flex items-center space-x-3">
+                        <span className="text-sm font-semibold text-green-200">Compatibilidad:</span>
+                        <div className="flex flex-wrap gap-2">
+                          {topSalesImpresoras[0].compatibilidad.map((comp, idx) => (
+                            <span key={idx} className="text-xs bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full border border-white/30">
+                              {comp}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            ))}
+
+              {/* Columna derecha - Dos tarjetas apiladas */}
+              <div className="col-span-1 flex flex-col gap-6">
+                {/* Tarjeta superior */}
+                <div className="flex-1 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden group">
+                  <div className="relative h-full">
+                    {/* Badge destacado */}
+                    <div className="absolute top-4 right-4 z-20">
+                      <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                        {topSalesImpresoras[1].destacado}
+                      </span>
+                    </div>
+
+                    {/* Imagen de fondo */}
+                    <div className="absolute inset-0">
+                      <img 
+                        src={topSalesImpresoras[1].imagen} 
+                        alt={topSalesImpresoras[1].nombre}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
+                    </div>
+
+                    {/* Contenido */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                      <h3 className="text-xl font-bold mb-3 group-hover:text-blue-300 transition-colors">
+                        {topSalesImpresoras[1].nombre}
+                      </h3>
+
+                      <div className="space-y-2">
+                        <div className="flex items-center space-x-2">
+                          <Printer className="w-4 h-4 text-blue-300" />
+                          <span className="text-blue-200 text-sm font-medium">{topSalesImpresoras[1].tecnologia}</span>
+                        </div>
+                        
+                        <div className="text-blue-100 text-sm">
+                          <div className="font-semibold">Resolución: {topSalesImpresoras[1].resolucion}</div>
+                          <div className="font-semibold">Velocidad: {topSalesImpresoras[1].velocidad}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Tarjeta inferior */}
+                <div className="flex-1 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden group">
+                  <div className="relative h-full">
+                    {/* Badge destacado */}
+                    <div className="absolute top-4 right-4 z-20">
+                      <span className="bg-gradient-to-r from-red-500 to-pink-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                        {topSalesImpresoras[2].destacado}
+                      </span>
+                    </div>
+
+                    {/* Imagen de fondo */}
+                    <div className="absolute inset-0">
+                      <img 
+                        src={topSalesImpresoras[2].imagen} 
+                        alt={topSalesImpresoras[2].nombre}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
+                    </div>
+
+                    {/* Contenido */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                      <h3 className="text-xl font-bold mb-3 group-hover:text-red-300 transition-colors">
+                        {topSalesImpresoras[2].nombre}
+                      </h3>
+
+                      <div className="space-y-2">
+                        <div className="flex items-center space-x-2">
+                          <Printer className="w-4 h-4 text-red-300" />
+                          <span className="text-red-200 text-sm font-medium">{topSalesImpresoras[2].tecnologia}</span>
+                        </div>
+                        
+                        <div className="text-red-100 text-sm">
+                          <div className="font-semibold">Resolución: {topSalesImpresoras[2].resolucion}</div>
+                          <div className="font-semibold">Velocidad: {topSalesImpresoras[2].velocidad}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
