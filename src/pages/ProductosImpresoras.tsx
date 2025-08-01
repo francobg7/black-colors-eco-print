@@ -220,8 +220,7 @@ const ProductosImpresoras = () => {
                   {/* Imagen de fondo */}
                   <div className="absolute inset-0">
                     <img 
-                      src={topSalesImpresoras[0].imagen} 
-                      alt={topSalesImpresoras[0].nombre}
+                      src="/images/impresoras/1.jpg"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
@@ -290,8 +289,7 @@ const ProductosImpresoras = () => {
                     {/* Imagen de fondo */}
                     <div className="absolute inset-0">
                       <img 
-                        src={topSalesImpresoras[1].imagen} 
-                        alt={topSalesImpresoras[1].nombre}
+                        src="/images/impresoras/2.jpg"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
@@ -331,8 +329,7 @@ const ProductosImpresoras = () => {
                     {/* Imagen de fondo */}
                     <div className="absolute inset-0">
                       <img 
-                        src={topSalesImpresoras[2].imagen} 
-                        alt={topSalesImpresoras[2].nombre}
+                        src="/images/impresoras/3.jpg"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
