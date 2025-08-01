@@ -56,7 +56,7 @@ const todasImpresoras = [
   {
     id: 2,
     nombre: 'Brother MFC-L2710DW',
-    imagen: '/images/impresoras/5.jpg',
+    imagen: '/images/impresoras/9.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '30 ppm',
@@ -76,7 +76,7 @@ const todasImpresoras = [
   {
     id: 4,
     nombre: 'Brother HL-L2370DW',
-    imagen: '/images/impresoras/7.jpg',
+    imagen: '/images/impresoras/13.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '32 ppm',
@@ -96,7 +96,7 @@ const todasImpresoras = [
   {
     id: 6,
     nombre: 'Brother DCP-L2570DW',
-    imagen: '/images/impresoras/9.jpg',
+    imagen: '/images/impresoras/5.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '30 ppm',
@@ -126,7 +126,7 @@ const todasImpresoras = [
   {
     id: 9,
     nombre: 'Brother DCP-L2590DW',
-    imagen: '/images/impresoras/.jpg',
+    imagen: '/images/impresoras/7.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '30 ppm',
@@ -136,7 +136,7 @@ const todasImpresoras = [
   {
     id: 10,
     nombre: 'Brother HL-L2395DW',
-    imagen: '/images/impresoras/brother-hl-l2395dw.jpg',
+    imagen: '/images/impresoras/12.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '32 ppm',
@@ -146,7 +146,7 @@ const todasImpresoras = [
   {
     id: 11,
     nombre: 'Brother MFC-L2775DW',
-    imagen: '/images/impresoras/brother-mfc-l2775dw.jpg',
+    imagen: '/images/impresoras/15.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '30 ppm',
@@ -156,7 +156,7 @@ const todasImpresoras = [
   {
     id: 12,
     nombre: 'Brother DCP-L2595DW',
-    imagen: '/images/impresoras/brother-dcp-l2595dw.jpg',
+    imagen: '/images/impresoras/16.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '30 ppm',
