@@ -50,7 +50,7 @@ const todasImpresoras = [
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '32 ppm',
-    precio: '850.000 Gs',
+    precio: '650.000 Gs',
     compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria']
   },
   {
