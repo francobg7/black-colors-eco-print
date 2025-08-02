@@ -301,6 +301,14 @@ const ProductosImpresoras = () => {
                           <div className="font-semibold">Resolución: {topSalesImpresoras[1].resolucion}</div>
                           <div className="font-semibold">Velocidad: {topSalesImpresoras[1].velocidad}</div>
                         </div>
+                        
+                        {/* Precio */}
+                        <div className="flex items-center space-x-3">
+                        <span className="text-sm font-semibold text-green-200">Precio:</span>
+                        <div className="flex space-x-2">
+                          <span className="text-lg font-bold text-green-300">{topSalesImpresoras[1].precio}</span>
+                        </div>
+                      </div>
                       </div>
                     </div>
                   </div>
@@ -341,6 +349,14 @@ const ProductosImpresoras = () => {
                           <div className="font-semibold">Resolución: {topSalesImpresoras[2].resolucion}</div>
                           <div className="font-semibold">Velocidad: {topSalesImpresoras[2].velocidad}</div>
                         </div>
+
+                         {/* Precio */}
+                      <div className="flex items-center space-x-3">
+                        <span className="text-sm font-semibold text-green-200">Precio:</span>
+                        <div className="flex space-x-2">
+                          <span className="text-lg font-bold text-green-300">{topSalesImpresoras[2].precio}</span>
+                        </div>
+                    </div>
                       </div>
                     </div>
                   </div>
