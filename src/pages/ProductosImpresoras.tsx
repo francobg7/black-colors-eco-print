@@ -24,7 +24,7 @@ const topSalesImpresoras = [
     resolucion: '2400 x 600 DPI',
     velocidad: '30 ppm',
     precio: '720.000 Gs',
-    compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria'],
+    compatibilidad: ['AirPrint', 'Google Cloud Print'],
     destacado: 'Todo en uno más popular',
     posicion: 'pequena-derecha-superior'
   },
@@ -35,7 +35,7 @@ const topSalesImpresoras = [
     resolucion: '2400 x 600 DPI',
     velocidad: '32 ppm',
     precio: '680.000 Gs',
-    compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria'],
+    compatibilidad: ['AirPrint', 'Google Cloud Print'],
     destacado: 'Alta eficiencia',
     posicion: 'pequena-derecha-inferior'
   }
@@ -297,7 +297,7 @@ const ProductosImpresoras = () => {
                           <span className="text-blue-200 text-sm font-medium">{topSalesImpresoras[1].tecnologia}</span>
                         </div>
                         
-                        <div className="text-blue-100 text-sm">
+                                                <div className="text-blue-100 text-sm">
                           <div className="font-semibold">Resolución: {topSalesImpresoras[1].resolucion}</div>
                           <div className="font-semibold">Velocidad: {topSalesImpresoras[1].velocidad}</div>
                         </div>
@@ -308,7 +308,19 @@ const ProductosImpresoras = () => {
                         <div className="flex space-x-2">
                           <span className="text-lg font-bold text-green-300">{topSalesImpresoras[1].precio}</span>
                         </div>
-                      </div>
+                       </div>
+
+                       {/* Compatibilidad */}
+                       <div className="flex items-center space-x-3">
+                         <span className="text-sm font-semibold text-blue-200">Compatibilidad:</span>
+                         <div className="flex flex-wrap gap-2">
+                           {topSalesImpresoras[1].compatibilidad.map((comp, idx) => (
+                             <span key={idx} className="text-xs bg-white/20 backdrop-blur-sm text-white px-2 py-1 rounded-full border border-white/30">
+                               {comp}
+                             </span>
+                           ))}
+                         </div>
+                       </div>
                       </div>
                     </div>
                   </div>
@@ -345,18 +357,30 @@ const ProductosImpresoras = () => {
                           <span className="text-red-200 text-sm font-medium">{topSalesImpresoras[2].tecnologia}</span>
                         </div>
                         
-                        <div className="text-red-100 text-sm">
+                                                <div className="text-red-100 text-sm">
                           <div className="font-semibold">Resolución: {topSalesImpresoras[2].resolucion}</div>
                           <div className="font-semibold">Velocidad: {topSalesImpresoras[2].velocidad}</div>
                         </div>
 
                          {/* Precio */}
+                       <div className="flex items-center space-x-3">
+                         <span className="text-sm font-semibold text-green-200">Precio:</span>
+                         <div className="flex space-x-2">
+                           <span className="text-lg font-bold text-green-300">{topSalesImpresoras[2].precio}</span>
+                         </div>
+                      </div>
+
+                      {/* Compatibilidad */}
                       <div className="flex items-center space-x-3">
-                        <span className="text-sm font-semibold text-green-200">Precio:</span>
-                        <div className="flex space-x-2">
-                          <span className="text-lg font-bold text-green-300">{topSalesImpresoras[2].precio}</span>
+                        <span className="text-sm font-semibold text-red-200">Compatibilidad:</span>
+                        <div className="flex flex-wrap gap-2">
+                          {topSalesImpresoras[2].compatibilidad.map((comp, idx) => (
+                            <span key={idx} className="text-xs bg-white/20 backdrop-blur-sm text-white px-2 py-1 rounded-full border border-white/30">
+                              {comp}
+                            </span>
+                          ))}
                         </div>
-                    </div>
+                      </div>
                       </div>
                     </div>
                   </div>
