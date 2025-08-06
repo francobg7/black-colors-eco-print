@@ -111,7 +111,7 @@ const Leasing = () => {
                   <span className="text-2xl" style={{ color: '#0f3d2e' }}>♻️</span>
                 </div>
                 <h3 className="text-xl font-bold mb-4" style={{ color: '#d7f2db' }}>Gestión Final Responsable</h3>
-                <p style={{ color: '#c3e8a4' }}>Nos hacemos cargo del reciclaje y disposición final adecuada</p>
+                <p style={{ color: '#c3e8a4' }}>Nos hacemos cargo del reciclaje y disposición final adecuada.</p>
               </div>
             </div>
           </div>
