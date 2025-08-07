@@ -87,7 +87,7 @@ const eventos = [
 
 const Eventos = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-green-100">
       <div className="container mx-auto px-6 py-8">
         {/* Navegación */}
         <div className="mb-8">
