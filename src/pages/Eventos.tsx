@@ -14,7 +14,7 @@ const eventos = [
     descripcion: 'La feria tecnológica más importante del país. Descubre las últimas innovaciones en impresión y tecnología sustentable.',
     categoria: 'Feria Tecnológica',
     destacado: true,
-    imagen: '/images/eventos/expo-tecnologia.jpg',
+    imagen: '/images/eventos/1.jpg',
     asistentes: '500+',
     precio: 'Gratuito'
   },
@@ -27,7 +27,7 @@ const eventos = [
     descripcion: 'Aprende sobre las mejores prácticas de impresión ecológica y cómo reducir el impacto ambiental en tu empresa.',
     categoria: 'Workshop',
     destacado: false,
-    imagen: '/images/eventos/workshop-sustentable.jpg',
+    imagen: '/images/eventos/2.jpg',
     asistentes: '30',
     precio: '50.000 Gs'
   },
@@ -40,7 +40,7 @@ const eventos = [
     descripcion: 'Presentación exclusiva de la nueva línea de impresoras Brother con tecnología de vanguardia.',
     categoria: 'Lanzamiento',
     destacado: true,
-    imagen: '/images/eventos/lanzamiento-brother.jpg',
+    imagen: '/images/eventos/3.jpg',
     asistentes: '200',
     precio: '100.000 Gs'
   },
