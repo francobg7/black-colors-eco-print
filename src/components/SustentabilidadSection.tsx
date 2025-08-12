@@ -58,6 +58,15 @@ const SustentabilidadSection = () => {
 
 	return (
 		<section className="py-16 md:py-24 lg:py-32 relative overflow-hidden">
+		{/* SVG de transición desde la sección de leasing (color verde) */}
+		<svg
+			className="absolute left-0 top-0 w-full h-40 z-10"
+			viewBox="0 0 100 100"
+			preserveAspectRatio="none"
+		>
+			<polygon fill="#2d472f" points="0,0 100,0 100,70 70,20 0,30" />
+		</svg>
+
 			{/* Imagen de fondo - sin superposición verde */}
 			<div 
 				className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
