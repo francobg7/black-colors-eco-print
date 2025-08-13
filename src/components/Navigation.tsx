@@ -19,7 +19,8 @@ const Navigation = () => {
 
   const productosSubmenu = [
     { name: 'IMPRESORAS', path: '/productos/impresoras' },
-    { name: 'CARTUCHOS Y TÓNERS', path: '/productos/cartuchos' },
+    { name: 'TONERS', path: '/productos/toners' },
+    { name: 'CARTUCHOS', path: '/productos/cartuchos' },
     { name: 'RESMAS SUSTENTABLES', path: '/productos/resmas' }
   ];
 
