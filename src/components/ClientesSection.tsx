@@ -6,7 +6,19 @@ const clientes = [
   { name: "GreenSolutions", logo: "/images/greensolutions-logo.png" },
   { name: "NatureCorp", logo: "/images/naturecorp-logo.png" },
   { name: "BioTech", logo: "/images/biotech-logo.png" },
-  { name: "EcoLife", logo: "/images/ecolife-logo.png" }
+  { name: "EcoLife", logo: "/images/ecolife-logo.png" },
+  { name: "EcoPrint", logo: "/images/ecoprint-logo.png" },
+  { name: "GreenPrint", logo: "/images/greenprint-logo.png" },
+  { name: "BioPrint", logo: "/images/bioprint-logo.png" },
+  { name: "NaturePrint", logo: "/images/natureprint-logo.png" },
+  { name: "EcoCorp", logo: "/images/ecocorp-logo.png" },
+  { name: "GreenCorp", logo: "/images/greencorp-logo.png" },
+  { name: "BioCorp", logo: "/images/biocorp-logo.png" },
+  { name: "NatureTech", logo: "/images/naturetech-logo.png" },
+  { name: "EcoSolutions", logo: "/images/ecosolutions-logo.png" },
+  { name: "GreenTech", logo: "/images/greentech-logo.png" },
+  { name: "BioSolutions", logo: "/images/biosolutions-logo.png" },
+  { name: "NatureLife", logo: "/images/naturelife-logo.png" }
 ];
 
 const ClientesSection = () => (
@@ -23,9 +35,22 @@ const ClientesSection = () => (
       </p>
     </div>
     <div className="relative">
-      <div className="flex animate-[scroll_20s_linear_infinite]">
+      {/* Primer carrusel */}
+      <div className="flex animate-[scroll_30s_linear_infinite]">
         {clientes.map((cliente, index) => (
-          <div key={index} className="flex-shrink-0 mx-8">
+          <div key={index} className="flex-shrink-0 mx-6">
+            <img
+              src={cliente.logo}
+              alt={cliente.name}
+              className="h-16 w-auto filter grayscale opacity-70 hover:opacity-100 transition-opacity"
+            />
+          </div>
+        ))}
+      </div>
+      {/* Segundo carrusel (duplicado para efecto continuo) */}
+      <div className="flex animate-[scroll2_30s_linear_infinite] absolute top-0">
+        {clientes.map((cliente, index) => (
+          <div key={`duplicate-${index}`} className="flex-shrink-0 mx-6">
             <img
               src={cliente.logo}
               alt={cliente.name}
@@ -37,17 +62,30 @@ const ClientesSection = () => (
     </div>
     <style>
       {`
-        @keyframes marquee {
+        @keyframes scroll {
           0% {
             transform: translateX(0%);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(-100%);
           }
         }
         
-        .animate-marquee {
-          animation: marquee 20s linear infinite;
+        @keyframes scroll2 {
+          0% {
+            transform: translateX(100%);
+          }
+          100% {
+            transform: translateX(0%);
+          }
+        }
+        
+        .animate-scroll {
+          animation: scroll 30s linear infinite;
+        }
+        
+        .animate-scroll2 {
+          animation: scroll2 30s linear infinite;
         }
       `}
     </style>
