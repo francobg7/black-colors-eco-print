@@ -20,7 +20,7 @@ const ProductosCartuchos = () => {
         
         <div className="text-center">
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold mb-8" style={{ color: '#d7f2db' }}>
-            CARTUCHOS Y TONERS
+            CARTUCHOS
           </h1>
           <p className="text-xl sm:text-2xl lg:text-4xl mb-12" style={{ color: '#c3e8a4' }}>
             Contenido próximamente
