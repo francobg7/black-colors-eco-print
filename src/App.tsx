@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 
 import ProductosImpresoras from "./pages/ProductosImpresoras";
 import ProductosCartuchos from "./pages/ProductosCartuchos";
+import ProductosToners from "./pages/ProductosToners";
 import ProductosResmas from "./pages/ProductosResmas";
 import Leasing from "./pages/Leasing";
 import Transformar from "./pages/Transformar";
@@ -30,6 +31,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
 
             <Route path="/productos/impresoras" element={<ProductosImpresoras />} />
+            <Route path="/productos/toners" element={<ProductosToners />} />
             <Route path="/productos/cartuchos" element={<ProductosCartuchos />} />
             <Route path="/productos/resmas" element={<ProductosResmas />} />
             <Route path="/leasing" element={<Leasing />} />
