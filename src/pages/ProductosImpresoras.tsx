@@ -8,34 +8,34 @@ import Footer from '@/components/Footer';
 const topSalesImpresoras = [
   {
     id: 1,
-    nombre: 'Brother HL-L2350DW',
+    nombre: 'IMPRESORA BROTHER HL1212W',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
-    velocidad: '32 ppm',
-    precio: '850.000 Gs',
-    compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria'],
+    velocidad: '20 ppm',
+    precio: '1.130.000 Gs',
+    compatibilidad: ['WiFi', 'USB', 'Impresión móvil'],
     destacado: 'Más vendida del año',
     posicion: 'grande-izquierda'
   },
   {
     id: 2,
-    nombre: 'Brother MFC-L2710DW',
+    nombre: 'IMPRESORA LASER BROTHER HL L2360DW',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
-    velocidad: '30 ppm',
-    precio: '720.000 Gs',
-    compatibilidad: ['AirPrint', 'Google Cloud Print'],
+    velocidad: '32 ppm',
+    precio: '2.360.000 Gs',
+    compatibilidad: ['WiFi', 'USB', 'Duplex automático'],
     destacado: 'Todo en uno más popular',
     posicion: 'pequena-derecha-superior'
   },
   {
     id: 3,
-    nombre: 'Brother HL-L2370DW',
+    nombre: 'MULTIF BROTHER DCP1617NW',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
-    velocidad: '32 ppm',
-    precio: '680.000 Gs',
-    compatibilidad: ['AirPrint', 'Google Cloud Print'],
+    velocidad: '16 ppm',
+    precio: '2.055.000 Gs',
+    compatibilidad: ['WiFi', 'USB', 'Escáner integrado'],
     destacado: 'Alta eficiencia',
     posicion: 'pequena-derecha-inferior'
   }
@@ -45,123 +45,183 @@ const topSalesImpresoras = [
 const todasImpresoras = [
   {
     id: 1,
-    nombre: 'Brother HL-L2350DW',
-    imagen: '/images/impresoras/4.jpg',
+    nombre: 'IMPRESORA BROTHER HL1212W',
+    imagen: '/images/impresoras/1.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
-    velocidad: '32 ppm',
-    precio: '650.000 Gs',
-    compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria']
+    velocidad: '20 ppm',
+    precio: '1.130.000 Gs',
+    compatibilidad: ['WiFi', 'USB', 'Impresión móvil']
   },
   {
     id: 2,
-    nombre: 'Brother MFC-L2710DW',
-    imagen: '/images/impresoras/9.jpg',
+    nombre: 'IMPRESORA LASER BROTHER HL L2360DW',
+    imagen: '/images/impresoras/2.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
-    velocidad: '30 ppm',
-    precio: '720.000 Gs',
-    compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria']
+    velocidad: '32 ppm',
+    precio: '2.360.000 Gs',
+    compatibilidad: ['WiFi', 'USB', 'Duplex automático']
   },
   {
     id: 3,
-    nombre: 'Brother DCP-L2550DW',
-    imagen: '/images/impresoras/6.jpg',
+    nombre: 'IMPRESORA BROTHER HLL5210DN',
+    imagen: '/images/impresoras/3.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
-    velocidad: '30 ppm',
-    precio: '650.000 Gs',
-    compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria']
+    velocidad: '26 ppm',
+    precio: '3.545.000 Gs',
+    compatibilidad: ['Red Ethernet', 'Duplex automático']
   },
   {
     id: 4,
-    nombre: 'Brother HL-L2370DW',
-    imagen: '/images/impresoras/13.jpg',
+    nombre: 'IMPRESORA BROTHER HLL6415DW',
+    imagen: '/images/impresoras/4.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
-    velocidad: '32 ppm',
-    precio: '680.000 Gs',
-    compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria']
+    velocidad: '42 ppm',
+    precio: '6.545.000 Gs',
+    compatibilidad: ['WiFi', 'USB', 'Duplex automático']
   },
   {
     id: 5,
-    nombre: 'Brother MFC-L2750DW',
-    imagen: '/images/impresoras/8.jpg',
-    tecnologia: 'Láser monocromática',
-    resolucion: '2400 x 600 DPI',
-    velocidad: '30 ppm',
-    precio: '780.000 Gs',
-    compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria']
-  },
-  {
-    id: 6,
-    nombre: 'Brother DCP-L2570DW',
+    nombre: 'IMPRESORA BROTHER HLL5210DW',
     imagen: '/images/impresoras/5.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
-    velocidad: '30 ppm',
-    precio: '590.000 Gs',
-    compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria']
+    velocidad: '26 ppm',
+    precio: '4.990.000 Gs',
+    compatibilidad: ['WiFi', 'USB', 'Duplex automático']
+  },
+  {
+    id: 6,
+    nombre: 'MULTIF COLOR BROTHER DCP-T220-',
+    imagen: '/images/impresoras/6.jpg',
+    tecnologia: 'Inyección de tinta color',
+    resolucion: '4800 x 1200 DPI',
+    velocidad: '27 ppm',
+    precio: '1.630.000 Gs',
+    compatibilidad: ['USB', 'Escáner integrado', 'Color']
   },
   {
     id: 7,
-    nombre: 'Brother HL-L2390DW',
-    imagen: '/images/impresoras/10.jpg',
-    tecnologia: 'Láser monocromática',
-    resolucion: '2400 x 600 DPI',
-    velocidad: '32 ppm',
-    precio: '920.000 Gs',
-    compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria']
+    nombre: 'MULTIF COLOR BROTHER DCP-T420W',
+    imagen: '/images/impresoras/7.jpg',
+    tecnologia: 'Inyección de tinta color',
+    resolucion: '4800 x 1200 DPI',
+    velocidad: '27 ppm',
+    precio: '1.980.000 Gs',
+    compatibilidad: ['WiFi', 'USB', 'Escáner integrado', 'Color']
   },
   {
     id: 8,
-    nombre: 'Brother MFC-L2770DW',
-    imagen: '/images/impresoras/14.jpg',
-    tecnologia: 'Láser monocromática',
-    resolucion: '2400 x 600 DPI',
-    velocidad: '30 ppm',
-    precio: '890.000 Gs',
-    compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria']
+    nombre: 'MULTIF COLOR BROTHER MFCTA500DW SERIAL',
+    imagen: '/images/impresoras/8.jpg',
+    tecnologia: 'Inyección de tinta color',
+    resolucion: '4800 x 1200 DPI',
+    velocidad: '27 ppm',
+    precio: '7.325.000 Gs',
+    compatibilidad: ['WiFi', 'USB', 'Escáner integrado', 'Color', 'Fax']
   },
   {
     id: 9,
-    nombre: 'Brother DCP-L2590DW',
-    imagen: '/images/impresoras/7.jpg',
+    nombre: 'MULTIF BROTHER DCP1617NW',
+    imagen: '/images/impresoras/9.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
-    velocidad: '30 ppm',
-    precio: '450.000 Gs',
-    compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria']
+    velocidad: '16 ppm',
+    precio: '2.055.000 Gs',
+    compatibilidad: ['WiFi', 'USB', 'Escáner integrado']
   },
   {
     id: 10,
-    nombre: 'Brother HL-L2395DW',
-    imagen: '/images/impresoras/12.jpg',
+    nombre: 'MULTIF BROTHER DCPL.2660DW (DCPL2660DW)',
+    imagen: '/images/impresoras/10.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
-    velocidad: '32 ppm',
-    precio: '950.000 Gs',
-    compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria']
+    velocidad: '30 ppm',
+    precio: '3.278.000 Gs',
+    compatibilidad: ['WiFi', 'USB', 'Escáner integrado', 'Duplex automático']
   },
   {
     id: 11,
-    nombre: 'Brother MFC-L2775DW',
-    imagen: '/images/impresoras/15.jpg',
+    nombre: 'MULTIF BROTHER DCPL2540DW',
+    imagen: '/images/impresoras/11.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
     velocidad: '30 ppm',
-    precio: '980.000 Gs',
-    compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria']
+    precio: '3.115.000 Gs',
+    compatibilidad: ['WiFi', 'USB', 'Escáner integrado', 'Duplex automático']
   },
   {
     id: 12,
-    nombre: 'Brother DCP-L2595DW',
-    imagen: '/images/impresoras/16.jpg',
+    nombre: 'MULTIF BROTHER DCPL5610DN',
+    imagen: '/images/impresoras/12.jpg',
     tecnologia: 'Láser monocromática',
     resolucion: '2400 x 600 DPI',
-    velocidad: '30 ppm',
-    precio: '520.000 Gs',
-    compatibilidad: ['AirPrint', 'Google Cloud Print', 'Mopria']
+    velocidad: '42 ppm',
+    precio: '6.160.000 Gs',
+    compatibilidad: ['Red Ethernet', 'Escáner integrado', 'Duplex automático']
+  },
+  {
+    id: 13,
+    nombre: 'MULTIF BROTHER DCPL5660DN',
+    imagen: '/images/impresoras/13.jpg',
+    tecnologia: 'Láser monocromática',
+    resolucion: '2400 x 600 DPI',
+    velocidad: '42 ppm',
+    precio: '6.961.000 Gs',
+    compatibilidad: ['Red Ethernet', 'Escáner integrado', 'Duplex automático']
+  },
+  {
+    id: 14,
+    nombre: 'MULTIF BROTHER MFCL6900DW',
+    imagen: '/images/impresoras/14.jpg',
+    tecnologia: 'Láser monocromática',
+    resolucion: '2400 x 600 DPI',
+    velocidad: '42 ppm',
+    precio: '11.150.000 Gs',
+    compatibilidad: ['WiFi', 'USB', 'Escáner integrado', 'Duplex automático', 'Fax']
+  },
+  {
+    id: 15,
+    nombre: 'MULTIF BROTHER MFCL6915DW',
+    imagen: '/images/impresoras/15.jpg',
+    tecnologia: 'Láser monocromática',
+    resolucion: '2400 x 600 DPI',
+    velocidad: '42 ppm',
+    precio: '11.150.000 Gs',
+    compatibilidad: ['WiFi', 'USB', 'Escáner integrado', 'Duplex automático', 'Fax']
+  },
+  {
+    id: 16,
+    nombre: 'IMPRESORA COLOR BROTHER HLL8360CDW',
+    imagen: '/images/impresoras/16.jpg',
+    tecnologia: 'Láser color',
+    resolucion: '2400 x 600 DPI',
+    velocidad: '31 ppm',
+    precio: '6.995.000 Gs',
+    compatibilidad: ['WiFi', 'USB', 'Duplex automático', 'Color']
+  },
+  {
+    id: 17,
+    nombre: 'MULTIF COLOR BROTHER DCPL.3560CDW',
+    imagen: '/images/impresoras/17.jpg',
+    tecnologia: 'Láser color',
+    resolucion: '2400 x 600 DPI',
+    velocidad: '31 ppm',
+    precio: '7.305.000 Gs',
+    compatibilidad: ['WiFi', 'USB', 'Escáner integrado', 'Duplex automático', 'Color']
+  },
+  {
+    id: 18,
+    nombre: 'MULTIF COLOR BROTHER MFCL8900CDW',
+    imagen: '/images/impresoras/18.jpg',
+    tecnologia: 'Láser color',
+    resolucion: '2400 x 600 DPI',
+    velocidad: '31 ppm',
+    precio: '10.525.000 Gs',
+    compatibilidad: ['WiFi', 'USB', 'Escáner integrado', 'Duplex automático', 'Color', 'Fax']
   }
 ];
 
