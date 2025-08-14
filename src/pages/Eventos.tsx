@@ -15,8 +15,7 @@ const eventos = [
     categoria: 'Feria Tecnológica',
     destacado: true,
     imagen: '/images/eventos/1.jpg',
-    asistentes: '500+',
-    precio: 'Gratuito'
+    asistentes: '500+'
   },
   {
     id: 2,
@@ -28,8 +27,7 @@ const eventos = [
     categoria: 'Workshop',
     destacado: false,
     imagen: '/images/eventos/2.jpg',
-    asistentes: '30',
-    precio: '50.000 Gs'
+    asistentes: '30'
   },
   {
     id: 3,
@@ -41,8 +39,7 @@ const eventos = [
     categoria: 'Lanzamiento',
     destacado: true,
     imagen: '/images/eventos/3.jpg',
-    asistentes: '200',
-    precio: '100.000 Gs'
+    asistentes: '200'
   },
   {
     id: 4,
@@ -54,8 +51,7 @@ const eventos = [
     categoria: 'Networking',
     destacado: false,
     imagen: '/images/eventos/networking.jpg',
-    asistentes: '80',
-    precio: '75.000 Gs'
+    asistentes: '80'
   },
   {
     id: 5,
@@ -67,8 +63,7 @@ const eventos = [
     categoria: 'Conferencia',
     destacado: false,
     imagen: '/images/eventos/conferencia-futuro.jpg',
-    asistentes: '150',
-    precio: '120.000 Gs'
+    asistentes: '150'
   },
   {
     id: 6,
@@ -80,8 +75,7 @@ const eventos = [
     categoria: 'Exposición',
     destacado: true,
     imagen: '/images/eventos/expo-black-colors.jpg',
-    asistentes: '1000+',
-    precio: 'Gratuito'
+    asistentes: '1000+'
   }
 ];
 
@@ -185,11 +179,8 @@ const Eventos = () => {
                     </div>
                   </div>
 
-                  {/* Precio y CTA */}
-                  <div className="mt-6 flex items-center justify-between">
-                    <span className="text-2xl font-bold text-[#4b6d3b]">
-                      {evento.precio}
-                    </span>
+                  {/* CTA */}
+                  <div className="mt-6 flex justify-end">
                     <button className="bg-[#2d472f] text-white px-6 py-2 rounded-lg hover:bg-[#4b6d3b] transition-colors font-semibold">
                       Inscribirse
                     </button>
@@ -263,11 +254,8 @@ const Eventos = () => {
                   </div>
                   </div>
 
-                  {/* Precio y CTA */}
-                  <div className="mt-4 flex items-center justify-between">
-                    <span className="text-lg font-bold text-[#4b6d3b]">
-                      {evento.precio}
-                    </span>
+                  {/* CTA */}
+                  <div className="mt-4 flex justify-end">
                     <button className="bg-[#2d472f] text-white px-4 py-1 rounded text-sm hover:bg-[#4b6d3b] transition-colors">
                       Ver más
                     </button>
