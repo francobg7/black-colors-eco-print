@@ -6,12 +6,13 @@ const Navigation = () => {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = React.useState(false);
   const [productosMenuOpen, setProductosMenuOpen] = React.useState(false);
+  const [serviciosMenuOpen, setServiciosMenuOpen] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
 
   const navItems = [
     { name: 'INICIO', path: '/' },
     { name: 'PRODUCTOS', path: '/productos', hasSubmenu: true },
-    { name: 'LEASING', path: '/leasing' },
+    { name: 'SERVICIOS', path: '/servicios', hasSubmenu: true },
     { name: 'PROYECTO TRANSFORMAR', path: '/transformar' },
     { name: 'EVENTOS', path: '/eventos' },
     { name: 'CONTACTO', path: '/contacto' }
@@ -24,17 +25,29 @@ const Navigation = () => {
     { name: 'RESMAS SUSTENTABLES', path: '/productos/resmas' }
   ];
 
+  const serviciosSubmenu = [
+    { name: 'LEASING SUSTENTABLE', path: '/servicios/leasing' },
+    { name: 'ALQUILERES', path: '/servicios/alquileres' },
+    { name: 'SERVICIOS DIFERENCIADOS', path: '/servicios/diferenciados' }
+  ];
+
   const isActive = (path: string) => location.pathname === path;
 
   // Cierra el menú móvil al navegar
   const handleNavClick = () => {
     setMenuOpen(false);
     setProductosMenuOpen(false);
+    setServiciosMenuOpen(false);
   };
 
   // Cierra el menú de productos al hacer click fuera
   const handleProductosClick = () => {
     setProductosMenuOpen(!productosMenuOpen);
+  };
+
+  // Cierra el menú de servicios al hacer click fuera
+  const handleServiciosClick = () => {
+    setServiciosMenuOpen(!serviciosMenuOpen);
   };
 
   // Detecta el scroll para cambiar el estilo del navbar
@@ -72,6 +85,19 @@ const Navigation = () => {
     return () => document.removeEventListener('mousedown', handleClick);
   }, [productosMenuOpen]);
 
+  // Cierra el menú de servicios si se hace click fuera
+  React.useEffect(() => {
+    if (!serviciosMenuOpen) return;
+    const handleClick = (e: MouseEvent) => {
+      const menu = document.getElementById('servicios-menu-panel');
+      if (menu && !menu.contains(e.target as Node)) {
+        setServiciosMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, [serviciosMenuOpen]);
+
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled ? 'backdrop-blur-md shadow-lg' : 'bg-white/10 backdrop-blur-sm'
@@ -102,7 +128,7 @@ const Navigation = () => {
                     {item.hasSubmenu ? (
                       <div className="relative">
                         <button
-                          onClick={handleProductosClick}
+                          onClick={item.name === 'PRODUCTOS' ? handleProductosClick : handleServiciosClick}
                           className={`transition-all duration-300 hover:scale-105 flex items-center gap-1 ${
                             isActive(item.path)
                               ? 'font-semibold border-b-2 border-current pb-1'
@@ -117,7 +143,9 @@ const Navigation = () => {
                         >
                           {item.name}
                           <svg 
-                            className={`w-4 h-4 transition-transform duration-300 ${productosMenuOpen ? 'rotate-180' : ''}`} 
+                            className={`w-4 h-4 transition-transform duration-300 ${
+                              (item.name === 'PRODUCTOS' && productosMenuOpen) || (item.name === 'SERVICIOS' && serviciosMenuOpen) ? 'rotate-180' : ''
+                            }`} 
                             fill="none" 
                             stroke="currentColor" 
                             viewBox="0 0 24 24"
@@ -127,7 +155,7 @@ const Navigation = () => {
                         </button>
                         
                         {/* Submenú de productos */}
-                        {productosMenuOpen && (
+                        {item.name === 'PRODUCTOS' && productosMenuOpen && (
                           <div
                             id="productos-menu-panel"
                             className="absolute top-full left-0 mt-2 w-64 bg-white/95 backdrop-blur-md rounded-lg shadow-xl border border-green-200/20 animate-fade-in"
@@ -138,6 +166,31 @@ const Navigation = () => {
                                   key={subItem.name}
                                   to={subItem.path}
                                   onClick={() => setProductosMenuOpen(false)}
+                                  className={`block px-4 py-3 text-sm transition-all duration-200 hover:bg-green-50 ${
+                                    isActive(subItem.path) 
+                                      ? 'bg-green-100 text-green-800 font-medium' 
+                                      : 'text-gray-700 hover:text-green-700'
+                                  }`}
+                                >
+                                  {subItem.name}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Submenú de servicios */}
+                        {item.name === 'SERVICIOS' && serviciosMenuOpen && (
+                          <div
+                            id="servicios-menu-panel"
+                            className="absolute top-full left-0 mt-2 w-64 bg-white/95 backdrop-blur-md rounded-lg shadow-xl border border-green-200/20 animate-fade-in"
+                          >
+                            <div className="py-2">
+                              {serviciosSubmenu.map((subItem) => (
+                                <Link
+                                  key={subItem.name}
+                                  to={subItem.path}
+                                  onClick={() => setServiciosMenuOpen(false)}
                                   className={`block px-4 py-3 text-sm transition-all duration-200 hover:bg-green-50 ${
                                     isActive(subItem.path) 
                                       ? 'bg-green-100 text-green-800 font-medium' 
@@ -218,7 +271,13 @@ const Navigation = () => {
                 {item.hasSubmenu ? (
                   <div className="border-b border-green-200/30">
                     <button
-                      onClick={() => setProductosMenuOpen(!productosMenuOpen)}
+                      onClick={() => {
+                        if (item.name === 'PRODUCTOS') {
+                          setProductosMenuOpen(!productosMenuOpen);
+                        } else if (item.name === 'SERVICIOS') {
+                          setServiciosMenuOpen(!serviciosMenuOpen);
+                        }
+                      }}
                       className={`block w-full text-center py-4 text-lg font-medium transition-all duration-200 hover:bg-green-600/20 ${
                         isActive(item.path) 
                           ? 'bg-green-600/30 font-semibold' 
@@ -230,7 +289,9 @@ const Navigation = () => {
                     >
                       {item.name}
                       <svg 
-                        className={`w-5 h-5 ml-2 inline transition-transform duration-300 ${productosMenuOpen ? 'rotate-180' : ''}`} 
+                        className={`w-5 h-5 ml-2 inline transition-transform duration-300 ${
+                          (item.name === 'PRODUCTOS' && productosMenuOpen) || (item.name === 'SERVICIOS' && serviciosMenuOpen) ? 'rotate-180' : ''
+                        }`} 
                         fill="none" 
                         stroke="currentColor" 
                         viewBox="0 0 24 24"
@@ -240,9 +301,32 @@ const Navigation = () => {
                     </button>
                     
                     {/* Submenú móvil de productos */}
-                    {productosMenuOpen && (
+                    {item.name === 'PRODUCTOS' && productosMenuOpen && (
                       <div className="bg-green-600/10 border-l-4 border-green-400/50">
                         {productosSubmenu.map((subItem) => (
+                          <Link
+                            key={subItem.name}
+                            to={subItem.path}
+                            onClick={handleNavClick}
+                            className={`block w-full text-center py-3 text-base transition-all duration-200 ${
+                              isActive(subItem.path) 
+                                ? 'bg-green-600/30 font-medium' 
+                                : 'hover:bg-green-600/20'
+                            }`}
+                            style={{
+                              color: isActive(subItem.path) ? '#d7f2db' : '#a7f3d0'
+                            }}
+                          >
+                            {subItem.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Submenú móvil de servicios */}
+                    {item.name === 'SERVICIOS' && serviciosMenuOpen && (
+                      <div className="bg-green-600/10 border-l-4 border-green-400/50">
+                        {serviciosSubmenu.map((subItem) => (
                           <Link
                             key={subItem.name}
                             to={subItem.path}
