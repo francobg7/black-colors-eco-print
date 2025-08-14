@@ -12,6 +12,8 @@ import ProductosCartuchos from "./pages/ProductosCartuchos";
 import ProductosToners from "./pages/ProductosToners";
 import ProductosResmas from "./pages/ProductosResmas";
 import Leasing from "./pages/Leasing";
+import Alquileres from "./pages/Alquileres";
+import ServiciosDiferenciados from "./pages/ServiciosDiferenciados";
 import Transformar from "./pages/Transformar";
 import Eventos from "./pages/Eventos";
 import Contacto from "./pages/Contacto";
@@ -34,7 +36,9 @@ const App = () => (
             <Route path="/productos/toners" element={<ProductosToners />} />
             <Route path="/productos/cartuchos" element={<ProductosCartuchos />} />
             <Route path="/productos/resmas" element={<ProductosResmas />} />
-            <Route path="/leasing" element={<Leasing />} />
+            <Route path="/servicios/leasing" element={<Leasing />} />
+            <Route path="/servicios/alquileres" element={<Alquileres />} />
+            <Route path="/servicios/diferenciados" element={<ServiciosDiferenciados />} />
             <Route path="/transformar" element={<Transformar />} />
             <Route path="/eventos" element={<Eventos />} />
             <Route path="/contacto" element={<Contacto />} />
