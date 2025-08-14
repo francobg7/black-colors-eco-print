@@ -1,11 +1,24 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
 import Footer from '@/components/Footer';
 
 const Leasing = () => {
   return (
     <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #0f3d2e 0%, #2f9e44 50%, #3d7b4f 100%)' }}>
       <div className="container mx-auto px-6 py-20">
+        {/* Navegación */}
+        <div className="mb-8">
+          <Link 
+            to="/" 
+            className="inline-flex items-center space-x-2 text-[#d7f2db] hover:text-[#c3e8a4] transition-colors font-semibold"
+          >
+            <ArrowLeft className="w-5 h-5" />
+            <span>Volver a Servicios</span>
+          </Link>
+        </div>
+
         {/* Hero Section */}
         <div className="text-center mb-20">
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold mb-8 animate-fade-in" style={{ color: '#d7f2db' }}>
