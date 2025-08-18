@@ -4,9 +4,9 @@ import Footer from '@/components/Footer';
 
 const Alquileres = () => {
   return (
-    <div className="min-h-screen bg-white pt-16">
+    <div className="min-h-screen bg-gradient-to-br from-green-50/30 to-white">
       {/* Hero Section - Primera imagen + introducción */}
-      <section className="w-full bg-gradient-to-br from-gray-50 to-white">
+      <section className="w-full bg-gradient-to-br from-green-50/40 to-emerald-50/20">
         <div className="container mx-auto px-8 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Primera imagen - 50% ancho */}
@@ -47,21 +47,21 @@ const Alquileres = () => {
       </section>
 
       {/* Información técnica del servicio - Pantalla completa */}
-      <section className="w-full bg-white py-24">
+      <section className="w-full bg-gradient-to-br from-white to-green-50/20 py-24">
         <div className="container mx-auto px-8">
           {/* Encabezado de sección */}
           <div className="text-center mb-20">
             <h2 className="text-5xl font-light text-gray-900 mb-6 tracking-tight">
               ¿QUÉ INCLUYE NUESTRO SERVICIO?
             </h2>
-            <div className="w-24 h-px bg-gray-300 mx-auto"></div>
+            <div className="w-24 h-px bg-emerald-300 mx-auto"></div>
           </div>
 
           {/* Grid de características principales */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-20">
             {/* Suministros completos */}
-            <div className="space-y-6">
-              <div className="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center mb-6">
+            <div className="space-y-6 bg-green-50/30 rounded-3xl p-8 border border-green-100/50">
+              <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6">
                 <span className="text-3xl">🧃</span>
               </div>
               <h3 className="text-2xl font-medium text-gray-900 tracking-wide">
@@ -91,8 +91,8 @@ const Alquileres = () => {
             </div>
 
             {/* Mantenimiento garantizado */}
-            <div className="space-y-6">
-              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6">
+            <div className="space-y-6 bg-blue-50/30 rounded-3xl p-8 border border-blue-100/50">
+              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
                 <Wrench className="w-8 h-8 text-blue-600" />
               </div>
               <h3 className="text-2xl font-medium text-gray-900 tracking-wide">
@@ -118,8 +118,8 @@ const Alquileres = () => {
             </div>
 
             {/* Soporte técnico avanzado */}
-            <div className="space-y-6">
-              <div className="w-16 h-16 bg-purple-50 rounded-2xl flex items-center justify-center mb-6">
+            <div className="space-y-6 bg-purple-50/30 rounded-3xl p-8 border border-purple-100/50">
+              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6">
                 <Headphones className="w-8 h-8 text-purple-600" />
               </div>
               <h3 className="text-2xl font-medium text-gray-900 tracking-wide">
@@ -150,38 +150,38 @@ const Alquileres = () => {
           </div>
 
           {/* Beneficios destacados */}
-          <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-3xl p-16">
+          <div className="bg-gradient-to-r from-green-50/50 to-emerald-100/30 rounded-3xl p-16 border border-green-200/30">
             <div className="text-center mb-12">
               <h3 className="text-4xl font-light text-gray-900 mb-4 tracking-tight">
                 ¿POR QUÉ ELEGIR ESTE SERVICIO?
               </h3>
-              <div className="w-20 h-px bg-gray-400 mx-auto"></div>
+              <div className="w-20 h-px bg-emerald-400 mx-auto"></div>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center space-y-4">
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto shadow-lg">
+                <div className="w-16 h-16 bg-white/80 rounded-2xl flex items-center justify-center mx-auto shadow-lg border border-green-100/50">
                   <Shield className="w-8 h-8 text-emerald-600" />
                 </div>
                 <h4 className="text-lg font-medium text-gray-900">SIN INVERSIÓN INICIAL</h4>
               </div>
               
               <div className="text-center space-y-4">
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto shadow-lg">
+                <div className="w-16 h-16 bg-white/80 rounded-2xl flex items-center justify-center mx-auto shadow-lg border border-green-100/50">
                   <TrendingUp className="w-8 h-8 text-emerald-600" />
                 </div>
                 <h4 className="text-lg font-medium text-gray-900">SIN GESTIÓN DE INVENTARIO</h4>
               </div>
               
               <div className="text-center space-y-4">
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto shadow-lg">
+                <div className="w-16 h-16 bg-white/80 rounded-2xl flex items-center justify-center mx-auto shadow-lg border border-green-100/50">
                   <CheckCircle className="w-8 h-8 text-emerald-600" />
                 </div>
                 <h4 className="text-lg font-medium text-gray-900">SIN COSTOS IMPREVISTOS</h4>
               </div>
               
               <div className="text-center space-y-4">
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto shadow-lg">
+                <div className="w-16 h-16 bg-white/80 rounded-2xl flex items-center justify-center mx-auto shadow-lg border border-green-100/50">
                   <Zap className="w-8 h-8 text-emerald-600" />
                 </div>
                 <h4 className="text-lg font-medium text-gray-900">MAYOR EFICIENCIA OPERATIVA</h4>
@@ -192,7 +192,7 @@ const Alquileres = () => {
       </section>
 
       {/* Segunda imagen + información complementaria */}
-      <section className="w-full bg-gray-50 py-24">
+      <section className="w-full bg-gradient-to-br from-emerald-50/30 to-green-50/20 py-24">
         <div className="container mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Información complementaria */}
@@ -234,7 +234,7 @@ const Alquileres = () => {
       </section>
 
       {/* CTA Final */}
-      <section className="w-full bg-white py-20">
+      <section className="w-full bg-gradient-to-br from-white to-green-50/30 py-20">
         <div className="container mx-auto px-8 text-center">
           <h2 className="text-5xl font-light text-gray-900 mb-8 tracking-tight">
             ¿INTERESADO EN NUESTRO SERVICIO?
@@ -245,7 +245,7 @@ const Alquileres = () => {
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-gray-50 rounded-2xl p-8 text-left">
+            <div className="bg-green-50/40 rounded-2xl p-8 text-left border border-green-100/50">
               <h3 className="text-2xl font-medium text-gray-900 mb-4 tracking-wide">
                 ALQUILER DE IMPRESORAS
               </h3>
@@ -254,7 +254,7 @@ const Alquileres = () => {
               </p>
             </div>
             
-            <div className="bg-gray-50 rounded-2xl p-8 text-left">
+            <div className="bg-green-50/40 rounded-2xl p-8 text-left border border-green-100/50">
               <h3 className="text-2xl font-medium text-gray-900 mb-4 tracking-wide">
                 ALQUILER DE EQUIPOS
               </h3>
