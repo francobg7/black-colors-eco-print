@@ -53,40 +53,40 @@ const ServicioTecnico = () => {
           {/* Grid de características principales */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-20">
             {/* Diagnóstico preciso */}
-            <div className="space-y-6 bg-green-50/30 rounded-3xl p-8 border border-green-100/50">
-              <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6">
-                <Search className="w-8 h-8 text-emerald-600" />
+            <div className="space-y-6 bg-green-50/30 rounded-3xl p-8 border border-green-100/50 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-emerald-200/50 cursor-pointer group">
+              <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-emerald-200 group-hover:scale-110">
+                <Search className="w-8 h-8 text-emerald-600 transition-all duration-300 group-hover:text-emerald-700" />
               </div>
-              <h3 className="text-2xl font-medium text-gray-900 tracking-wide">
+              <h3 className="text-2xl font-medium text-gray-900 tracking-wide transition-all duration-300 group-hover:text-emerald-800">
                 🔍 DIAGNÓSTICO PRECISO
               </h3>
-              <p className="text-gray-600 leading-relaxed font-light">
+              <p className="text-gray-600 leading-relaxed font-light transition-all duration-300 group-hover:text-gray-700">
                 Nuestros especialistas detectan y resuelven fallas con rapidez y exactitud, minimizando tiempos de inactividad.
               </p>
             </div>
 
             {/* Repuestos originales */}
-            <div className="space-y-6 bg-blue-50/30 rounded-3xl p-8 border border-blue-100/50">
-              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
-                <Package className="w-8 h-8 text-blue-600" />
+            <div className="space-y-6 bg-blue-50/30 rounded-3xl p-8 border border-blue-100/50 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-blue-200/50 cursor-pointer group">
+              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-blue-200 group-hover:scale-110">
+                <Package className="w-8 h-8 text-blue-600 transition-all duration-300 group-hover:text-blue-700" />
               </div>
-              <h3 className="text-2xl font-medium text-gray-900 tracking-wide">
+              <h3 className="text-2xl font-medium text-gray-900 tracking-wide transition-all duration-300 group-hover:text-blue-800">
                 🧩 REPUESTOS ORIGINALES
               </h3>
-              <p className="text-gray-600 leading-relaxed font-light">
+              <p className="text-gray-600 leading-relaxed font-light transition-all duration-300 group-hover:text-gray-700">
                 Utilizamos exclusivamente piezas originales Brother, asegurando calidad, rendimiento y durabilidad.
               </p>
             </div>
 
             {/* Mantenimiento preventivo y correctivo */}
-            <div className="space-y-6 bg-purple-50/30 rounded-3xl p-8 border border-purple-100/50">
-              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6">
-                <Settings className="w-8 h-8 text-purple-600" />
+            <div className="space-y-6 bg-purple-50/30 rounded-3xl p-8 border border-purple-100/50 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-purple-200/50 cursor-pointer group">
+              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-purple-200 group-hover:scale-110">
+                <Settings className="w-8 h-8 text-purple-600 transition-all duration-300 group-hover:text-purple-700" />
               </div>
-              <h3 className="text-2xl font-medium text-gray-900 tracking-wide">
+              <h3 className="text-2xl font-medium text-gray-900 tracking-wide transition-all duration-300 group-hover:text-purple-800">
                 🔧 MANTENIMIENTO PREVENTIVO Y CORRECTIVO
               </h3>
-              <p className="text-gray-600 leading-relaxed font-light">
+              <p className="text-gray-600 leading-relaxed font-light transition-all duration-300 group-hover:text-gray-700">
                 Prolongá la vida útil de tus dispositivos con mantenimientos periódicos realizados por profesionales especializados.
               </p>
             </div>
@@ -150,21 +150,7 @@ const ServicioTecnico = () => {
         </div>
       </section>
 
-      {/* CTA Final */}
-      <section className="w-full bg-gradient-to-br from-white to-green-50/30 py-20">
-        <div className="container mx-auto px-8 text-center">
-          <h2 className="text-5xl font-light text-gray-900 mb-8 tracking-tight">
-            📩 CONSULTANOS HOY Y RECIBÍ TODA LA INFORMACIÓN QUE NECESITÁS.
-          </h2>
-          
-          <div className="flex justify-center">
-            <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-2xl text-xl font-medium transition-colors duration-300 flex items-center space-x-3">
-              <Mail className="w-6 h-6" />
-              <span>👉 CONTACTANOS</span>
-            </button>
-          </div>
-        </div>
-      </section>
+
 
       <Footer />
     </div>
