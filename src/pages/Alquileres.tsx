@@ -9,17 +9,6 @@ const Alquileres = () => {
       <section className="w-full bg-gradient-to-br from-green-50/40 to-emerald-50/20">
         <div className="container mx-auto px-8 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Primera imagen - 50% ancho */}
-            <div className="relative">
-              <div className="w-full h-[500px] bg-gradient-to-br from-gray-200 to-gray-300 rounded-2xl overflow-hidden shadow-2xl">
-                <div className="w-full h-full bg-gradient-to-br from-emerald-100 to-blue-100 flex items-center justify-center">
-                  <span className="text-gray-500 text-lg font-light tracking-wide">
-                    📸 Imagen: Equipos de Impresión Profesionales
-                  </span>
-                </div>
-              </div>
-            </div>
-
             {/* Introducción del servicio */}
             <div className="space-y-8">
               <div className="space-y-6">
@@ -40,6 +29,17 @@ const Alquileres = () => {
                   Nos encargamos de suministros, mantenimiento y soporte técnico especializado. 
                   Sin costos ocultos, sin sorpresas.
                 </p>
+              </div>
+            </div>
+
+            {/* Primera imagen - 50% ancho */}
+            <div className="relative">
+              <div className="w-full h-[500px] bg-gradient-to-br from-gray-200 to-gray-300 rounded-2xl overflow-hidden shadow-2xl">
+                <div className="w-full h-full bg-gradient-to-br from-emerald-100 to-blue-100 flex items-center justify-center">
+                  <span className="text-gray-500 text-lg font-light tracking-wide">
+                    📸 Imagen: Equipos de Impresión Profesionales
+                  </span>
+                </div>
               </div>
             </div>
           </div>
