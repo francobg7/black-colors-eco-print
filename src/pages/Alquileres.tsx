@@ -1,24 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowLeft, CheckCircle, Wrench, Headphones, Zap, Shield, TrendingUp } from 'lucide-react';
+import { CheckCircle, Wrench, Headphones, Zap, Shield, TrendingUp } from 'lucide-react';
 import Footer from '@/components/Footer';
 
 const Alquileres = () => {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Navegación superior */}
-      <div className="border-b border-gray-100 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-8 py-6">
-          <Link 
-            to="/" 
-            className="inline-flex items-center space-x-3 text-gray-700 hover:text-[#2d472f] transition-colors font-medium tracking-wide"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span className="text-sm uppercase tracking-widest">Volver a Servicios</span>
-          </Link>
-        </div>
-      </div>
-
+    <div className="min-h-screen bg-white pt-16">
       {/* Hero Section - Primera imagen + introducción */}
       <section className="w-full bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-8 py-20">
