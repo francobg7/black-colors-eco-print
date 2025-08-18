@@ -1,8 +1,7 @@
-
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Wifi, Usb, Monitor, Printer } from 'lucide-react';
+import { ArrowLeft, Printer } from 'lucide-react';
 import Footer from '@/components/Footer';
+import { useState } from 'react';
 
 // Datos de impresoras Top Sales
 const topSalesImpresoras = [
@@ -226,11 +225,73 @@ const todasImpresoras = [
 ];
 
 const ProductosImpresoras = () => {
+  const [selectedFilter, setSelectedFilter] = useState('all');
+
+  const filterCategories = {
+    all: 'Todas las impresoras',
+    mono: 'Impresora láser monocromática',
+    color: 'Impresora láser color',
+    tank: 'Tanque de tinta continua color',
+    scanncut: 'Impresora ScanNCut'
+  };
+
+  const filteredImpresoras = todasImpresoras.filter(impresora => {
+    if (selectedFilter === 'all') return true;
+    if (selectedFilter === 'mono') return impresora.tecnologia.toLowerCase().includes('láser monocromática');
+    if (selectedFilter === 'color') return impresora.tecnologia.toLowerCase().includes('láser color');
+    if (selectedFilter === 'tank') return impresora.tecnologia.toLowerCase().includes('inyección de tinta');
+    if (selectedFilter === 'scanncut') return impresora.nombre.toLowerCase().includes('scanncut');
+    
+    return true;
+  });
+
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-6 py-8">
+      {/* Hero Section with integrated search */}
+      <div className="relative">
+        {/* Hero Background */}
+        <div className="relative h-[500px] overflow-hidden">
+          <img 
+            src="/images/impresoras/portada.jpg" 
+            alt="Impresoras Hero"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-gray-50" />
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
+            <h1 className="text-5xl font-bold mb-4">IMPRESORAS</h1>
+            <p className="text-xl max-w-2xl text-center mb-12">
+              Descubre nuestra línea completa de impresoras Brother para todas tus necesidades
+            </p>
+          </div>
+        </div>
+
+        {/* Floating Filter Card */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 translate-y-1/2 w-full px-4">
+          <div className="max-w-5xl mx-auto bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl p-8">
+            <h2 className="text-2xl font-bold text-[#2d472f] text-center mb-6">Impresoras</h2>
+            <div className="flex flex-wrap gap-4 justify-center">
+              {Object.entries(filterCategories).map(([key, label]) => (
+                <button
+                  key={key}
+                  onClick={() => setSelectedFilter(key)}
+                  className={`px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${
+                    selectedFilter === key
+                      ? 'bg-[#2d472f] text-white shadow-lg shadow-[#2d472f]/20 scale-105'
+                      : 'bg-white/80 text-[#2d472f] hover:bg-[#2d472f]/10 border-2 border-[#2d472f]/10 hover:scale-105'
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="container mx-auto px-6 pt-32 pb-16">
         {/* Navegación */}
-        <div className="mb-8">
+        <div className="mb-16">
           <Link 
             to="/productos" 
             className="inline-flex items-center space-x-2 text-[#2d472f] hover:text-[#4b6d3b] transition-colors font-semibold"
@@ -240,284 +301,67 @@ const ProductosImpresoras = () => {
           </Link>
         </div>
 
-        {/* Título principal */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-[#2d472f]">
-            IMPRESORAS
-          </h1>
-          <p className="text-xl sm:text-2xl text-[#4b6d3b] max-w-3xl mx-auto">
-            Tecnología de impresión sustentable para tu empresa
-          </p>
-        </div>
-
-        {/* Sección 1: Top Sales - Layout de dos columnas asimétricas */}
-        <section className="mb-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#2d472f] mb-4">
-              Productos Estrella
-            </h2>
-            <p className="text-lg text-[#4b6d3b]">
-              Nuestras impresoras más vendidas y recomendadas
-            </p>
-          </div>
-
-          {/* Layout de dos columnas asimétricas */}
-          <div className="w-full max-w-7xl mx-auto">
-            <div className="grid grid-cols-3 gap-6 h-[800px]">
-              {/* Columna izquierda - Tarjeta grande */}
-              <div className="col-span-2 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden group">
-                <div className="relative h-full">
-                  {/* Badge destacado */}
-                  <div className="absolute top-6 right-6 z-20">
-                    <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
-                      {topSalesImpresoras[0].destacado}
-                    </span>
-                  </div>
-
-                  {/* Imagen de fondo */}
-                  <div className="absolute inset-0">
-                    <img 
-                      src="/images/impresoras/1.jpg"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                  </div>
-
-                  {/* Contenido */}
-                  <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                    <h3 className="text-3xl font-bold mb-4 group-hover:text-green-300 transition-colors">
-                      {topSalesImpresoras[0].nombre}
-                    </h3>
-
-                    <div className="space-y-3 mb-6">
-                      <div className="flex items-center space-x-3">
-                        <Printer className="w-5 h-5 text-green-300" />
-                        <span className="text-green-200 font-medium">{topSalesImpresoras[0].tecnologia}</span>
-                      </div>
-                      
-                      <div className="text-green-100">
-                        <div className="font-semibold">Resolución: {topSalesImpresoras[0].resolucion}</div>
-                        <div className="font-semibold">Velocidad: {topSalesImpresoras[0].velocidad}</div>
-                      </div>
-
-                      {/* Precio */}
-                      <div className="flex items-center space-x-3">
-                        <span className="text-sm font-semibold text-green-200">Precio:</span>
-                        <div className="flex space-x-2">
-                          <span className="text-lg font-bold text-green-300">{topSalesImpresoras[0].precio}</span>
-                        </div>
-                      </div>
-
-                      {/* Compatibilidad */}
-                      <div className="flex items-center space-x-3">
-                        <span className="text-sm font-semibold text-green-200">Compatibilidad:</span>
-                        <div className="flex flex-wrap gap-2">
-                          {topSalesImpresoras[0].compatibilidad.map((comp, idx) => (
-                            <span key={idx} className="text-xs bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full border border-white/30">
-                              {comp}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+        {/* Products Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          {filteredImpresoras.map((impresora) => (
+            <div 
+              key={impresora.id}
+              className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group"
+            >
+              {/* Product Image */}
+              <div className="relative h-64 overflow-hidden rounded-t-xl">
+                <img 
+                  src={impresora.imagen} 
+                  alt={impresora.nombre}
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
 
-              {/* Columna derecha - Dos tarjetas apiladas */}
-              <div className="col-span-1 flex flex-col gap-6">
-                {/* Tarjeta superior */}
-                <div className="flex-1 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden group">
-                  <div className="relative h-full">
-                    {/* Badge destacado */}
-                    <div className="absolute top-4 right-4 z-20">
-                      <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                        {topSalesImpresoras[1].destacado}
-                      </span>
+              {/* Product Info */}
+              <div className="p-6">
+                <h3 className="text-lg font-bold text-[#2d472f] mb-3 group-hover:text-[#4b6d3b] transition-colors">
+                  {impresora.nombre}
+                </h3>
+
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-2">
+                    <Printer className="w-4 h-4 text-[#4b6d3b]" />
+                    <span className="text-[#4b6d3b] font-medium">{impresora.tecnologia}</span>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-2 text-sm text-gray-600">
+                    <div>
+                      <span className="font-semibold block">Resolución</span>
+                      {impresora.resolucion}
                     </div>
-
-                    {/* Imagen de fondo */}
-                    <div className="absolute inset-0">
-                      <img 
-                        src="/images/impresoras/2.jpg"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
-                    </div>
-
-                    {/* Contenido */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                      <h3 className="text-xl font-bold mb-3 group-hover:text-blue-300 transition-colors">
-                        {topSalesImpresoras[1].nombre}
-                      </h3>
-
-                      <div className="space-y-2">
-                        <div className="flex items-center space-x-2">
-                          <Printer className="w-4 h-4 text-blue-300" />
-                          <span className="text-blue-200 text-sm font-medium">{topSalesImpresoras[1].tecnologia}</span>
-                        </div>
-                        
-                                                <div className="text-blue-100 text-sm">
-                          <div className="font-semibold">Resolución: {topSalesImpresoras[1].resolucion}</div>
-                          <div className="font-semibold">Velocidad: {topSalesImpresoras[1].velocidad}</div>
-                        </div>
-                        
-                        {/* Precio */}
-                        <div className="flex items-center space-x-3">
-                        <span className="text-sm font-semibold text-green-200">Precio:</span>
-                        <div className="flex space-x-2">
-                          <span className="text-lg font-bold text-green-300">{topSalesImpresoras[1].precio}</span>
-                        </div>
-                       </div>
-
-                       {/* Compatibilidad */}
-                       <div className="flex items-center space-x-3">
-                         <span className="text-sm font-semibold text-blue-200">Compatibilidad:</span>
-                         <div className="flex flex-wrap gap-2">
-                           {topSalesImpresoras[1].compatibilidad.map((comp, idx) => (
-                             <span key={idx} className="text-xs bg-white/20 backdrop-blur-sm text-white px-2 py-1 rounded-full border border-white/30">
-                               {comp}
-                             </span>
-                           ))}
-                         </div>
-                       </div>
-                      </div>
+                    <div>
+                      <span className="font-semibold block">Velocidad</span>
+                      {impresora.velocidad}
                     </div>
                   </div>
-                </div>
 
-                {/* Tarjeta inferior */}
-                <div className="flex-1 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden group">
-                  <div className="relative h-full">
-                    {/* Badge destacado */}
-                    <div className="absolute top-4 right-4 z-20">
-                      <span className="bg-gradient-to-r from-red-500 to-pink-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                        {topSalesImpresoras[2].destacado}
+                  {/* Price */}
+                  <div className="mt-4">
+                    <span className="text-2xl font-bold text-[#2d472f]">{impresora.precio}</span>
+                  </div>
+
+                  {/* Features */}
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {impresora.compatibilidad.map((comp, idx) => (
+                      <span 
+                        key={idx} 
+                        className="text-xs bg-[#e8f5e9] text-[#2d472f] px-3 py-1 rounded-full font-medium"
+                      >
+                        {comp}
                       </span>
-                    </div>
-
-                    {/* Imagen de fondo */}
-                    <div className="absolute inset-0">
-                      <img 
-                        src="/images/impresoras/3.jpg"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
-                    </div>
-
-                    {/* Contenido */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                      <h3 className="text-xl font-bold mb-3 group-hover:text-red-300 transition-colors">
-                        {topSalesImpresoras[2].nombre}
-                      </h3>
-
-                      <div className="space-y-2">
-                        <div className="flex items-center space-x-2">
-                          <Printer className="w-4 h-4 text-red-300" />
-                          <span className="text-red-200 text-sm font-medium">{topSalesImpresoras[2].tecnologia}</span>
-                        </div>
-                        
-                                                <div className="text-red-100 text-sm">
-                          <div className="font-semibold">Resolución: {topSalesImpresoras[2].resolucion}</div>
-                          <div className="font-semibold">Velocidad: {topSalesImpresoras[2].velocidad}</div>
-                        </div>
-
-                         {/* Precio */}
-                       <div className="flex items-center space-x-3">
-                         <span className="text-sm font-semibold text-green-200">Precio:</span>
-                         <div className="flex space-x-2">
-                           <span className="text-lg font-bold text-green-300">{topSalesImpresoras[2].precio}</span>
-                         </div>
-                      </div>
-
-                      {/* Compatibilidad */}
-                      <div className="flex items-center space-x-3">
-                        <span className="text-sm font-semibold text-red-200">Compatibilidad:</span>
-                        <div className="flex flex-wrap gap-2">
-                          {topSalesImpresoras[2].compatibilidad.map((comp, idx) => (
-                            <span key={idx} className="text-xs bg-white/20 backdrop-blur-sm text-white px-2 py-1 rounded-full border border-white/30">
-                              {comp}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* Sección 2: Cuadrilla general */}
-        <section>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#2d472f] mb-4">
-              Catálogo Completo
-            </h2>
-            <p className="text-lg text-[#4b6d3b]">
-              Nuestra gama completa de impresoras Brother
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {todasImpresoras.map((impresora) => (
-              <div 
-                key={impresora.id}
-                className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
-              >
-                {/* Imagen */}
-                <div className="h-48 overflow-hidden">
-                  <img 
-                    src={impresora.imagen} 
-                    alt={impresora.nombre}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                {/* Contenido técnico */}
-                <div className="p-4">
-                  <h3 className="text-lg font-bold text-[#2d472f] mb-3">
-                    {impresora.nombre}
-                  </h3>
-
-                  <div className="space-y-2 text-sm">
-                    <div className="flex items-center space-x-2">
-                      <Printer className="w-3 h-3 text-[#4b6d3b]" />
-                      <span className="text-[#4b6d3b] font-medium">{impresora.tecnologia}</span>
-                    </div>
-                    
-                    <div className="text-gray-600">
-                      <div className="font-semibold">Resolución: {impresora.resolucion}</div>
-                      <div className="font-semibold">Velocidad: {impresora.velocidad}</div>
-                    </div>
-
-                    {/* Precio */}
-                    <div className="flex items-center space-x-1">
-                      <span className="text-xs font-semibold text-[#2d472f]">Precio:</span>
-                      <div className="flex space-x-1">
-                        <span className="text-sm font-bold text-[#4b6d3b]">{impresora.precio}</span>
-                      </div>
-                    </div>
-
-                    {/* Compatibilidad */}
-                    <div className="flex flex-wrap gap-1">
-                      {impresora.compatibilidad.slice(0, 2).map((comp, idx) => (
-                        <span key={idx} className="text-xs bg-[#2d472f] text-white px-1.5 py-0.5 rounded">
-                          {comp}
-                        </span>
-                      ))}
-                      {impresora.compatibilidad.length > 2 && (
-                        <span className="text-xs text-[#4b6d3b]">+{impresora.compatibilidad.length - 2} más</span>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+          ))}
+        </div>
       </div>
       <Footer />
     </div>
