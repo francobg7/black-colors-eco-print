@@ -26,6 +26,7 @@ const Navigation = () => {
   ];
 
   const serviciosSubmenu = [
+    { name: 'SERVICIO TECNICO', path: '/servicios/tecnico' },
     { name: 'LEASING SUSTENTABLE', path: '/servicios/leasing' },
     { name: 'ALQUILERES', path: '/servicios/alquileres' },
     { name: 'SERVICIOS DIFERENCIADOS', path: '/servicios/diferenciados' }
