@@ -72,7 +72,7 @@ const Leasing = () => {
           {/* Grid de servicios principales */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-20">
             {/* Alquiler de Impresoras */}
-            <div className="space-y-6">
+            <div className="space-y-6 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer">
               <div className="w-full h-48 rounded-2xl overflow-hidden mb-6">
                 <img 
                   src="/images/impresoras/1.jpg" 
@@ -92,7 +92,7 @@ const Leasing = () => {
             </div>
 
             {/* Insumos Siempre Disponibles */}
-            <div className="space-y-6">
+            <div className="space-y-6 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer">
               <div className="w-full h-48 rounded-2xl overflow-hidden mb-6">
                 <img 
                   src="/images/cartuchos/portada.jpg" 
@@ -112,7 +112,7 @@ const Leasing = () => {
             </div>
 
             {/* Gestión Responsable de Desechos */}
-            <div className="space-y-6">
+            <div className="space-y-6 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer">
               <div className="w-full h-48 rounded-2xl overflow-hidden mb-6">
                 <img 
                   src="/images/reciclaje-icon.png" 
