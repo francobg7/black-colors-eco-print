@@ -149,45 +149,95 @@ const ServiciosDiferenciados = () => {
             </div>
           </div>
 
-          {/* Beneficios destacados */}
-          <div className="bg-gradient-to-r from-green-50/50 to-emerald-100/30 rounded-3xl p-16 border border-green-200/30">
-            <div className="text-center mb-12">
-              <h3 className="text-4xl font-light text-gray-900 mb-4 tracking-tight">
-                ¿POR QUÉ ELEGIR ESTE SERVICIO?
-              </h3>
-              <div className="w-20 h-px bg-emerald-400 mx-auto"></div>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="text-center space-y-4">
-                <div className="w-16 h-16 bg-white/80 rounded-2xl flex items-center justify-center mx-auto shadow-lg border border-green-100/50">
-                  <Shield className="w-8 h-8 text-emerald-600" />
-                </div>
-                <h4 className="text-lg font-medium text-gray-900">SOLUCIONES A MEDIDA</h4>
+          {/* Software Especializado de Gestión de Impresoras */}
+          <div className="w-full bg-gradient-to-r from-blue-50/50 to-indigo-100/30 py-24">
+            <div className="container mx-auto px-8">
+              <div className="text-center mb-20">
+                <h3 className="text-5xl font-light text-gray-900 mb-6 tracking-tight">
+                  SOFTWARE ESPECIALIZADO DE GESTIÓN
+                </h3>
+                <h4 className="text-4xl font-light text-blue-800 mb-6 tracking-tight">
+                  IMPRESORAS Y TINTAS
+                </h4>
+                <div className="w-24 h-px bg-blue-400 mx-auto mb-8"></div>
+                <p className="text-xl text-gray-700 leading-relaxed font-light max-w-5xl mx-auto">
+                  El software de gestión de impresoras de BlackColors ofrece a los proveedores de servicios y departamentos de TI una visión completa y detallada de todos los dispositivos de impresión conectados a la red. Este innovador sistema de software se distingue por sus funcionalidades avanzadas, que incluyen:
+                </p>
               </div>
-              
-              <div className="text-center space-y-4">
-                <div className="w-16 h-16 bg-white/80 rounded-2xl flex items-center justify-center mx-auto shadow-lg border border-green-100/50">
-                  <TrendingUp className="w-8 h-8 text-emerald-600" />
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+                {/* Información detallada sobre el rendimiento */}
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-4 mb-6">
+                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                      <TrendingUp className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <h4 className="text-2xl font-medium text-gray-900 tracking-wide">
+                      INFORMACIÓN DETALLADA SOBRE EL RENDIMIENTO
+                    </h4>
+                  </div>
+                  <p className="text-lg text-gray-600 leading-relaxed font-light">
+                    Proporciona métricas precisas sobre el estado de cada equipo de impresión, tales como el número de páginas impresas, los días restantes hasta que los consumibles (como tinta y tóner) se agoten, entre otros datos cruciales para la planificación de mantenimiento y reposición.
+                  </p>
                 </div>
-                <h4 className="text-lg font-medium text-gray-900">EXPERTOS ESPECIALIZADOS</h4>
+
+                {/* Alertas inteligentes y personalizables */}
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-4 mb-6">
+                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                      <Zap className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <h4 className="text-2xl font-medium text-gray-900 tracking-wide">
+                      ALERTAS INTELIGENTES Y PERSONALIZABLES
+                    </h4>
+                  </div>
+                  <p className="text-lg text-gray-600 leading-relaxed font-light">
+                    El software genera alertas únicamente cuando es absolutamente necesario, reduciendo significativamente las falsas alarmas y mejorando la eficiencia operativa. Estas alertas están diseñadas para ser proactivas y están orientadas a optimizar la gestión de los dispositivos sin generar notificaciones innecesarias.
+                  </p>
+                </div>
+
+                {/* Inventario automático */}
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-4 mb-6">
+                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                      <CheckCircle className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <h4 className="text-2xl font-medium text-gray-900 tracking-wide">
+                      INVENTARIO AUTOMÁTICO
+                    </h4>
+                  </div>
+                  <p className="text-lg text-gray-600 leading-relaxed font-light">
+                    Realiza un inventario en tiempo real de todos los dispositivos de impresión conectados a la red, permitiendo una visibilidad completa del parque de equipos, sin necesidad de intervenciones manuales, lo que facilita la gestión de recursos y la optimización de operaciones.
+                  </p>
+                </div>
+
+                {/* Diagnósticos remotos */}
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-4 mb-6">
+                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                      <Wrench className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <h4 className="text-2xl font-medium text-gray-900 tracking-wide">
+                      DIAGNÓSTICOS REMOTOS
+                    </h4>
+                  </div>
+                  <p className="text-lg text-gray-600 leading-relaxed font-light">
+                    A través de esta funcionalidad, se pueden realizar diagnósticos detallados de los equipos de forma remota, lo que reduce considerablemente la necesidad de visitas técnicas presenciales. Esto no solo reduce costos operativos, sino que también mejora la rapidez en la resolución de problemas y la satisfacción del cliente.
+                  </p>
+                </div>
               </div>
-              
-              <div className="text-center space-y-4">
-                <div className="w-16 h-16 bg-white/80 rounded-2xl flex items-center justify-center mx-auto shadow-lg border border-green-100/50">
-                  <CheckCircle className="w-8 h-8 text-emerald-600" />
+
+              <div className="text-center">
+                <div className="max-w-4xl mx-auto">
+                  <p className="text-xl text-gray-700 leading-relaxed font-light">
+                    Este servicio diferenciado está diseñado para ofrecer una gestión eficiente, reducción de costos operativos y mejorar la experiencia de los clientes, asegurando que los equipos de impresión operen siempre en condiciones óptimas.
+                  </p>
                 </div>
-                <h4 className="text-lg font-medium text-gray-900">ATENCIÓN PRIORITARIA</h4>
-              </div>
-              
-              <div className="text-center space-y-4">
-                <div className="w-16 h-16 bg-white/80 rounded-2xl flex items-center justify-center mx-auto shadow-lg border border-green-100/50">
-                  <Zap className="w-8 h-8 text-emerald-600" />
-                </div>
-                <h4 className="text-lg font-medium text-gray-900">RESULTADOS GARANTIZADOS</h4>
               </div>
             </div>
           </div>
+
+
         </div>
       </section>
 
