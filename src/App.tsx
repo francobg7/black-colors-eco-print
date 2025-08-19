@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -7,17 +6,22 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Index from "./pages/Index";
 
-import ProductosImpresoras from "./pages/ProductosImpresoras";
-import ProductosCartuchos from "./pages/ProductosCartuchos";
-import ProductosToners from "./pages/ProductosToners";
-import ProductosResmas from "./pages/ProductosResmas";
-import Leasing from "./pages/Leasing";
-import Alquileres from "./pages/Alquileres";
-import ServiciosDiferenciados from "./pages/ServiciosDiferenciados";
-import ServicioTecnico from "./pages/ServicioTecnico";
-import Transformar from "./pages/Transformar";
-import Eventos from "./pages/Eventos";
-import Contacto from "./pages/Contacto";
+// Importaciones de productos
+import ProductosImpresoras from "./pages/productos/impresoras/index";
+import ProductosCartuchos from "./pages/productos/cartuchos/index";
+import ProductosToners from "./pages/productos/toners/index";
+import ProductosResmas from "./pages/productos/resmas/index";
+
+// Importaciones de servicios
+import Leasing from "./pages/servicios/leasing/index";
+import Alquileres from "./pages/servicios/alquileres/index";
+import ServiciosDiferenciados from "./pages/servicios/diferenciados/index";
+import ServicioTecnico from "./pages/servicios/tecnico/index";
+
+// Otras páginas
+import Transformar from "./pages/transformar/index";
+import Eventos from "./pages/eventos/index";
+import Contacto from "./pages/contacto/index";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,7 +36,6 @@ const App = () => (
         <div>
           <Routes>
             <Route path="/" element={<Index />} />
-
             <Route path="/productos/impresoras" element={<ProductosImpresoras />} />
             <Route path="/productos/toners" element={<ProductosToners />} />
             <Route path="/productos/cartuchos" element={<ProductosCartuchos />} />
@@ -44,7 +47,6 @@ const App = () => (
             <Route path="/transformar" element={<Transformar />} />
             <Route path="/eventos" element={<Eventos />} />
             <Route path="/contacto" element={<Contacto />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
