@@ -343,24 +343,24 @@ const todasImpresoras = [
   },
   {
     id: 10,
-    nombre: 'BROTHER HL-5210 DN',
-    modelo: 'HL-5210 DN',
-    descripcion: 'Impresora Láser Monocromática con Red Full Duplex',
-    slug: 'brother-hl-5210-dn',
+    nombre: 'BROTHER HL-L5210DN',
+    modelo: 'HL-L5210DN',
+    descripcion: 'Impresora Láser Monocromática con Red',
+    slug: 'brother-hl-l5210-dn',
     imagen: '/images/impresoras/BROTHER-HL-5210-DN.jpg',
     imagenes: [
       '/images/impresoras/BROTHER-HL-5210-DN.jpg',
       '/images/impresoras/imgi_32_Brother-5210dn-700x804.png'
     ],
     tecnologia: 'Láser monocromática',
-    resolucion: '2400 x 600 DPI',
-    velocidad: '42 ppm',
+    resolucion: '1200 x 1200 DPI',
+    velocidad: '48 ppm',
     precio: 'Consultar precio',
-    compatibilidad: ['Red Ethernet', 'Full Duplex'],
+    compatibilidad: ['Red Ethernet', 'USB', 'Dúplex automático'],
     caracteristicas: {
       impresion: {
-        velocidadMono: '42 ppm',
-        resolucion: '2400 x 600 DPI',
+        velocidadMono: '48 ppm',
+        resolucion: '1200 x 1200 DPI',
         primeraPagina: 'Menos de 8.5 segundos'
       },
       conectividad: {
@@ -376,7 +376,43 @@ const todasImpresoras = [
         duplex: 'Automático'
       },
       capacidad: {
-        papel: '250 hojas + 50 hojas multipropósito',
+        papel: '250 hojas + multipropósito 100 hojas',
+        salida: '150 hojas'
+      }
+    }
+  },
+  {
+    id: 30,
+    nombre: 'BROTHER HL-L5210DW',
+    modelo: 'HL-L5210DW',
+    descripcion: 'Impresora Láser Monocromática con Red/WiFi',
+    slug: 'brother-hl-l5210-dw',
+    imagen: '/images/impresoras/BROTHER-HL-5210-DN.jpg',
+    tecnologia: 'Láser monocromática',
+    resolucion: '1200 x 1200 DPI',
+    velocidad: '48 ppm',
+    precio: 'Consultar precio',
+    compatibilidad: ['WiFi', 'Red Ethernet', 'USB', 'Dúplex automático'],
+    caracteristicas: {
+      impresion: {
+        velocidadMono: '48 ppm',
+        resolucion: '1200 x 1200 DPI',
+        primeraPagina: 'Menos de 8.5 segundos'
+      },
+      conectividad: {
+        wifi: 'Sí',
+        ethernet: 'Sí',
+        usb: 'Sí',
+        movil: 'Brother Mobile Connect'
+      },
+      funciones: {
+        escaner: 'No',
+        copiadora: 'No',
+        fax: 'No',
+        duplex: 'Automático'
+      },
+      capacidad: {
+        papel: '250 hojas + multipropósito 100 hojas',
         salida: '150 hojas'
       }
     }
@@ -496,6 +532,693 @@ const todasImpresoras = [
         salida: '150 hojas'
       }
     }
+  },
+  // Impresoras Láser Monocromáticas adicionales
+  {
+    id: 14,
+    nombre: 'BROTHER HL-L2320D',
+    modelo: 'HL-L2320D',
+    descripcion: 'Impresora Láser Monocromática con Dúplex Automático',
+    slug: 'brother-hl-l2320d',
+    imagen: '/images/impresoras/BROTHER-HL-L2320D.png',
+    imagenes: [
+      '/images/impresoras/BROTHER-HL-L2320D.png',
+      '/images/impresoras/BROTHER-HL-L2320D-2.png'
+    ],
+    tecnologia: 'Láser monocromática',
+    resolucion: '2400 x 600 DPI',
+    velocidad: '30 ppm',
+    precio: 'Consultar precio',
+    compatibilidad: ['USB', 'Dúplex Automático'],
+    caracteristicas: {
+      impresion: {
+        velocidadMono: '30 ppm',
+        resolucion: '2400 x 600 DPI',
+        primeraPagina: 'Menos de 10 segundos'
+      },
+      conectividad: {
+        wifi: 'No',
+        ethernet: 'No',
+        usb: 'Sí',
+        movil: 'No'
+      },
+      funciones: {
+        escaner: 'No',
+        copiadora: 'No',
+        fax: 'No',
+        duplex: 'Automático'
+      },
+      capacidad: {
+        papel: '250 hojas',
+        salida: '100 hojas'
+      }
+    }
+  },
+  {
+    id: 15,
+    nombre: 'BROTHER DCP-L2660DW',
+    modelo: 'DCP-L2660DW',
+    descripcion: 'Multifunción Láser Monocromática con Red/WiFi',
+    slug: 'brother-dcp-l2660dw',
+    imagen: '/images/impresoras/BROTHER-DCP-L2660DW.jpg',
+    imagenes: [
+      '/images/impresoras/BROTHER-DCP-L2660DW.jpg',
+      '/images/impresoras/BROTHER-DCP-L2660DW-2.jpg'
+    ],
+    tecnologia: 'Láser monocromática',
+    resolucion: '1200 x 1200 DPI',
+    velocidad: '34-36 ppm',
+    precio: 'Consultar precio',
+    compatibilidad: ['WiFi', 'Red Ethernet', 'Escáner integrado', 'Dúplex Automático'],
+    caracteristicas: {
+      impresion: {
+        velocidadMono: '34-36 ppm',
+        resolucion: '1200 x 1200 DPI',
+        primeraPagina: 'Menos de 8 segundos'
+      },
+      conectividad: {
+        wifi: 'Sí',
+        ethernet: 'Sí',
+        usb: 'Sí',
+        movil: 'Brother Mobile Connect'
+      },
+      funciones: {
+        escaner: 'Sí - hasta 1200 x 2400 DPI',
+        copiadora: 'Sí',
+        fax: 'No',
+        duplex: 'Automático'
+      },
+      capacidad: {
+        papel: '250 hojas + 100 hojas multipropósito',
+        salida: '150 hojas'
+      }
+    }
+  },
+  {
+    id: 16,
+    nombre: 'BROTHER DCP-L5610DN',
+    modelo: 'DCP-L5610DN',
+    descripcion: 'Multifunción Láser Monocromática con Red',
+    slug: 'brother-dcp-l5610dn',
+    imagen: '/images/impresoras/BROTHER-DCP-L5610DN.png',
+    imagenes: [
+      '/images/impresoras/BROTHER-DCP-L5610DN.png',
+      '/images/impresoras/BROTHER-DCP-L5610DN-2.png'
+    ],
+    tecnologia: 'Láser monocromática',
+    resolucion: '1200 x 1200 DPI',
+    velocidad: '48-50 ppm',
+    precio: 'Consultar precio',
+    compatibilidad: ['Red Ethernet', 'Escáner integrado', 'Dúplex Automático'],
+    caracteristicas: {
+      impresion: {
+        velocidadMono: '48-50 ppm',
+        resolucion: '1200 x 1200 DPI',
+        primeraPagina: 'Menos de 8 segundos'
+      },
+      conectividad: {
+        wifi: 'No',
+        ethernet: 'Sí',
+        usb: 'Sí',
+        movil: 'No'
+      },
+      funciones: {
+        escaner: 'Sí - hasta 1200 x 2400 DPI',
+        copiadora: 'Sí',
+        fax: 'No',
+        duplex: 'Automático'
+      },
+      capacidad: {
+        papel: '250 hojas + 100 hojas multipropósito',
+        salida: '150 hojas'
+      }
+    }
+  },
+  {
+    id: 17,
+    nombre: 'BROTHER MFC-L59150DW',
+    modelo: 'MFC-L59150DW',
+    descripcion: 'Multifunción Láser Monocromática con Red/WiFi Full Dúplex + Fax',
+    slug: 'brother-mfc-l59150dw',
+    imagen: '/images/impresoras/BROTHER-MFC-L59150DW.jpg',
+    imagenes: [
+      '/images/impresoras/BROTHER-MFC-L59150DW.jpg',
+      '/images/impresoras/BROTHER-MFC-L59150DW-2.jpg'
+    ],
+    tecnologia: 'Láser monocromática',
+    resolucion: '1200 x 1200 DPI',
+    velocidad: '50-52 ppm',
+    precio: 'Consultar precio',
+    compatibilidad: ['WiFi', 'Red Ethernet', 'Escáner integrado', 'Full Duplex', 'Fax'],
+    caracteristicas: {
+      impresion: {
+        velocidadMono: '50-52 ppm',
+        resolucion: '1200 x 1200 DPI',
+        primeraPagina: 'Menos de 8 segundos'
+      },
+      conectividad: {
+        wifi: 'Sí',
+        ethernet: 'Sí',
+        usb: 'Sí',
+        movil: 'Brother Mobile Connect'
+      },
+      funciones: {
+        escaner: 'Sí - hasta 1200 x 2400 DPI',
+        copiadora: 'Sí',
+        fax: 'Sí',
+        duplex: 'Full Dúplex'
+      },
+      capacidad: {
+        papel: '250 hojas + 100 hojas multipropósito',
+        salida: '150 hojas'
+      }
+    }
+  },
+  {
+    id: 18,
+    nombre: 'BROTHER MFC-L69150DW',
+    modelo: 'MFC-L69150DW',
+    descripcion: 'Multifunción Láser Monocromática con Red/WiFi Full Dúplex + Fax',
+    slug: 'brother-mfc-l69150dw',
+    imagen: '/images/impresoras/BROTHER-MFC-L69150DW.jpg',
+    imagenes: [
+      '/images/impresoras/BROTHER-MFC-L69150DW.jpg',
+      '/images/impresoras/BROTHER-MFC-L69150DW-2.jpg'
+    ],
+    tecnologia: 'Láser monocromática',
+    resolucion: '1200 x 1200 DPI',
+    velocidad: '50-52 ppm',
+    precio: 'Consultar precio',
+    compatibilidad: ['WiFi', 'Red Ethernet', 'Escáner integrado', 'Full Duplex', 'Fax'],
+    caracteristicas: {
+      impresion: {
+        velocidadMono: '50-52 ppm',
+        resolucion: '1200 x 1200 DPI',
+        primeraPagina: 'Menos de 8 segundos'
+      },
+      conectividad: {
+        wifi: 'Sí',
+        ethernet: 'Sí',
+        usb: 'Sí',
+        movil: 'Brother Mobile Connect'
+      },
+      funciones: {
+        escaner: 'Sí - hasta 1200 x 2400 DPI',
+        copiadora: 'Sí',
+        fax: 'Sí',
+        duplex: 'Full Dúplex'
+      },
+      capacidad: {
+        papel: '550 hojas + 100 hojas multipropósito',
+        salida: '150 hojas'
+      }
+    }
+  },
+  // Impresoras Láser Color
+  {
+    id: 19,
+    nombre: 'BROTHER HL-L8360CDW',
+    modelo: 'HL-L8360CDW',
+    descripcion: 'Impresora Láser Color con Red/WiFi',
+    slug: 'brother-hl-l8360cdw',
+    imagen: '/images/impresoras/BROTHER-HL-L8360CDW.jpg',
+    imagenes: [
+      '/images/impresoras/BROTHER-HL-L8360CDW.jpg',
+      '/images/impresoras/BROTHER-HL-L8360CDW-2.jpg'
+    ],
+    tecnologia: 'Láser color',
+    resolucion: '2400 x 600 DPI',
+    velocidad: '33 ppm',
+    precio: 'Consultar precio',
+    compatibilidad: ['WiFi', 'Red Ethernet', 'Color', 'Dúplex Automático'],
+    caracteristicas: {
+      impresion: {
+        velocidadColor: '33 ppm',
+        velocidadMono: '33 ppm',
+        resolucion: '2400 x 600 DPI',
+        primeraPagina: 'Menos de 9 segundos'
+      },
+      conectividad: {
+        wifi: 'Sí',
+        ethernet: 'Sí',
+        usb: 'Sí',
+        movil: 'Brother Mobile Connect'
+      },
+      funciones: {
+        escaner: 'No',
+        copiadora: 'No',
+        fax: 'No',
+        duplex: 'Automático'
+      },
+      capacidad: {
+        papel: '250 hojas',
+        salida: '150 hojas'
+      }
+    }
+  },
+  // Multifunción Inkjet (Tinta Continua)
+  {
+    id: 20,
+    nombre: 'BROTHER DCP-T220',
+    modelo: 'DCP-T220',
+    descripcion: 'Multifunción Inkjet con Sistema de Tinta Continua',
+    slug: 'brother-dcp-t220',
+    imagen: '/images/impresoras/BROTHER-DCP-T220.png',
+    imagenes: [
+      '/images/impresoras/BROTHER-DCP-T220.png',
+      '/images/impresoras/BROTHER-DCP-T220-2.png'
+    ],
+    tecnologia: 'Inkjet',
+    resolucion: '6000 x 1200 DPI',
+    velocidad: '28 ppm Negro / 11 ppm Color',
+    precio: 'Consultar precio',
+    compatibilidad: ['USB', 'Escáner integrado', 'Color', 'Tinta Continua'],
+    caracteristicas: {
+      impresion: {
+        velocidadMono: '28 ppm',
+        velocidadColor: '11 ppm',
+        resolucion: '6000 x 1200 DPI',
+        primeraPagina: 'Menos de 10 segundos'
+      },
+      conectividad: {
+        wifi: 'No',
+        ethernet: 'No',
+        usb: 'Sí',
+        movil: 'No'
+      },
+      funciones: {
+        escaner: 'Sí - hasta 1200 x 2400 DPI',
+        copiadora: 'Sí',
+        fax: 'No',
+        duplex: 'Manual'
+      },
+      capacidad: {
+        papel: '150 hojas',
+        salida: '50 hojas'
+      }
+    }
+  },
+  {
+    id: 21,
+    nombre: 'BROTHER DCP-T420W',
+    modelo: 'DCP-T420W',
+    descripcion: 'Multifunción Inkjet con Sistema de Tinta Continua y WiFi',
+    slug: 'brother-dcp-t420w',
+    imagen: '/images/impresoras/BROTHER-DCP-T420W.jpg',
+    imagenes: [
+      '/images/impresoras/BROTHER-DCP-T420W.jpg',
+      '/images/impresoras/BROTHER-DCP-T420W-2.jpg',
+      '/images/impresoras/BROTHER-DCP-T420W-3.jpg'
+    ],
+    tecnologia: 'Inkjet',
+    resolucion: '6000 x 1200 DPI',
+    velocidad: '28 ppm Negro / 11 ppm Color',
+    precio: 'Consultar precio',
+    compatibilidad: ['USB', 'WiFi', 'Escáner integrado', 'Color', 'Tinta Continua'],
+    caracteristicas: {
+      impresion: {
+        velocidadMono: '28 ppm',
+        velocidadColor: '11 ppm',
+        resolucion: '6000 x 1200 DPI',
+        primeraPagina: 'Menos de 10 segundos'
+      },
+      conectividad: {
+        wifi: 'Sí',
+        ethernet: 'No',
+        usb: 'Sí',
+        movil: 'Brother Mobile Connect'
+      },
+      funciones: {
+        escaner: 'Sí - hasta 1200 x 2400 DPI',
+        copiadora: 'Sí',
+        fax: 'No',
+        duplex: 'Manual'
+      },
+      capacidad: {
+        papel: '150 hojas',
+        salida: '50 hojas'
+      }
+    }
+  },
+  {
+    id: 22,
+    nombre: 'BROTHER DCP-T720DW',
+    modelo: 'DCP-T720DW',
+    descripcion: 'Multifunción Inkjet con Sistema de Tinta Continua, WiFi y Dúplex',
+    slug: 'brother-dcp-t720dw',
+    imagen: '/images/impresoras/BROTHER-DCP-T720DW.png',
+    imagenes: [
+      '/images/impresoras/BROTHER-DCP-T720DW.png',
+      '/images/impresoras/BROTHER-DCP-T720DW-2.jpg',
+      '/images/impresoras/BROTHER-DCP-T720DW-3.jpg'
+    ],
+    tecnologia: 'Inkjet',
+    resolucion: '6000 x 1200 DPI',
+    velocidad: '30 ppm Negro / 26 ppm Color',
+    precio: 'Consultar precio',
+    compatibilidad: ['USB', 'WiFi', 'Escáner integrado', 'Color', 'Tinta Continua', 'Dúplex Automático'],
+    caracteristicas: {
+      impresion: {
+        velocidadMono: '30 ppm',
+        velocidadColor: '26 ppm',
+        resolucion: '6000 x 1200 DPI',
+        primeraPagina: 'Menos de 10 segundos'
+      },
+      conectividad: {
+        wifi: 'Sí',
+        ethernet: 'No',
+        usb: 'Sí',
+        movil: 'Brother Mobile Connect'
+      },
+      funciones: {
+        escaner: 'Sí - hasta 1200 x 2400 DPI',
+        copiadora: 'Sí',
+        fax: 'No',
+        duplex: 'Automático'
+      },
+      capacidad: {
+        papel: '150 hojas',
+        salida: '50 hojas'
+      }
+    }
+  },
+  {
+    id: 23,
+    nombre: 'BROTHER DCP-T820DW',
+    modelo: 'DCP-T820DW',
+    descripcion: 'Multifunción Inkjet con Sistema de Tinta Continua, Red/WiFi y Dúplex',
+    slug: 'brother-dcp-t820dw',
+    imagen: '/images/impresoras/BROTHER-DCP-T820DW.jpg',
+    imagenes: [
+      '/images/impresoras/BROTHER-DCP-T820DW.jpg',
+      '/images/impresoras/BROTHER-DCP-T820DW-2.jpg'
+    ],
+    tecnologia: 'Inkjet',
+    resolucion: '6000 x 1200 DPI',
+    velocidad: '30 ppm Negro / 26 ppm Color',
+    precio: 'Consultar precio',
+    compatibilidad: ['USB', 'WiFi', 'Red Ethernet', 'Escáner integrado', 'Color', 'Tinta Continua', 'Dúplex Automático'],
+    caracteristicas: {
+      impresion: {
+        velocidadMono: '30 ppm',
+        velocidadColor: '26 ppm',
+        resolucion: '6000 x 1200 DPI',
+        primeraPagina: 'Menos de 10 segundos'
+      },
+      conectividad: {
+        wifi: 'Sí',
+        ethernet: 'Sí',
+        usb: 'Sí',
+        movil: 'Brother Mobile Connect'
+      },
+      funciones: {
+        escaner: 'Sí - hasta 1200 x 2400 DPI',
+        copiadora: 'Sí',
+        fax: 'No',
+        duplex: 'Automático'
+      },
+      capacidad: {
+        papel: '150 hojas',
+        salida: '80 hojas'
+      }
+    }
+  },
+  {
+    id: 24,
+    nombre: 'BROTHER MFC-T4500DW',
+    modelo: 'MFC-T4500DW',
+    descripcion: 'Multifunción Inkjet A3 con Sistema de Tinta Continua, Red/WiFi y Fax',
+    slug: 'brother-mfc-t4500dw',
+    imagen: '/images/impresoras/BROTHER-MFC-T4500DW.png',
+    imagenes: [
+      '/images/impresoras/BROTHER-MFC-T4500DW.png',
+      '/images/impresoras/BROTHER-MFC-T4500DW-2.png'
+    ],
+    tecnologia: 'Inkjet',
+    resolucion: '6000 x 1200 DPI',
+    velocidad: '35 ppm Negro / 27 ppm Color',
+    precio: 'Consultar precio',
+    compatibilidad: ['USB', 'WiFi', 'Red Ethernet', 'Escáner integrado', 'Color', 'Tinta Continua', 'A3', 'Fax'],
+    caracteristicas: {
+      impresion: {
+        velocidadMono: '35 ppm',
+        velocidadColor: '27 ppm',
+        resolucion: '6000 x 1200 DPI',
+        primeraPagina: 'Menos de 10 segundos'
+      },
+      conectividad: {
+        wifi: 'Sí',
+        ethernet: 'Sí',
+        usb: 'Sí',
+        movil: 'Brother Mobile Connect'
+      },
+      funciones: {
+        escaner: 'Sí - hasta A3',
+        copiadora: 'Sí - hasta A3',
+        fax: 'Sí',
+        duplex: 'Hasta A4'
+      },
+      capacidad: {
+        papel: '250 hojas + 100 hojas multipropósito',
+        salida: '100 hojas'
+      }
+    }
+  },
+  {
+    id: 25,
+    nombre: 'BROTHER MFC-J6955DW',
+    modelo: 'MFC-J6955DW',
+    descripcion: 'Multifunción Inkjet A3 con Cartucho, Red/WiFi y Full Dúplex + Fax',
+    slug: 'brother-mfc-j6955dw',
+    imagen: '/images/impresoras/BROTHER-MFC-J6955DW.jpg',
+    imagenes: [
+      '/images/impresoras/BROTHER-MFC-J6955DW.jpg',
+      '/images/impresoras/BROTHER-MFC-J6955DW-2.jpg'
+    ],
+    tecnologia: 'Inkjet',
+    resolucion: '6000 x 1200 DPI',
+    velocidad: '30 ppm Negro / 30 ppm Color',
+    precio: 'Consultar precio',
+    compatibilidad: ['USB', 'WiFi', 'Red Ethernet', 'Escáner integrado', 'Color', 'A3', 'Full Duplex', 'Fax'],
+    caracteristicas: {
+      impresion: {
+        velocidadMono: '30 ppm',
+        velocidadColor: '30 ppm',
+        resolucion: '6000 x 1200 DPI',
+        primeraPagina: 'Menos de 10 segundos'
+      },
+      conectividad: {
+        wifi: 'Sí',
+        ethernet: 'Sí',
+        usb: 'Sí',
+        movil: 'Brother Mobile Connect'
+      },
+      funciones: {
+        escaner: 'Sí - hasta A3',
+        copiadora: 'Sí - hasta A3',
+        fax: 'Sí',
+        duplex: 'Full Dúplex hasta A3'
+      },
+      capacidad: {
+        papel: '2x250 hojas + 100 hojas multipropósito',
+        salida: '100 hojas'
+      }
+    }
+  },
+  {
+    id: 26,
+    nombre: 'BROTHER HL-L5210DW',
+    modelo: 'HL-L5210DW',
+    descripcion: 'Impresora Láser Monocromática con Red/WiFi',
+    slug: 'brother-hl-l5210-dw',
+    imagen: '/images/impresoras/BROTHER-HL-5210-DN.jpg',
+    tecnologia: 'Láser monocromática',
+    resolucion: '1200 x 1200 DPI',
+    velocidad: '48 ppm',
+    precio: 'Consultar precio',
+    compatibilidad: ['WiFi', 'Red Ethernet', 'USB', 'Dúplex automático'],
+    caracteristicas: {
+      impresion: {
+        velocidadMono: '48 ppm',
+        resolucion: '1200 x 1200 DPI',
+        primeraPagina: 'Menos de 8.5 segundos'
+      },
+      conectividad: {
+        wifi: 'Sí',
+        ethernet: 'Sí',
+        usb: 'Sí',
+        movil: 'Brother Mobile Connect'
+      },
+      funciones: {
+        escaner: 'No',
+        copiadora: 'No',
+        fax: 'No',
+        duplex: 'Automático'
+      },
+      capacidad: {
+        papel: '250 hojas + multipropósito 100 hojas',
+        salida: '150 hojas'
+      }
+    }
+  },
+  {
+    id: 27,
+    nombre: 'BROTHER DCP-1617NW',
+    modelo: 'DCP-1617NW',
+    descripcion: 'Multifuncional Láser Monocromática con Red/WiFi',
+    slug: 'brother-dcp-1617-nw',
+    imagen: '/images/impresoras/imgi_167_brother-dcp1617nw.jpg',
+    tecnologia: 'Láser monocromática',
+    resolucion: '2400 x 600 DPI',
+    velocidad: '21 ppm',
+    precio: 'Consultar precio',
+    compatibilidad: ['WiFi', 'Red Ethernet', 'USB', 'Escáner integrado', 'ADF', 'Platina A4'],
+    caracteristicas: {
+      impresion: {
+        velocidadMono: '21 ppm',
+        resolucion: '2400 x 600 DPI',
+        primeraPagina: 'Menos de 10 segundos'
+      },
+      conectividad: {
+        wifi: 'Sí',
+        ethernet: 'Sí',
+        usb: 'Sí',
+        movil: 'Brother Mobile Connect'
+      },
+      funciones: {
+        escaner: 'Sí - hasta 1200 x 2400 DPI',
+        copiadora: 'Sí',
+        fax: 'No',
+        duplex: 'Manual'
+      },
+      capacidad: {
+        papel: '150 hojas',
+        salida: '50 hojas'
+      }
+    }
+  },
+  {
+    id: 28,
+    nombre: 'BROTHER MFC-L8360DW',
+    modelo: 'MFC-L8360DW',
+    descripcion: 'Multifuncional Láser Color con Red/WiFi',
+    slug: 'brother-mfc-l8360-dw',
+    imagen: '/images/impresoras/BROTHER-MFC-L8360-DW.jpg',
+    tecnologia: 'Láser color',
+    resolucion: '2400 x 600 DPI',
+    velocidad: '31 ppm',
+    precio: 'Consultar precio',
+    compatibilidad: ['WiFi', 'Red Ethernet', 'USB', 'Escáner integrado', 'Color'],
+    caracteristicas: {
+      impresion: {
+        velocidadColor: '31 ppm',
+        velocidadMono: '33 ppm',
+        resolucion: '2400 x 600 DPI',
+        primeraPagina: 'Menos de 9.5 segundos'
+      },
+      conectividad: {
+        wifi: 'Sí',
+        ethernet: 'Sí',
+        usb: 'Sí',
+        movil: 'Brother Mobile Connect'
+      },
+      funciones: {
+        escaner: 'Sí - hasta 1200 x 2400 DPI',
+        copiadora: 'Sí',
+        fax: 'No',
+        duplex: 'Manual'
+      },
+      capacidad: {
+        papel: '250 hojas',
+        salida: '150 hojas'
+      }
+    }
+  },
+  {
+    id: 29,
+    nombre: 'BROTHER Multifunción LED Color',
+    modelo: 'LED Color',
+    descripcion: 'Multifuncional LED Color con Red/WiFi 5GHz',
+    slug: 'brother-led-color',
+    imagen: '/images/impresoras/BROTHER-HL-L8360CDW.jpg',
+    tecnologia: 'LED color',
+    resolucion: '2400 x 600 DPI',
+    velocidad: '27 ppm',
+    precio: 'Consultar precio',
+    compatibilidad: ['WiFi 5GHz', 'Red Ethernet', 'USB', 'Escáner integrado', 'ADF', 'Color', 'Platina A4'],
+    caracteristicas: {
+      impresion: {
+        velocidadColor: '27 ppm',
+        velocidadMono: '27 ppm',
+        resolucion: '2400 x 600 DPI',
+        primeraPagina: 'Menos de 9 segundos'
+      },
+      conectividad: {
+        wifi: 'Sí - 5GHz',
+        ethernet: 'Sí',
+        usb: 'Sí',
+        movil: 'Brother Mobile Connect'
+      },
+      funciones: {
+        escaner: 'Sí - hasta 1200 x 2400 DPI',
+        copiadora: 'Sí',
+        fax: 'No',
+        duplex: 'Manual'
+      },
+      capacidad: {
+        papel: '250 hojas',
+        salida: '100 hojas'
+      }
+    }
+  },
+  {
+    id: 30,
+    nombre: 'BROTHER ScanNCut SDX125',
+    modelo: 'SDX125',
+    descripcion: 'Plotter de corte con escáner incorporado para manualidades y diseño textil',
+    slug: 'brother-scanncut-sdx125',
+    imagen: '/images/impresoras/BROTHER-SCANNCUT-SDX125.png',
+    imagenes: [
+      '/images/impresoras/BROTHER-SCANNCUT-SDX125-3.png',
+      '/images/impresoras/BROTHER-SCANNCUT-SDX125.png',
+      '/images/impresoras/BROTHER-SCANNCUT-SDX125-2.png',
+      
+    ],
+    tecnologia: 'Plotter de corte',
+    resolucion: '600 DPI (escáner)',
+    velocidad: 'Corte rápido y silencioso',
+    precio: 'Consultar precio',
+    compatibilidad: ['WiFi', 'Escáner incorporado 600 DPI', 'Pantalla táctil LCD 5"', 'Brother Canvas Web App', 'Independiente (sin PC)'],
+    caracteristicas: {
+      corte: {
+        grosorMaximo: 'Hasta 3 mm',
+        areaTrabajo: '12" x 12" estándar',
+        areaMaxima: '30 cm x 178 cm (con alimentador de rollo)',
+        cuchilla: 'Automática con ajuste de profundidad y presión'
+      },
+      conectividad: {
+        wifi: 'Sí',
+        ethernet: 'No',
+        usb: 'Sí',
+        movil: 'Brother Canvas Web App'
+      },
+      funciones: {
+        escaner: 'Sí - 600 DPI hasta 12" x 12"',
+        copiadora: 'No',
+        fax: 'No',
+        duplex: 'No'
+      },
+      especiales: {
+        corte: 'Papel, cartulina, vinilo, vinil textil, acetato, goma eva, madera balsa, imán, tela algodón, silicón flexible',
+        dibujo: 'Sí (con accesorios)',
+        realce: 'Sí (accesorio opcional)',
+        independiente: 'Funciona sin conexión a PC'
+      },
+      capacidad: {
+        patrones: '682 patrones precargados',
+        pantalla: 'LCD táctil a color 5"'
+      }
+    }
   }
 ];
 
@@ -507,12 +1230,19 @@ const DetalleImpresora = () => {
   if (!impresora) {
     return (
       <div className="min-h-screen bg-gray-50">
-        {/* Hero Minimalista para Error */}
-        <div className="bg-gradient-to-br from-[#2d472f] to-[#4b6d3b] text-white">
-          <div className="container mx-auto px-6 py-16">
-            <div className="text-center">
+        {/* Hero Section for Error */}
+        <div className="relative">
+          {/* Hero Background */}
+          <div className="relative h-[400px] overflow-hidden">
+            <img 
+              src="/images/impresoras/portada.jpg" 
+              alt="Impresoras Hero"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-gray-50" />
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-6">
               <h1 className="text-4xl font-bold mb-4">Producto no encontrado</h1>
-              <p className="text-white/90 mb-8">El producto que buscas no existe o ha sido removido</p>
+              <p className="text-xl text-center mb-8">El producto que buscas no existe o ha sido removido</p>
               <Link 
                 to="/productos/impresoras"
                 className="inline-flex items-center space-x-2 bg-white text-[#2d472f] px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors"
@@ -529,30 +1259,39 @@ const DetalleImpresora = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Minimalista */}
-      <div className="bg-gradient-to-br from-[#2d472f] to-[#4b6d3b] text-white">
-        <div className="container mx-auto px-6 py-16">
-          {/* Título del producto */}
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+      {/* Hero Section similar to index */}
+      <div className="relative">
+        {/* Hero Background */}
+        <div className="relative h-[400px] overflow-hidden">
+          <img 
+            src={impresora.imagenes ? impresora.imagenes[0] : impresora.imagen} 
+            alt={`${impresora.nombre} Hero`}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-gray-50" />
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-6">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center">
               {impresora.modelo}
             </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+            <p className="text-xl max-w-3xl text-center mb-8">
               {impresora.descripcion}
             </p>
           </div>
         </div>
+
       </div>
 
-      {/* Navegación debajo del hero */}
+      {/* Navigation Button - Centered above main content */}
       <div className="container mx-auto px-6 pt-8 pb-4">
-        <Link 
-          to="/productos/impresoras" 
-          className="inline-flex items-center space-x-2 text-[#2d472f] hover:text-[#4b6d3b] transition-colors font-semibold"
-        >
-          <ArrowLeft className="w-5 h-5" />
-          <span>Volver a Impresoras</span>
-        </Link>
+        <div className="flex justify-left">
+          <Link 
+            to="/productos/impresoras" 
+            className="inline-flex items-center space-x-2 bg-white text-[#2d472f] px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors shadow-lg border border-gray-200"
+          >
+            <ArrowLeft className="w-5 h-5" />
+            <span>Volver a Impresoras</span>
+          </Link>
+        </div>
       </div>
 
       {/* Contenido Principal */}
@@ -693,78 +1432,106 @@ const DetalleImpresora = () => {
               Especificaciones Técnicas Detalladas
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {/* Impresión */}
-              <div>
-                <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
-                  <Printer className="w-5 h-5 mr-2" />
-                  Impresión
-                </h3>
-                <div className="space-y-3">
-                  {Object.entries(impresora.caracteristicas.impresion).map(([key, value]) => (
-                    <div key={key}>
-                      <span className="font-semibold block text-gray-700 capitalize">
-                        {key.replace(/([A-Z])/g, ' $1').trim()}
-                      </span>
-                      <span className="text-gray-600">{value}</span>
-                    </div>
-                  ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+              {/* Sección principal (Impresión o Corte) */}
+              {(impresora.caracteristicas.impresion || impresora.caracteristicas.corte) && (
+                <div>
+                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                    <Printer className="w-5 h-5 mr-2" />
+                    {impresora.caracteristicas.impresion ? 'Impresión' : 'Corte'}
+                  </h3>
+                  <div className="space-y-3">
+                    {Object.entries(impresora.caracteristicas.impresion || impresora.caracteristicas.corte || {}).map(([key, value]) => (
+                      <div key={key}>
+                        <span className="font-semibold block text-gray-700 capitalize">
+                          {key.replace(/([A-Z])/g, ' $1').trim()}
+                        </span>
+                        <span className="text-gray-600">{value}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Conectividad */}
-              <div>
-                <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
-                  <Wifi className="w-5 h-5 mr-2" />
-                  Conectividad
-                </h3>
-                <div className="space-y-3">
-                  {Object.entries(impresora.caracteristicas.conectividad).map(([key, value]) => (
-                    <div key={key}>
-                      <span className="font-semibold block text-gray-700 capitalize">
-                        {key === 'wifi' ? 'WiFi' : key === 'ethernet' ? 'Ethernet' : key === 'usb' ? 'USB' : 'Móvil'}
-                      </span>
-                      <span className="text-gray-600">{value}</span>
-                    </div>
-                  ))}
+              {impresora.caracteristicas.conectividad && (
+                <div>
+                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                    <Wifi className="w-5 h-5 mr-2" />
+                    Conectividad
+                  </h3>
+                  <div className="space-y-3">
+                    {Object.entries(impresora.caracteristicas.conectividad).map(([key, value]) => (
+                      <div key={key}>
+                        <span className="font-semibold block text-gray-700 capitalize">
+                          {key === 'wifi' ? 'WiFi' : key === 'ethernet' ? 'Ethernet' : key === 'usb' ? 'USB' : 'Móvil'}
+                        </span>
+                        <span className="text-gray-600">{value}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Funciones */}
-              <div>
-                <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
-                  <Scan className="w-5 h-5 mr-2" />
-                  Funciones
-                </h3>
-                <div className="space-y-3">
-                  {Object.entries(impresora.caracteristicas.funciones).map(([key, value]) => (
-                    <div key={key}>
-                      <span className="font-semibold block text-gray-700 capitalize">
-                        {key === 'escaner' ? 'Escáner' : key}
-                      </span>
-                      <span className="text-gray-600">{value}</span>
-                    </div>
-                  ))}
+              {impresora.caracteristicas.funciones && (
+                <div>
+                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                    <Scan className="w-5 h-5 mr-2" />
+                    Funciones
+                  </h3>
+                  <div className="space-y-3">
+                    {Object.entries(impresora.caracteristicas.funciones).map(([key, value]) => (
+                      <div key={key}>
+                        <span className="font-semibold block text-gray-700 capitalize">
+                          {key === 'escaner' ? 'Escáner' : key}
+                        </span>
+                        <span className="text-gray-600">{value}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Capacidad */}
-              <div>
-                <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
-                  <Network className="w-5 h-5 mr-2" />
-                  Capacidad
-                </h3>
-                <div className="space-y-3">
-                  {Object.entries(impresora.caracteristicas.capacidad).map(([key, value]) => (
-                    <div key={key}>
-                      <span className="font-semibold block text-gray-700 capitalize">
-                        {key}
-                      </span>
-                      <span className="text-gray-600">{value}</span>
-                    </div>
-                  ))}
+              {impresora.caracteristicas.capacidad && (
+                <div>
+                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                    <Network className="w-5 h-5 mr-2" />
+                    Capacidad
+                  </h3>
+                  <div className="space-y-3">
+                    {Object.entries(impresora.caracteristicas.capacidad).map(([key, value]) => (
+                      <div key={key}>
+                        <span className="font-semibold block text-gray-700 capitalize">
+                          {key}
+                        </span>
+                        <span className="text-gray-600">{value}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
+
+              {/* Funciones Especiales (para ScanNCut) */}
+              {impresora.caracteristicas.especiales && (
+                <div>
+                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                    <Check className="w-5 h-5 mr-2" />
+                    Especiales
+                  </h3>
+                  <div className="space-y-3">
+                    {Object.entries(impresora.caracteristicas.especiales).map(([key, value]) => (
+                      <div key={key}>
+                        <span className="font-semibold block text-gray-700 capitalize">
+                          {key}
+                        </span>
+                        <span className="text-gray-600 text-sm">{value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         )}
