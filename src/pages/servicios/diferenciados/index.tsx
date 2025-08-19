@@ -60,7 +60,7 @@ const ServiciosDiferenciados = () => {
           {/* Grid de características principales */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-20">
             {/* Consultoría especializada */}
-            <div className="space-y-6 bg-green-50/30 rounded-3xl p-8 border border-green-100/50">
+            <div className="space-y-6 bg-green-50/30 rounded-3xl p-8 border border-green-100/50 transition-all duration-300 ease-in-out hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-green-200/50 hover:-translate-y-2 hover:border-green-200">
               <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6">
                 <span className="text-3xl">📋</span>
               </div>
@@ -91,7 +91,7 @@ const ServiciosDiferenciados = () => {
             </div>
 
             {/* Capacitación personalizada */}
-            <div className="space-y-6 bg-blue-50/30 rounded-3xl p-8 border border-blue-100/50">
+            <div className="space-y-6 bg-blue-50/30 rounded-3xl p-8 border border-blue-100/50 transition-all duration-300 ease-in-out hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-200/50 hover:-translate-y-2 hover:border-blue-200">
               <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
                 <TrendingUp className="w-8 h-8 text-blue-600" />
               </div>
@@ -118,7 +118,7 @@ const ServiciosDiferenciados = () => {
             </div>
 
             {/* Soporte técnico premium */}
-            <div className="space-y-6 bg-purple-50/30 rounded-3xl p-8 border border-purple-100/50">
+            <div className="space-y-6 bg-purple-50/30 rounded-3xl p-8 border border-purple-100/50 transition-all duration-300 ease-in-out hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-200/50 hover:-translate-y-2 hover:border-purple-200">
               <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6">
                 <Headphones className="w-8 h-8 text-purple-600" />
               </div>
@@ -152,34 +152,23 @@ const ServiciosDiferenciados = () => {
           {/* Software Especializado de Gestión de Impresoras */}
           <div className="w-full bg-gradient-to-r from-blue-50/50 to-indigo-100/30 py-24">
             {/* Hero Section con información de fondo - Ancho completo */}
-            <div className="w-full bg-gradient-to-br from-blue-600 to-indigo-700 py-16 mb-20 overflow-hidden">
-              {/* Background con información */}
-              <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-8 left-8 text-8xl font-bold text-white leading-none">
-                  SOFTWARE ESPECIALIZADO DE GESTIÓN
-                </div>
-                <div className="absolute top-32 left-8 text-6xl font-bold text-white leading-none">
-                  IMPRESORAS Y TINTAS
-                </div>
-                <div className="absolute top-48 left-8 text-lg text-white leading-relaxed max-w-2xl">
-                  El software de gestión de impresoras de BlackColors ofrece a los proveedores de servicios y departamentos de TI una visión completa y detallada de todos los dispositivos de impresión conectados a la red. Este innovador sistema de software se distingue por sus funcionalidades avanzadas, que incluyen:
+            <section className="w-full bg-[#2d472f] py-20">
+              <div className="container mx-auto px-8">
+                {/* Contenido principal sobre el background */}
+                <div className="text-center">
+                  <h3 className="text-5xl font-light text-white mb-6 tracking-tight">
+                    SOFTWARE ESPECIALIZADO DE GESTIÓN
+                  </h3>
+                  <h4 className="text-4xl font-light text-green-100 mb-6 tracking-tight">
+                    IMPRESORAS Y TINTAS
+                  </h4>
+                  <div className="w-24 h-px bg-green-300 mx-auto mb-8"></div>
+                  <p className="text-xl text-green-50 leading-relaxed font-light max-w-4xl mx-auto">
+                    El software de gestión de impresoras de BlackColors ofrece a los proveedores de servicios y departamentos de TI una visión completa y detallada de todos los dispositivos de impresión conectados a la red. Este innovador sistema de software se distingue por sus funcionalidades avanzadas, que incluyen:
+                  </p>
                 </div>
               </div>
-              
-              {/* Contenido principal sobre el background */}
-              <div className="container mx-auto px-8 relative z-10 text-center">
-                <h3 className="text-5xl font-light text-white mb-6 tracking-tight">
-                  SOFTWARE ESPECIALIZADO DE GESTIÓN
-                </h3>
-                <h4 className="text-4xl font-light text-blue-100 mb-6 tracking-tight">
-                  IMPRESORAS Y TINTAS
-                </h4>
-                <div className="w-24 h-px bg-blue-300 mx-auto mb-8"></div>
-                <p className="text-xl text-blue-50 leading-relaxed font-light max-w-4xl mx-auto">
-                  El software de gestión de impresoras de BlackColors ofrece a los proveedores de servicios y departamentos de TI una visión completa y detallada de todos los dispositivos de impresión conectados a la red. Este innovador sistema de software se distingue por sus funcionalidades avanzadas, que incluyen:
-                </p>
-              </div>
-            </div>
+            </section>
 
             <div className="container mx-auto px-8">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
