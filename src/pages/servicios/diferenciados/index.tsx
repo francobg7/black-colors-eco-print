@@ -151,20 +151,37 @@ const ServiciosDiferenciados = () => {
 
           {/* Software Especializado de Gestión de Impresoras */}
           <div className="w-full bg-gradient-to-r from-blue-50/50 to-indigo-100/30 py-24">
-            <div className="container mx-auto px-8">
-              <div className="text-center mb-20">
-                <h3 className="text-5xl font-light text-gray-900 mb-6 tracking-tight">
+            {/* Hero Section con información de fondo - Ancho completo */}
+            <div className="w-full bg-gradient-to-br from-blue-600 to-indigo-700 py-16 mb-20 overflow-hidden">
+              {/* Background con información */}
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute top-8 left-8 text-8xl font-bold text-white leading-none">
+                  SOFTWARE ESPECIALIZADO DE GESTIÓN
+                </div>
+                <div className="absolute top-32 left-8 text-6xl font-bold text-white leading-none">
+                  IMPRESORAS Y TINTAS
+                </div>
+                <div className="absolute top-48 left-8 text-lg text-white leading-relaxed max-w-2xl">
+                  El software de gestión de impresoras de BlackColors ofrece a los proveedores de servicios y departamentos de TI una visión completa y detallada de todos los dispositivos de impresión conectados a la red. Este innovador sistema de software se distingue por sus funcionalidades avanzadas, que incluyen:
+                </div>
+              </div>
+              
+              {/* Contenido principal sobre el background */}
+              <div className="container mx-auto px-8 relative z-10 text-center">
+                <h3 className="text-5xl font-light text-white mb-6 tracking-tight">
                   SOFTWARE ESPECIALIZADO DE GESTIÓN
                 </h3>
-                <h4 className="text-4xl font-light text-blue-800 mb-6 tracking-tight">
+                <h4 className="text-4xl font-light text-blue-100 mb-6 tracking-tight">
                   IMPRESORAS Y TINTAS
                 </h4>
-                <div className="w-24 h-px bg-blue-400 mx-auto mb-8"></div>
-                <p className="text-xl text-gray-700 leading-relaxed font-light max-w-5xl mx-auto">
+                <div className="w-24 h-px bg-blue-300 mx-auto mb-8"></div>
+                <p className="text-xl text-blue-50 leading-relaxed font-light max-w-4xl mx-auto">
                   El software de gestión de impresoras de BlackColors ofrece a los proveedores de servicios y departamentos de TI una visión completa y detallada de todos los dispositivos de impresión conectados a la red. Este innovador sistema de software se distingue por sus funcionalidades avanzadas, que incluyen:
                 </p>
               </div>
+            </div>
 
+            <div className="container mx-auto px-8">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
                 {/* Información detallada sobre el rendimiento */}
                 <div className="space-y-6">
