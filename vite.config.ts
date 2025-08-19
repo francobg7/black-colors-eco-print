@@ -36,5 +36,8 @@ export default defineConfig(({ mode }) => ({
         },
       },
     },
+    assetsDir: "assets",
+    copyPublicDir: true,
   },
+  publicDir: "public",
 }));
