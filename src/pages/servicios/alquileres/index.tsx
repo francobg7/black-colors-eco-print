@@ -60,7 +60,7 @@ const Alquileres = () => {
           {/* Grid de características principales */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-20">
             {/* Suministros completos */}
-            <div className="space-y-6 bg-green-50/30 rounded-3xl p-8 border border-green-100/50">
+            <div className="space-y-6 bg-green-50/30 rounded-3xl p-8 border border-green-100/50 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:bg-green-50/50 cursor-pointer">
               <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6">
                 <span className="text-3xl">🧃</span>
               </div>
@@ -91,7 +91,7 @@ const Alquileres = () => {
             </div>
 
             {/* Mantenimiento garantizado */}
-            <div className="space-y-6 bg-blue-50/30 rounded-3xl p-8 border border-blue-100/50">
+            <div className="space-y-6 bg-blue-50/30 rounded-3xl p-8 border border-blue-100/50 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:bg-blue-50/50 cursor-pointer">
               <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
                 <Wrench className="w-8 h-8 text-blue-600" />
               </div>
@@ -118,7 +118,7 @@ const Alquileres = () => {
             </div>
 
             {/* Soporte técnico avanzado */}
-            <div className="space-y-6 bg-purple-50/30 rounded-3xl p-8 border border-purple-100/50">
+            <div className="space-y-6 bg-purple-50/30 rounded-3xl p-8 border border-purple-100/50 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:bg-purple-50/50 cursor-pointer">
               <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6">
                 <Headphones className="w-8 h-8 text-purple-600" />
               </div>
