@@ -19,17 +19,19 @@ const HeroSection = ({ heroLoaded, scrollY }: { heroLoaded: boolean, scrollY: nu
             style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.08)', transform: `translateY(${Math.max(0, 30 - scrollY * 0.08)}px)` }}>
             Convertí tu impresión en una acción por el planeta con nuestras soluciones integrales de impresión sustentable y economía circular.
           </p>
-          <div className={`flex flex-col sm:flex-row gap-6 transition-all duration-1000 delay-700 ease-out ${heroLoaded ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'}` + ' justify-center lg:justify-end'}>
-            <Link to="/productos">
+          <div className={`flex flex-col sm:flex-row gap-6 transition-all duration-1000 delay-700 ease-out 
+            ${heroLoaded ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'}`}
+            style={{ transform: `translateY(${Math.max(0, 20 - scrollY * 0.06)}px)` }}>
+            <Link to="/productos/impresoras">
               <Button 
                 size="lg" 
                 className="px-10 py-4 text-xl border-0 shadow-2xl transition-all duration-300 transform hover:scale-105 group"
                 style={{ background: 'linear-gradient(135deg, #2f9e44, #3d7b4f)', color: '#ffffff' }}>
-                Conocer Productos
+                Conocer Impresoras
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
-            <Link to="/leasing">
+            <Link to="/servicios/leasing">
               <Button 
                 size="lg" 
                 className="px-10 py-4 text-xl backdrop-blur-sm transition-all duration-300 transform hover:scale-105"
