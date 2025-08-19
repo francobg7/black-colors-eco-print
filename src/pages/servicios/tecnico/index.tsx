@@ -54,6 +54,13 @@ const ServicioTecnico = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-20">
             {/* Diagnóstico preciso */}
             <div className="space-y-6 bg-green-50/30 rounded-3xl p-8 border border-green-100/50 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-emerald-200/50 cursor-pointer group">
+              <div className="w-full h-32 rounded-2xl overflow-hidden mb-6">
+                <img 
+                  src="/images/tecnico/diagnostico.jpg" 
+                  alt="Diagnóstico Técnico de Impresoras" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-emerald-200 group-hover:scale-110">
                 <Search className="w-8 h-8 text-emerald-600 transition-all duration-300 group-hover:text-emerald-700" />
               </div>
@@ -67,6 +74,13 @@ const ServicioTecnico = () => {
 
             {/* Repuestos originales */}
             <div className="space-y-6 bg-green-50/30 rounded-3xl p-8 border border-green-100/50 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-emerald-200/50 cursor-pointer group">
+              <div className="w-full h-32 rounded-2xl overflow-hidden mb-6">
+                <img 
+                  src="/images/tecnico/repuestos.jpg" 
+                  alt="Repuestos Originales Brother" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-emerald-200 group-hover:scale-110">
                 <Package className="w-8 h-8 text-emerald-600 transition-all duration-300 group-hover:text-emerald-700" />
               </div>
@@ -80,6 +94,13 @@ const ServicioTecnico = () => {
 
             {/* Mantenimiento preventivo y correctivo */}
             <div className="space-y-6 bg-green-50/30 rounded-3xl p-8 border border-green-100/50 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-emerald-200/50 cursor-pointer group">
+              <div className="w-full h-32 rounded-2xl overflow-hidden mb-6">
+                <img 
+                  src="/images/tecnico/mantenimiento.jpg" 
+                  alt="Mantenimiento de Impresoras" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-emerald-200 group-hover:scale-110">
                 <Settings className="w-8 h-8 text-emerald-600 transition-all duration-300 group-hover:text-emerald-700" />
               </div>
