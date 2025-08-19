@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 
 // Importaciones de productos
 import ProductosImpresoras from "./pages/productos/impresoras/index";
+import DetalleImpresora from "./pages/productos/impresoras/[slug]";
 import ProductosCartuchos from "./pages/productos/cartuchos/index";
 import ProductosToners from "./pages/productos/toners/index";
 import ProductosResmas from "./pages/productos/resmas/index";
@@ -37,6 +38,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/productos/impresoras" element={<ProductosImpresoras />} />
+            <Route path="/productos/impresoras/:slug" element={<DetalleImpresora />} />
             <Route path="/productos/toners" element={<ProductosToners />} />
             <Route path="/productos/cartuchos" element={<ProductosCartuchos />} />
             <Route path="/productos/resmas" element={<ProductosResmas />} />
