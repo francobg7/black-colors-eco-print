@@ -524,7 +524,7 @@ const ProductosImpresoras = () => {
     'inkjet-continua': 'Inkjet Tinta Continua',
     'inkjet-cartucho': 'Inkjet Cartucho',
     'led-color': 'LED Color',
-    'plotter-corte': 'Plotter de Corte'
+    'plotter-corte': 'ScanNCut Plotter de Corte'
   };
 
   const filteredImpresoras = todasImpresoras.filter(impresora => {
@@ -614,16 +614,7 @@ const ProductosImpresoras = () => {
 
       {/* Main Content */}
       <div className="container mx-auto px-6 pt-40 pb-16">
-        {/* Navegación */}
-        <div className="mb-16">
-          <Link 
-            to="/productos" 
-            className="inline-flex items-center space-x-2 text-[#2d472f] hover:text-[#4b6d3b] transition-colors font-semibold"
-          >
-            <ArrowLeft className="w-5 h-5" />
-            <span>Volver a Productos</span>
-          </Link>
-        </div>
+        
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
