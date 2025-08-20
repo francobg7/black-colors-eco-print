@@ -5,46 +5,45 @@ import Footer from '@/components/Footer';
 const Alquileres = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50/30 to-white">
-      {/* Hero Section - Primera imagen + introducción */}
-      <section className="w-full bg-gradient-to-br from-green-50/40 to-emerald-50/20">
-        <div className="container mx-auto px-8 py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Introducción del servicio */}
-            <div className="space-y-8">
-              <div className="space-y-6">
-                <h1 className="text-6xl lg:text-7xl font-light text-gray-900 leading-tight tracking-tight">
-                  SERVICIO INTEGRAL
+      {/* Hero Section with integrated information */}
+      <div className="relative">
+        {/* Hero Background */}
+        <div className="relative h-[600px] overflow-hidden">
+          <img 
+            src="/images/background-1.jpg" 
+            alt="Alquileres Hero"
+            className="w-full h-full object-cover"
+          />
+          {/* Gradient overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-gray-50" />
+          
+          {/* Hero Content */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-8 pt-20">
+            <div className="max-w-5xl mx-auto text-center space-y-8">
+              {/* Main Title */}
+              <div className="space-y-4 animate-fade-in">
+                <h1 className="text-5xl lg:text-7xl font-bold mb-4 leading-tight tracking-tight animate-fade-in-up">
+                  SERVICIO DE ALQUILER
                 </h1>
-                <h2 className="text-4xl lg:text-5xl font-light text-[#2d472f] leading-tight tracking-tight">
-                  DE ALQUILER
-                </h2>
-                <h3 className="text-3xl lg:text-4xl font-light text-gray-600 leading-tight tracking-tight">
+                <h2 className="text-3xl lg:text-5xl font-light text-emerald-300 leading-tight tracking-tight animate-fade-in-up animation-delay-200">
                   DE IMPRESORAS
-                </h3>
+                </h2>
               </div>
               
-              <div className="max-w-lg">
-                <p className="text-xl text-gray-600 leading-relaxed font-light">
-                  Un servicio todo incluido donde tu empresa solo se preocupa por imprimir. 
+              {/* Description */}
+              <div className="max-w-4xl mx-auto space-y-4 animate-fade-in animation-delay-400">
+                <p className="text-xl lg:text-2xl text-gray-100 leading-relaxed font-light animate-fade-in-up animation-delay-500">
+                  Un servicio todo incluido donde tu empresa solo se preocupa por imprimir
+                </p>
+                <p className="text-lg lg:text-xl text-gray-200 leading-relaxed font-light max-w-3xl mx-auto animate-fade-in-up animation-delay-600">
                   Nos encargamos de suministros, mantenimiento y soporte técnico especializado. 
                   Sin costos ocultos, sin sorpresas.
                 </p>
               </div>
             </div>
-
-            {/* Primera imagen - 50% ancho */}
-            <div className="relative">
-              <div className="w-full h-[500px] bg-gradient-to-br from-gray-200 to-gray-300 rounded-2xl overflow-hidden shadow-2xl">
-                <div className="w-full h-full bg-gradient-to-br from-emerald-100 to-blue-100 flex items-center justify-center">
-                  <span className="text-gray-500 text-lg font-light tracking-wide">
-                    📸 Imagen: Equipos de Impresión Profesionales
-                  </span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Información técnica del servicio - Pantalla completa */}
       <section className="w-full bg-gradient-to-br from-white to-green-50/20 py-24">
