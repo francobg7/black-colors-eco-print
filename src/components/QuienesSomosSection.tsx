@@ -1,4 +1,3 @@
-import React from 'react';
 
 const QuienesSomosSection = () => (
   <section className="py-10 md:py-20 relative overflow-hidden bg-white">

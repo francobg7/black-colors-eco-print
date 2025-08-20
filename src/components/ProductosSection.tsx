@@ -1,4 +1,3 @@
-import React from 'react';
 import { Printer, Package, FileText } from 'lucide-react';
 
 const productos = [

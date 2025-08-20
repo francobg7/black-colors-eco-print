@@ -1,14 +1,14 @@
 const clientes = [
-  { name: "Garden", logo: "/images/garden-logo.png" },
-  { name: "Cavallaro", logo: "/images/cavallaro-logo.png" },
-  { name: "Inpaco", logo: "/images/inpaco-logo.png" },
-  { name: "EcoTech", logo: "/images/ecotech-logo.jpg" },
-  { name: "GreenSolutions", logo: "/images/greensolutions-logo.png" },
-  { name: "NatureCorp", logo: "/images/naturecorp-logo.png" },
-  { name: "BioTech", logo: "/images/biotech-logo.png" },
-  { name: "EcoLife", logo: "/images/ecolife-logo.png" },
-  { name: "EcoPrint", logo: "/images/ecoprint-logo.png" },
-  { name: "GreenPrint", logo: "/images/greenprint-logo.png" }
+  { name: "Garden", logo: "/images/logos/garden-logo.png" },
+  { name: "Cavallaro", logo: "/images/logos/cavallaro-logo.png" },
+  { name: "Inpaco", logo: "/images/logos/inpaco-logo.png" },
+  { name: "EcoTech", logo: "/images/logos/ecotech-logo.jpg" },
+  { name: "GreenSolutions", logo: "/images/logos/greensolutions-logo.png" },
+  { name: "NatureCorp", logo: "/images/logos/naturecorp-logo.png" },
+  { name: "BioTech", logo: "/images/logos/biotech-logo.png" },
+  { name: "EcoLife", logo: "/images/logos/ecolife-logo.png" },
+  { name: "EcoPrint", logo: "/images/logos/ecoprint-logo.png" },
+  { name: "GreenPrint", logo: "/images/logos/greenprint-logo.png" }
 ];
 
 const ClientesSection = () => (
