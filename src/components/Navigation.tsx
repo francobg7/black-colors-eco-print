@@ -42,11 +42,6 @@ const Navigation = () => {
   };
 
   // Cierra todos los menús
-  const closeAllMenus = () => {
-    setMenuOpen(false);
-    setProductosMenuOpen(false);
-    setServiciosMenuOpen(false);
-  };
 
   // Cierra el menú de productos al hacer click fuera
   const handleProductosClick = () => {
@@ -145,7 +140,7 @@ const Navigation = () => {
             <Link to="/" className="block hover:scale-105 transition-transform duration-300">
               <span className="sr-only">Black Colors Home</span>
               <img
-                src="/images/logo-mejorado-removebg-preview.png"
+                src="/images/logos/logo-mejorado-removebg-preview.png"
                 alt="Black Colors Logo"
                 className="h-12 sm:h-14 md:h-16 w-auto"
               />

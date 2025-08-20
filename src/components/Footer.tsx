@@ -1,4 +1,3 @@
-import React from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
@@ -9,7 +8,7 @@ const Footer = () => (
         <div className="md:col-span-2">
           <div className="mb-4">
             <img
-              src="/images/logo-mejorado-removebg-preview.png"
+              src="/images/logos/logo-mejorado-removebg-preview.png"
               alt="Black Colors Logo"
               className="h-24 w-auto"
             />

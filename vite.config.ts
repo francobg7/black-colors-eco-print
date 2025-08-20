@@ -16,9 +16,22 @@ export default defineConfig(({ mode }) => ({
       manifest: {
         name: "Black Colors Eco Print",
         short_name: "Black Colors",
-        theme_color: "#ffffff",
+        description: "Soluciones ecológicas en impresión y cartuchos remanufacturados",
+        theme_color: "#2d472f",
+        background_color: "#ffffff",
+        display: "standalone",
+        start_url: "/",
         icons: [
-          // Add your icons here
+          {
+            src: "/android-chrome-192x192.png",
+            sizes: "192x192",
+            type: "image/png"
+          },
+          {
+            src: "/android-chrome-512x512.png", 
+            sizes: "512x512",
+            type: "image/png"
+          }
         ],
       },
     }),

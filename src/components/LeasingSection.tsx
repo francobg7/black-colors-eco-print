@@ -1,4 +1,3 @@
-import React from 'react';
 
 const LeasingSection = () => (
   <section className="py-10 md:py-20 relative overflow-hidden bg-[#2d472f]">
