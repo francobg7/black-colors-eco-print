@@ -1,0 +1,832 @@
+import { Link, useParams } from 'react-router-dom';
+import { ArrowLeft, Scissors, Trash2, Battery, Tag, Scan, Check, Phone, Mail, MapPin, ChevronLeft, ChevronRight, Wifi, Network } from 'lucide-react';
+import Footer from '@/components/Footer';
+import { useState } from 'react';
+
+// Datos de todos los equipos (mismos datos que en index.tsx)
+const todosEquipos = [
+  // ROTULADORAS PORTÁTILES
+  {
+    id: 1,
+    nombre: 'BROTHER P-touch PT-D200',
+    modelo: 'PT-D200',
+    descripcion: 'Rotuladora Portátil de Etiquetas',
+    slug: 'brother-p-touch-pt-d200',
+    imagen: '/images/equipos/rotuladora-pt-d200.jpg',
+    categoria: 'Rotuladoras portátiles',
+    tecnologia: 'Impresión térmica',
+    resolucion: '180 DPI',
+    velocidad: 'Hasta 5 cms/seg',
+    precio: 'Consultar precio',
+    compatibilidad: ['USB', 'Batería recargable', 'Pantalla LCD'],
+    caracteristicas: {
+      impresion: {
+        resolucion: '180 DPI',
+        velocidad: 'Hasta 5 cms/seg',
+        primeraPagina: 'Menos de 2 segundos',
+        tipoCinta: 'TZe (3.5mm a 12mm)'
+      },
+      conectividad: {
+        usb: 'Sí',
+        wifi: 'No',
+        ethernet: 'No',
+        movil: 'No'
+      },
+      funciones: {
+        pantalla: 'LCD 2 líneas',
+        teclado: 'QWERTY completo',
+        memoria: '8 MB RAM',
+        bateria: 'Li-ion recargable'
+      },
+      capacidad: {
+        cintas: '3.5mm a 12mm',
+        bateria: 'Hasta 8 horas',
+        memoria: '8 MB RAM'
+      }
+    }
+  },
+  {
+    id: 2,
+    nombre: 'BROTHER P-touch PT-D400',
+    modelo: 'PT-D400',
+    descripcion: 'Rotuladora Portátil Profesional',
+    slug: 'brother-p-touch-pt-d400',
+    imagen: '/images/equipos/rotuladora-pt-d400.jpg',
+    categoria: 'Rotuladoras portátiles',
+    tecnologia: 'Impresión térmica',
+    resolucion: '180 DPI',
+    velocidad: 'Hasta 5 cms/seg',
+    precio: 'Consultar precio',
+    compatibilidad: ['USB', 'Batería recargable', 'Pantalla LCD', 'Teclado QWERTY'],
+    caracteristicas: {
+      impresion: {
+        resolucion: '180 DPI',
+        velocidad: 'Hasta 5 cms/seg',
+        primeraPagina: 'Menos de 2 segundos',
+        tipoCinta: 'TZe (3.5mm a 18mm)'
+      },
+      conectividad: {
+        usb: 'Sí',
+        wifi: 'No',
+        ethernet: 'No',
+        movil: 'No'
+      },
+      funciones: {
+        pantalla: 'LCD 4 líneas',
+        teclado: 'QWERTY completo',
+        memoria: '16 MB RAM',
+        bateria: 'Li-ion recargable'
+      },
+      capacidad: {
+        cintas: '3.5mm a 18mm',
+        bateria: 'Hasta 10 horas',
+        memoria: '16 MB RAM'
+      }
+    }
+  },
+  {
+    id: 3,
+    nombre: 'BROTHER P-touch PT-D600',
+    modelo: 'PT-D600',
+    descripcion: 'Rotuladora Portátil de Alto Rendimiento',
+    slug: 'brother-p-touch-pt-d600',
+    imagen: '/images/equipos/rotuladora-pt-d600.jpg',
+    categoria: 'Rotuladoras portátiles',
+    tecnologia: 'Impresión térmica',
+    resolucion: '180 DPI',
+    velocidad: 'Hasta 5 cms/seg',
+    precio: 'Consultar precio',
+    compatibilidad: ['USB', 'Batería recargable', 'Pantalla LCD', 'Teclado QWERTY', 'WiFi'],
+    caracteristicas: {
+      impresion: {
+        resolucion: '180 DPI',
+        velocidad: 'Hasta 5 cms/seg',
+        primeraPagina: 'Menos de 2 segundos',
+        tipoCinta: 'TZe (3.5mm a 24mm)'
+      },
+      conectividad: {
+        usb: 'Sí',
+        wifi: 'Sí',
+        ethernet: 'No',
+        movil: 'Brother Mobile Connect'
+      },
+      funciones: {
+        pantalla: 'LCD 6 líneas',
+        teclado: 'QWERTY completo',
+        memoria: '32 MB RAM',
+        bateria: 'Li-ion recargable'
+      },
+      capacidad: {
+        cintas: '3.5mm a 24mm',
+        bateria: 'Hasta 12 horas',
+        memoria: '32 MB RAM'
+      }
+    }
+  },
+
+  // DESTRUCTORA DE PAPEL
+  {
+    id: 4,
+    nombre: 'BROTHER DS-120',
+    modelo: 'DS-120',
+    descripcion: 'Destructora de Papel Personal',
+    slug: 'brother-ds-120',
+    imagen: '/images/equipos/destructora-ds-120.jpg',
+    categoria: 'Destructora de papel',
+    tecnologia: 'Corte en tiras',
+    resolucion: 'N/A',
+    velocidad: 'Hasta 8 hojas',
+    precio: 'Consultar precio',
+    compatibilidad: ['Papel A4', 'Grapas', 'Clips'],
+    caracteristicas: {
+      destruccion: {
+        tipoCorte: 'Corte en tiras',
+        capacidad: 'Hasta 8 hojas',
+        velocidad: 'Hasta 8 hojas',
+        primeraHoja: 'Inmediata'
+      },
+      conectividad: {
+        usb: 'No',
+        wifi: 'No',
+        ethernet: 'No',
+        movil: 'No'
+      },
+      funciones: {
+        motor: '120W',
+        bandeja: 'Capacidad 20L',
+        seguridad: 'Nivel P-1',
+        autoOff: 'Sí'
+      },
+      capacidad: {
+        papel: 'Hasta 8 hojas',
+        bandeja: '20L',
+        ciclo: 'Hasta 100 hojas/día'
+      }
+    }
+  },
+  {
+    id: 5,
+    nombre: 'BROTHER DS-740D',
+    modelo: 'DS-740D',
+    descripcion: 'Destructora de Papel de Oficina',
+    slug: 'brother-ds-740d',
+    imagen: '/images/equipos/destructora-ds-740d.jpg',
+    categoria: 'Destructora de papel',
+    tecnologia: 'Corte en partículas',
+    resolucion: 'N/A',
+    velocidad: 'Hasta 10 hojas',
+    precio: 'Consultar precio',
+    compatibilidad: ['Papel A4', 'Grapas', 'Clips', 'Tarjetas de crédito'],
+    caracteristicas: {
+      destruccion: {
+        tipoCorte: 'Corte en partículas',
+        capacidad: 'Hasta 10 hojas',
+        velocidad: 'Hasta 10 hojas',
+        primeraHoja: 'Inmediata'
+      },
+      conectividad: {
+        usb: 'No',
+        wifi: 'No',
+        ethernet: 'No',
+        movil: 'No'
+      },
+      funciones: {
+        motor: '200W',
+        bandeja: 'Capacidad 30L',
+        seguridad: 'Nivel P-4',
+        autoOff: 'Sí'
+      },
+      capacidad: {
+        papel: 'Hasta 10 hojas',
+        bandeja: '30L',
+        ciclo: 'Hasta 500 hojas/día'
+      }
+    }
+  },
+  {
+    id: 6,
+    nombre: 'BROTHER DS-940DW',
+    modelo: 'DS-940DW',
+    descripcion: 'Destructora de Papel Profesional',
+    slug: 'brother-ds-940dw',
+    imagen: '/images/equipos/destructora-ds-940dw.jpg',
+    categoria: 'Destructora de papel',
+    tecnologia: 'Corte en partículas',
+    resolucion: 'N/A',
+    velocidad: 'Hasta 12 hojas',
+    precio: 'Consultar precio',
+    compatibilidad: ['Papel A4', 'Grapas', 'Clips', 'Tarjetas', 'CDs/DVDs'],
+    caracteristicas: {
+      destruccion: {
+        tipoCorte: 'Corte en partículas',
+        capacidad: 'Hasta 12 hojas',
+        velocidad: 'Hasta 12 hojas',
+        primeraHoja: 'Inmediata'
+      },
+      conectividad: {
+        usb: 'No',
+        wifi: 'No',
+        ethernet: 'No',
+        movil: 'No'
+      },
+      funciones: {
+        motor: '300W',
+        bandeja: 'Capacidad 50L',
+        seguridad: 'Nivel P-4',
+        autoOff: 'Sí'
+      },
+      capacidad: {
+        papel: 'Hasta 12 hojas',
+        bandeja: '50L',
+        ciclo: 'Hasta 1000 hojas/día'
+      }
+    }
+  },
+  {
+    id: 7,
+    nombre: 'BROTHER DS-1200DW',
+    modelo: 'DS-1200DW',
+    descripcion: 'Destructora de Papel Industrial',
+    slug: 'brother-ds-1200dw',
+    imagen: '/images/equipos/destructora-ds-1200dw.jpg',
+    categoria: 'Destructora de papel',
+    tecnologia: 'Corte en partículas',
+    resolucion: 'N/A',
+    velocidad: 'Hasta 20 hojas',
+    precio: 'Consultar precio',
+    compatibilidad: ['Papel A4', 'Grapas', 'Clips', 'Tarjetas', 'CDs/DVDs', 'Papel continuo'],
+    caracteristicas: {
+      destruccion: {
+        tipoCorte: 'Corte en partículas',
+        capacidad: 'Hasta 20 hojas',
+        velocidad: 'Hasta 20 hojas',
+        primeraHoja: 'Inmediata'
+      },
+      conectividad: {
+        usb: 'No',
+        wifi: 'No',
+        ethernet: 'No',
+        movil: 'No'
+      },
+      funciones: {
+        motor: '500W',
+        bandeja: 'Capacidad 100L',
+        seguridad: 'Nivel P-4',
+        autoOff: 'Sí'
+      },
+      capacidad: {
+        papel: 'Hasta 20 hojas',
+        bandeja: '100L',
+        ciclo: 'Hasta 5000 hojas/día'
+      }
+    }
+  },
+
+  // UPS POLARIAS
+  {
+    id: 8,
+    nombre: 'POLARIAS UPS-1000VA',
+    modelo: 'UPS-1000VA',
+    descripcion: 'UPS de 1000VA con Protección de Batería',
+    slug: 'polarias-ups-1000va',
+    imagen: '/images/equipos/ups-1000va.jpg',
+    categoria: 'UPS Polarias',
+    tecnologia: 'UPS Line-Interactive',
+    resolucion: 'N/A',
+    velocidad: 'N/A',
+    precio: 'Consultar precio',
+    compatibilidad: ['PC', 'Monitor', 'Router', 'Modem'],
+    caracteristicas: {
+      proteccion: {
+        potencia: '1000VA / 600W',
+        tipo: 'Line-Interactive',
+        voltaje: '120V',
+        frecuencia: '50/60 Hz'
+      },
+      conectividad: {
+        usb: 'Sí',
+        wifi: 'No',
+        ethernet: 'No',
+        movil: 'No'
+      },
+      funciones: {
+        bateria: 'Plomo-ácido sellada',
+        tiempoRespaldo: 'Hasta 30 minutos',
+        proteccion: 'Sobretensión, subtensión, picos',
+        autoOff: 'Sí'
+      },
+      capacidad: {
+        salidas: '6 salidas protegidas',
+        bateria: 'Reemplazable',
+        tiempo: 'Hasta 30 minutos'
+      }
+    }
+  },
+  {
+    id: 9,
+    nombre: 'POLARIAS UPS-1500VA',
+    modelo: 'UPS-1500VA',
+    descripcion: 'UPS de 1500VA con Protección Avanzada',
+    slug: 'polarias-ups-1500va',
+    imagen: '/images/equipos/ups-1500va.jpg',
+    categoria: 'UPS Polarias',
+    tecnologia: 'UPS Line-Interactive',
+    resolucion: 'N/A',
+    velocidad: 'N/A',
+    precio: 'Consultar precio',
+    compatibilidad: ['PC', 'Monitor', 'Router', 'Modem', 'Impresora'],
+    caracteristicas: {
+      proteccion: {
+        potencia: '1500VA / 900W',
+        tipo: 'Line-Interactive',
+        voltaje: '120V',
+        frecuencia: '50/60 Hz'
+      },
+      conectividad: {
+        usb: 'Sí',
+        wifi: 'No',
+        ethernet: 'No',
+        movil: 'No'
+      },
+      funciones: {
+        bateria: 'Plomo-ácido sellada',
+        tiempoRespaldo: 'Hasta 45 minutos',
+        proteccion: 'Sobretensión, subtensión, picos',
+        autoOff: 'Sí'
+      },
+      capacidad: {
+        salidas: '8 salidas protegidas',
+        bateria: 'Reemplazable',
+        tiempo: 'Hasta 45 minutos'
+      }
+    }
+  },
+
+  // ETIQUETADORAS
+  {
+    id: 10,
+    nombre: 'BROTHER QL-800',
+    modelo: 'QL-800',
+    descripcion: 'Etiquetadora de Escritorio Profesional',
+    slug: 'brother-ql-800',
+    imagen: '/images/equipos/etiquetadora-ql-800.jpg',
+    categoria: 'Etiquetadoras',
+    tecnologia: 'Impresión térmica',
+    resolucion: '300 DPI',
+    velocidad: 'Hasta 8 cms/seg',
+    precio: 'Consultar precio',
+    compatibilidad: ['USB', 'PC', 'Mac', 'Software P-touch Editor'],
+    caracteristicas: {
+      impresion: {
+        resolucion: '300 DPI',
+        velocidad: 'Hasta 8 cms/seg',
+        primeraPagina: 'Menos de 3 segundos',
+        tipoCinta: 'QL (6mm a 62mm)'
+      },
+      conectividad: {
+        usb: 'Sí',
+        wifi: 'No',
+        ethernet: 'No',
+        movil: 'No'
+      },
+      funciones: {
+        software: 'P-touch Editor',
+        memoria: '16 MB RAM',
+        pantalla: 'No',
+        teclado: 'No'
+      },
+      capacidad: {
+        cintas: '6mm a 62mm',
+        memoria: '16 MB RAM',
+        laminado: 'Sí'
+      }
+    }
+  },
+
+  // SCANNERS
+  {
+    id: 11,
+    nombre: 'BROTHER ADS-1200',
+    modelo: 'ADS-1200',
+    descripcion: 'Scanner de Documentos Portátil',
+    slug: 'brother-ads-1200',
+    imagen: '/images/equipos/scanner-ads-1200.jpg',
+    categoria: 'Scanners',
+    tecnologia: 'Scanner de documentos',
+    resolucion: 'Hasta 600 DPI',
+    velocidad: 'Hasta 20 ppm',
+    precio: 'Consultar precio',
+    compatibilidad: ['USB', 'WiFi', 'PC', 'Mac', 'Android', 'iOS'],
+    caracteristicas: {
+      escaneo: {
+        resolucion: 'Hasta 600 DPI',
+        velocidad: 'Hasta 20 ppm',
+        primeraPagina: 'Menos de 5 segundos',
+        formato: 'A4, A5, A6, Oficio'
+      },
+      conectividad: {
+        usb: 'Sí',
+        wifi: 'Sí',
+        ethernet: 'No',
+        movil: 'Brother Mobile Connect'
+      },
+      funciones: {
+        adf: '20 hojas',
+        platina: 'Sí',
+        duplex: 'Manual',
+        memoria: '32 MB RAM'
+      },
+      capacidad: {
+        papel: 'Hasta 20 hojas',
+        memoria: '32 MB RAM',
+        ciclo: 'Hasta 1000 páginas'
+      }
+    }
+  },
+  {
+    id: 12,
+    nombre: 'BROTHER ADS-1700W',
+    modelo: 'ADS-1700W',
+    descripcion: 'Scanner de Documentos WiFi',
+    slug: 'brother-ads-1700w',
+    imagen: '/images/equipos/scanner-ads-1700w.jpg',
+    categoria: 'Scanners',
+    tecnologia: 'Scanner de documentos',
+    resolucion: 'Hasta 600 DPI',
+    velocidad: 'Hasta 25 ppm',
+    precio: 'Consultar precio',
+    compatibilidad: ['USB', 'WiFi', 'PC', 'Mac', 'Android', 'iOS', 'Cloud'],
+    caracteristicas: {
+      escaneo: {
+        resolucion: 'Hasta 600 DPI',
+        velocidad: 'Hasta 25 ppm',
+        primeraPagina: 'Menos de 4 segundos',
+        formato: 'A4, A5, A6, Oficio'
+      },
+      conectividad: {
+        usb: 'Sí',
+        wifi: 'Sí',
+        ethernet: 'No',
+        movil: 'Brother Mobile Connect'
+      },
+      funciones: {
+        adf: '30 hojas',
+        platina: 'Sí',
+        duplex: 'Manual',
+        memoria: '64 MB RAM'
+      },
+      capacidad: {
+        papel: 'Hasta 30 hojas',
+        memoria: '64 MB RAM',
+        ciclo: 'Hasta 2000 páginas'
+      }
+    }
+  },
+  {
+    id: 13,
+    nombre: 'BROTHER ADS-2200',
+    modelo: 'ADS-2200',
+    descripcion: 'Scanner de Documentos de Alto Rendimiento',
+    slug: 'brother-ads-2200',
+    imagen: '/images/equipos/scanner-ads-2200.jpg',
+    categoria: 'Scanners',
+    tecnologia: 'Scanner de documentos',
+    resolucion: 'Hasta 600 DPI',
+    velocidad: 'Hasta 30 ppm',
+    precio: 'Consultar precio',
+    compatibilidad: ['USB', 'WiFi', 'Red Ethernet', 'PC', 'Mac', 'Cloud'],
+    caracteristicas: {
+      escaneo: {
+        resolucion: 'Hasta 600 DPI',
+        velocidad: 'Hasta 30 ppm',
+        primeraPagina: 'Menos de 3 segundos',
+        formato: 'A4, A5, A6, Oficio'
+      },
+      conectividad: {
+        usb: 'Sí',
+        wifi: 'Sí',
+        ethernet: 'Sí',
+        movil: 'Brother Mobile Connect'
+      },
+      funciones: {
+        adf: '50 hojas',
+        platina: 'Sí',
+        duplex: 'Manual',
+        memoria: '128 MB RAM'
+      },
+      capacidad: {
+        papel: 'Hasta 50 hojas',
+        memoria: '128 MB RAM',
+        ciclo: 'Hasta 5000 páginas'
+      }
+    }
+  }
+];
+
+const DetalleEquipo = () => {
+  const { slug } = useParams();
+  const equipo = todosEquipos.find(p => p.slug === slug);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  if (!equipo) {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        {/* Hero Section for Error */}
+        <div className="relative">
+          {/* Hero Background */}
+          <div className="relative h-[400px] overflow-hidden">
+            <img 
+              src="/images/equipos/portada-equipos.jpg" 
+              alt="Equipos Hero"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-gray-50" />
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-6">
+              <h1 className="text-4xl font-bold mb-4">Producto no encontrado</h1>
+              <p className="text-xl text-center mb-8">El producto que buscas no existe o ha sido removido</p>
+              <Link 
+                to="/productos/equipos"
+                className="inline-flex items-center space-x-2 bg-white text-[#2d472f] px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors"
+              >
+                <ArrowLeft className="w-5 h-5" />
+                <span>Volver a Equipos</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Función para obtener el icono según la categoría
+  const getCategoryIcon = (categoria: string) => {
+    switch (categoria) {
+      case 'Rotuladoras portátiles':
+        return <Scissors className="w-5 h-5" />;
+      case 'Destructora de papel':
+        return <Trash2 className="w-5 h-5" />;
+      case 'UPS Polarias':
+        return <Battery className="w-5 h-5" />;
+      case 'Etiquetadoras':
+        return <Tag className="w-5 h-5" />;
+      case 'Scanners':
+        return <Scan className="w-5 h-5" />;
+      default:
+        return <Scissors className="w-5 h-5" />;
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero Section similar to index */}
+      <div className="relative">
+        {/* Hero Background */}
+        <div className="relative h-[400px] overflow-hidden">
+          <img 
+            src={equipo.imagen} 
+            alt={`${equipo.nombre} Hero`}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-gray-50" />
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-6">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center">
+              {equipo.modelo}
+            </h1>
+            <p className="text-xl max-w-3xl text-center mb-8">
+              {equipo.descripcion}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Navigation Button - Centered above main content */}
+      <div className="container mx-auto px-6 pt-8 pb-4">
+        <div className="flex justify-left">
+          <Link 
+            to="/productos/equipos" 
+            className="inline-flex items-center space-x-2 bg-white text-[#2d472f] px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors shadow-lg border border-gray-200"
+          >
+            <ArrowLeft className="w-5 h-5" />
+            <span>Volver a Equipos</span>
+          </Link>
+        </div>
+      </div>
+
+      {/* Contenido Principal */}
+      <div className="container mx-auto px-6 pb-16">
+        <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Galería de Imágenes del Producto */}
+            <div className="relative">
+              {/* Imagen Principal */}
+              <div className="relative h-96 lg:h-full overflow-hidden rounded-lg">
+                <img 
+                  src={equipo.imagen} 
+                  alt={`${equipo.nombre} - Vista principal`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Información del Producto */}
+            <div className="p-8">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-[#2d472f] mb-2">
+                  {equipo.nombre}
+                </h2>
+                <div className="flex items-center space-x-2 mb-4">
+                  {getCategoryIcon(equipo.categoria)}
+                  <span className="text-[#4b6d3b] font-medium">{equipo.tecnologia}</span>
+                </div>
+                <div className="text-2xl font-bold text-[#2d472f]">
+                  {equipo.precio}
+                </div>
+              </div>
+
+              {/* Características Principales */}
+              <div className="mb-8">
+                <h3 className="text-xl font-bold text-[#2d472f] mb-4">Características Principales</h3>
+                <div className="grid grid-cols-2 gap-4 text-sm">
+                  {equipo.resolucion !== 'N/A' && (
+                    <div>
+                      <span className="font-semibold block text-gray-700">Resolución</span>
+                      <span className="text-gray-600">{equipo.resolucion}</span>
+                    </div>
+                  )}
+                  {equipo.velocidad !== 'N/A' && (
+                    <div>
+                      <span className="font-semibold block text-gray-700">Velocidad</span>
+                      <span className="text-gray-600">{equipo.velocidad}</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Compatibilidades */}
+              <div className="mb-8">
+                <h3 className="text-xl font-bold text-[#2d472f] mb-4">Conectividad y Funciones</h3>
+                <div className="flex flex-wrap gap-2">
+                  {equipo.compatibilidad.map((comp, idx) => (
+                    <span 
+                      key={idx} 
+                      className="flex items-center space-x-2 bg-[#e8f5e9] text-[#2d472f] px-4 py-2 rounded-full font-medium"
+                    >
+                      <Check className="w-4 h-4" />
+                      <span>{comp}</span>
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Botones de Acción */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button className="flex-1 bg-[#2d472f] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#4b6d3b] transition-colors">
+                  Solicitar Cotización
+                </button>
+                <button className="flex-1 border-2 border-[#2d472f] text-[#2d472f] px-6 py-3 rounded-xl font-semibold hover:bg-[#2d472f] hover:text-white transition-colors">
+                  Más Información
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Especificaciones Técnicas Detalladas */}
+        {equipo.caracteristicas && (
+          <div className="mt-12 bg-white rounded-2xl shadow-xl p-8">
+            <h2 className="text-2xl font-bold text-[#2d472f] mb-8 text-center">
+              Especificaciones Técnicas Detalladas
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+              {/* Sección principal según el tipo de equipo */}
+              {(equipo.caracteristicas.impresion || equipo.caracteristicas.destruccion || equipo.caracteristicas.proteccion || equipo.caracteristicas.escaneo) && (
+                <div>
+                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                    {equipo.categoria === 'Rotuladoras portátiles' || equipo.categoria === 'Etiquetadoras' ? (
+                      <Scissors className="w-5 h-5 mr-2" />
+                    ) : equipo.categoria === 'Destructora de papel' ? (
+                      <Trash2 className="w-5 h-5 mr-2" />
+                    ) : equipo.categoria === 'UPS Polarias' ? (
+                      <Battery className="w-5 h-5 mr-2" />
+                    ) : equipo.categoria === 'Scanners' ? (
+                      <Scan className="w-5 h-5 mr-2" />
+                    ) : (
+                      <Scissors className="w-5 h-5 mr-2" />
+                    )}
+                    {equipo.caracteristicas.impresion ? 'Impresión' : 
+                     equipo.caracteristicas.destruccion ? 'Destrucción' :
+                     equipo.caracteristicas.proteccion ? 'Protección' :
+                     equipo.caracteristicas.escaneo ? 'Escaneo' : 'Características'}
+                  </h3>
+                  <div className="space-y-3">
+                    {Object.entries(equipo.caracteristicas.impresion || equipo.caracteristicas.destruccion || equipo.caracteristicas.proteccion || equipo.caracteristicas.escaneo || {}).map(([key, value]) => (
+                      <div key={key}>
+                        <span className="font-semibold block text-gray-700 capitalize">
+                          {key.replace(/([A-Z])/g, ' $1').trim()}
+                        </span>
+                        <span className="text-gray-600">{value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Conectividad */}
+              {equipo.caracteristicas.conectividad && (
+                <div>
+                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                    <Wifi className="w-5 h-5 mr-2" />
+                    Conectividad
+                  </h3>
+                  <div className="space-y-3">
+                    {Object.entries(equipo.caracteristicas.conectividad).map(([key, value]) => (
+                      <div key={key}>
+                        <span className="font-semibold block text-gray-700 capitalize">
+                          {key === 'wifi' ? 'WiFi' : key === 'ethernet' ? 'Ethernet' : key === 'usb' ? 'USB' : 'Móvil'}
+                        </span>
+                        <span className="text-gray-600">{value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Funciones */}
+              {equipo.caracteristicas.funciones && (
+                <div>
+                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                    <Check className="w-5 h-5 mr-2" />
+                    Funciones
+                  </h3>
+                  <div className="space-y-3">
+                    {Object.entries(equipo.caracteristicas.funciones).map(([key, value]) => (
+                      <div key={key}>
+                        <span className="font-semibold block text-gray-700 capitalize">
+                          {key === 'adf' ? 'ADF' : key === 'platina' ? 'Platina' : key === 'duplex' ? 'Dúplex' : key === 'memoria' ? 'Memoria' : key === 'bateria' ? 'Batería' : key === 'pantalla' ? 'Pantalla' : key === 'teclado' ? 'Teclado' : key === 'software' ? 'Software' : key === 'motor' ? 'Motor' : key === 'bandeja' ? 'Bandeja' : key === 'seguridad' ? 'Seguridad' : key === 'autoOff' ? 'Auto Off' : key === 'tiempoRespaldo' ? 'Tiempo Respaldo' : key === 'proteccion' ? 'Protección' : key === 'salidas' ? 'Salidas' : key === 'tiempo' ? 'Tiempo' : key === 'laminado' ? 'Laminado' : key === 'ciclo' ? 'Ciclo' : key}
+                        </span>
+                        <span className="text-gray-600">{value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Capacidad */}
+              {equipo.caracteristicas.capacidad && (
+                <div>
+                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                    <Network className="w-5 h-5 mr-2" />
+                    Capacidad
+                  </h3>
+                  <div className="space-y-3">
+                    {Object.entries(equipo.caracteristicas.capacidad).map(([key, value]) => (
+                      <div key={key}>
+                        <span className="font-semibold block text-gray-700 capitalize">
+                          {key === 'cintas' ? 'Cintas' : key === 'papel' ? 'Papel' : key === 'memoria' ? 'Memoria' : key === 'bateria' ? 'Batería' : key === 'bandeja' ? 'Bandeja' : key === 'ciclo' ? 'Ciclo' : key === 'salidas' ? 'Salidas' : key === 'tiempo' ? 'Tiempo' : key === 'laminado' ? 'Laminado' : key}
+                        </span>
+                        <span className="text-gray-600">{value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* Sección de Contacto */}
+        <div className="mt-12 bg-gradient-to-r from-[#2d472f] to-[#4b6d3b] rounded-2xl text-white p-8">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-bold mb-4">¿Interesado en este producto?</h2>
+            <p className="text-lg opacity-90">
+              Contáctanos para obtener más información y precios especiales
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="text-center">
+              <Phone className="w-8 h-8 mx-auto mb-2" />
+              <h3 className="font-semibold mb-1">Teléfono</h3>
+              <p className="opacity-90">+595 21 123 456</p>
+            </div>
+            <div className="text-center">
+              <Mail className="w-8 h-8 mx-auto mb-2" />
+              <h3 className="font-semibold mb-1">Email</h3>
+              <p className="opacity-90">info@blackcolors.com.py</p>
+            </div>
+            <div className="text-center">
+              <MapPin className="w-8 h-8 mx-auto mb-2" />
+              <h3 className="font-semibold mb-1">Ubicación</h3>
+              <p className="opacity-90">Asunción, Paraguay</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default DetalleEquipo; 
