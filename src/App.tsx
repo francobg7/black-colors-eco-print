@@ -12,6 +12,7 @@ import DetalleImpresora from "./pages/productos/impresoras/[slug]";
 import ProductosCartuchos from "./pages/productos/cartuchos/index";
 import ProductosToners from "./pages/productos/toners/index";
 import ProductosResmas from "./pages/productos/resmas/index";
+import ProductosEquipos from "./pages/productos/equipos/index";
 
 // Importaciones de servicios
 import Leasing from "./pages/servicios/leasing/index";
@@ -42,6 +43,7 @@ const App = () => (
             <Route path="/productos/toners" element={<ProductosToners />} />
             <Route path="/productos/cartuchos" element={<ProductosCartuchos />} />
             <Route path="/productos/resmas" element={<ProductosResmas />} />
+            <Route path="/productos/equipos" element={<ProductosEquipos />} />
             <Route path="/servicios/tecnico" element={<ServicioTecnico />} />
             <Route path="/servicios/leasing" element={<Leasing />} />
             <Route path="/servicios/alquileres" element={<Alquileres />} />
