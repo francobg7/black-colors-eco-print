@@ -8,118 +8,125 @@ const todosEquipos = [
   // ROTULADORAS PORTÁTILES
   {
     id: 1,
-    nombre: 'BROTHER P-touch PT-D200',
-    modelo: 'PT-D200',
-    descripcion: 'Rotuladora Portátil de Etiquetas',
-    slug: 'brother-p-touch-pt-d200',
-    imagen: '/images/equipos/rotuladora-pt-d200.jpg',
+    nombre: 'ROTULADORA BROTHER PTH110',
+    modelo: 'PTH110',
+    descripcion: 'Rotuladora portátil de fácil uso. Ideal para el hogar y oficina.',
+    descripcionLarga: 'La PT-H110 es ideal para la casa, la oficina en el hogar y para usar en cualquier lugar. Presenta un teclado QWERTY con teclas de un solo toque y pantalla gráfica con vista previa. Personalización fácil con 3 fuentes, 14 encuadres y más de 250 símbolos. Etiquetas de 1 o 2 renglones, guarda hasta 15 etiquetas en memoria, usa cintas "TZe" duraderas y funciona con 6 baterías AAA (no incluidas) o adaptador CA opcional.',
+    slug: 'rotuladora-brother-pth110',
+    imagen: '/images/equipos/rotuladora-pth110.jpg',
     categoria: 'Rotuladoras portátiles',
     tecnologia: 'Impresión térmica',
     resolucion: '180 DPI',
     velocidad: 'Hasta 5 cms/seg',
     precio: 'Consultar precio',
-    compatibilidad: ['USB', 'Batería recargable', 'Pantalla LCD'],
+    compatibilidad: ['Teclado QWERTY', 'Vista previa gráfica', 'Cintas TZe', 'Baterías AAA'],
+    memoria: '15 etiquetas en memoria',
+    procesador: 'Teclado QWERTY con teclas de un solo toque',
+    bandeja: 'Cintas TZe de hasta 12 mm',
+    cicloMensual: 'Ilimitado',
+    insumos: 'Cintas TZe (hasta 12 mm) | 6 baterías AAA (no incluidas) | Adaptador CA opcional',
     caracteristicas: {
-      impresion: {
-        resolucion: '180 DPI',
-        velocidad: 'Hasta 5 cms/seg',
-        primeraPagina: 'Menos de 2 segundos',
-        tipoCinta: 'TZe (3.5mm a 12mm)'
+      portabilidad: {
+        peso: 'Ligera y portátil',
+        dimensiones: '29 cm x 19 cm x 10,5 cm',
+        energia: '6 baterías AAA o adaptador CA opcional'
       },
-      conectividad: {
-        usb: 'Sí',
-        wifi: 'No',
-        ethernet: 'No',
-        movil: 'No'
+      funcionalidad: {
+        teclado: 'QWERTY fácil de usar',
+        pantalla: 'Vista previa gráfica antes de imprimir',
+        teclas: 'Teclas de acceso rápido a estilos',
+        fuentes: '3 fuentes disponibles',
+        encuadres: '14 encuadres',
+        simbolos: 'Más de 250 símbolos'
       },
-      funciones: {
-        pantalla: 'LCD 2 líneas',
-        teclado: 'QWERTY completo',
-        memoria: '8 MB RAM',
-        bateria: 'Li-ion recargable'
-      },
-      capacidad: {
-        cintas: '3.5mm a 12mm',
-        bateria: 'Hasta 8 horas',
-        memoria: '8 MB RAM'
+      compatibilidad: {
+        cintas: 'Cintas TZe de hasta 12 mm',
+        etiquetas: '1 o 2 renglones',
+        memoria: 'Guarda hasta 15 etiquetas'
       }
     }
   },
   {
     id: 2,
-    nombre: 'BROTHER P-touch PT-D400',
-    modelo: 'PT-D400',
-    descripcion: 'Rotuladora Portátil Profesional',
-    slug: 'brother-p-touch-pt-d400',
-    imagen: '/images/equipos/rotuladora-pt-d400.jpg',
+    nombre: 'ROTULADORA BROTHER PTH110PK',
+    modelo: 'PTH110PK',
+    descripcion: 'Rotuladora de etiquetas rosa con teclado QWERTY y cintas resistentes.',
+    descripcionLarga: 'Utiliza etiquetas de tela y laminadas duraderas, resistentes al sol, agua y temperatura. Ideal para cocina, jardín y manualidades. Tiene 3 fuentes, 14 marcos, más de 250 símbolos, y permite guardar hasta 15 etiquetas para reimpresión rápida. Compatible con cintas de hasta 12 mm.',
+    slug: 'rotuladora-brother-pth110pk',
+    imagen: '/images/equipos/rotuladora-pth110pk.jpg',
     categoria: 'Rotuladoras portátiles',
     tecnologia: 'Impresión térmica',
     resolucion: '180 DPI',
     velocidad: 'Hasta 5 cms/seg',
     precio: 'Consultar precio',
-    compatibilidad: ['USB', 'Batería recargable', 'Pantalla LCD', 'Teclado QWERTY'],
+    compatibilidad: ['Cintas TZE', 'Teclado QWERTY', 'Etiquetas resistentes', 'Memoria interna'],
+    memoria: '15 etiquetas en memoria',
+    procesador: 'Teclado QWERTY',
+    bandeja: 'Cintas TZE de hasta 12 mm',
+    cicloMensual: 'Ilimitado',
+    insumos: 'Cintas TZE (hasta 12 mm) | 6 pilas AAA | Etiquetas de tela y laminadas',
     caracteristicas: {
-      impresion: {
-        resolucion: '180 DPI',
-        velocidad: 'Hasta 5 cms/seg',
-        primeraPagina: 'Menos de 2 segundos',
-        tipoCinta: 'TZe (3.5mm a 18mm)'
+      portabilidad: {
+        peso: 'Ligera y portátil',
+        dimensiones: '29 cm x 19 cm x 10,5 cm',
+        energia: '6 pilas AAA',
+        color: 'Rosado'
       },
-      conectividad: {
-        usb: 'Sí',
-        wifi: 'No',
-        ethernet: 'No',
-        movil: 'No'
+      funcionalidad: {
+        teclado: 'QWERTY fácil de usar',
+        pantalla: 'Vista previa gráfica',
+        fuentes: '3 fuentes disponibles',
+        marcos: '14 marcos',
+        simbolos: 'Más de 250 símbolos',
+        memoria: 'Guarda hasta 15 etiquetas'
       },
-      funciones: {
-        pantalla: 'LCD 4 líneas',
-        teclado: 'QWERTY completo',
-        memoria: '16 MB RAM',
-        bateria: 'Li-ion recargable'
+      compatibilidad: {
+        cintas: 'Cintas TZE de hasta 12 mm',
+        etiquetas: 'Etiquetas de tela y laminadas',
+        resistencia: 'Resistente al sol, agua y temperatura'
       },
-      capacidad: {
-        cintas: '3.5mm a 18mm',
-        bateria: 'Hasta 10 horas',
-        memoria: '16 MB RAM'
-      }
+      garantia: '1 año por defectos de fabricación'
     }
   },
   {
     id: 3,
-    nombre: 'BROTHER P-touch PT-D600',
-    modelo: 'PT-D600',
-    descripcion: 'Rotuladora Portátil de Alto Rendimiento',
-    slug: 'brother-p-touch-pt-d600',
-    imagen: '/images/equipos/rotuladora-pt-d600.jpg',
+    nombre: 'ROTULADORA BROTHER PTH110TB (VERDE AGUA)',
+    modelo: 'PTH110TB',
+    descripcion: 'Rotuladora electrónica portátil verde agua, fácil de usar.',
+    descripcionLarga: 'Diseñada para organizar espacios del hogar u oficina. Tiene teclado QWERTY, pantalla con vista previa y teclas estilo PC de un solo toque. Funciona con 6 pilas AAA o adaptador CA opcional. Incluye cinta inicial de 12 mm negra sobre blanco.',
+    slug: 'rotuladora-brother-pth110tb',
+    imagen: '/images/equipos/rotuladora-pth110tb.jpg',
     categoria: 'Rotuladoras portátiles',
     tecnologia: 'Impresión térmica',
     resolucion: '180 DPI',
     velocidad: 'Hasta 5 cms/seg',
     precio: 'Consultar precio',
-    compatibilidad: ['USB', 'Batería recargable', 'Pantalla LCD', 'Teclado QWERTY', 'WiFi'],
+    compatibilidad: ['Teclado QWERTY', 'Vista previa', 'Teclas estilo PC', 'Cinta inicial incluida'],
+    memoria: '15 etiquetas en memoria',
+    procesador: 'Teclado QWERTY con teclas estilo PC',
+    bandeja: 'Cintas de hasta 12 mm de ancho',
+    cicloMensual: 'Ilimitado',
+    insumos: 'Cinta inicial 12 mm negra sobre blanco | 6 pilas AAA | Adaptador CA opcional',
     caracteristicas: {
-      impresion: {
-        resolucion: '180 DPI',
-        velocidad: 'Hasta 5 cms/seg',
-        primeraPagina: 'Menos de 2 segundos',
-        tipoCinta: 'TZe (3.5mm a 24mm)'
+      portabilidad: {
+        peso: 'Ligera y portátil',
+        dimensiones: '29 cm x 19 cm x 10,5 cm',
+        energia: '6 pilas AAA o adaptador CA opcional',
+        color: 'Verde agua'
       },
-      conectividad: {
-        usb: 'Sí',
-        wifi: 'Sí',
-        ethernet: 'No',
-        movil: 'Brother Mobile Connect'
+      funcionalidad: {
+        teclado: 'QWERTY con teclas estilo PC',
+        pantalla: 'Vista previa antes de imprimir',
+        teclas: 'Teclas de un solo toque',
+        fuentes: '3 fuentes disponibles',
+        bordes: '14 bordes',
+        simbolos: 'Más de 250 símbolos',
+        memoria: 'Almacena hasta 15 etiquetas'
       },
-      funciones: {
-        pantalla: 'LCD 6 líneas',
-        teclado: 'QWERTY completo',
-        memoria: '32 MB RAM',
-        bateria: 'Li-ion recargable'
-      },
-      capacidad: {
-        cintas: '3.5mm a 24mm',
-        bateria: 'Hasta 12 horas',
-        memoria: '32 MB RAM'
+      compatibilidad: {
+        cintas: 'Cintas de hasta 12 mm de ancho',
+        etiquetas: '1 o 2 líneas de texto',
+        cintaInicial: 'Cinta inicial de 12 mm negra sobre blanco incluida'
       }
     }
   },
@@ -700,7 +707,7 @@ const DetalleEquipo = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
               {/* Sección principal según el tipo de equipo */}
-              {(equipo.caracteristicas.impresion || equipo.caracteristicas.destruccion || equipo.caracteristicas.proteccion || equipo.caracteristicas.escaneo) && (
+              {(equipo.caracteristicas.impresion || equipo.caracteristicas.destruccion || equipo.caracteristicas.proteccion || equipo.caracteristicas.escaneo || equipo.caracteristicas.portabilidad) && (
                 <div>
                   <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
                     {equipo.categoria === 'Rotuladoras portátiles' || equipo.categoria === 'Etiquetadoras' ? (
@@ -717,13 +724,46 @@ const DetalleEquipo = () => {
                     {equipo.caracteristicas.impresion ? 'Impresión' : 
                      equipo.caracteristicas.destruccion ? 'Destrucción' :
                      equipo.caracteristicas.proteccion ? 'Protección' :
-                     equipo.caracteristicas.escaneo ? 'Escaneo' : 'Características'}
+                     equipo.caracteristicas.escaneo ? 'Escaneo' : 
+                     equipo.caracteristicas.portabilidad ? 'Portabilidad' : 'Características'}
                   </h3>
                   <div className="space-y-3">
-                    {Object.entries(equipo.caracteristicas.impresion || equipo.caracteristicas.destruccion || equipo.caracteristicas.proteccion || equipo.caracteristicas.escaneo || {}).map(([key, value]) => (
+                    {Object.entries(equipo.caracteristicas.impresion || equipo.caracteristicas.destruccion || equipo.caracteristicas.proteccion || equipo.caracteristicas.escaneo || equipo.caracteristicas.portabilidad || {}).map(([key, value]) => (
                       <div key={key}>
                         <span className="font-semibold block text-gray-700 capitalize">
-                          {key.replace(/([A-Z])/g, ' $1').trim()}
+                          {key === 'peso' ? 'Peso' : 
+                           key === 'dimensiones' ? 'Dimensiones' : 
+                           key === 'energia' ? 'Energía' : 
+                           key === 'color' ? 'Color' :
+                           key.replace(/([A-Z])/g, ' $1').trim()}
+                        </span>
+                        <span className="text-gray-600">{value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Funcionalidad (para rotuladoras) */}
+              {equipo.caracteristicas.funcionalidad && (
+                <div>
+                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                    <Check className="w-5 h-5 mr-2" />
+                    Funcionalidad
+                  </h3>
+                  <div className="space-y-3">
+                    {Object.entries(equipo.caracteristicas.funcionalidad).map(([key, value]) => (
+                      <div key={key}>
+                        <span className="font-semibold block text-gray-700 capitalize">
+                          {key === 'teclado' ? 'Teclado' : 
+                           key === 'pantalla' ? 'Pantalla' : 
+                           key === 'teclas' ? 'Teclas' : 
+                           key === 'fuentes' ? 'Fuentes' : 
+                           key === 'encuadres' ? 'Encuadres' : 
+                           key === 'marcos' ? 'Marcos' : 
+                           key === 'bordes' ? 'Bordes' : 
+                           key === 'simbolos' ? 'Símbolos' : 
+                           key === 'memoria' ? 'Memoria' : key}
                         </span>
                         <span className="text-gray-600">{value}</span>
                       </div>
@@ -788,6 +828,46 @@ const DetalleEquipo = () => {
                         <span className="text-gray-600">{value}</span>
                       </div>
                     ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Compatibilidad (para rotuladoras) */}
+              {equipo.caracteristicas.compatibilidad && (
+                <div>
+                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                    <Check className="w-5 h-5 mr-2" />
+                    Compatibilidad
+                  </h3>
+                  <div className="space-y-3">
+                    {Object.entries(equipo.caracteristicas.compatibilidad).map(([key, value]) => (
+                      <div key={key}>
+                        <span className="font-semibold block text-gray-700 capitalize">
+                          {key === 'cintas' ? 'Cintas' : 
+                           key === 'etiquetas' ? 'Etiquetas' : 
+                           key === 'memoria' ? 'Memoria' : 
+                           key === 'resistencia' ? 'Resistencia' : 
+                           key === 'cintaInicial' ? 'Cinta Inicial' : key}
+                        </span>
+                        <span className="text-gray-600">{value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Garantía (si existe) */}
+              {equipo.caracteristicas.garantia && (
+                <div>
+                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                    <Check className="w-5 h-5 mr-2" />
+                    Garantía
+                  </h3>
+                  <div className="space-y-3">
+                    <div>
+                      <span className="font-semibold block text-gray-700">Garantía</span>
+                      <span className="text-gray-600">{equipo.caracteristicas.garantia}</span>
+                    </div>
                   </div>
                 </div>
               )}
