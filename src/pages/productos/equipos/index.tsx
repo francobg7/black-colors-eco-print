@@ -1,53 +1,353 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Monitor, Printer, Server, Wifi, Shield, Zap } from 'lucide-react';
+import { ArrowLeft, Monitor, Printer, Server, Wifi, Shield, Zap, Scissors, Trash2, Battery, Tag, Scan } from 'lucide-react';
 import Footer from '@/components/Footer';
+import { useState } from 'react';
+
+// Datos de todos los equipos
+const todosEquipos = [
+  // ROTULADORAS PORTÁTILES
+  {
+    id: 1,
+    nombre: 'BROTHER P-touch PT-D200',
+    modelo: 'PT-D200',
+    descripcion: 'Rotuladora Portátil de Etiquetas',
+    slug: 'brother-p-touch-pt-d200',
+    imagen: '/images/equipos/rotuladora-pt-d200.jpg',
+    categoria: 'Rotuladoras portátiles',
+    tecnologia: 'Impresión térmica',
+    resolucion: '180 DPI',
+    velocidad: 'Hasta 5 cms/seg',
+    precio: 'Consultar precio',
+    compatibilidad: ['USB', 'Batería recargable', 'Pantalla LCD'],
+    memoria: '8 MB RAM',
+    procesador: 'Pantalla LCD 2 líneas',
+    bandeja: 'Cintas de 3.5mm a 12mm',
+    cicloMensual: 'Ilimitado',
+    insumos: 'Cintas TZe (3.5mm a 12mm) | Batería Li-ion recargable'
+  },
+  {
+    id: 2,
+    nombre: 'BROTHER P-touch PT-D400',
+    modelo: 'PT-D400',
+    descripcion: 'Rotuladora Portátil Profesional',
+    slug: 'brother-p-touch-pt-d400',
+    imagen: '/images/equipos/rotuladora-pt-d400.jpg',
+    categoria: 'Rotuladoras portátiles',
+    tecnologia: 'Impresión térmica',
+    resolucion: '180 DPI',
+    velocidad: 'Hasta 5 cms/seg',
+    precio: 'Consultar precio',
+    compatibilidad: ['USB', 'Batería recargable', 'Pantalla LCD', 'Teclado QWERTY'],
+    memoria: '16 MB RAM',
+    procesador: 'Pantalla LCD 4 líneas',
+    bandeja: 'Cintas de 3.5mm a 18mm',
+    cicloMensual: 'Ilimitado',
+    insumos: 'Cintas TZe (3.5mm a 18mm) | Batería Li-ion recargable'
+  },
+  {
+    id: 3,
+    nombre: 'BROTHER P-touch PT-D600',
+    modelo: 'PT-D600',
+    descripcion: 'Rotuladora Portátil de Alto Rendimiento',
+    slug: 'brother-p-touch-pt-d600',
+    imagen: '/images/equipos/rotuladora-pt-d600.jpg',
+    categoria: 'Rotuladoras portátiles',
+    tecnologia: 'Impresión térmica',
+    resolucion: '180 DPI',
+    velocidad: 'Hasta 5 cms/seg',
+    precio: 'Consultar precio',
+    compatibilidad: ['USB', 'Batería recargable', 'Pantalla LCD', 'Teclado QWERTY', 'WiFi'],
+    memoria: '32 MB RAM',
+    procesador: 'Pantalla LCD 6 líneas',
+    bandeja: 'Cintas de 3.5mm a 24mm',
+    cicloMensual: 'Ilimitado',
+    insumos: 'Cintas TZe (3.5mm a 24mm) | Batería Li-ion recargable'
+  },
+
+  // DESTRUCTORA DE PAPEL
+  {
+    id: 4,
+    nombre: 'BROTHER DS-120',
+    modelo: 'DS-120',
+    descripcion: 'Destructora de Papel Personal',
+    slug: 'brother-ds-120',
+    imagen: '/images/equipos/destructora-ds-120.jpg',
+    categoria: 'Destructora de papel',
+    tecnologia: 'Corte en tiras',
+    resolucion: 'N/A',
+    velocidad: 'Hasta 8 hojas',
+    precio: 'Consultar precio',
+    compatibilidad: ['Papel A4', 'Grapas', 'Clips'],
+    memoria: 'N/A',
+    procesador: 'Motor de 120W',
+    bandeja: 'Capacidad 20L',
+    cicloMensual: 'Hasta 100 hojas/día',
+    insumos: 'Bolsa de residuos incluida'
+  },
+  {
+    id: 5,
+    nombre: 'BROTHER DS-740D',
+    modelo: 'DS-740D',
+    descripcion: 'Destructora de Papel de Oficina',
+    slug: 'brother-ds-740d',
+    imagen: '/images/equipos/destructora-ds-740d.jpg',
+    categoria: 'Destructora de papel',
+    tecnologia: 'Corte en partículas',
+    resolucion: 'N/A',
+    velocidad: 'Hasta 10 hojas',
+    precio: 'Consultar precio',
+    compatibilidad: ['Papel A4', 'Grapas', 'Clips', 'Tarjetas de crédito'],
+    memoria: 'N/A',
+    procesador: 'Motor de 200W',
+    bandeja: 'Capacidad 30L',
+    cicloMensual: 'Hasta 500 hojas/día',
+    insumos: 'Bolsa de residuos incluida'
+  },
+  {
+    id: 6,
+    nombre: 'BROTHER DS-940DW',
+    modelo: 'DS-940DW',
+    descripcion: 'Destructora de Papel Profesional',
+    slug: 'brother-ds-940dw',
+    imagen: '/images/equipos/destructora-ds-940dw.jpg',
+    categoria: 'Destructora de papel',
+    tecnologia: 'Corte en partículas',
+    resolucion: 'N/A',
+    velocidad: 'Hasta 12 hojas',
+    precio: 'Consultar precio',
+    compatibilidad: ['Papel A4', 'Grapas', 'Clips', 'Tarjetas', 'CDs/DVDs'],
+    memoria: 'N/A',
+    procesador: 'Motor de 300W',
+    bandeja: 'Capacidad 50L',
+    cicloMensual: 'Hasta 1000 hojas/día',
+    insumos: 'Bolsa de residuos incluida'
+  },
+  {
+    id: 7,
+    nombre: 'BROTHER DS-1200DW',
+    modelo: 'DS-1200DW',
+    descripcion: 'Destructora de Papel Industrial',
+    slug: 'brother-ds-1200dw',
+    imagen: '/images/equipos/destructora-ds-1200dw.jpg',
+    categoria: 'Destructora de papel',
+    tecnologia: 'Corte en partículas',
+    resolucion: 'N/A',
+    velocidad: 'Hasta 20 hojas',
+    precio: 'Consultar precio',
+    compatibilidad: ['Papel A4', 'Grapas', 'Clips', 'Tarjetas', 'CDs/DVDs', 'Papel continuo'],
+    memoria: 'N/A',
+    procesador: 'Motor de 500W',
+    bandeja: 'Capacidad 100L',
+    cicloMensual: 'Hasta 5000 hojas/día',
+    insumos: 'Bolsa de residuos incluida'
+  },
+
+  // UPS POLARIAS
+  {
+    id: 8,
+    nombre: 'POLARIAS UPS-1000VA',
+    modelo: 'UPS-1000VA',
+    descripcion: 'UPS de 1000VA con Protección de Batería',
+    slug: 'polarias-ups-1000va',
+    imagen: '/images/equipos/ups-1000va.jpg',
+    categoria: 'UPS Polarias',
+    tecnologia: 'UPS Line-Interactive',
+    resolucion: 'N/A',
+    velocidad: 'N/A',
+    precio: 'Consultar precio',
+    compatibilidad: ['PC', 'Monitor', 'Router', 'Modem'],
+    memoria: 'N/A',
+    procesador: 'Microcontrolador integrado',
+    bandeja: 'N/A',
+    cicloMensual: 'N/A',
+    insumos: 'Batería de plomo-ácido sellada'
+  },
+  {
+    id: 9,
+    nombre: 'POLARIAS UPS-1500VA',
+    modelo: 'UPS-1500VA',
+    descripcion: 'UPS de 1500VA con Protección Avanzada',
+    slug: 'polarias-ups-1500va',
+    imagen: '/images/equipos/ups-1500va.jpg',
+    categoria: 'UPS Polarias',
+    tecnologia: 'UPS Line-Interactive',
+    resolucion: 'N/A',
+    velocidad: 'N/A',
+    precio: 'Consultar precio',
+    compatibilidad: ['PC', 'Monitor', 'Router', 'Modem', 'Impresora'],
+    memoria: 'N/A',
+    procesador: 'Microcontrolador integrado',
+    bandeja: 'N/A',
+    cicloMensual: 'N/A',
+    insumos: 'Batería de plomo-ácido sellada'
+  },
+
+  // ETIQUETADORAS
+  {
+    id: 10,
+    nombre: 'BROTHER QL-800',
+    modelo: 'QL-800',
+    descripcion: 'Etiquetadora de Escritorio Profesional',
+    slug: 'brother-ql-800',
+    imagen: '/images/equipos/etiquetadora-ql-800.jpg',
+    categoria: 'Etiquetadoras',
+    tecnologia: 'Impresión térmica',
+    resolucion: '300 DPI',
+    velocidad: 'Hasta 8 cms/seg',
+    precio: 'Consultar precio',
+    compatibilidad: ['USB', 'PC', 'Mac', 'Software P-touch Editor'],
+    memoria: '16 MB RAM',
+    procesador: 'Procesador integrado',
+    bandeja: 'Cintas de 6mm a 62mm',
+    cicloMensual: 'Ilimitado',
+    insumos: 'Cintas QL (6mm a 62mm) | Cintas de laminado'
+  },
+
+  // SCANNERS
+  {
+    id: 11,
+    nombre: 'BROTHER ADS-1200',
+    modelo: 'ADS-1200',
+    descripcion: 'Scanner de Documentos Portátil',
+    slug: 'brother-ads-1200',
+    imagen: '/images/equipos/scanner-ads-1200.jpg',
+    categoria: 'Scanners',
+    tecnologia: 'Scanner de documentos',
+    resolucion: 'Hasta 600 DPI',
+    velocidad: 'Hasta 20 ppm',
+    precio: 'Consultar precio',
+    compatibilidad: ['USB', 'WiFi', 'PC', 'Mac', 'Android', 'iOS'],
+    memoria: '32 MB RAM',
+    procesador: 'Procesador ARM',
+    bandeja: 'ADF de 20 hojas',
+    cicloMensual: 'Hasta 1000 páginas',
+    insumos: 'N/A'
+  },
+  {
+    id: 12,
+    nombre: 'BROTHER ADS-1700W',
+    modelo: 'ADS-1700W',
+    descripcion: 'Scanner de Documentos WiFi',
+    slug: 'brother-ads-1700w',
+    imagen: '/images/equipos/scanner-ads-1700w.jpg',
+    categoria: 'Scanners',
+    tecnologia: 'Scanner de documentos',
+    resolucion: 'Hasta 600 DPI',
+    velocidad: 'Hasta 25 ppm',
+    precio: 'Consultar precio',
+    compatibilidad: ['USB', 'WiFi', 'PC', 'Mac', 'Android', 'iOS', 'Cloud'],
+    memoria: '64 MB RAM',
+    procesador: 'Procesador ARM',
+    bandeja: 'ADF de 30 hojas',
+    cicloMensual: 'Hasta 2000 páginas',
+    insumos: 'N/A'
+  },
+  {
+    id: 13,
+    nombre: 'BROTHER ADS-2200',
+    modelo: 'ADS-2200',
+    descripcion: 'Scanner de Documentos de Alto Rendimiento',
+    slug: 'brother-ads-2200',
+    imagen: '/images/equipos/scanner-ads-2200.jpg',
+    categoria: 'Scanners',
+    tecnologia: 'Scanner de documentos',
+    resolucion: 'Hasta 600 DPI',
+    velocidad: 'Hasta 30 ppm',
+    precio: 'Consultar precio',
+    compatibilidad: ['USB', 'WiFi', 'Red Ethernet', 'PC', 'Mac', 'Cloud'],
+    memoria: '128 MB RAM',
+    procesador: 'Procesador ARM dual-core',
+    bandeja: 'ADF de 50 hojas',
+    cicloMensual: 'Hasta 5000 páginas',
+    insumos: 'N/A'
+  }
+];
 
 const ProductosEquipos = () => {
+  const [selectedFilter, setSelectedFilter] = useState('all');
+
+  const filterCategories = {
+    all: 'Todos los equipos',
+    'rotuladoras-portatiles': 'Rotuladoras portátiles',
+    'destructora-papel': 'Destructora de papel',
+    'ups-polarias': 'UPS Polarias',
+    'etiquetadoras': 'Etiquetadoras',
+    'scanners': 'Scanners'
+  };
+
+  const filteredEquipos = todosEquipos.filter(equipo => {
+    if (selectedFilter === 'all') return true;
+    
+    if (selectedFilter === 'rotuladoras-portatiles') {
+      return equipo.categoria === 'Rotuladoras portátiles';
+    }
+    
+    if (selectedFilter === 'destructora-papel') {
+      return equipo.categoria === 'Destructora de papel';
+    }
+    
+    if (selectedFilter === 'ups-polarias') {
+      return equipo.categoria === 'UPS Polarias';
+    }
+    
+    if (selectedFilter === 'etiquetadoras') {
+      return equipo.categoria === 'Etiquetadoras';
+    }
+    
+    if (selectedFilter === 'scanners') {
+      return equipo.categoria === 'Scanners';
+    }
+    
+    return true;
+  });
+
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
+      {/* Hero Section with integrated search */}
       <div className="relative">
         {/* Hero Background */}
         <div className="relative h-[500px] overflow-hidden">
           <img 
-            src="/images/background-3.jpg" 
+            src="/images/equipos/portada-equipos.jpg" 
             alt="Equipos Hero"
             className="w-full h-full object-cover"
           />
-          {/* Gradient overlay for better text readability */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-gray-50" />
-          
-          {/* Hero Content */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-8">
-            <div className="max-w-5xl mx-auto text-center space-y-8">
-              {/* Main Title */}
-              <div className="space-y-4">
-                <h1 className="text-5xl lg:text-7xl font-bold mb-4 leading-tight tracking-tight">
-                  EQUIPOS
-                </h1>
-                <h2 className="text-3xl lg:text-5xl font-light text-emerald-300 leading-tight tracking-tight">
-                  DE IMPRESIÓN Y TECNOLOGÍA
-                </h2>
-              </div>
-              
-              {/* Description */}
-              <div className="max-w-4xl mx-auto space-y-4">
-                <p className="text-xl lg:text-2xl text-gray-100 leading-relaxed font-light">
-                  Soluciones tecnológicas completas para tu empresa
-                </p>
-                <p className="text-lg lg:text-xl text-gray-200 leading-relaxed font-light max-w-3xl mx-auto">
-                  Desde equipos de impresión hasta soluciones de red y monitoreo, 
-                  ofrecemos tecnología de vanguardia para optimizar tus operaciones.
-                </p>
-              </div>
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
+            <h1 className="text-5xl font-bold mb-4">EQUIPOS</h1>
+            <p className="text-xl max-w-2xl text-center mb-12">
+              Descubre nuestra línea completa de equipos tecnológicos para todas tus necesidades
+            </p>
+          </div>
+        </div>
+
+        {/* Floating Filter Card */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 translate-y-1/2 w-full px-4">
+          <div className="max-w-6xl mx-auto bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl p-8">
+            <h2 className="text-2xl font-bold text-[#2d472f] text-center mb-6">Filtrar Equipos</h2>
+            
+            {/* Categorías de equipos */}
+            <div className="flex flex-wrap gap-3 justify-center">
+              {Object.entries(filterCategories).map(([key, label]) => (
+                <button
+                  key={key}
+                  onClick={() => setSelectedFilter(key)}
+                  className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
+                    selectedFilter === key
+                      ? 'bg-[#2d472f] text-white shadow-lg shadow-[#2d472f]/20 scale-105'
+                      : 'bg-white/80 text-[#2d472f] hover:bg-[#2d472f]/10 border-2 border-[#2d472f]/10 hover:scale-105'
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
             </div>
           </div>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-6 py-24">
+      <div className="container mx-auto px-6 pt-40 pb-16">
         {/* Navegación */}
         <div className="mb-16">
           <Link 
@@ -59,139 +359,107 @@ const ProductosEquipos = () => {
           </Link>
         </div>
 
-        {/* Título principal */}
-        <div className="text-center mb-20">
-          <h3 className="text-4xl font-light text-gray-900 mb-4 tracking-tight">
-            NUESTROS EQUIPOS
-          </h3>
-          <div className="w-20 h-px bg-emerald-400 mx-auto"></div>
-          <p className="text-xl text-gray-600 mt-6 max-w-3xl mx-auto leading-relaxed font-light">
-            Tecnología avanzada para impulsar la productividad de tu empresa
-          </p>
+        {/* Products Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          {filteredEquipos.map((equipo) => (
+            <Link 
+              key={equipo.id}
+              to={`/productos/equipos/${equipo.slug}`}
+              className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group block"
+            >
+              {/* Product Image */}
+              <div className="relative h-64 overflow-hidden rounded-t-xl">
+                <img 
+                  src={equipo.imagen} 
+                  alt={equipo.nombre}
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              </div>
+
+              {/* Product Info */}
+              <div className="p-6">
+                <h3 className="text-lg font-bold text-[#2d472f] mb-2 group-hover:text-[#4b6d3b] transition-colors">
+                  {equipo.nombre}
+                </h3>
+                
+                <p className="text-sm text-gray-600 mb-3">
+                  {equipo.descripcion}
+                </p>
+
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-2">
+                    {equipo.categoria === 'Rotuladoras portátiles' && <Scissors className="w-4 h-4 text-[#4b6d3b]" />}
+                    {equipo.categoria === 'Destructora de papel' && <Trash2 className="w-4 h-4 text-[#4b6d3b]" />}
+                    {equipo.categoria === 'UPS Polarias' && <Battery className="w-4 h-4 text-[#4b6d3b]" />}
+                    {equipo.categoria === 'Etiquetadoras' && <Tag className="w-4 h-4 text-[#4b6d3b]" />}
+                    {equipo.categoria === 'Scanners' && <Scan className="w-4 h-4 text-[#4b6d3b]" />}
+                    <span className="text-[#4b6d3b] font-medium">{equipo.tecnologia}</span>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-2 text-sm text-gray-600">
+                    {equipo.resolucion !== 'N/A' && (
+                      <div>
+                        <span className="font-semibold block">Resolución</span>
+                        {equipo.resolucion}
+                      </div>
+                    )}
+                    {equipo.velocidad !== 'N/A' && (
+                      <div>
+                        <span className="font-semibold block">Velocidad</span>
+                        {equipo.velocidad}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Información adicional técnica */}
+                  {(equipo.memoria || equipo.bandeja || equipo.cicloMensual) && (
+                    <div className="text-xs text-gray-500 bg-gray-50 p-3 rounded-lg">
+                      {equipo.memoria && equipo.memoria !== 'N/A' && (
+                        <div className="mb-1">
+                          <span className="font-semibold">Memoria:</span> {equipo.memoria}
+                        </div>
+                      )}
+                      {equipo.bandeja && equipo.bandeja !== 'N/A' && (
+                        <div className="mb-1">
+                          <span className="font-semibold">Bandeja:</span> {equipo.bandeja}
+                        </div>
+                      )}
+                      {equipo.cicloMensual && equipo.cicloMensual !== 'N/A' && (
+                        <div>
+                          <span className="font-semibold">Ciclo:</span> {equipo.cicloMensual}
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Price */}
+                  <div className="mt-4">
+                    <span className="text-lg font-bold text-[#2d472f]">{equipo.precio}</span>
+                  </div>
+
+                  {/* Features */}
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {equipo.compatibilidad.slice(0, 3).map((comp, idx) => (
+                      <span 
+                        key={idx} 
+                        className="text-xs bg-[#e8f5e9] text-[#2d472f] px-3 py-1 rounded-full font-medium"
+                      >
+                        {comp}
+                      </span>
+                    ))}
+                    {equipo.compatibilidad.length > 3 && (
+                      <span className="text-xs text-gray-500 px-3 py-1">
+                        +{equipo.compatibilidad.length - 3} más
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
-
-        {/* Grid de categorías de equipos */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-20">
-          {/* Equipos de Impresión */}
-          <div className="space-y-6 bg-green-50/30 rounded-3xl p-8 border border-green-100/50 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-emerald-200/50 cursor-pointer group">
-            <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-emerald-200 group-hover:scale-110">
-              <Printer className="w-8 h-8 text-emerald-600 transition-all duration-300 group-hover:text-emerald-700" />
-            </div>
-            <h3 className="text-2xl font-medium text-gray-900 tracking-wide transition-all duration-300 group-hover:text-emerald-800">
-              🖨️ EQUIPOS DE IMPRESIÓN
-            </h3>
-            <p className="text-gray-600 leading-relaxed font-light transition-all duration-300 group-hover:text-gray-700">
-              Impresoras láser, multifuncionales, plotters y equipos especializados para diferentes necesidades empresariales.
-            </p>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li>• Impresoras láser monocromáticas y color</li>
-              <li>• Multifuncionales con escáner integrado</li>
-              <li>• Plotters de gran formato</li>
-              <li>• Equipos de producción industrial</li>
-            </ul>
-          </div>
-
-          {/* Equipos de Red y Conectividad */}
-          <div className="space-y-6 bg-blue-50/30 rounded-3xl p-8 border border-blue-100/50 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-blue-200/50 cursor-pointer group">
-            <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-blue-200 group-hover:scale-110">
-              <Wifi className="w-8 h-8 text-blue-600 transition-all duration-300 group-hover:text-blue-700" />
-            </div>
-            <h3 className="text-2xl font-medium text-gray-900 tracking-wide transition-all duration-300 group-hover:text-blue-800">
-              🌐 EQUIPOS DE RED
-            </h3>
-            <p className="text-gray-600 leading-relaxed font-light transition-all duration-300 group-hover:text-gray-700">
-              Soluciones de conectividad y red para optimizar la comunicación entre dispositivos y usuarios.
-            </p>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li>• Switches y routers empresariales</li>
-              <li>• Access points WiFi</li>
-              <li>• Cables y conectores de red</li>
-              <li>• Soluciones de seguridad</li>
-            </ul>
-          </div>
-
-          {/* Equipos de Monitoreo y Control */}
-          <div className="space-y-6 bg-purple-50/30 rounded-3xl p-8 border border-purple-100/50 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-purple-200/50 cursor-pointer group">
-            <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-purple-200 group-hover:scale-110">
-              <Monitor className="w-8 h-8 text-purple-600 transition-all duration-300 group-hover:text-purple-700" />
-            </div>
-            <h3 className="text-2xl font-medium text-gray-900 tracking-wide transition-all duration-300 group-hover:text-purple-800">
-              📊 EQUIPOS DE MONITOREO
-            </h3>
-            <p className="text-gray-600 leading-relaxed font-light transition-all duration-300 group-hover:text-gray-700">
-              Sistemas de control y monitoreo para gestionar eficientemente tu parque tecnológico.
-            </p>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li>• Monitores de control</li>
-              <li>• Sistemas de gestión centralizada</li>
-              <li>• Software de monitoreo</li>
-              <li>• Herramientas de diagnóstico</li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Sección de Servicios Adicionales */}
-        <section className="w-full bg-gradient-to-br from-green-50/20 to-emerald-50/10 py-24 rounded-3xl">
-          <div className="container mx-auto px-8">
-            <div className="text-center mb-16">
-              <h3 className="text-4xl font-light text-gray-900 mb-4 tracking-tight">
-                SERVICIOS COMPLEMENTARIOS
-              </h3>
-              <div className="w-20 h-px bg-emerald-400 mx-auto"></div>
-              <p className="text-xl text-gray-600 mt-6 max-w-3xl mx-auto leading-relaxed font-light">
-                No solo vendemos equipos, también te acompañamos en su implementación y mantenimiento
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              <div className="text-center space-y-4">
-                <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto">
-                  <Shield className="w-8 h-8 text-emerald-600" />
-                </div>
-                <h4 className="text-lg font-medium text-gray-900">INSTALACIÓN Y CONFIGURACIÓN</h4>
-                <p className="text-sm text-gray-600">Configuración profesional de todos los equipos</p>
-              </div>
-              
-              <div className="text-center space-y-4">
-                <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto">
-                  <Zap className="w-8 h-8 text-emerald-600" />
-                </div>
-                <h4 className="text-lg font-medium text-gray-900">CAPACITACIÓN DEL PERSONAL</h4>
-                <p className="text-sm text-gray-600">Entrenamiento para tu equipo técnico</p>
-              </div>
-              
-              <div className="text-center space-y-4">
-                <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto">
-                  <Server className="w-8 h-8 text-emerald-600" />
-                </div>
-                <h4 className="text-lg font-medium text-gray-900">SOPORTE TÉCNICO</h4>
-                <p className="text-sm text-gray-600">Asistencia continua y mantenimiento</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Final */}
-        <section className="w-full bg-gradient-to-br from-white to-green-50/30 py-24 rounded-3xl">
-          <div className="container mx-auto px-8 text-center">
-            <h3 className="text-4xl font-light text-gray-900 mb-8 tracking-tight">
-              ¿NECESITÁS EQUIPOS ESPECIALIZADOS?
-            </h3>
-            
-            <div className="max-w-4xl mx-auto mb-12">
-              <p className="text-lg text-gray-600 leading-relaxed font-light">
-                Contáctanos para asesorarte sobre la mejor solución tecnológica para tu empresa. 
-                Nuestros especialistas te ayudarán a elegir los equipos más adecuados.
-              </p>
-            </div>
-
-            <button className="bg-gradient-to-r from-emerald-600 to-green-600 text-white px-8 py-4 rounded-2xl text-lg font-medium hover:from-emerald-700 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl">
-              Solicitar Cotización
-            </button>
-          </div>
-        </section>
       </div>
-
       <Footer />
     </div>
   );
