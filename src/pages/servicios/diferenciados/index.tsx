@@ -5,38 +5,40 @@ import Footer from '@/components/Footer';
 const ServiciosDiferenciados = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50/30 to-white">
-      {/* Hero Section - Primera imagen + introducción */}
-      <section className="w-full bg-gradient-to-br from-green-50/40 to-emerald-50/20">
-        <div className="container mx-auto px-8 py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Primera imagen - 50% ancho */}
-            <div className="relative">
-              <div className="w-full h-[500px] bg-gradient-to-br from-gray-200 to-gray-300 rounded-2xl overflow-hidden shadow-2xl">
-                <div className="w-full h-full bg-gradient-to-br from-emerald-100 to-blue-100 flex items-center justify-center">
-                  <span className="text-gray-500 text-lg font-light tracking-wide">
-                    📸 Imagen: Servicios Especializados y Consultoría
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Introducción del servicio */}
-            <div className="space-y-8">
-              <div className="space-y-6">
-                <h1 className="text-6xl lg:text-7xl font-light text-gray-900 leading-tight tracking-tight">
+      {/* Hero Section with integrated information */}
+      <div className="relative">
+        {/* Hero Background */}
+        <div className="relative h-[600px] overflow-hidden">
+          <img 
+            src="/images/background-2.jpg" 
+            alt="Servicios Diferenciados Hero"
+            className="w-full h-full object-cover"
+          />
+          {/* Gradient overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-gray-50" />
+          
+          {/* Hero Content */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-8 pt-20">
+            <div className="max-w-5xl mx-auto text-center space-y-8">
+              {/* Main Title */}
+              <div className="space-y-4 animate-fade-in">
+                <h1 className="text-5xl lg:text-7xl font-bold mb-4 leading-tight tracking-tight animate-fade-in-up">
                   SERVICIOS DIFERENCIADOS
                 </h1>
-                <h2 className="text-4xl lg:text-5xl font-light text-[#2d472f] leading-tight tracking-tight">
+                <h2 className="text-3xl lg:text-5xl font-light text-emerald-300 leading-tight tracking-tight animate-fade-in-up animation-delay-200">
                   Y ESPECIALIZADOS
                 </h2>
-                <h3 className="text-3xl lg:text-4xl font-light text-gray-600 leading-tight tracking-tight">
+                <h3 className="text-2xl lg:text-4xl font-light text-emerald-200 leading-tight tracking-tight animate-fade-in-up animation-delay-300">
                   PARA TU EMPRESA
                 </h3>
               </div>
               
-              <div className="max-w-lg">
-                <p className="text-xl text-gray-600 leading-relaxed font-light">
-                  Un servicio personalizado donde tu empresa recibe soluciones a medida de sus necesidades específicas. 
+              {/* Description */}
+              <div className="max-w-4xl mx-auto space-y-4 animate-fade-in animation-delay-400">
+                <p className="text-xl lg:text-2xl text-gray-100 leading-relaxed font-light animate-fade-in-up animation-delay-500">
+                  Un servicio personalizado donde tu empresa recibe soluciones a medida de sus necesidades específicas
+                </p>
+                <p className="text-lg lg:text-xl text-gray-200 leading-relaxed font-light max-w-3xl mx-auto animate-fade-in-up animation-delay-600">
                   Nos encargamos de la consultoría, capacitación y soporte especializado. 
                   Sin soluciones genéricas, sin servicios estándar.
                 </p>
@@ -44,7 +46,7 @@ const ServiciosDiferenciados = () => {
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Información técnica del servicio - Pantalla completa */}
       <section className="w-full bg-gradient-to-br from-white to-green-50/20 py-24">
@@ -150,33 +152,29 @@ const ServiciosDiferenciados = () => {
           </div>
 
           {/* Software Especializado de Gestión de Impresoras */}
-          <div className="w-full bg-gradient-to-r from-blue-50/50 to-indigo-100/30 py-24">
-            {/* Hero Section con información de fondo - Ancho completo */}
-            <section className="w-full bg-[#2d472f] py-20">
-              <div className="container mx-auto px-8">
-                {/* Contenido principal sobre el background */}
-                <div className="text-center">
-                  <h3 className="text-5xl font-light text-white mb-6 tracking-tight">
-                    SOFTWARE ESPECIALIZADO DE GESTIÓN
-                  </h3>
-                  <h4 className="text-4xl font-light text-green-100 mb-6 tracking-tight">
-                    IMPRESORAS Y TINTAS
-                  </h4>
-                  <div className="w-24 h-px bg-green-300 mx-auto mb-8"></div>
-                  <p className="text-xl text-green-50 leading-relaxed font-light max-w-4xl mx-auto">
-                    El software de gestión de impresoras de BlackColors ofrece a los proveedores de servicios y departamentos de TI una visión completa y detallada de todos los dispositivos de impresión conectados a la red. Este innovador sistema de software se distingue por sus funcionalidades avanzadas, que incluyen:
-                  </p>
-                </div>
-              </div>
-            </section>
-
+          <section className="w-full bg-gradient-to-br from-blue-50/30 to-indigo-100/20 py-24 rounded-3xl">
             <div className="container mx-auto px-8">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+              {/* Header de la sección */}
+              <div className="text-center mb-20">
+                <h3 className="text-5xl font-light text-gray-900 mb-4 tracking-tight">
+                  SOFTWARE ESPECIALIZADO DE GESTIÓN
+                </h3>
+                <h4 className="text-4xl font-light text-emerald-600 mb-6 tracking-tight">
+                  IMPRESORAS Y TINTAS
+                </h4>
+                <div className="w-24 h-px bg-emerald-400 mx-auto mb-8"></div>
+                <p className="text-xl text-gray-600 leading-relaxed font-light max-w-4xl mx-auto">
+                  El software de gestión de impresoras de BlackColors ofrece a los proveedores de servicios y departamentos de TI una visión completa y detallada de todos los dispositivos de impresión conectados a la red. Este innovador sistema de software se distingue por sus funcionalidades avanzadas.
+                </p>
+              </div>
+
+              {/* Grid de funcionalidades principales */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
                 {/* Información detallada sobre el rendimiento */}
-                <div className="space-y-6">
+                <div className="bg-white/80 rounded-3xl p-8 border border-blue-100/50 shadow-lg hover:shadow-xl transition-all duration-300">
                   <div className="flex items-center space-x-4 mb-6">
-                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                      <TrendingUp className="w-6 h-6 text-blue-600" />
+                    <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center">
+                      <TrendingUp className="w-8 h-8 text-blue-600" />
                     </div>
                     <h4 className="text-2xl font-medium text-gray-900 tracking-wide">
                       INFORMACIÓN DETALLADA SOBRE EL RENDIMIENTO
@@ -188,10 +186,10 @@ const ServiciosDiferenciados = () => {
                 </div>
 
                 {/* Alertas inteligentes y personalizables */}
-                <div className="space-y-6">
+                <div className="bg-white/80 rounded-3xl p-8 border border-blue-100/50 shadow-lg hover:shadow-xl transition-all duration-300">
                   <div className="flex items-center space-x-4 mb-6">
-                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                      <Zap className="w-6 h-6 text-blue-600" />
+                    <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center">
+                      <Zap className="w-8 h-8 text-blue-600" />
                     </div>
                     <h4 className="text-2xl font-medium text-gray-900 tracking-wide">
                       ALERTAS INTELIGENTES Y PERSONALIZABLES
@@ -203,10 +201,10 @@ const ServiciosDiferenciados = () => {
                 </div>
 
                 {/* Inventario automático */}
-                <div className="space-y-6">
+                <div className="bg-white/80 rounded-3xl p-8 border border-blue-100/50 shadow-lg hover:shadow-xl transition-all duration-300">
                   <div className="flex items-center space-x-4 mb-6">
-                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                      <CheckCircle className="w-6 h-6 text-blue-600" />
+                    <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center">
+                      <CheckCircle className="w-8 h-8 text-blue-600" />
                     </div>
                     <h4 className="text-2xl font-medium text-gray-900 tracking-wide">
                       INVENTARIO AUTOMÁTICO
@@ -218,10 +216,10 @@ const ServiciosDiferenciados = () => {
                 </div>
 
                 {/* Diagnósticos remotos */}
-                <div className="space-y-6">
+                <div className="bg-white/80 rounded-3xl p-8 border border-blue-100/50 shadow-lg hover:shadow-xl transition-all duration-300">
                   <div className="flex items-center space-x-4 mb-6">
-                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                      <Wrench className="w-6 h-6 text-blue-600" />
+                    <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center">
+                      <Wrench className="w-8 h-8 text-blue-600" />
                     </div>
                     <h4 className="text-2xl font-medium text-gray-900 tracking-wide">
                       DIAGNÓSTICOS REMOTOS
@@ -233,15 +231,16 @@ const ServiciosDiferenciados = () => {
                 </div>
               </div>
 
+              {/* Resumen final */}
               <div className="text-center">
-                <div className="max-w-4xl mx-auto">
-                  <p className="text-xl text-gray-700 leading-relaxed font-light">
+                <div className="bg-gradient-to-r from-blue-50/50 to-indigo-100/30 rounded-3xl p-12 border border-blue-200/30">
+                  <p className="text-xl text-gray-700 leading-relaxed font-light max-w-4xl mx-auto">
                     Este servicio diferenciado está diseñado para ofrecer una gestión eficiente, reducción de costos operativos y mejorar la experiencia de los clientes, asegurando que los equipos de impresión operen siempre en condiciones óptimas.
                   </p>
                 </div>
               </div>
             </div>
-          </div>
+          </section>
 
 
         </div>
