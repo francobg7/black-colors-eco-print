@@ -10,7 +10,7 @@ const Alquileres = () => {
         {/* Hero Background */}
         <div className="relative h-[600px] overflow-hidden">
           <img 
-            src="/images/background-1.jpg" 
+            src="/images/servicios/alquileres/hero.jpg" 
             alt="Alquileres Hero"
             className="w-full h-full object-cover"
           />
