@@ -7,50 +7,43 @@ const Leasing = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50/30 to-white">
       {/* Hero Section - Nueva estructura con imagen */}
-      <section className="w-full bg-gradient-to-br from-green-50/40 to-emerald-50/20 py-32">
-        <div className="container mx-auto px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Contenido del hero */}
-            <div className="space-y-8">
-              <div className="space-y-6">
-                <h1 className="text-6xl lg:text-7xl font-light text-gray-900 leading-tight tracking-tight">
+      <div className="relative">
+        {/* Hero Background */}
+        <div className="relative h-[600px] overflow-hidden">
+          <img 
+            src="/images/leasing.jpg" 
+            alt="Leasing Sustentable Hero"
+            className="w-full h-full object-cover"
+          />
+          {/* Gradient overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-gray-50" />
+          
+          {/* Hero Content */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-8 pt-20">
+            <div className="max-w-5xl mx-auto text-center space-y-8">
+              {/* Main Title */}
+              <div className="space-y-4 animate-fade-in">
+                <h1 className="text-5xl lg:text-7xl font-bold mb-4 leading-tight tracking-tight animate-fade-in-up">
                   LEASING SUSTENTABLE
                 </h1>
-                <h2 className="text-4xl lg:text-5xl font-light text-[#2d472f] leading-tight tracking-tight">
+                <h2 className="text-3xl lg:text-5xl font-light text-emerald-300 leading-tight tracking-tight animate-fade-in-up animation-delay-200">
                   DE IMPRESORAS
                 </h2>
               </div>
               
-              <div className="max-w-lg">
-                <p className="text-xl text-gray-600 leading-relaxed font-light">
+              {/* Description */}
+              <div className="max-w-4xl mx-auto space-y-4 animate-fade-in animation-delay-300">
+                <p className="text-xl lg:text-2xl text-gray-100 leading-relaxed font-light animate-fade-in-up animation-delay-400">
                   Transformá tu Empresa en un Modelo de Sustentabilidad
                 </p>
-                <p className="text-lg text-gray-600 leading-relaxed font-light mt-4">
+                <p className="text-lg lg:text-xl text-gray-200 leading-relaxed font-light max-w-3xl mx-auto animate-fade-in-up animation-delay-500">
                   En un mundo cada vez más enfocado en la sostenibilidad, las empresas tienen la oportunidad —y la responsabilidad— de adoptar prácticas que no solo optimicen sus costos operativos, sino que también generen un impacto positivo en el medio ambiente.
                 </p>
-              </div>
-
-              {/* Botón de contacto */}
-              <div className="pt-8">
-                <button className="bg-gradient-to-r from-emerald-600 to-green-600 text-white px-8 py-4 rounded-2xl text-lg font-medium hover:from-emerald-700 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl">
-                  Solicitar Leasing Sustentable
-                </button>
-              </div>
-            </div>
-
-            {/* Imagen del hero */}
-            <div className="relative">
-              <div className="w-full h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="/images/leasing.jpg" 
-                  alt="Leasing Sustentable de Impresoras" 
-                  className="w-full h-full object-cover"
-                />
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Introducción del servicio */}
       <section className="w-full bg-white py-24">
