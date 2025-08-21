@@ -7,83 +7,51 @@ import Footer from '@/components/Footer';
 const eventos = [
   {
     id: 1,
-    titulo: 'Expo Tecnología 2024',
-    fecha: '15 de Marzo, 2024',
-    hora: '09:00 - 18:00',
-    ubicacion: 'Centro de Convenciones Asunción',
-    descripcion: 'La feria tecnológica más importante del país. Descubre las últimas innovaciones en impresión y tecnología sustentable.',
-    categoria: 'Feria Tecnológica',
+    titulo: 'Black Colors celebra sus 18 años',
+    fecha: '23 de Agosto, 2025',
+    hora: '09:00 - 16:00',
+    ubicacion: 'Black Colors Lambaré - Cacique Lambaré y Bonifacio Ovando',
+    descripcion: 'Un evento especial para celebrar nuestros 18 años de trayectoria en el mercado paraguayo con la reinauguración de nuestro local totalmente renovado.',
+    categoria: 'Aniversario',
     destacado: true,
     imagen: '/images/eventos/1.jpg',
-    asistentes: '500+'
-  },
-  {
-    id: 2,
-    titulo: 'Workshop: Impresión Sustentable',
-    fecha: '22 de Marzo, 2024',
-    hora: '14:00 - 17:00',
-    ubicacion: 'Black Colors Showroom',
-    descripcion: 'Aprende sobre las mejores prácticas de impresión ecológica y cómo reducir el impacto ambiental en tu empresa.',
-    categoria: 'Workshop',
-    destacado: false,
-    imagen: '/images/eventos/2.jpg',
-    asistentes: '30'
-  },
-  {
-    id: 3,
-    titulo: 'Lanzamiento Brother 2024',
-    fecha: '5 de Abril, 2024',
-    hora: '19:00 - 22:00',
-    ubicacion: 'Hotel Sheraton Asunción',
-    descripcion: 'Presentación exclusiva de la nueva línea de impresoras Brother con tecnología de vanguardia.',
-    categoria: 'Lanzamiento',
-    destacado: true,
-    imagen: '/images/eventos/3.jpg',
-    asistentes: '200'
-  },
-  {
-    id: 4,
-    titulo: 'Networking Empresarial',
-    fecha: '12 de Abril, 2024',
-    hora: '18:00 - 21:00',
-    ubicacion: 'Cámara de Comercio Paraguaya',
-    descripcion: 'Encuentro de profesionales del sector tecnológico para crear conexiones y oportunidades de negocio.',
-    categoria: 'Networking',
-    destacado: false,
-    imagen: '/images/eventos/networking.jpg',
-    asistentes: '80'
-  },
-  {
-    id: 5,
-    titulo: 'Conferencia: Futuro de la Impresión',
-    fecha: '20 de Abril, 2024',
-    hora: '10:00 - 16:00',
-    ubicacion: 'Universidad Católica',
-    descripcion: 'Conferencia magistral sobre las tendencias y el futuro de la industria de la impresión.',
-    categoria: 'Conferencia',
-    destacado: false,
-    imagen: '/images/eventos/conferencia-futuro.jpg',
-    asistentes: '150'
-  },
-  {
-    id: 6,
-    titulo: 'Expo Black Colors',
-    fecha: '28 de Abril, 2024',
-    hora: '09:00 - 20:00',
-    ubicacion: 'Shopping del Sol',
-    descripcion: 'Nuestra exposición anual con descuentos especiales, demostraciones y sorteos.',
-    categoria: 'Exposición',
-    destacado: true,
-    imagen: '/images/eventos/expo-black-colors.jpg',
-    asistentes: '1000+'
+    asistentes: 'Abierto al público',
+    slug: 'aniversario-18-anos-black-colors',
+    beneficios: [
+      'Las 10 primeras personas en traer cartuchos reciben carga gratuita',
+      'Las 5 primeras en traer equipos acceden a mantenimiento preventivo sin costo',
+      'Demostraciones gratuitas de equipos',
+      'Descuentos de hasta 70% en impresoras nuevas',
+      'Regalos, sorteos y cupones especiales'
+    ],
+    detallesCompletos: true
   }
 ];
 
 const Eventos = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-green-100">
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero Section */}
+      <div className="relative">
+        {/* Hero Background */}
+        <div className="relative h-[500px] overflow-hidden">
+          <img 
+            src="/images/eventos/1.jpg" 
+            alt="Eventos Hero"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-gray-50" />
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
+            <h1 className="text-5xl lg:text-7xl font-bold mb-4 leading-tight tracking-tight">EVENTOS</h1>
+            <p className="text-xl lg:text-2xl text-gray-100 leading-relaxed font-light max-w-3xl text-center">
+              Participa en nuestros eventos y mantente actualizado con las últimas tendencias
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Navegación */}
       <div className="container mx-auto px-6 py-8">
-        {/* Navegación */}
         <div className="mb-8">
           <Link 
             to="/" 
@@ -94,178 +62,153 @@ const Eventos = () => {
           </Link>
         </div>
 
-        {/* Título principal */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-[#2d472f]">
-            EVENTOS
-          </h1>
-          <p className="text-xl sm:text-2xl text-[#4b6d3b] max-w-3xl mx-auto">
-            Participa en nuestros eventos y mantente actualizado con las últimas tendencias
-          </p>
-        </div>
-
         {/* Eventos Destacados */}
         <section className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#2d472f] mb-4">
+            <h2 className="text-4xl font-light text-gray-900 mb-4 tracking-tight">
               Eventos Destacados
             </h2>
-            <p className="text-lg text-[#4b6d3b]">
+            <div className="w-20 h-px bg-emerald-400 mx-auto mb-4"></div>
+            <p className="text-lg text-gray-600 leading-relaxed font-light">
               Los eventos más importantes que no te puedes perder
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="max-w-6xl mx-auto">
             {eventos.filter(evento => evento.destacado).map((evento) => (
               <div 
                 key={evento.id}
-                className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden group"
+                className="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
               >
-                {/* Imagen */}
-                <div className="relative h-64 overflow-hidden">
-                  <img 
-                    src={evento.imagen} 
-                    alt={evento.titulo}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                  
-                  {/* Badge destacado */}
-                  <div className="absolute top-4 right-4">
-                    <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg">
-                      <Star className="w-4 h-4 inline mr-1" />
-                      Destacado
-                    </span>
-                  </div>
-
-                  {/* Categoría */}
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium border border-white/30">
-                      {evento.categoria}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Contenido */}
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold text-[#2d472f] mb-4 group-hover:text-[#4b6d3b] transition-colors">
-                    {evento.titulo}
-                  </h3>
-
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    {evento.descripcion}
-                  </p>
-
-                  {/* Detalles del evento */}
-                  <div className="space-y-3">
-                    <div className="flex items-center space-x-3">
-                      <Calendar className="w-5 h-5 text-[#4b6d3b]" />
-                      <span className="text-[#2d472f] font-medium">{evento.fecha}</span>
-                    </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                  {/* Imagen */}
+                  <div className="relative h-64 lg:h-auto overflow-hidden">
+                    <img 
+                      src={evento.imagen} 
+                      alt={evento.titulo}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent lg:hidden"></div>
                     
-                    <div className="flex items-center space-x-3">
-                      <Clock className="w-5 h-5 text-[#4b6d3b]" />
-                      <span className="text-[#2d472f] font-medium">{evento.hora}</span>
-                    </div>
-                    
-                    <div className="flex items-center space-x-3">
-                      <MapPin className="w-5 h-5 text-[#4b6d3b]" />
-                      <span className="text-[#2d472f] font-medium">{evento.ubicacion}</span>
-                    </div>
-                    
-                    <div className="flex items-center space-x-3">
-                      <Users className="w-5 h-5 text-[#4b6d3b]" />
-                      <span className="text-[#2d472f] font-medium">{evento.asistentes} asistentes</span>
+                    {/* Badge destacado */}
+                    <div className="absolute top-6 right-6">
+                      <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                        <Star className="w-4 h-4 inline mr-1" />
+                        {evento.categoria}
+                      </span>
                     </div>
                   </div>
 
-                  {/* CTA */}
-                  <div className="mt-6 flex justify-end">
-                    <button className="bg-[#2d472f] text-white px-6 py-2 rounded-lg hover:bg-[#4b6d3b] transition-colors font-semibold">
-                      Inscribirse
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+                  {/* Contenido */}
+                  <div className="p-8 lg:p-12 flex flex-col justify-center">
+                    <h3 className="text-3xl font-bold text-[#2d472f] mb-6 leading-tight">
+                      {evento.titulo}
+                    </h3>
 
-        {/* Todos los Eventos */}
-        <section>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#2d472f] mb-4">
-              Todos los Eventos
-            </h2>
-            <p className="text-lg text-[#4b6d3b]">
-              Explora nuestra agenda completa de eventos
-            </p>
-          </div>
+                    <p className="text-gray-600 mb-8 leading-relaxed text-lg">
+                      {evento.descripcion}
+                    </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {eventos.map((evento) => (
-              <div 
-                key={evento.id}
-                className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
-              >
-                {/* Imagen */}
-                <div className="h-48 overflow-hidden">
-                  <img 
-                    src={evento.imagen} 
-                    alt={evento.titulo}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-
-                {/* Contenido */}
-                <div className="p-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs bg-[#2d472f] text-white px-2 py-1 rounded">
-                      {evento.categoria}
-                    </span>
-                    {evento.destacado && (
-                      <Star className="w-4 h-4 text-yellow-500" />
+                    {/* Beneficios especiales */}
+                    {evento.beneficios && (
+                      <div className="mb-8">
+                        <h4 className="text-xl font-bold text-[#2d472f] mb-4">Beneficios exclusivos:</h4>
+                        <ul className="space-y-3">
+                          {evento.beneficios.slice(0, 3).map((beneficio, index) => (
+                            <li key={index} className="flex items-start space-x-3">
+                              <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
+                              <span className="text-gray-700">{beneficio}</span>
+                            </li>
+                          ))}
+                          {evento.beneficios.length > 3 && (
+                            <li className="text-emerald-600 font-medium">
+                              + {evento.beneficios.length - 3} beneficios más...
+                            </li>
+                          )}
+                        </ul>
+                      </div>
                     )}
-                  </div>
 
-                  <h3 className="text-lg font-bold text-[#2d472f] mb-3">
-                    {evento.titulo}
-                  </h3>
-
-                  <p className="text-sm text-gray-600 mb-4 line-clamp-3">
-                    {evento.descripcion}
-                  </p>
-
-                  {/* Detalles compactos */}
-                  <div className="space-y-2 text-sm">
-                    <div className="flex items-center space-x-2">
-                      <Calendar className="w-3 h-3 text-[#4b6d3b]" />
-                      <span className="text-[#2d472f]">{evento.fecha}</span>
+                    {/* Detalles del evento */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">
+                          <Calendar className="w-5 h-5 text-emerald-600" />
+                        </div>
+                        <div>
+                          <p className="text-sm text-gray-500">Fecha</p>
+                          <p className="text-[#2d472f] font-medium">{evento.fecha}</p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-center space-x-3">
+                        <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">
+                          <Clock className="w-5 h-5 text-emerald-600" />
+                        </div>
+                        <div>
+                          <p className="text-sm text-gray-500">Horario</p>
+                          <p className="text-[#2d472f] font-medium">{evento.hora}</p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start space-x-3 sm:col-span-2">
+                        <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <MapPin className="w-5 h-5 text-emerald-600" />
+                        </div>
+                        <div>
+                          <p className="text-sm text-gray-500">Ubicación</p>
+                          <p className="text-[#2d472f] font-medium">{evento.ubicacion}</p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-center space-x-3 sm:col-span-2">
+                        <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">
+                          <Users className="w-5 h-5 text-emerald-600" />
+                        </div>
+                        <div>
+                          <p className="text-sm text-gray-500">Asistencia</p>
+                          <p className="text-[#2d472f] font-medium">{evento.asistentes}</p>
+                        </div>
+                      </div>
                     </div>
-                    
-                    <div className="flex items-center space-x-2">
-                      <MapPin className="w-3 h-3 text-[#4b6d3b]" />
-                      <span className="text-[#2d472f]">{evento.ubicacion}</span>
-                    </div>
-                    
-                    <div className="flex items-center space-x-2">
-                      <Users className="w-3 h-3 text-[#4b6d3b]" />
-                      <span className="text-[#2d472f]">{evento.asistentes}</span>
-                  </div>
-                  </div>
 
-                  {/* CTA */}
-                  <div className="mt-4 flex justify-end">
-                    <button className="bg-[#2d472f] text-white px-4 py-1 rounded text-sm hover:bg-[#4b6d3b] transition-colors">
-                      Ver más
-                    </button>
+                    {/* CTA */}
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      {evento.detallesCompletos && (
+                        <Link 
+                          to={`/eventos/${evento.slug}`}
+                          className="inline-flex items-center justify-center px-6 py-3 border-2 border-[#2d472f] text-[#2d472f] hover:bg-[#2d472f] hover:text-white transition-colors font-semibold rounded-lg"
+                        >
+                          Ver detalles completos
+                        </Link>
+                      )}
+                      <button className="inline-flex items-center justify-center px-6 py-3 bg-[#2d472f] text-white hover:bg-[#4b6d3b] transition-colors font-semibold rounded-lg">
+                        Confirmar Asistencia
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
         </section>
+
+        {/* Próximamente */}
+        {eventos.filter(evento => !evento.destacado).length === 0 && (
+          <section className="text-center py-20">
+            <div className="max-w-2xl mx-auto">
+              <h2 className="text-3xl font-light text-gray-900 mb-4 tracking-tight">
+                Próximos Eventos
+              </h2>
+              <div className="w-20 h-px bg-emerald-400 mx-auto mb-6"></div>
+              <p className="text-lg text-gray-600 leading-relaxed font-light">
+                Mantente atento a nuestras redes sociales para conocer los próximos eventos que tenemos preparados para ti.
+              </p>
+            </div>
+          </section>
+        )}
       </div>
+      
       <Footer />
     </div>
   );

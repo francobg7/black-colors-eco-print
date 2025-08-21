@@ -33,7 +33,7 @@ const Footer = () => (
           <div className="space-y-3">
             {[
               { icon: Phone, text: "+595 982 343 128" },
-              { icon: Mail, text: "info@blackcolors.py" },
+              { icon: Mail, text: "mkt@blackcolors.com.py" },
               { icon: MapPin, text: "Asunción, Paraguay" }
             ].map((item, index) => (
               <div key={index} className="flex items-center group hover:text-green-400 transition-colors cursor-pointer">

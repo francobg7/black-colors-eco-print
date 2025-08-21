@@ -1563,7 +1563,7 @@ const DetalleImpresora = () => {
             <div className="text-center">
               <Mail className="w-8 h-8 mx-auto mb-2" />
               <h3 className="font-semibold mb-1">Email</h3>
-              <p className="opacity-90">info@blackcolors.com.py</p>
+              <p className="opacity-90">mkt@blackcolors.com.py</p>
             </div>
             <div className="text-center">
               <MapPin className="w-8 h-8 mx-auto mb-2" />
