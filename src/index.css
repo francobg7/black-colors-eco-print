@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -289,4 +288,33 @@ All colors MUST be HSL.
   --green-lime: #c3e8a4;
   --green-mint: #d7f2db;
   --green-emerald: #2f9e44;
+}
+
+/* Page Transition Styles */
+.page-transition {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: opacity, transform;
+}
+
+/* Smooth scrolling for the entire document */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure body maintains smooth scrolling */
+body {
+  scroll-behavior: smooth;
+}
+
+/* Prevent scroll restoration on route changes */
+.main-content {
+  min-height: 100vh;
+}
+
+/* Enhanced smooth scrolling for all scrollable elements */
+* {
+  scroll-behavior: smooth;
 }

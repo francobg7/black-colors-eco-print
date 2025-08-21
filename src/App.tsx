@@ -4,6 +4,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
+import WhatsAppButton from "./components/WhatsAppButton";
+import PageTransition from "./components/PageTransition";
 import Index from "./pages/Index";
 
 // Importaciones de productos
@@ -36,24 +38,24 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Navigation />
-        <div>
+        <div className="main-content">
           <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/productos/impresoras" element={<ProductosImpresoras />} />
-            <Route path="/productos/impresoras/:slug" element={<DetalleImpresora />} />
-            <Route path="/productos/toners" element={<ProductosToners />} />
-            <Route path="/productos/cartuchos" element={<ProductosCartuchos />} />
-            <Route path="/productos/resmas" element={<ProductosResmas />} />
-            <Route path="/productos/equipos" element={<ProductosEquipos />} />
-            <Route path="/productos/equipos/:slug" element={<DetalleEquipo />} />
-            <Route path="/servicios/tecnico" element={<ServicioTecnico />} />
-            <Route path="/servicios/leasing" element={<Leasing />} />
-            <Route path="/servicios/alquileres" element={<Alquileres />} />
-            <Route path="/servicios/diferenciados" element={<ServiciosDiferenciados />} />
-            <Route path="/transformar" element={<Transformar />} />
-            <Route path="/eventos" element={<Eventos />} />
-            <Route path="/contacto" element={<Contacto />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="/" element={<PageTransition><Index /></PageTransition>} />
+            <Route path="/productos/impresoras" element={<PageTransition><ProductosImpresoras /></PageTransition>} />
+            <Route path="/productos/impresoras/:slug" element={<PageTransition><DetalleImpresora /></PageTransition>} />
+            <Route path="/productos/toners" element={<PageTransition><ProductosToners /></PageTransition>} />
+            <Route path="/productos/cartuchos" element={<PageTransition><ProductosCartuchos /></PageTransition>} />
+            <Route path="/productos/resmas" element={<PageTransition><ProductosResmas /></PageTransition>} />
+            <Route path="/productos/equipos" element={<PageTransition><ProductosEquipos /></PageTransition>} />
+            <Route path="/productos/equipos/:slug" element={<PageTransition><DetalleEquipo /></PageTransition>} />
+            <Route path="/servicios/tecnico" element={<PageTransition><ServicioTecnico /></PageTransition>} />
+            <Route path="/servicios/leasing" element={<PageTransition><Leasing /></PageTransition>} />
+            <Route path="/servicios/alquileres" element={<PageTransition><Alquileres /></PageTransition>} />
+            <Route path="/servicios/diferenciados" element={<PageTransition><ServiciosDiferenciados /></PageTransition>} />
+            <Route path="/transformar" element={<PageTransition><Transformar /></PageTransition>} />
+            <Route path="/eventos" element={<PageTransition><Eventos /></PageTransition>} />
+            <Route path="/contacto" element={<PageTransition><Contacto /></PageTransition>} />
+            <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
           </Routes>
         </div>
       </BrowserRouter>

@@ -18,64 +18,29 @@ const ProductosResmas = () => {
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-green-50/90" />
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-            <h1 className="text-5xl font-bold mb-2">RESMAS</h1>
-            <h2 className="text-4xl font-light text-emerald-300 mb-4">SUSTENTABLES</h2>
-            <p className="text-xl max-w-2xl text-center mb-12">
-              Papel Ecológico Certificado para un Futuro más Sostenible
-            </p>
-          </div>
-        </div>
-
-        {/* Floating Info Card */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 translate-y-1/2 w-full px-4">
-          <div className="max-w-6xl mx-auto bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl p-8">
-            <h3 className="text-2xl font-bold text-[#2d472f] text-center mb-6">Nuestra Línea de Productos</h3>
-            
-            {/* Tipos de resmas */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center space-y-3">
-                <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto">
-                  <FileText className="w-8 h-8 text-emerald-600" />
-                </div>
-                <h4 className="font-semibold text-gray-900">Resma A4 Executive</h4>
-                <p className="text-sm text-gray-600">Papel de alta calidad formato A4</p>
-              </div>
-              
-              <div className="text-center space-y-3">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
-                  <Package className="w-8 h-8 text-blue-600" />
-                </div>
-                <h4 className="font-semibold text-gray-900">Resma Oficio Executive</h4>
-                <p className="text-sm text-gray-600">Formato oficio para documentación empresarial</p>
-              </div>
-              
-              <div className="text-center space-y-3">
-                <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto">
-                  <TreePine className="w-8 h-8 text-amber-600" />
-                </div>
-                <h4 className="font-semibold text-gray-900">Resmas NAT</h4>
-                <p className="text-sm text-gray-600">100% Caña de azúcar, libre de árboles</p>
-              </div>
-            </div>
-            
-            <div className="text-center mt-8">
-              <button className="bg-gradient-to-r from-emerald-600 to-green-600 text-white px-8 py-3 rounded-xl text-lg font-medium hover:from-emerald-700 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl">
-                Solicitar Cotización
-              </button>
-            </div>
-          </div>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="pt-40 pb-16">
+      <div className="pb-16">
         {/* Introducción del producto */}
         <section className="w-full bg-white py-24">
           <div className="container mx-auto px-8">
+            {/* Título principal */}
+            <div className="text-center mb-16">
+              <h1 className="text-5xl font-bold text-gray-900 mb-4">RESMAS</h1>
+              <h2 className="text-4xl font-light text-emerald-600 mb-8">SUSTENTABLES</h2>
+            </div>
+
             <div className="max-w-4xl mx-auto text-center mb-16">
               <p className="text-lg text-gray-600 leading-relaxed font-light">
                 En BlackColors, entendemos que cada elección cuenta. Por eso, desarrollamos una línea completa de resmas sustentables que combinan calidad premium con responsabilidad ambiental, para que tu empresa pueda operar de manera eficiente mientras contribuye a la preservación del planeta.
+              </p>
+            </div>
+
+            <div className="max-w-4xl mx-auto text-center mb-16">
+              <p className="text-xl text-emerald-700 font-medium">
+                Papel Ecológico Certificado para un Futuro más Sostenible
               </p>
             </div>
 
@@ -95,7 +60,7 @@ const ProductosResmas = () => {
                 <img 
                   src="/images/resmas/A4-executive.webp" 
                   alt="Resma A4 Executive" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain bg-white"
                 />
               </div>
               <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
@@ -115,7 +80,7 @@ const ProductosResmas = () => {
                 <img 
                   src="/images/resmas/oficio-executive.webp" 
                   alt="Resma Oficio Executive" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain bg-white"
                 />
               </div>
               <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
@@ -135,7 +100,7 @@ const ProductosResmas = () => {
                 <img 
                   src="/images/resmas/nat-resmas.webp" 
                   alt="Resmas NAT - 100% Caña de Azúcar" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain bg-white"
                 />
               </div>
               <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
@@ -161,9 +126,9 @@ const ProductosResmas = () => {
             <div className="relative">
               <div className="w-full h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="/images/resmas/nat-hero.png" 
+                  src="/images/resmas/nat-resmas.webp" 
                   alt="Papel NAT - 100% Caña de Azúcar" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain bg-white"
                 />
               </div>
             </div>
@@ -319,44 +284,6 @@ const ProductosResmas = () => {
               </div>
               <h4 className="text-lg font-medium text-gray-900">Responsabilidad Social</h4>
               <p className="text-sm text-gray-600">Cada compra apoya cadenas de reciclaje y programas de sustentabilidad local.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Compromiso con el Medio Ambiente */}
-      <section className="w-full bg-white py-24">
-        <div className="container mx-auto px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Contenido */}
-            <div className="max-w-2xl space-y-8">
-              <h3 className="text-4xl font-light text-gray-900 tracking-tight">
-                COMPROMISO CON EL MEDIO AMBIENTE
-              </h3>
-              <div className="w-20 h-px bg-emerald-400"></div>
-              
-              <div className="space-y-6 text-lg text-gray-600 leading-relaxed font-light">
-                <p>
-                  Cada resma que elegís representa una decisión consciente hacia un futuro más sostenible. Nuestros procesos de fabricación reducen el consumo de agua en un 60% y las emisiones de CO2 en un 40% comparado con el papel tradicional.
-                </p>
-                <p>
-                  Al elegir nuestras resmas sustentables, tu empresa se convierte en parte activa de la economía circular, contribuyendo a la preservación de bosques y la reducción de residuos en vertederos.
-                </p>
-                <p>
-                  Certificaciones internacionales como FSC, PEFC y ISO 14001 respaldan nuestro compromiso con la excelencia ambiental y la calidad del producto.
-                </p>
-              </div>
-            </div>
-
-            {/* Imagen de compromiso ambiental */}
-            <div className="relative">
-              <div className="w-full h-[400px] rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="/images/clean-energy.jpg" 
-                  alt="Compromiso Ambiental" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
             </div>
           </div>
         </div>
