@@ -126,7 +126,7 @@ const Navigation = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      isScrolled ? 'backdrop-blur-md shadow-lg' : 'bg-white/10 backdrop-blur-sm'
+      isScrolled ? '' : 'bg-white/10 '
     }`}
     style={{
       backgroundColor: isScrolled ? '#2d472f' : 'transparent',
