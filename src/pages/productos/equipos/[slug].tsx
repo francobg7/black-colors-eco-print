@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
-import { ArrowLeft, Scissors, Trash2, Battery, Tag, Scan, Check, Phone, Mail, MapPin, ChevronLeft, ChevronRight, Wifi, Network } from 'lucide-react';
+import { Scissors, Trash2, Battery, Tag, Scan, Check, Phone, Mail, MapPin, ChevronLeft, ChevronRight, Wifi, Network } from 'lucide-react';
 import Footer from '@/components/Footer';
 import { useState } from 'react';
 
@@ -289,82 +289,100 @@ const todosEquipos = [
     }
   },
 
-  // UPS POLARIAS
+  // UPS POLARIS
   {
     id: 8,
-    nombre: 'POLARIAS UPS-1000VA',
-    modelo: 'UPS-1000VA',
-    descripcion: 'UPS de 1000VA con Protección de Batería',
-    slug: 'polarias-ups-1000va',
-    imagen: '/images/equipos/ups-1000va.jpg',
-    categoria: 'UPS Polarias',
+    nombre: 'UPS INTERACTIVA 800 VA',
+    modelo: 'XION 800',
+    descripcion: 'UPS versátil y compacta, ideal para proteger PC o notebooks de bajo consumo.',
+    descripcionLarga: 'Estos equipos son versátiles y de pequeño tamaño, ideales para proteger tu PC, notebook o dispositivos de bajo consumo. Representan una solución económica con excelente relación costo-beneficio. Permiten cuidar tus datos ante cortes de energía, brindando tiempo para guardar tu trabajo y apagar correctamente tu equipo. No apta para impresoras.',
+    slug: 'ups-interactiva-800-va-xion-800',
+    imagen: '/images/equipos/ups-xion-800.jpg',
+    categoria: 'UPS Polaris',
     tecnologia: 'UPS Line-Interactive',
     resolucion: 'N/A',
     velocidad: 'N/A',
     precio: 'Consultar precio',
-    compatibilidad: ['PC', 'Monitor', 'Router', 'Modem'],
+    compatibilidad: ['PC', 'Notebook', 'Dispositivos de bajo consumo'],
+    memoria: 'N/A',
+    procesador: 'Microcontrolador integrado',
+    bandeja: 'N/A',
+    cicloMensual: 'N/A',
+    insumos: 'Batería 12V9AH sellada libre de mantenimiento',
     caracteristicas: {
       proteccion: {
-        potencia: '1000VA / 600W',
-        tipo: 'Line-Interactive',
-        voltaje: '120V',
-        frecuencia: '50/60 Hz'
+        capacidad: '480W',
+        bateria: '12V9AH x 1',
+        tipo: 'Sellada libre de mantenimiento',
+        tiempoRecarga: '6-8 horas al 90%'
       },
-      conectividad: {
-        usb: 'Sí',
-        wifi: 'No',
-        ethernet: 'No',
-        movil: 'No'
+      electrica: {
+        entrada: '220-240V~ 50/60 Hz 5.2A máx., Rango: 162-290V',
+        salida: 'Línea y Batería: 220VAC ±10%',
+        ondaSalida: 'Senoidal modificada',
+        tiempoTransferencia: '2-6 ms'
       },
-      funciones: {
-        bateria: 'Plomo-ácido sellada',
-        tiempoRespaldo: 'Hasta 30 minutos',
-        proteccion: 'Sobretensión, subtensión, picos',
-        autoOff: 'Sí'
+      indicadores: {
+        led: 'Verde (normal), Amarilla (batería), Roja (falla)',
+        alarmas: 'Batería: Bip cada 10s, Batería baja: Bip cada 1s, Sobrecarga: Bip cada 0.5s, Falla: Bip continuo'
       },
-      capacidad: {
-        salidas: '6 salidas protegidas',
-        bateria: 'Reemplazable',
-        tiempo: 'Hasta 30 minutos'
+      protecciones: {
+        descarga: 'Sí',
+        sobrecarga: 'Sí',
+        restriccion: 'No apta para impresoras'
+      },
+      fisicas: {
+        dimensiones: '298x101x142 mm',
+        peso: '4.7 kg',
+        ambiente: '0°C-40°C / 0%-90% HR (sin condensación)'
       }
     }
   },
   {
     id: 9,
-    nombre: 'POLARIAS UPS-1500VA',
-    modelo: 'UPS-1500VA',
-    descripcion: 'UPS de 1500VA con Protección Avanzada',
-    slug: 'polarias-ups-1500va',
-    imagen: '/images/equipos/ups-1500va.jpg',
-    categoria: 'UPS Polarias',
+    nombre: 'UPS INTERACTIVA 2 KVA',
+    modelo: 'XION 2000',
+    descripcion: 'UPS con display digital, ideal para proteger equipos de hogar u oficina.',
+    descripcionLarga: 'La UPS XION 2000 es ideal para proteger tus equipos con autonomía suficiente para guardar datos y apagar tu sistema ante cortes de energía. Incorpora un display digital que muestra en tiempo real la tensión, frecuencia, carga de batería y autonomía, todo en forma clara y sencilla.',
+    slug: 'ups-interactiva-2-kva-xion-2000',
+    imagen: '/images/equipos/ups-xion-2000.jpg',
+    categoria: 'UPS Polaris',
     tecnologia: 'UPS Line-Interactive',
     resolucion: 'N/A',
     velocidad: 'N/A',
     precio: 'Consultar precio',
-    compatibilidad: ['PC', 'Monitor', 'Router', 'Modem', 'Impresora'],
+    compatibilidad: ['PC', 'Notebook', 'Equipos de hogar', 'Equipos de oficina'],
+    memoria: 'N/A',
+    procesador: 'Microcontrolador integrado con display digital',
+    bandeja: 'N/A',
+    cicloMensual: 'N/A',
+    insumos: 'Batería 12V9AH x 2 selladas libres de mantenimiento',
     caracteristicas: {
       proteccion: {
-        potencia: '1500VA / 900W',
-        tipo: 'Line-Interactive',
-        voltaje: '120V',
-        frecuencia: '50/60 Hz'
+        capacidad: '1200W',
+        bateria: '12V9AH x 2',
+        tipo: 'Sellada libre de mantenimiento',
+        tiempoRecarga: '6-8 horas al 90%'
       },
-      conectividad: {
-        usb: 'Sí',
-        wifi: 'No',
-        ethernet: 'No',
-        movil: 'No'
+      electrica: {
+        entrada: '220-240V~ 50/60Hz, 10A máx., Rango: 162-290V',
+        salida: 'Línea y Batería: 220VAC ±10%',
+        tiempoTransferencia: '2-6 ms'
       },
-      funciones: {
-        bateria: 'Plomo-ácido sellada',
-        tiempoRespaldo: 'Hasta 45 minutos',
-        proteccion: 'Sobretensión, subtensión, picos',
-        autoOff: 'Sí'
+      indicadores: {
+        led: 'Verde (normal), Amarilla (batería), Roja (falla)',
+        alarmas: 'Batería: Bip cada 10s, Batería baja: Bip cada 1s, Sobrecarga: Bip cada 0.5s, Falla: Bip continuo',
+        display: 'Digital en tiempo real (tensión, frecuencia, carga de batería, autonomía)'
       },
-      capacidad: {
-        salidas: '8 salidas protegidas',
-        bateria: 'Reemplazable',
-        tiempo: 'Hasta 45 minutos'
+      protecciones: {
+        descarga: 'Sí',
+        sobrecarga: 'Sí',
+        restriccion: 'No apta para impresoras'
+      },
+      fisicas: {
+        dimensiones: '380x158x198 mm',
+        peso: '10.5 kg',
+        ambiente: '0°C-40°C / 0%-90% HR (sin condensación)'
       }
     }
   },
@@ -551,13 +569,6 @@ const DetalleEquipo = () => {
             <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-6">
               <h1 className="text-4xl font-bold mb-4">Producto no encontrado</h1>
               <p className="text-xl text-center mb-8">El producto que buscas no existe o ha sido removido</p>
-              <Link 
-                to="/productos/equipos"
-                className="inline-flex items-center space-x-2 bg-white text-[#2d472f] px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors"
-              >
-                <ArrowLeft className="w-5 h-5" />
-                <span>Volver a Equipos</span>
-              </Link>
             </div>
           </div>
         </div>
@@ -572,7 +583,7 @@ const DetalleEquipo = () => {
         return <Scissors className="w-5 h-5" />;
       case 'Destructora de papel':
         return <Trash2 className="w-5 h-5" />;
-      case 'UPS Polarias':
+      case 'UPS Polaris':
         return <Battery className="w-5 h-5" />;
       case 'Etiquetadoras':
         return <Tag className="w-5 h-5" />;
@@ -606,18 +617,7 @@ const DetalleEquipo = () => {
         </div>
       </div>
 
-      {/* Navigation Button - Centered above main content */}
-      <div className="container mx-auto px-6 pt-8 pb-4">
-        <div className="flex justify-left">
-          <Link 
-            to="/productos/equipos" 
-            className="inline-flex items-center space-x-2 bg-white text-[#2d472f] px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors shadow-lg border border-gray-200"
-          >
-            <ArrowLeft className="w-5 h-5" />
-            <span>Volver a Equipos</span>
-          </Link>
-        </div>
-      </div>
+
 
       {/* Contenido Principal */}
       <div className="container mx-auto px-6 pb-16">
@@ -714,7 +714,7 @@ const DetalleEquipo = () => {
                       <Scissors className="w-5 h-5 mr-2" />
                     ) : equipo.categoria === 'Destructora de papel' ? (
                       <Trash2 className="w-5 h-5 mr-2" />
-                    ) : equipo.categoria === 'UPS Polarias' ? (
+                    ) : equipo.categoria === 'UPS Polaris' ? (
                       <Battery className="w-5 h-5 mr-2" />
                     ) : equipo.categoria === 'Scanners' ? (
                       <Scan className="w-5 h-5 mr-2" />
@@ -735,9 +735,58 @@ const DetalleEquipo = () => {
                            key === 'dimensiones' ? 'Dimensiones' : 
                            key === 'energia' ? 'Energía' : 
                            key === 'color' ? 'Color' :
+                           key === 'capacidad' ? 'Capacidad' :
+                           key === 'bateria' ? 'Batería' :
+                           key === 'tipo' ? 'Tipo' :
+                           key === 'tiempoRecarga' ? 'Tiempo de Recarga' :
                            key.replace(/([A-Z])/g, ' $1').trim()}
                         </span>
                         <span className="text-gray-600">{value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Eléctrica (para UPS) */}
+              {equipo.caracteristicas.electrica && (
+                <div>
+                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                    <Battery className="w-5 h-5 mr-2" />
+                    Especificaciones Eléctricas
+                  </h3>
+                  <div className="space-y-3">
+                    {Object.entries(equipo.caracteristicas.electrica).map(([key, value]) => (
+                      <div key={key}>
+                        <span className="font-semibold block text-gray-700 capitalize">
+                          {key === 'entrada' ? 'Entrada' : 
+                           key === 'salida' ? 'Salida' : 
+                           key === 'ondaSalida' ? 'Onda de Salida' : 
+                           key === 'tiempoTransferencia' ? 'Tiempo de Transferencia' : key}
+                        </span>
+                        <span className="text-gray-600 text-sm">{value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Indicadores (para UPS) */}
+              {equipo.caracteristicas.indicadores && (
+                <div>
+                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                    <Check className="w-5 h-5 mr-2" />
+                    Indicadores y Alarmas
+                  </h3>
+                  <div className="space-y-3">
+                    {Object.entries(equipo.caracteristicas.indicadores).map(([key, value]) => (
+                      <div key={key}>
+                        <span className="font-semibold block text-gray-700 capitalize">
+                          {key === 'led' ? 'LED' : 
+                           key === 'alarmas' ? 'Alarmas Sonoras' : 
+                           key === 'display' ? 'Display Digital' : key}
+                        </span>
+                        <span className="text-gray-600 text-sm">{value}</span>
                       </div>
                     ))}
                   </div>
@@ -850,6 +899,50 @@ const DetalleEquipo = () => {
                            key === 'cintaInicial' ? 'Cinta Inicial' : key}
                         </span>
                         <span className="text-gray-600">{value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Protecciones (para UPS) */}
+              {equipo.caracteristicas.protecciones && (
+                <div>
+                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                    <Check className="w-5 h-5 mr-2" />
+                    Protecciones
+                  </h3>
+                  <div className="space-y-3">
+                    {Object.entries(equipo.caracteristicas.protecciones).map(([key, value]) => (
+                      <div key={key}>
+                        <span className="font-semibold block text-gray-700 capitalize">
+                          {key === 'descarga' ? 'Contra Descarga' : 
+                           key === 'sobrecarga' ? 'Contra Sobrecarga' : 
+                           key === 'restriccion' ? 'Restricción' : key}
+                        </span>
+                        <span className="text-gray-600">{value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Físicas (para UPS) */}
+              {equipo.caracteristicas.fisicas && (
+                <div>
+                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                    <Network className="w-5 h-5 mr-2" />
+                    Características Físicas
+                  </h3>
+                  <div className="space-y-3">
+                    {Object.entries(equipo.caracteristicas.fisicas).map(([key, value]) => (
+                      <div key={key}>
+                        <span className="font-semibold block text-gray-700 capitalize">
+                          {key === 'dimensiones' ? 'Dimensiones' : 
+                           key === 'peso' ? 'Peso' : 
+                           key === 'ambiente' ? 'Condiciones Ambientales' : key}
+                        </span>
+                        <span className="text-gray-600 text-sm">{value}</span>
                       </div>
                     ))}
                   </div>
