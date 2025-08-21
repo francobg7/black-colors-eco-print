@@ -151,67 +151,10 @@ const todosEquipos = [
     cicloMensual: 'Hasta 100 hojas/día',
     insumos: 'Bolsa de residuos incluida'
   },
-  {
-    id: 5,
-    nombre: 'BROTHER DS-740D',
-    modelo: 'DS-740D',
-    descripcion: 'Destructora de Papel de Oficina',
-    slug: 'brother-ds-740d',
-    imagen: '/images/equipos/destructora-ds-740d.jpg',
-    categoria: 'Destructora de papel',
-    tecnologia: 'Corte en partículas',
-    resolucion: 'N/A',
-    velocidad: 'Hasta 10 hojas',
-    precio: 'Consultar precio',
-    compatibilidad: ['Papel A4', 'Grapas', 'Clips', 'Tarjetas de crédito'],
-    memoria: 'N/A',
-    procesador: 'Motor de 200W',
-    bandeja: 'Capacidad 30L',
-    cicloMensual: 'Hasta 500 hojas/día',
-    insumos: 'Bolsa de residuos incluida'
-  },
-  {
-    id: 6,
-    nombre: 'BROTHER DS-940DW',
-    modelo: 'DS-940DW',
-    descripcion: 'Destructora de Papel Profesional',
-    slug: 'brother-ds-940dw',
-    imagen: '/images/equipos/destructora-ds-940dw.jpg',
-    categoria: 'Destructora de papel',
-    tecnologia: 'Corte en partículas',
-    resolucion: 'N/A',
-    velocidad: 'Hasta 12 hojas',
-    precio: 'Consultar precio',
-    compatibilidad: ['Papel A4', 'Grapas', 'Clips', 'Tarjetas', 'CDs/DVDs'],
-    memoria: 'N/A',
-    procesador: 'Motor de 300W',
-    bandeja: 'Capacidad 50L',
-    cicloMensual: 'Hasta 1000 hojas/día',
-    insumos: 'Bolsa de residuos incluida'
-  },
-  {
-    id: 7,
-    nombre: 'BROTHER DS-1200DW',
-    modelo: 'DS-1200DW',
-    descripcion: 'Destructora de Papel Industrial',
-    slug: 'brother-ds-1200dw',
-    imagen: '/images/equipos/destructora-ds-1200dw.jpg',
-    categoria: 'Destructora de papel',
-    tecnologia: 'Corte en partículas',
-    resolucion: 'N/A',
-    velocidad: 'Hasta 20 hojas',
-    precio: 'Consultar precio',
-    compatibilidad: ['Papel A4', 'Grapas', 'Clips', 'Tarjetas', 'CDs/DVDs', 'Papel continuo'],
-    memoria: 'N/A',
-    procesador: 'Motor de 500W',
-    bandeja: 'Capacidad 100L',
-    cicloMensual: 'Hasta 5000 hojas/día',
-    insumos: 'Bolsa de residuos incluida'
-  },
 
   // UPS POLARIS
   {
-    id: 8,
+    id: 5,
     nombre: 'UPS INTERACTIVA 800 VA',
     modelo: 'XION 800',
     descripcion: 'UPS versátil y compacta, ideal para proteger PC o notebooks de bajo consumo.',
@@ -259,7 +202,7 @@ const todosEquipos = [
     }
   },
   {
-    id: 9,
+    id: 6,
     nombre: 'UPS INTERACTIVA 2 KVA',
     modelo: 'XION 2000',
     descripcion: 'UPS con display digital, ideal para proteger equipos de hogar u oficina.',
@@ -309,7 +252,7 @@ const todosEquipos = [
 
   // ETIQUETADORAS
   {
-    id: 10,
+    id: 7,
     nombre: 'BROTHER QL-800',
     modelo: 'QL-800',
     descripcion: 'Etiquetadora de Escritorio Profesional',
@@ -330,7 +273,7 @@ const todosEquipos = [
 
   // SCANNERS
   {
-    id: 11,
+    id: 8,
     nombre: 'BROTHER ADS-1200',
     modelo: 'ADS-1200',
     descripcion: 'Scanner de Documentos Portátil',
@@ -349,7 +292,7 @@ const todosEquipos = [
     insumos: 'N/A'
   },
   {
-    id: 12,
+    id: 9,
     nombre: 'BROTHER ADS-1700W',
     modelo: 'ADS-1700W',
     descripcion: 'Scanner de Documentos WiFi',
@@ -368,7 +311,7 @@ const todosEquipos = [
     insumos: 'N/A'
   },
   {
-    id: 13,
+    id: 10,
     nombre: 'BROTHER ADS-2200',
     modelo: 'ADS-2200',
     descripcion: 'Scanner de Documentos de Alto Rendimiento',
