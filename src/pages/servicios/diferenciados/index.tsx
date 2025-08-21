@@ -276,12 +276,12 @@ const ServiciosDiferenciados = () => {
 
             {/* Segunda imagen - 50% ancho */}
             <div className="relative">
-              <div className="w-full h-[500px] bg-gradient-to-br from-blue-200 to-purple-200 rounded-2xl overflow-hidden shadow-2xl">
-                <div className="w-full h-full bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
-                  <span className="text-gray-500 text-lg font-light tracking-wide">
-                    📸 Imagen: Consultoría y Análisis Especializado
-                  </span>
-                </div>
+              <div className="w-full h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src="/images/nosotros2.jpg" 
+                  alt="Equipo de especialistas analizando soluciones personalizadas"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
