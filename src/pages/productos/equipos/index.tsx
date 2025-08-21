@@ -433,7 +433,7 @@ const ProductosEquipos = () => {
         {/* Hero Background */}
         <div className="relative h-[500px] overflow-hidden">
           <img 
-            src="/images/equipos/portada-equipos.jpg" 
+            src="/images/hero-equipos.png" 
             alt="Equipos Hero"
             className="w-full h-full object-cover"
           />
