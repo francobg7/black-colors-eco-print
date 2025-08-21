@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ChevronDown, ChevronUp, ChevronLeft, ChevronRight } from 'lucide-react';
 import Footer from '@/components/Footer';
+import WhatsAppInlineButton from '@/components/WhatsAppInlineButton';
+import { useWhatsApp } from '@/hooks/useWhatsApp';
 import { useState } from 'react';
 
 interface TonerProduct {
@@ -123,6 +125,9 @@ const additionalProducts = [
 ];
 
 const ProductosToners = () => {
+  const { openWhatsApp } = useWhatsApp();
+
+  // ...existing code...
   const [showAllProducts, setShowAllProducts] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [current32AImageIndex, setCurrent32AImageIndex] = useState(0);
@@ -246,12 +251,13 @@ const ProductosToners = () => {
                   </div>
                   
                   <div className="flex gap-4">
-                    <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                    <WhatsAppInlineButton
+                      customMessage="Hola, me interesa el TONER 105A. ¿Podrían proporcionarme el precio y disponibilidad?"
+                      className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                      size="default"
+                    >
                       Consultar precio
-                    </button>
-                    <button className="border border-gray-300 hover:border-gray-400 text-gray-700 px-6 py-3 rounded-lg font-medium transition-colors">
-                      Ver detalles
-                    </button>
+                    </WhatsAppInlineButton>
                   </div>
                 </div>
               </div>
@@ -294,12 +300,13 @@ const ProductosToners = () => {
                   </div>
                   
                   <div className="flex gap-4">
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                    <WhatsAppInlineButton
+                      customMessage="Hola, me interesa el TONER 203U. ¿Podrían proporcionarme el precio y disponibilidad?"
+                      className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                      size="default"
+                    >
                       Consultar precio
-                    </button>
-                    <button className="border border-gray-300 hover:border-gray-400 text-gray-700 px-6 py-3 rounded-lg font-medium transition-colors">
-                      Ver detalles
-                    </button>
+                    </WhatsAppInlineButton>
                   </div>
                 </div>
 
@@ -308,11 +315,6 @@ const ProductosToners = () => {
                   <div className="w-full max-w-lg">
                     {/* Image Slider Container */}
                     <div className="relative bg-gray-50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
-                      {/* Current Image Label */}
-                      <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-medium">
-                        {toner203UImages[currentImageIndex].label}
-                      </div>
-                      
                       {/* Image Display */}
                       <div className="relative h-64 w-full flex items-center justify-center overflow-hidden rounded-lg">
                         <img 
@@ -394,16 +396,6 @@ const ProductosToners = () => {
                       className="w-full h-full object-cover drop-shadow-lg transition-transform duration-500"
                     />
                     
-                    {/* Overlay con información de imagen */}
-                    <div className="absolute top-4 left-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      {toner32AImages[current32AImageIndex].label}
-                    </div>
-                    
-                    {/* Premium Badge */}
-                    <div className="absolute -top-4 -right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                      Premium
-                    </div>
-                    
                     {/* Navegación del slider */}
                     <button
                       onClick={() => setCurrent32AImageIndex(current32AImageIndex === 0 ? 1 : 0)}
@@ -468,12 +460,13 @@ const ProductosToners = () => {
                   </div>
                   
                   <div className="flex gap-4">
-                    <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                    <WhatsAppInlineButton
+                      customMessage="Hola, me interesa el TONER 32A. ¿Podrían proporcionarme el precio y disponibilidad?"
+                      className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                      size="default"
+                    >
                       Consultar precio
-                    </button>
-                    <button className="border border-gray-300 hover:border-gray-400 text-gray-700 px-6 py-3 rounded-lg font-medium transition-colors">
-                      Ver detalles
-                    </button>
+                    </WhatsAppInlineButton>
                   </div>
                 </div>
               </div>
@@ -526,9 +519,6 @@ const ProductosToners = () => {
                     <span className="text-sm text-gray-500">
                       +{mainProducts.hpNegro.length - 6} modelos más
                     </span>
-                    <button className="text-gray-800 hover:text-gray-900 text-sm font-medium border border-gray-300 hover:border-gray-400 px-4 py-2 rounded-lg transition-colors">
-                      Ver todos
-                    </button>
                   </div>
                 </div>
               </div>
@@ -565,9 +555,6 @@ const ProductosToners = () => {
                     <span className="text-sm text-gray-500">
                       +{mainProducts.hpColor.length - 6} modelos más
                     </span>
-                    <button className="text-blue-600 hover:text-blue-700 text-sm font-medium border border-blue-300 hover:border-blue-400 px-4 py-2 rounded-lg transition-colors">
-                      Ver todos
-                    </button>
                   </div>
                 </div>
               </div>
@@ -604,9 +591,6 @@ const ProductosToners = () => {
                     <span className="text-sm text-gray-500">
                       Serie completa disponible
                     </span>
-                    <button className="text-green-600 hover:text-green-700 text-sm font-medium border border-green-300 hover:border-green-400 px-4 py-2 rounded-lg transition-colors">
-                      Consultar
-                    </button>
                   </div>
                 </div>
               </div>
@@ -669,93 +653,17 @@ const ProductosToners = () => {
                       <p className="text-gray-600 mb-4 text-sm">
                         Contamos con más de 200 modelos disponibles. Consulta por el tuyo.
                       </p>
-                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                      <WhatsAppInlineButton
+                        customMessage="Hola, no encuentro el toner que necesito. ¿Podrían ayudarme con la disponibilidad?"
+                        className="bg-blue-600 hover:bg-blue-700 text-white"
+                        size="default"
+                      >
                         Consultar disponibilidad
-                      </button>
+                      </WhatsAppInlineButton>
                     </div>
                   </div>
                 </div>
               )}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="w-full bg-gradient-to-br from-green-50 via-emerald-50/30 to-blue-50/20 py-20">
-        <div className="container mx-auto px-8 text-center">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-light text-gray-900 mb-6 tracking-tight">
-              ¿NECESITÁS ASESORAMIENTO?
-            </h2>
-            <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Nuestro equipo de especialistas te ayudará a encontrar el toner perfecto 
-              para tus necesidades específicas de impresión profesional.
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 text-center border border-green-100/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                  <span className="text-white text-2xl">📞</span>
-                </div>
-                <h3 className="text-lg font-medium text-gray-900 mb-3">
-                  CONSULTA TELEFÓNICA
-                </h3>
-                <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-                  Atención personalizada para resolver todas tus dudas sobre compatibilidad y rendimiento
-                </p>
-                <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors w-full">
-                  Llamar ahora
-                </button>
-              </div>
-              
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 text-center border border-blue-100/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                  <span className="text-white text-2xl">💬</span>
-                </div>
-                <h3 className="text-lg font-medium text-gray-900 mb-3">
-                  CHAT EN LÍNEA
-                </h3>
-                <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-                  Soporte inmediato a través de nuestro chat para consultas rápidas y cotizaciones
-                </p>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors w-full">
-                  Iniciar chat
-                </button>
-              </div>
-              
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 text-center border border-purple-100/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                  <span className="text-white text-2xl">📧</span>
-                </div>
-                <h3 className="text-lg font-medium text-gray-900 mb-3">
-                  CONTACTO POR EMAIL
-                </h3>
-                <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-                  Recibe información detallada, catálogos y precios directamente en tu correo
-                </p>
-                <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-medium transition-colors w-full">
-                  Enviar email
-                </button>
-              </div>
-            </div>
-
-            {/* Additional Info */}
-            <div className="mt-16 bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-gray-100/50">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div>
-                  <div className="text-3xl font-bold text-green-600 mb-2">200+</div>
-                  <div className="text-sm text-gray-600">Modelos disponibles</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-blue-600 mb-2">24h</div>
-                  <div className="text-sm text-gray-600">Tiempo de respuesta</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-purple-600 mb-2">15+</div>
-                  <div className="text-sm text-gray-600">Años de experiencia</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -766,4 +674,4 @@ const ProductosToners = () => {
   );
 };
 
-export default ProductosToners; 
+export default ProductosToners;

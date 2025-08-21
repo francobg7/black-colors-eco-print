@@ -1,7 +1,7 @@
 
-import React from 'react';
-import { MessageCircle, MapPin, User, ExternalLink } from 'lucide-react';
+import { MapPin, User } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import WhatsAppInlineButton from '@/components/WhatsAppInlineButton';
 import Footer from '@/components/Footer';
 
 const Contacto = () => {
@@ -9,19 +9,19 @@ const Contacto = () => {
     {
       nombre: 'Sofía Duarte',
       cargo: 'Asesora Corporativa',
-      telefono: '+595981123456',
+      telefono: '+595982343128',
       especialidad: 'Soluciones empresariales y corporativas'
     },
     {
       nombre: 'Lucas Ríos',
       cargo: 'Asesor Técnico',
-      telefono: '+595983654321',
+      telefono: '+595982343128',
       especialidad: 'Soporte técnico y mantenimiento'
     },
     {
       nombre: 'Martina Gómez',
       cargo: 'Atención Comercial',
-      telefono: '+595985789123',
+      telefono: '+595982343128',
       especialidad: 'Ventas y asesoramiento general'
     }
   ];
@@ -86,14 +86,13 @@ const Contacto = () => {
                   {asesor.especialidad}
                 </p>
 
-                <button
-                  onClick={() => handleWhatsAppClick(asesor.telefono, asesor.nombre)}
-                  className="w-full bg-emerald-500 hover:bg-emerald-400 text-white font-semibold py-4 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center space-x-3 group"
+                <WhatsAppInlineButton
+                  customMessage={`Hola ${asesor.nombre}, me gustaría recibir más información sobre los servicios de Black Colors.`}
+                  className="w-full bg-emerald-500 hover:bg-emerald-400"
+                  size="lg"
                 >
-                  <MessageCircle className="w-6 h-6" />
-                  <span>Contactar por WhatsApp</span>
-                  <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </button>
+                  Contactar por WhatsApp
+                </WhatsAppInlineButton>
               </CardContent>
             </Card>
           ))}

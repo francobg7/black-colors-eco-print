@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, Printer, Wifi, Network, Scan, Check, Phone, Mail, MapPin, ChevronLeft, ChevronRight } from 'lucide-react';
 import Footer from '@/components/Footer';
+import WhatsAppInlineButton from '@/components/WhatsAppInlineButton';
 import { useState } from 'react';
 
 // Datos de todas las impresoras (mismos datos que en index.tsx)
@@ -1414,12 +1415,20 @@ const DetalleImpresora = () => {
 
               {/* Botones de Acción */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="flex-1 bg-[#2d472f] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#4b6d3b] transition-colors">
+                <WhatsAppInlineButton
+                  customMessage={`Hola, me gustaría solicitar una cotización para la impresora ${impresora.nombre}.`}
+                  className="flex-1 bg-[#2d472f] text-white hover:bg-[#4b6d3b] transition-colors"
+                  size="default"
+                >
                   Solicitar Cotización
-                </button>
-                <button className="flex-1 border-2 border-[#2d472f] text-[#2d472f] px-6 py-3 rounded-xl font-semibold hover:bg-[#2d472f] hover:text-white transition-colors">
+                </WhatsAppInlineButton>
+                <WhatsAppInlineButton
+                  customMessage={`Hola, necesito más información sobre la impresora ${impresora.nombre}.`}
+                  className="flex-1 border-2 border-[#2d472f] text-[#2d472f] hover:bg-[#2d472f] hover:text-white transition-colors"
+                  size="default"
+                >
                   Más Información
-                </button>
+                </WhatsAppInlineButton>
               </div>
             </div>
           </div>
@@ -1549,7 +1558,7 @@ const DetalleImpresora = () => {
             <div className="text-center">
               <Phone className="w-8 h-8 mx-auto mb-2" />
               <h3 className="font-semibold mb-1">Teléfono</h3>
-              <p className="opacity-90">+595 21 123 456</p>
+              <p className="opacity-90">+595 982 343 128</p>
             </div>
             <div className="text-center">
               <Mail className="w-8 h-8 mx-auto mb-2" />

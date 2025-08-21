@@ -32,7 +32,7 @@ const Footer = () => (
           <h4 className="text-xl font-semibold mb-4 text-white">Contacto</h4>
           <div className="space-y-3">
             {[
-              { icon: Phone, text: "+595 21 123-456" },
+              { icon: Phone, text: "+595 982 343 128" },
               { icon: Mail, text: "info@blackcolors.py" },
               { icon: MapPin, text: "Asunción, Paraguay" }
             ].map((item, index) => (

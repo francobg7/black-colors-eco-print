@@ -1,406 +1,185 @@
-
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowLeft, Package, Zap, Shield } from 'lucide-react';
 import Footer from '@/components/Footer';
+import WhatsAppInlineButton from '@/components/WhatsAppInlineButton';
+import { useWhatsApp } from '@/hooks/useWhatsApp';
 
-// Datos de cartuchos Top Sales
-const topSalesCartuchos = [
-  {
-    id: 1,
-    nombre: 'Cartucho 122 XXL Color Importado',
-    tecnologia: 'Cartucho de tinta importado',
-    compatibilidad: 'Impresoras HP 122',
-    rendimiento: 'Alto rendimiento XXL',
-    precio: '150.000 Gs',
-    caracteristicas: ['Alta calidad', 'Rendimiento XXL', 'Color vibrante'],
-    destacado: 'Más vendido del año',
-    posicion: 'grande-izquierda'
-  },
-  {
-    id: 2,
-    nombre: 'Cartucho 60XXL Color Importado',
-    tecnologia: 'Cartucho de tinta importado',
-    compatibilidad: 'Impresoras HP 60',
-    rendimiento: 'Alto rendimiento XXL',
-    precio: '160.000 Gs',
-    caracteristicas: ['Alta durabilidad', 'Impresión nítida'],
-    destacado: 'Todo en uno más popular',
-    posicion: 'pequena-derecha-superior'
-  },
-  {
-    id: 3,
-    nombre: 'Cartucho 667 XXL Importado Color',
-    tecnologia: 'Cartucho de tinta importado',
-    compatibilidad: 'Impresoras HP 667',
-    rendimiento: 'Alto rendimiento XXL',
-    precio: '160.000 Gs',
-    caracteristicas: ['Eficiencia energética', 'Bajo consumo'],
-    destacado: 'Alta eficiencia',
-    posicion: 'pequena-derecha-inferior'
-  }
-];
-
-// Datos de todos los cartuchos
-const todosCartuchos = [
-  {
-    id: 1,
-    nombre: 'Cartucho 122 XXL Color Importado',
-    imagen: '/images/cartuchos/1.jpg',
-    tecnologia: 'Cartucho de tinta importado',
-    compatibilidad: 'Impresoras HP 122',
-    rendimiento: 'Alto rendimiento XXL',
-    precio: '150.000 Gs',
-    caracteristicas: ['Alta calidad', 'Rendimiento XXL', 'Color vibrante']
-  },
-  {
-    id: 2,
-    nombre: 'Cartucho 122XXL Negro Importado',
-    imagen: '/images/cartuchos/2.jpg',
-    tecnologia: 'Cartucho de tinta importado',
-    compatibilidad: 'Impresoras HP 122',
-    rendimiento: 'Alto rendimiento XXL',
-    precio: '150.000 Gs',
-    caracteristicas: ['Alta calidad', 'Rendimiento XXL', 'Negro intenso']
-  },
-  {
-    id: 3,
-    nombre: 'Cartucho 21 XXL Negro Importado',
-    imagen: '/images/cartuchos/3.jpg',
-    tecnologia: 'Cartucho de tinta importado',
-    compatibilidad: 'Impresoras HP 21',
-    rendimiento: 'Alto rendimiento XXL',
-    precio: '150.000 Gs',
-    caracteristicas: ['Alta calidad', 'Rendimiento XXL', 'Negro profesional']
-  },
-  {
-    id: 4,
-    nombre: 'Cartucho 22 XXL color importado',
-    imagen: '/images/cartuchos/4.jpg',
-    tecnologia: 'Cartucho de tinta importado',
-    compatibilidad: 'Impresoras HP 22',
-    rendimiento: 'Alto rendimiento XXL',
-    precio: '160.000 Gs',
-    caracteristicas: ['Alto rendimiento', 'Color profesional']
-  },
-  {
-    id: 5,
-    nombre: 'Cartucho 60XXL Color Importado',
-    imagen: '/images/cartuchos/5.jpg',
-    tecnologia: 'Cartucho de tinta importado',
-    compatibilidad: 'Impresoras HP 60',
-    rendimiento: 'Alto rendimiento XXL',
-    precio: '160.000 Gs',
-    caracteristicas: ['Durabilidad extrema', 'Impresión consistente']
-  },
-  {
-    id: 6,
-    nombre: 'Cartucho 60XXL Negro Importado',
-    imagen: '/images/cartuchos/6.jpg',
-    tecnologia: 'Cartucho de tinta importado',
-    compatibilidad: 'Impresoras HP 60',
-    rendimiento: 'Alto rendimiento XXL',
-    precio: '150.000 Gs',
-    caracteristicas: ['Eficiencia', 'Bajo costo por página']
-  },
-  {
-    id: 7,
-    nombre: 'Cartucho 61XXL Color Importado',
-    imagen: '/images/cartuchos/7.jpg',
-    tecnologia: 'Cartucho de tinta importado',
-    compatibilidad: 'Impresoras HP 61',
-    rendimiento: 'Alto rendimiento XXL',
-    precio: '150.000 Gs',
-    caracteristicas: ['Alta calidad', 'Rendimiento garantizado']
-  },
-  {
-    id: 8,
-    nombre: 'Cartucho 61 XXL Negro Importado',
-    imagen: '/images/cartuchos/8.jpg',
-    tecnologia: 'Cartucho de tinta importado',
-    compatibilidad: 'Impresoras HP 61',
-    rendimiento: 'Alto rendimiento XXL',
-    precio: '130.000 Gs',
-    caracteristicas: ['Durabilidad', 'Impresión profesional']
-  },
-  {
-    id: 9,
-    nombre: 'Cartucho 662XXL Color Importado',
-    imagen: '/images/cartuchos/9.jpg',
-    tecnologia: 'Cartucho de tinta importado',
-    compatibilidad: 'Impresoras HP 662',
-    rendimiento: 'Alto rendimiento XXL',
-    precio: '150.000 Gs',
-    caracteristicas: ['Eficiencia energética', 'Bajo consumo']
-  },
-  {
-    id: 10,
-    nombre: 'Cartucho 662XXL Negro Importado',
-    imagen: '/images/cartuchos/10.jpg',
-    tecnologia: 'Cartucho de tinta importado',
-    compatibilidad: 'Impresoras HP 662',
-    rendimiento: 'Alto rendimiento XXL',
-    precio: '145.000 Gs',
-    caracteristicas: ['Alta calidad', 'Rendimiento garantizado']
-  },
-  {
-    id: 11,
-    nombre: 'Cartucho 664XXL Color New Version Importado',
-    imagen: '/images/cartuchos/11.jpg',
-    tecnologia: 'Cartucho de tinta importado',
-    compatibilidad: 'Impresoras HP 664',
-    rendimiento: 'Alto rendimiento XXL',
-    precio: '150.000 Gs',
-    caracteristicas: ['Durabilidad extrema', 'Impresión consistente']
-  },
-  {
-    id: 12,
-    nombre: 'Cartucho 664XXL Negro New Version Importado',
-    imagen: '/images/cartuchos/12.jpg',
-    tecnologia: 'Cartucho de tinta importado',
-    compatibilidad: 'Impresoras HP 664',
-    rendimiento: 'Alto rendimiento XXL',
-    precio: '150.000 Gs',
-    caracteristicas: ['Eficiencia', 'Bajo costo por página']
-  },
-  {
-    id: 13,
-    nombre: 'Cartucho 667 XXL Importado Color',
-    imagen: '/images/cartuchos/13.jpg',
-    tecnologia: 'Cartucho de tinta importado',
-    compatibilidad: 'Impresoras HP 667',
-    rendimiento: 'Alto rendimiento XXL',
-    precio: '160.000 Gs',
-    caracteristicas: ['Alta calidad', 'Rendimiento garantizado']
-  },
-  {
-    id: 14,
-    nombre: 'Cartucho 667 XXL Importado Negro',
-    imagen: '/images/cartuchos/14.jpg',
-    tecnologia: 'Cartucho de tinta importado',
-    compatibilidad: 'Impresoras HP 667',
-    rendimiento: 'Alto rendimiento XXL',
-    precio: '160.000 Gs',
-    caracteristicas: ['Eficiencia energética', 'Bajo consumo']
-  }
-];
+// Productos principales destacados
+const mainProducts = {
+  cartuchos: [
+    'Cartucho 122 XXL Color Importado',
+    'Cartucho 122XXL Negro Importado',
+    'Cartucho 21 XXL Negro Importado',
+    'Cartucho 22 XXL color importado',
+    'Cartucho 60XXL Color Importado',
+    'Cartucho 60XXL Negro Importado',
+    'Cartucho 61XXL Color Importado',
+    'Cartucho 61 XXL Negro Importado',
+    'Cartucho 662XXL Color Importado',
+    'Cartucho 662XXL Negro Importado',
+    'Cartucho 664XXL Color New Version Importado',
+    'Cartucho 664XXL Negro New Version Importado',
+    'Cartucho 667 XXL Importado Color',
+    'Cartucho 667 XXL Importado Negro'
+  ]
+};
 
 const ProductosCartuchos = () => {
+  const { openWhatsApp } = useWhatsApp();
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-6 py-8">
-        {/* Navegación */}
-        <div className="mb-8">
-          <Link 
-            to="/productos" 
-            className="inline-flex items-center space-x-2 text-[#2d472f] hover:text-[#4b6d3b] transition-colors font-semibold"
-          >
-            <ArrowLeft className="w-5 h-5" />
-            <span>Volver a Productos</span>
-          </Link>
+    <div className="min-h-screen bg-gradient-to-br from-green-50/30 to-white">
+      {/* Hero Section */}
+      <div className="relative">
+        {/* Hero Background */}
+        <div className="relative h-[70vh] overflow-hidden">
+          <img 
+            src="/images/cartuchos/portada.jpg" 
+            alt="Cartuchos Hero"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-gray-50" />
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
+            <h1 className="text-5xl lg:text-6xl font-bold mb-4 text-white">CARTUCHOS</h1>
+            <h2 className="text-2xl lg:text-3xl font-light text-green-100 mb-6">DE ALTA CALIDAD XXL</h2>
+            <p className="text-lg max-w-2xl text-center text-white/90 leading-relaxed">
+              Descubre nuestra selección especializada de cartuchos XXL premium para todas tus necesidades de impresión
+            </p>
+          </div>
         </div>
+      </div>
 
-        {/* Título principal */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-[#2d472f]">
-            CARTUCHOS
-          </h1>
-          <p className="text-xl sm:text-2xl text-[#4b6d3b] max-w-3xl mx-auto">
-            Tóneres originales Brother para máxima calidad y durabilidad
-          </p>
-        </div>
-
-        {/* Sección 1: Top Sales - Layout de dos columnas asimétricas */}
-        <section className="mb-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#2d472f] mb-4">
-              Productos Estrella
+      {/* Products Showcase Section */}
+      <section className="w-full bg-white py-20">
+        <div className="container mx-auto px-8">
+          {/* Section Header */}
+          <div className="text-center mb-20">
+            <h2 className="text-4xl font-light text-gray-900 mb-4 tracking-tight">
+              Productos Destacados
             </h2>
-            <p className="text-lg text-[#4b6d3b]">
-              Nuestros cartuchos más vendidos y recomendados
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Descubre nuestra selección premium de cartuchos XXL con la más alta calidad y rendimiento
             </p>
           </div>
 
-          {/* Layout de dos columnas asimétricas */}
-          <div className="w-full max-w-7xl mx-auto">
-            <div className="grid grid-cols-3 gap-6 h-[800px]">
-              {/* Columna izquierda - Tarjeta grande */}
-              <div className="col-span-2 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden group">
-                <div className="relative h-full">
-                  {/* Badge destacado */}
-                  <div className="absolute top-6 right-6 z-20">
-                    <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
-                      {topSalesCartuchos[0].destacado}
-                    </span>
-                  </div>
-
-                  {/* Imagen de fondo */}
-                  <div className="absolute inset-0">
+          {/* Cartucho 664 - Card Style */}
+          <div className="mb-20">
+            <div className="bg-gradient-to-br from-gray-50 to-gray-100/50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                {/* Image Section */}
+                <div className="relative bg-white p-12 flex items-center justify-center">
+                  <div className="relative w-full max-w-md h-80">
                     <img 
-                      src="/images/cartuchos/1.jpg"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      src="/images/cartuchos/cartucho-664.jpeg"
+                      alt="Cartucho 664 XXL"
+                      className="w-full h-full object-cover rounded-lg drop-shadow-lg"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                  </div>
-
-                  {/* Contenido */}
-                  <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                    <h3 className="text-3xl font-bold mb-4 group-hover:text-green-300 transition-colors">
-                      {topSalesCartuchos[0].nombre}
-                    </h3>
-
-                    <div className="space-y-3 mb-6">
-                      <div className="flex items-center space-x-3">
-                        <Package className="w-5 h-5 text-green-300" />
-                        <span className="text-green-200 font-medium">{topSalesCartuchos[0].tecnologia}</span>
-                      </div>
-                      
-                      <div className="text-green-100">
-                        <div className="font-semibold">Compatibilidad: {topSalesCartuchos[0].compatibilidad}</div>
-                        <div className="font-semibold">Rendimiento: {topSalesCartuchos[0].rendimiento}</div>
-                      </div>
-
-                      {/* Precio */}
-                      <div className="flex items-center space-x-3">
-                        <span className="text-sm font-semibold text-green-200">Precio:</span>
-                        <div className="flex space-x-2">
-                          <span className="text-lg font-bold text-green-300">{topSalesCartuchos[0].precio}</span>
-                        </div>
-                      </div>
-
-                      {/* Características */}
-                      <div className="flex items-center space-x-3">
-                        <span className="text-sm font-semibold text-green-200">Características:</span>
-                        <div className="flex flex-wrap gap-2">
-                          {topSalesCartuchos[0].caracteristicas.map((caract, idx) => (
-                            <span key={idx} className="text-xs bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full border border-white/30">
-                              {caract}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
+                    <div className="absolute -top-4 -right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      Destacado
                     </div>
+                  </div>
+                </div>
+
+                {/* Info Section */}
+                <div className="p-12 flex flex-col justify-center">
+                  <div className="mb-6">
+                    <span className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-4">
+                      HP Compatible
+                    </span>
+                    <h3 className="text-3xl font-light text-gray-900 mb-3">
+                      CARTUCHO 664 XXL
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed mb-6">
+                      Cartucho de alta capacidad XXL diseñado para ofrecer impresiones nítidas y duraderas. 
+                      Perfecto para documentos profesionales y uso intensivo en oficinas.
+                    </p>
+                  </div>
+                  
+                  {/* Features Grid */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                    <div className="bg-white p-4 rounded-lg border border-gray-200">
+                      <div className="text-sm font-medium text-gray-900 mb-1">Alta Capacidad XXL</div>
+                      <div className="text-xs text-gray-600">Hasta 11x más impresiones</div>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg border border-gray-200">
+                      <div className="text-sm font-medium text-gray-900 mb-1">Calidad Premium</div>
+                      <div className="text-xs text-gray-600">Impresión profesional</div>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg border border-gray-200">
+                      <div className="text-sm font-medium text-gray-900 mb-1">Fácil Instalación</div>
+                      <div className="text-xs text-gray-600">Plug & play</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex gap-4">
+                    <WhatsAppInlineButton
+                      customMessage="Hola, me gustaría consultar la disponibilidad de cartuchos XXL."
+                      className="bg-green-600 hover:bg-green-700 text-white"
+                      size="default"
+                    >
+                      Consultar disponibilidad
+                    </WhatsAppInlineButton>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
 
-              {/* Columna derecha - Dos tarjetas apiladas */}
-              <div className="col-span-1 flex flex-col gap-6">
-                {/* Tarjeta superior */}
-                <div className="flex-1 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden group">
-                  <div className="relative h-full">
-                    {/* Badge destacado */}
-                    <div className="absolute top-4 right-4 z-20">
-                      <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                        {topSalesCartuchos[1].destacado}
-                      </span>
+          {/* Cartucho 667 - Card Style */}
+          <div className="mb-20">
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                {/* Info Section */}
+                <div className="p-12 flex flex-col justify-center lg:order-1">
+                  <div className="mb-6">
+                    <span className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mb-4">
+                      HP Compatible
+                    </span>
+                    <h3 className="text-3xl font-light text-gray-900 mb-3">
+                      CARTUCHO 667 XXL
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed mb-6">
+                      Solución avanzada para impresión de alta resolución. Ideal para trabajos que requieren 
+                      precisión y consistencia en cada página impresa con capacidad extendida XXL.
+                    </p>
+                  </div>
+                  
+                  {/* Features Grid */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                    <div className="bg-white p-4 rounded-lg border border-gray-200">
+                      <div className="text-sm font-medium text-gray-900 mb-1">Tecnología Avanzada</div>
+                      <div className="text-xs text-gray-600">Nueva versión</div>
                     </div>
-
-                    {/* Imagen de fondo */}
-                    <div className="absolute inset-0">
-                      <img 
-                        src="/images/cartuchos/2.jpg"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
+                    <div className="bg-white p-4 rounded-lg border border-gray-200">
+                      <div className="text-sm font-medium text-gray-900 mb-1">Alta Resolución</div>
+                      <div className="text-xs text-gray-600">Hasta 1200 DPI</div>
                     </div>
-
-                    {/* Contenido */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                      <h3 className="text-xl font-bold mb-3 group-hover:text-blue-300 transition-colors">
-                        {topSalesCartuchos[1].nombre}
-                      </h3>
-
-                      <div className="space-y-2">
-                        <div className="flex items-center space-x-2">
-                          <Package className="w-4 h-4 text-blue-300" />
-                          <span className="text-blue-200 text-sm font-medium">{topSalesCartuchos[1].tecnologia}</span>
-                        </div>
-                        
-                        <div className="text-blue-100 text-sm">
-                          <div className="font-semibold">Compatibilidad: {topSalesCartuchos[1].compatibilidad}</div>
-                          <div className="font-semibold">Rendimiento: {topSalesCartuchos[1].rendimiento}</div>
-                        </div>
-                        
-                        {/* Precio */}
-                        <div className="flex items-center space-x-3">
-                          <span className="text-sm font-semibold text-green-200">Precio:</span>
-                          <div className="flex space-x-2">
-                            <span className="text-lg font-bold text-green-300">{topSalesCartuchos[1].precio}</span>
-                          </div>
-                        </div>
-
-                        {/* Características */}
-                        <div className="flex items-center space-x-3">
-                          <span className="text-sm font-semibold text-blue-200">Características:</span>
-                          <div className="flex flex-wrap gap-2">
-                            {topSalesCartuchos[1].caracteristicas.map((caract, idx) => (
-                              <span key={idx} className="text-xs bg-white/20 backdrop-blur-sm text-white px-2 py-1 rounded-full border border-white/30">
-                                {caract}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
+                    <div className="bg-white p-4 rounded-lg border border-gray-200">
+                      <div className="text-sm font-medium text-gray-900 mb-1">XXL Capacidad</div>
+                      <div className="text-xs text-gray-600">9x más tinta</div>
                     </div>
+                  </div>
+                  
+                  <div className="flex gap-4">
+                    <WhatsAppInlineButton
+                      customMessage="Hola, me gustaría consultar la disponibilidad del cartucho 667 XXL."
+                      className="bg-blue-600 hover:bg-blue-700 text-white"
+                      size="default"
+                    >
+                      Consultar disponibilidad
+                    </WhatsAppInlineButton>
                   </div>
                 </div>
 
-                {/* Tarjeta inferior */}
-                <div className="flex-1 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden group">
-                  <div className="relative h-full">
-                    {/* Badge destacado */}
-                    <div className="absolute top-4 right-4 z-20">
-                      <span className="bg-gradient-to-r from-red-500 to-pink-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                        {topSalesCartuchos[2].destacado}
-                      </span>
-                    </div>
-
-                    {/* Imagen de fondo */}
-                    <div className="absolute inset-0">
+                {/* Image Section */}
+                <div className="relative bg-white p-8 flex items-center justify-center lg:order-2">
+                  <div className="w-full max-w-lg">
+                    <div className="relative bg-gray-50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
                       <img 
-                        src="/images/cartuchos/3.jpg"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        src="/images/cartuchos/cartucho-667.jpeg"
+                        alt="Cartucho 667 XXL"
+                        className="w-full h-80 object-cover rounded-lg"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
-                    </div>
-
-                    {/* Contenido */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                      <h3 className="text-xl font-bold mb-3 group-hover:text-red-300 transition-colors">
-                        {topSalesCartuchos[2].nombre}
-                      </h3>
-
-                      <div className="space-y-2">
-                        <div className="flex items-center space-x-2">
-                          <Package className="w-4 h-4 text-red-300" />
-                          <span className="text-red-200 text-sm font-medium">{topSalesCartuchos[2].tecnologia}</span>
-                        </div>
-                        
-                        <div className="text-red-100 text-sm">
-                          <div className="font-semibold">Compatibilidad: {topSalesCartuchos[2].compatibilidad}</div>
-                          <div className="font-semibold">Rendimiento: {topSalesCartuchos[2].rendimiento}</div>
-                        </div>
-
-                        {/* Precio */}
-                        <div className="flex items-center space-x-3">
-                          <span className="text-sm font-semibold text-green-200">Precio:</span>
-                          <div className="flex space-x-2">
-                            <span className="text-lg font-bold text-green-300">{topSalesCartuchos[2].precio}</span>
-                          </div>
-                        </div>
-
-                        {/* Características */}
-                        <div className="flex items-center space-x-3">
-                          <span className="text-sm font-semibold text-red-200">Características:</span>
-                          <div className="flex flex-wrap gap-2">
-                            {topSalesCartuchos[2].caracteristicas.map((caract, idx) => (
-                              <span key={idx} className="text-xs bg-white/20 backdrop-blur-sm text-white px-2 py-1 rounded-full border border-white/30">
-                                {caract}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
+                      <div className="absolute -top-3 -right-3 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                        XXL
                       </div>
                     </div>
                   </div>
@@ -408,77 +187,334 @@ const ProductosCartuchos = () => {
               </div>
             </div>
           </div>
-        </section>
 
-        {/* Sección 2: Cuadrilla general */}
-        <section>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#2d472f] mb-4">
-              Catálogo Completo
+          {/* Cartucho 662 - Card Style */}
+          <div className="mb-12">
+            <div className="bg-gradient-to-br from-green-50 to-green-100/50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                {/* Image Section */}
+                <div className="relative bg-white p-12 flex items-center justify-center group">
+                  <div className="relative w-full max-w-md h-80 overflow-hidden rounded-lg">
+                    <img 
+                      src="/images/cartuchos/cartucho-662.jpeg"
+                      alt="Cartucho 662 XXL"
+                      className="w-full h-full object-cover drop-shadow-lg transition-transform duration-500"
+                    />
+                    <div className="absolute -top-4 -right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      Popular
+                    </div>
+                  </div>
+                </div>
+
+                {/* Info Section */}
+                <div className="p-12 flex flex-col justify-center">
+                  <div className="mb-6">
+                    <span className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-4">
+                      HP Compatible
+                    </span>
+                    <h3 className="text-3xl font-light text-gray-900 mb-3">
+                      CARTUCHO 662 XXL
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed mb-6">
+                      Cartucho premium con tecnología de última generación. Garantiza resultados excepcionales 
+                      para aplicaciones críticas y presentaciones importantes con capacidad XXL extendida.
+                    </p>
+                  </div>
+                  
+                  {/* Features Grid */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                    <div className="bg-white p-4 rounded-lg border border-gray-200">
+                      <div className="text-sm font-medium text-gray-900 mb-1">Secado Rápido</div>
+                      <div className="text-xs text-gray-600">Resistente al agua</div>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg border border-gray-200">
+                      <div className="text-sm font-medium text-gray-900 mb-1">Durabilidad</div>
+                      <div className="text-xs text-gray-600">Sin decoloración</div>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg border border-gray-200">
+                      <div className="text-sm font-medium text-gray-900 mb-1">Sellado al Vacío</div>
+                      <div className="text-xs text-gray-600">Máxima seguridad</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex gap-4">
+                    <WhatsAppInlineButton
+                      customMessage="Hola, me gustaría consultar la disponibilidad del cartucho 664 XXL."
+                      className="bg-green-600 hover:bg-green-700 text-white"
+                      size="default"
+                    >
+                      Consultar disponibilidad
+                    </WhatsAppInlineButton>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Products Catalog Section */}
+      <section className="w-full bg-gradient-to-br from-gray-50 to-gray-100/50 py-20">
+        <div className="container mx-auto px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-light text-gray-900 mb-4 tracking-tight">
+              Catálogo de Cartuchos
             </h2>
-            <p className="text-lg text-[#4b6d3b]">
-              Nuestra gama completa de cartuchos Brother
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Nuestra gama completa de cartuchos XXL para máximo rendimiento
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {todosCartuchos.map((cartucho) => (
-              <div 
-                key={cartucho.id}
-                className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
-              >
-                {/* Imagen */}
-                <div className="h-48 overflow-hidden">
-                  <img 
-                    src={cartucho.imagen} 
-                    alt={cartucho.nombre}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                {/* Contenido técnico */}
-                <div className="p-4">
-                  <h3 className="text-lg font-bold text-[#2d472f] mb-3">
-                    {cartucho.nombre}
-                  </h3>
-
-                  <div className="space-y-2 text-sm">
-                    <div className="flex items-center space-x-2">
-                      <Package className="w-3 h-3 text-[#4b6d3b]" />
-                      <span className="text-[#4b6d3b] font-medium">{cartucho.tecnologia}</span>
+          <div className="max-w-6xl mx-auto">
+            <div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
+              {/* Header Section */}
+              <div className="bg-gradient-to-r from-green-600 via-green-700 to-emerald-600 p-8">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center">
+                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mr-6 border border-white/30">
+                      <span className="text-white text-2xl">🖨️</span>
                     </div>
-                    
-                    <div className="text-gray-600">
-                      <div className="font-semibold">Compatibilidad: {cartucho.compatibilidad}</div>
-                      <div className="font-semibold">Rendimiento: {cartucho.rendimiento}</div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-white mb-2">Cartuchos XXL Premium</h3>
+                      <p className="text-green-100">Compatible con impresoras HP • Alta capacidad • Calidad garantizada</p>
                     </div>
-
-                    {/* Precio */}
-                    <div className="flex items-center space-x-1">
-                      <span className="text-xs font-semibold text-[#2d472f]">Precio:</span>
-                      <div className="flex space-x-1">
-                        <span className="text-sm font-bold text-[#4b6d3b]">{cartucho.precio}</span>
-                      </div>
+                  </div>
+                  <div className="hidden md:flex items-center space-x-4">
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-white">14</div>
+                      <div className="text-green-100 text-sm">Modelos</div>
                     </div>
-
-                    {/* Características */}
-                    <div className="flex flex-wrap gap-1">
-                      {cartucho.caracteristicas.slice(0, 2).map((caract, idx) => (
-                        <span key={idx} className="text-xs bg-[#2d472f] text-white px-1.5 py-0.5 rounded">
-                          {caract}
-                        </span>
-                      ))}
-                      {cartucho.caracteristicas.length > 2 && (
-                        <span className="text-xs text-[#4b6d3b]">+{cartucho.caracteristicas.length - 2} más</span>
-                      )}
+                    <div className="w-px h-12 bg-white/30"></div>
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-white">XXL</div>
+                      <div className="text-green-100 text-sm">Capacidad</div>
                     </div>
                   </div>
                 </div>
               </div>
-            ))}
+              
+              {/* Products Grid */}
+              <div className="p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                  {mainProducts.cartuchos.map((product, index) => (
+                    <div key={index} className="group flex items-center space-x-4 p-4 bg-gray-50 hover:bg-green-50 rounded-xl transition-all duration-200 cursor-pointer border border-gray-100 hover:border-green-200 hover:shadow-md">
+                      <div className="w-12 h-12 bg-green-100 group-hover:bg-green-200 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors">
+                        <div className="w-3 h-3 bg-green-600 rounded-full"></div>
+                      </div>
+                      <div className="flex-1">
+                        <span className="text-gray-800 font-medium text-sm leading-tight block">{product}</span>
+                        <span className="text-gray-500 text-xs mt-1 block">Compatible HP • Sellado al vacío</span>
+                      </div>
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+                        <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                
+                {/* Features Bar */}
+                <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-6 mb-6">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    <div className="flex items-center justify-center space-x-3">
+                      <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
+                        <span className="text-white text-lg">💧</span>
+                      </div>
+                      <div className="text-left">
+                        <div className="font-semibold text-gray-900 text-sm">Alta Capacidad</div>
+                        <div className="text-gray-600 text-xs">Hasta 9x más tinta</div>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-center space-x-3">
+                      <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
+                        <span className="text-white text-lg">✅</span>
+                      </div>
+                      <div className="text-left">
+                        <div className="font-semibold text-gray-900 text-sm">100% Compatible</div>
+                        <div className="text-gray-600 text-xs">Garantía de funcionamiento</div>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-center space-x-3">
+                      <div className="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center">
+                        <span className="text-white text-lg">📦</span>
+                      </div>
+                      <div className="text-left">
+                        <div className="font-semibold text-gray-900 text-sm">Sellado al Vacío</div>
+                        <div className="text-gray-600 text-xs">Máxima protección</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Action Section */}
+                <div className="text-center pt-6 border-t border-gray-200">
+                  <p className="text-gray-600 mb-6 text-sm">
+                    ¿Necesitás ayuda para encontrar el cartucho correcto para tu impresora?
+                  </p>
+                  <div className="flex justify-center">
+                    <WhatsAppInlineButton
+                      customMessage="Hola, necesito ayuda para encontrar el cartucho correcto para mi impresora."
+                      className="bg-green-600 hover:bg-green-700 text-white"
+                      size="default"
+                    >
+                      📞 Consultar disponibilidad
+                    </WhatsAppInlineButton>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+
+      {/* Technical Information Section */}
+      <section className="w-full bg-white py-16">
+        <div className="container mx-auto px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-light text-gray-900 mb-3">
+              Información Técnica
+            </h2>
+            <p className="text-gray-600">
+              Todo lo que necesitás saber sobre nuestros cartuchos XXL
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {/* Capacidad de tinta */}
+            <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mr-3">
+                  <span className="text-white text-lg">💧</span>
+                </div>
+                <h3 className="text-lg font-medium text-gray-900">Capacidad de tinta</h3>
+              </div>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li className="flex items-start space-x-2">
+                  <span className="text-blue-500">•</span>
+                  <span>Hasta 9 veces superior al cartucho estándar</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <span className="text-blue-500">•</span>
+                  <span>Más de 1.000 páginas por cartucho</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Compatibilidad */}
+            <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center mr-3">
+                  <span className="text-white text-lg">🔧</span>
+                </div>
+                <h3 className="text-lg font-medium text-gray-900">Compatibilidad</h3>
+              </div>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li className="flex items-start space-x-2">
+                  <span className="text-green-500">•</span>
+                  <span>Compatible con HP/Brother/Epson</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <span className="text-green-500">•</span>
+                  <span>Instalación simple y rápida</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Rendimiento optimizado */}
+            <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center mr-3">
+                  <span className="text-white text-lg">⚡</span>
+                </div>
+                <h3 className="text-lg font-medium text-gray-900">Rendimiento</h3>
+              </div>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li className="flex items-start space-x-2">
+                  <span className="text-purple-500">•</span>
+                  <span>Hasta 11x más impresiones</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <span className="text-purple-500">•</span>
+                  <span>Calidad constante sin manchas</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="max-w-4xl mx-auto mt-8 bg-gray-900 rounded-xl p-6 text-center text-white">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+              <div className="flex flex-col items-center">
+                <span className="text-xl mb-1">🖤</span>
+                <p>Cartuchos compatibles</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="text-xl mb-1">📦</span>
+                <p>Sellados al vacío</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="text-xl mb-1">🖨️</span>
+                <p>Hasta 11x más rendimiento</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Environmental Commitment Section */}
+      <section className="w-full bg-gray-50 py-16">
+        <div className="container mx-auto px-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-light text-gray-900 mb-3">
+                Compromiso con el medio ambiente 🌍
+              </h2>
+            </div>
+            
+            <div className="bg-white rounded-xl p-8 border border-gray-200 mb-6">
+              <div className="flex items-start mb-6">
+                <div className="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                  <span className="text-white text-xl">⚠️</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-medium text-red-600 mb-3">No tires tus cartuchos ni toners usados en el basurero.</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    Estos contienen metales pesados y sustancias tóxicas que pueden contaminar el suelo y el agua, 
+                    intoxicando durante décadas, poniendo en riesgo la salud de las personas y el ecosistema.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-start mb-6">
+                <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                  <span className="text-white text-xl">♻️</span>
+                </div>
+                <div>
+                  <p className="text-gray-700 leading-relaxed">
+                    En Black Colors nos encargamos de reciclarlos de manera responsable: transformamos los cartuchos 
+                    utilizados en carbón y gas, evitando que se conviertan en residuos contaminantes y aportando a un 
+                    futuro más limpio y sustentable.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <p className="text-gray-700 mb-4">
+                ¿Tienes cartuchos o toners usados? ¡Contáctanos para más información sobre nuestro programa de reciclaje!
+              </p>
+              <WhatsAppInlineButton
+                customMessage="Hola, estoy interesado en el programa de reciclaje de cartuchos. Quiero más información."
+                className="bg-green-600 hover:bg-green-700 text-white"
+                size="default"
+              >
+                Reciclar cartuchos
+              </WhatsAppInlineButton>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
