@@ -1,9 +1,22 @@
 
 import React from 'react';
 import { CheckCircle, Wrench, Headphones, Zap, Shield, TrendingUp, Printer, Package, Recycle, Users, FileText, Mail } from 'lucide-react';
+import { saveAs } from 'file-saver';
 import Footer from '@/components/Footer';
 
 const Leasing = () => {
+  const handleDownloadPDF = async () => {
+    try {
+      const response = await fetch('/pdf/Impresión Sustentable - Black Colors Brochure.pdf');
+      const blob = await response.blob();
+      saveAs(blob, 'Impresión Sustentable - Black Colors Brochure.pdf');
+    } catch (error) {
+      console.error('Error al descargar el PDF:', error);
+      // Fallback: abrir en nueva pestaña si falla la descarga
+      window.open('/pdf/Impresión Sustentable - Black Colors Brochure.pdf', '_blank');
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50/30 to-white">
       {/* Hero Section - Nueva estructura con imagen */}
@@ -127,6 +140,8 @@ const Leasing = () => {
         </div>
       </section>
 
+
+
       {/* ¿Por qué elegir nuestro leasing sustentable? */}
       <section className="w-full bg-gradient-to-br from-green-50/20 to-emerald-50/10 py-24">
         <div className="container mx-auto px-8">
@@ -196,6 +211,24 @@ const Leasing = () => {
                 />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Descarga del Brochure */}
+      <section className="w-full bg-gradient-to-br from-emerald-50/30 to-green-50/20 py-16">
+        <div className="container mx-auto px-8 text-center">
+          <div className="max-w-2xl mx-auto">
+            <h4 className="text-2xl font-medium text-gray-900 mb-4">
+              Descargá nuestro brochure completo
+            </h4>
+            <button 
+              onClick={handleDownloadPDF}
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-green-600 text-white px-6 py-3 rounded-xl text-base font-medium hover:from-emerald-700 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer"
+            >
+              <FileText className="w-4 h-4" />
+              Descargar PDF
+            </button>
           </div>
         </div>
       </section>
