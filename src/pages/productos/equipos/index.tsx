@@ -314,7 +314,7 @@ const todosEquipos = [
     modelo: 'QL-800',
     descripcion: 'Etiquetadora de Escritorio Profesional',
     slug: 'brother-ql-800',
-    imagen: '/images/equipos/etiquetadora-ql-800.jpg',
+    imagen: '/images/etiquetadora/ql-800.jpg',
     categoria: 'Etiquetadoras',
     tecnologia: 'Impresión térmica',
     resolucion: '300 DPI',
