@@ -287,7 +287,7 @@ const EventoDetalle = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-600">Email</p>
-                    <p className="font-semibold text-[#2d472f]">eventos@blackcolors.com.py</p>
+                    <p className="font-semibold text-[#2d472f]">mkt@blackcolors.com.py</p>
                   </div>
                 </div>
               </div>
