@@ -134,23 +134,24 @@ const todosEquipos = [
   // DESTRUCTORA DE PAPEL
   {
     id: 4,
-    nombre: 'BROTHER DS-120',
-    modelo: 'DS-120',
-    descripcion: 'Destructora de Papel Personal',
-    slug: 'brother-ds-120',
-    imagen: '/images/equipos/destructora-ds-120.jpg',
+    nombre: 'Destructor de Documentos Fellowes LX41 4x12mm',
+    modelo: 'LX41',
+    descripcion: 'Destructora 4x12mm. Fellowes 4300701.',
+    slug: 'destructor-fellowes-lx41',
+    imagen: '/images/destructora/Fellowes2.jpg.webp',
     categoria: 'Destructora de papel',
-    tecnologia: 'Corte en tiras',
+    tecnologia: 'Corte en partículas 4x12mm',
     resolucion: 'N/A',
-    velocidad: 'Hasta 8 hojas',
+    velocidad: 'Hasta 11 hojas',
     precio: 'Consultar precio',
-    compatibilidad: ['Papel A4', 'Grapas', 'Clips'],
+    compatibilidad: ['Papel A4', 'Grapas', 'Clips', 'Tarjetas de crédito'],
     caracteristicas: {
       destruccion: {
-        tipoCorte: 'Corte en tiras',
-        capacidad: 'Hasta 8 hojas',
-        velocidad: 'Hasta 8 hojas',
-        primeraHoja: 'Inmediata'
+        tipoCorte: 'Corte en partículas 4x12mm (Din P-4)',
+        capacidad: 'Hasta 11 hojas',
+        velocidad: 'Hasta 11 hojas',
+        primeraHoja: 'Inmediata',
+        nivelSeguridad: 'Din P-4'
       },
       conectividad: {
         usb: 'No',
@@ -159,15 +160,28 @@ const todosEquipos = [
         movil: 'No'
       },
       funciones: {
-        motor: '120W',
-        bandeja: 'Capacidad 20L',
-        seguridad: 'Nivel P-1',
-        autoOff: 'Sí'
+        motor: 'Motor de alta durabilidad',
+        bandeja: 'Capacidad 18L',
+        seguridad: 'Bloqueo de seguridad para evitar accidentes',
+        autoOff: 'Sí',
+        tiempoUso: '5 minutos continuos con 30 minutos de enfriamiento'
       },
       capacidad: {
-        papel: 'Hasta 8 hojas',
-        bandeja: '20L',
-        ciclo: 'Hasta 100 hojas/día'
+        papel: 'Hasta 11 hojas',
+        bandeja: '18L',
+        ciclo: 'Uso ocasional en hogar y oficina',
+        cabezal: 'Cabezal extraíble para vaciar papelera'
+      },
+      fisicas: {
+        peso: '5.1kg',
+        dimensiones: '40x31x22cm',
+        color: 'Negro'
+      },
+      especificaciones: {
+        peso: '5.1kg',
+        dimensiones: '40x31x22cm',
+        capacidad: '11 hojas',
+        origen: 'Estados Unidos'
       }
     }
   },
