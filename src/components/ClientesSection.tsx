@@ -3,12 +3,24 @@ const clientes = [
   { name: "Cavallaro", logo: "/images/logos/cavallaro-logo.png" },
   { name: "Inpaco", logo: "/images/logos/inpaco-logo.png" },
   { name: "EcoTech", logo: "/images/logos/ecotech-logo.jpg" },
-  { name: "GreenSolutions", logo: "/images/logos/greensolutions-logo.png" },
-  { name: "NatureCorp", logo: "/images/logos/naturecorp-logo.png" },
   { name: "BioTech", logo: "/images/logos/biotech-logo.png" },
-  { name: "EcoLife", logo: "/images/logos/ecolife-logo.png" },
-  { name: "EcoPrint", logo: "/images/logos/ecoprint-logo.png" },
-  { name: "GreenPrint", logo: "/images/logos/greenprint-logo.png" }
+  { name: "Agua Bes", logo: "/images/logos/agua-bes.jpg" },
+  { name: "Apleno", logo: "/images/logos/apleno-logo.png" },
+  { name: "Asociación Rural", logo: "/images/logos/asociacion-rural-logo.png" },
+  { name: "Clínica Imagix", logo: "/images/logos/clinica-imagix.png" },
+  { name: "Cuevas Hermanos", logo: "/images/logos/cuevas-hermanos.jpg" },
+  { name: "Dazler", logo: "/images/logos/dazler-logo.png" },
+  { name: "Etiquetas Paraguay", logo: "/images/logos/etiquetas-paraguay.jpg" },
+  { name: "Flexnet", logo: "/images/logos/flexnet-logo.png" },
+  { name: "IMGI", logo: "/images/logos/imgi_17_TyCBlanco.png" },
+  { name: "Lacerie", logo: "/images/logos/lacerie-logo.png" },
+  { name: "SAX", logo: "/images/logos/sax-logo.png" },
+  { name: "Tatakua", logo: "/images/logos/tatakua-logo.png" },
+  { name: "Tema Automotores", logo: "/images/logos/tema-automotores.png" },
+  { name: "UAP", logo: "/images/logos/uap-logo.png" },
+  { name: "UCP", logo: "/images/logos/ucp-logo.svg" },
+  { name: "UMA", logo: "/images/logos/uma-logo.png" },
+  { name: "Voicenter", logo: "/images/logos/voicenter-logo.png" }
 ];
 
 const ClientesSection = () => (
