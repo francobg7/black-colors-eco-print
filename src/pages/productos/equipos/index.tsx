@@ -134,22 +134,22 @@ const todosEquipos = [
   // DESTRUCTORA DE PAPEL
   {
     id: 4,
-    nombre: 'BROTHER DS-120',
-    modelo: 'DS-120',
-    descripcion: 'Destructora de Papel Personal',
-    slug: 'brother-ds-120',
-    imagen: '/images/equipos/destructora-ds-120.jpg',
+    nombre: 'Destructor de Documentos Fellowes LX41 4x12mm',
+    modelo: 'LX41',
+    descripcion: 'Destructora 4x12mm. Fellowes 4300701.',
+    slug: 'destructor-fellowes-lx41',
+    imagen: '/images/destructora/Fellowes.jpg.webp',
     categoria: 'Destructora de papel',
-    tecnologia: 'Corte en tiras',
+    tecnologia: 'Corte en partículas 4x12mm',
     resolucion: 'N/A',
-    velocidad: 'Hasta 8 hojas',
+    velocidad: 'Hasta 11 hojas',
     precio: 'Consultar precio',
-    compatibilidad: ['Papel A4', 'Grapas', 'Clips'],
+    compatibilidad: ['Papel A4', 'Grapas', 'Clips', 'Tarjetas de crédito'],
     memoria: 'N/A',
-    procesador: 'Motor de 120W',
-    bandeja: 'Capacidad 20L',
-    cicloMensual: 'Hasta 100 hojas/día',
-    insumos: 'Bolsa de residuos incluida'
+    procesador: 'Motor de alta durabilidad',
+    bandeja: 'Capacidad 18L',
+    cicloMensual: 'Uso ocasional en hogar y oficina',
+    insumos: 'Cabezal extraíble para vaciar papelera'
   },
 
   // UPS POLARIS
