@@ -209,102 +209,44 @@ const todosEquipos = [
     insumos: 'Bolsa de residuos incluida'
   },
 
-  // UPS POLARIS
+  // UPS POLARIAS
   {
     id: 8,
-    nombre: 'UPS INTERACTIVA 800 VA',
-    modelo: 'XION 800',
-    descripcion: 'UPS versátil y compacta, ideal para proteger PC o notebooks de bajo consumo.',
-    descripcionLarga: 'Estos equipos son versátiles y de pequeño tamaño, ideales para proteger tu PC, notebook o dispositivos de bajo consumo. Representan una solución económica con excelente relación costo-beneficio. Permiten cuidar tus datos ante cortes de energía, brindando tiempo para guardar tu trabajo y apagar correctamente tu equipo. No apta para impresoras.',
-    slug: 'ups-interactiva-800-va-xion-800',
-    imagen: '/images/ups/800/1224.png',
-    categoria: 'UPS Polaris',
-    tecnologia: 'UPS Line-Interactive CON BATERIA REFORZADA 12V 9A',
+    nombre: 'POLARIAS UPS-1000VA',
+    modelo: 'UPS-1000VA',
+    descripcion: 'UPS de 1000VA con Protección de Batería',
+    slug: 'polarias-ups-1000va',
+    imagen: '/images/equipos/ups-1000va.jpg',
+    categoria: 'UPS Polarias',
+    tecnologia: 'UPS Line-Interactive',
     resolucion: 'N/A',
     velocidad: 'N/A',
     precio: 'Consultar precio',
-    compatibilidad: ['PC', 'Notebook', 'Dispositivos de bajo consumo', 'Protección de datos'],
+    compatibilidad: ['PC', 'Monitor', 'Router', 'Modem'],
     memoria: 'N/A',
     procesador: 'Microcontrolador integrado',
     bandeja: 'N/A',
     cicloMensual: 'N/A',
-    insumos: 'Batería 12V9AH sellada libre de mantenimiento',
-    caracteristicas: {
-      proteccion: {
-        capacidad: '480W',
-        bateria: '12V9AH x 1',
-        tipo: 'Sellada libre de mantenimiento',
-        tiempoRecarga: '6-8 horas al 90%'
-      },
-      electrica: {
-        entrada: '220-240V~ 50/60 Hz 5.2A máx., Rango: 162-290V',
-        salida: 'Línea y Batería: 220VAC ±10%',
-        ondaSalida: 'Senoidal modificada',
-        tiempoTransferencia: '2-6 ms'
-      },
-      indicadores: {
-        ledVerde: 'Normal',
-        ledAmarillo: 'Batería',
-        ledRojo: 'Falla',
-        alarmas: 'Batería: Bip cada 10s, Batería baja: Bip cada 1s, Sobrecarga: Bip cada 0.5s, Falla: Bip continuo'
-      },
-      especificaciones: {
-        descarga: 'Sí',
-        sobrecarga: 'Sí',
-        dimensiones: '298x101x142 mm',
-        peso: '4.7 kg',
-        ambiente: '0°C-40°C / 0%-90% HR (sin condensación)',
-        restriccion: 'No apta para impresoras'
-      }
-    }
+    insumos: 'Batería de plomo-ácido sellada'
   },
   {
     id: 9,
-    nombre: 'UPS INTERACTIVA 2 KVA',
-    modelo: 'XION 2000',
-    descripcion: 'UPS con display digital, ideal para proteger equipos de hogar u oficina.',
-    descripcionLarga: 'La UPS XION 2000 es ideal para proteger tus equipos con autonomía suficiente para guardar datos y apagar tu sistema ante cortes de energía. Incorpora un display digital que muestra en tiempo real la tensión, frecuencia, carga de batería y autonomía, todo en forma clara y sencilla.',
-    slug: 'ups-interactiva-2-kva-xion-2000',
-    imagen: '/images/ups/2kva/frente.jpg',
-    categoria: 'UPS Polaris',
-    tecnologia: 'UPS Line-Interactive CON 2 BATERIAS REFORZADAS 12V 9A',
+    nombre: 'POLARIAS UPS-1500VA',
+    modelo: 'UPS-1500VA',
+    descripcion: 'UPS de 1500VA con Protección Avanzada',
+    slug: 'polarias-ups-1500va',
+    imagen: '/images/equipos/ups-1500va.jpg',
+    categoria: 'UPS Polarias',
+    tecnologia: 'UPS Line-Interactive',
     resolucion: 'N/A',
     velocidad: 'N/A',
     precio: 'Consultar precio',
-    compatibilidad: ['PC', 'Notebook', 'Equipos de hogar y oficina', 'Display digital', 'Protección de datos'],
+    compatibilidad: ['PC', 'Monitor', 'Router', 'Modem', 'Impresora'],
     memoria: 'N/A',
-    procesador: 'Microcontrolador integrado con display digital',
+    procesador: 'Microcontrolador integrado',
     bandeja: 'N/A',
     cicloMensual: 'N/A',
-    insumos: 'Batería 12V9AH x 2 selladas libres de mantenimiento',
-    caracteristicas: {
-      proteccion: {
-        capacidad: '1200W',
-        bateria: '12V9AH x 2',
-        tipo: 'Sellada libre de mantenimiento',
-        tiempoRecarga: '6-8 horas al 90%'
-      },
-      electrica: {
-        entrada: '220-240V~ 50/60Hz, 10A máx., Rango: 162-290V',
-        salida: 'Línea y Batería: 220VAC ±10%',
-        tiempoTransferencia: '2-6 ms'
-      },
-      indicadores: {
-        ledVerde: 'Normal',
-        ledAmarillo: 'Batería',
-        ledRojo: 'Falla',
-        display: 'Digital en tiempo real (tensión, frecuencia, carga de batería, autonomía)',
-        alarmas: 'Batería: Bip cada 10s, Batería baja: Bip cada 1s, Sobrecarga: Bip cada 0.5s, Falla: Bip continuo'
-      },
-      especificaciones: {
-        descarga: 'Sí',
-        sobrecarga: 'Sí',
-        dimensiones: '380x158x198 mm',
-        peso: '10.5 kg',
-        ambiente: '0°C-40°C / 0%-90% HR (sin condensación)',
-        restriccion: 'No apta para impresoras'
-      }
-    }
+    insumos: 'Batería de plomo-ácido sellada'
   },
 
   // ETIQUETADORAS
@@ -314,7 +256,7 @@ const todosEquipos = [
     modelo: 'QL-800',
     descripcion: 'Etiquetadora de Escritorio Profesional',
     slug: 'brother-ql-800',
-    imagen: '/images/etiquetadora/ql-800.jpg',
+    imagen: '/images/equipos/etiquetadora-ql-800.jpg',
     categoria: 'Etiquetadoras',
     tecnologia: 'Impresión térmica',
     resolucion: '300 DPI',
@@ -395,7 +337,7 @@ const ProductosEquipos = () => {
     all: 'Todos los equipos',
     'rotuladoras-portatiles': 'Rotuladoras portátiles',
     'destructora-papel': 'Destructora de papel',
-    'ups-polaris': 'UPS Polaris',
+    'ups-polarias': 'UPS Polarias',
     'etiquetadoras': 'Etiquetadoras',
     'scanners': 'Scanners'
   };
@@ -411,8 +353,8 @@ const ProductosEquipos = () => {
       return equipo.categoria === 'Destructora de papel';
     }
     
-    if (selectedFilter === 'ups-polaris') {
-      return equipo.categoria === 'UPS Polaris';
+    if (selectedFilter === 'ups-polarias') {
+      return equipo.categoria === 'UPS Polarias';
     }
     
     if (selectedFilter === 'etiquetadoras') {
@@ -516,7 +458,7 @@ const ProductosEquipos = () => {
                   <div className="flex items-center space-x-2">
                     {equipo.categoria === 'Rotuladoras portátiles' && <Scissors className="w-4 h-4 text-[#4b6d3b]" />}
                     {equipo.categoria === 'Destructora de papel' && <Trash2 className="w-4 h-4 text-[#4b6d3b]" />}
-                    {equipo.categoria === 'UPS Polaris' && <Battery className="w-4 h-4 text-[#4b6d3b]" />}
+                    {equipo.categoria === 'UPS Polarias' && <Battery className="w-4 h-4 text-[#4b6d3b]" />}
                     {equipo.categoria === 'Etiquetadoras' && <Tag className="w-4 h-4 text-[#4b6d3b]" />}
                     {equipo.categoria === 'Scanners' && <Scan className="w-4 h-4 text-[#4b6d3b]" />}
                     <span className="text-[#4b6d3b] font-medium">{equipo.tecnologia}</span>
