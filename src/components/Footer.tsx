@@ -17,13 +17,13 @@ const Footer = () => (
             Líderes en soluciones de impresión sustentable con 18 años de experiencia en el mercado.
           </p>
           <div className="flex space-x-4">
-            <a href="#" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-green-600 hover:bg-green-500 flex items-center justify-center hover:scale-110 transition-all duration-300 cursor-pointer shadow-lg">
+            <a href="https://www.facebook.com/blackcolorssrl/?locale=es_LA" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-green-600 hover:bg-green-500 flex items-center justify-center hover:scale-110 transition-all duration-300 cursor-pointer shadow-lg">
               <FaFacebook className="text-white text-2xl" />
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-green-600 hover:bg-green-500 flex items-center justify-center hover:scale-110 transition-all duration-300 cursor-pointer shadow-lg">
+            <a href="https://www.instagram.com/blackcolorssrl/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-green-600 hover:bg-green-500 flex items-center justify-center hover:scale-110 transition-all duration-300 cursor-pointer shadow-lg">
               <FaInstagram className="text-white text-2xl" />
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-green-600 hover:bg-green-500 flex items-center justify-center hover:scale-110 transition-all duration-300 cursor-pointer shadow-lg">
+            <a href="https://api.whatsapp.com/send/?phone=595982343128&text=Hola%2C+me+interesa+obtener+m%C3%A1s+informaci%C3%B3n+sobre+sus+productos+y+servicios+de+Black+Colors+Eco+Print.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-green-600 hover:bg-green-500 flex items-center justify-center hover:scale-110 transition-all duration-300 cursor-pointer shadow-lg">
               <FaWhatsapp className="text-white text-2xl" />
             </a>
           </div>
