@@ -27,6 +27,7 @@ const Transformar = () => {
           backgroundPosition: 'center 25%',
         }}
       >
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-gray-50" />
         <div className="relative z-10">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white drop-shadow-lg leading-tight tracking-tight">
             PROYECTO <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-green-500">TRANSFORMAR</span>

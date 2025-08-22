@@ -220,10 +220,15 @@ const Alquileres = () => {
 
             {/* Segunda imagen - 50% ancho */}
             <div className="relative">
-              <div className="w-full h-[500px] bg-gradient-to-br from-blue-200 to-purple-200 rounded-2xl overflow-hidden shadow-2xl">
-                <div className="w-full h-full bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
-                  <span className="text-gray-500 text-lg font-light tracking-wide">
-                    📸 Imagen: Servicio Técnico y Monitoreo
+              <div className="w-full h-[500px] rounded-2xl overflow-hidden shadow-2xl border-2 border-emerald-100/40">
+                <img 
+                  src="/images/servicios/alquileres/gestion-inteligente.jpg" 
+                  alt="Servicio Técnico y Monitoreo" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end justify-start p-6">
+                  <span className="text-white text-lg font-medium tracking-wide">
+                    Monitoreo en tiempo real de su parque de impresoras
                   </span>
                 </div>
               </div>

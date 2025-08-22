@@ -1,21 +1,9 @@
 
-import React from 'react';
-import { CheckCircle, Wrench, Headphones, Zap, Shield, TrendingUp, Printer, Package, Recycle, Users, FileText, Mail } from 'lucide-react';
-import { saveAs } from 'file-saver';
+import { CheckCircle, Shield, TrendingUp, Printer, Package, Recycle } from 'lucide-react';
 import Footer from '@/components/Footer';
+import WhatsAppInlineButton from '@/components/WhatsAppInlineButton';
 
 const Leasing = () => {
-  const handleDownloadPDF = async () => {
-    try {
-      const response = await fetch('/pdf/Impresión Sustentable - Black Colors Brochure.pdf');
-      const blob = await response.blob();
-      saveAs(blob, 'Impresión Sustentable - Black Colors Brochure.pdf');
-    } catch (error) {
-      console.error('Error al descargar el PDF:', error);
-      // Fallback: abrir en nueva pestaña si falla la descarga
-      window.open('/pdf/Impresión Sustentable - Black Colors Brochure.pdf', '_blank');
-    }
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50/30 to-white">
@@ -81,7 +69,7 @@ const Leasing = () => {
             <div className="space-y-6 bg-green-50/30 rounded-3xl p-8 border border-green-100/50 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer">
               <div className="w-full h-48 rounded-2xl overflow-hidden mb-6">
                 <img 
-                  src="/images/impresoras/1.jpg" 
+                  src="/images/servicios/alquileres/hero.jpg" 
                   alt="Impresora de Alta Calidad" 
                   className="w-full h-full object-cover"
                 />
@@ -180,58 +168,8 @@ const Leasing = () => {
         </div>
       </section>
 
-      {/* Impacto Real, No Promesas Vacías */}
-      <section className="w-full bg-white py-24">
-        <div className="container mx-auto px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Contenido */}
-            <div className="max-w-2xl space-y-8">
-              <h3 className="text-4xl font-light text-gray-900 tracking-tight">
-                IMPACTO REAL, NO PROMESAS VACÍAS
-              </h3>
-              <div className="w-20 h-px bg-emerald-400"></div>
-              
-              <div className="space-y-6 text-lg text-gray-600 leading-relaxed font-light">
-                <p>
-                  Tu empresa puede hacer la diferencia. Con cada hoja que imprimís bajo nuestro sistema, estás apoyando una red de logística inversa, reutilización y reciclaje que disminuye considerablemente el impacto ecológico de las actividades de oficina.
-                </p>
-                <p>
-                  Al convertirte en parte de nuestro ecosistema sustentable, no solo accedés a tecnología de impresión avanzada, sino que también te posicionás como un actor clave en la transformación verde del mundo empresarial.
-                </p>
-              </div>
-            </div>
+    
 
-            {/* Imagen de impacto ambiental */}
-            <div className="relative">
-              <div className="w-full h-[400px] rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="/images/clean-energy.jpg" 
-                  alt="Energía Limpia y Sustentabilidad" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Descarga del Brochure */}
-      <section className="w-full bg-gradient-to-br from-emerald-50/30 to-green-50/20 py-16">
-        <div className="container mx-auto px-8 text-center">
-          <div className="max-w-2xl mx-auto">
-            <h4 className="text-2xl font-medium text-gray-900 mb-4">
-              Descargá nuestro brochure completo
-            </h4>
-            <button 
-              onClick={handleDownloadPDF}
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-green-600 text-white px-6 py-3 rounded-xl text-base font-medium hover:from-emerald-700 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer"
-            >
-              <FileText className="w-4 h-4" />
-              Descargar PDF
-            </button>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Final */}
       <section className="w-full bg-gradient-to-br from-green-50/30 to-emerald-50/20 py-24">
@@ -246,9 +184,13 @@ const Leasing = () => {
             </p>
           </div>
 
-          <button className="bg-gradient-to-r from-emerald-600 to-green-600 text-white px-8 py-4 rounded-2xl text-lg font-medium hover:from-emerald-700 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+          <WhatsAppInlineButton
+            customMessage="Hola, estoy interesado/a en conocer más sobre el servicio de Leasing Sustentable de Impresoras de Black Colors."
+            className="bg-gradient-to-r from-emerald-600 to-green-600 text-white px-8 py-4 rounded-2xl text-lg font-medium hover:from-emerald-700 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+            size="lg"
+          >
             Contactar Ahora
-          </button>
+          </WhatsAppInlineButton>
         </div>
       </section>
 

@@ -1,59 +1,51 @@
 
-import { MapPin, User } from 'lucide-react';
+import { MapPin, User, Phone, Clock, Building } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import WhatsAppInlineButton from '@/components/WhatsAppInlineButton';
 import Footer from '@/components/Footer';
 
 const Contacto = () => {
-  const asesores = [
-    {
-      nombre: 'Sofía Duarte',
-      cargo: 'Asesora Corporativa',
-      telefono: '+595982343128',
-      especialidad: 'Soluciones empresariales y corporativas'
-    },
-    {
-      nombre: 'Lucas Ríos',
-      cargo: 'Asesor Técnico',
-      telefono: '+595982343128',
-      especialidad: 'Soporte técnico y mantenimiento'
-    },
-    {
-      nombre: 'Martina Gómez',
-      cargo: 'Atención Comercial',
-      telefono: '+595982343128',
-      especialidad: 'Ventas y asesoramiento general'
-    }
-  ];
 
-  const handleWhatsAppClick = (telefono: string, nombre: string) => {
-    const message = `Hola ${nombre}, me gustaría recibir más información sobre los servicios de Black Colors.`;
-    const whatsappUrl = `https://wa.me/${telefono}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-  };
 
   return (
     <div className="min-h-screen bg-[#0f3d2e]">
       {/* Hero Section */}
-      <div className="relative h-[80vh] flex items-center justify-center overflow-hidden">
-        {/* Background Image - You'll need to add the actual image */}
+      <div className="relative h-[90vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/images/contact-hero-bg.jpg)',
-            filter: 'brightness(0.3)'
+            backgroundImage: 'url(/images/servicio-dif.jpg)',
+            filter: 'brightness(0.25)'
           }}
         />
         
         {/* Content */}
         <div className="relative z-10 container mx-auto px-6 text-center">
-          <h1 className="text-[5rem] font-bold mb-6 text-white">
-            CONTACTO <span className="text-emerald-400">DIRECTO</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
-            Conecta con nuestro equipo de expertos y descubre cómo podemos transformar 
-            tu experiencia de impresión en una solución más eficiente y sostenible.
-          </p>
+          <div className="animate-fadeIn">
+            <h1 className="text-5xl md:text-6xl lg:text-[5rem] font-extrabold mb-8 text-white tracking-tighter">
+              CONTACTO <span className="text-emerald-400">DIRECTO</span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed mb-10">
+              <span className="font-semibold">Tu éxito es nuestro compromiso.</span> Estamos aquí para brindarte 
+              soluciones personalizadas que impulsen la eficiencia y sostenibilidad de tu negocio.
+            </p>
+            
+            {/* Número de teléfono grande */}
+            <div className="mb-6">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-emerald-300 tracking-wide mb-4">
+                +595 982 343 128
+              </h2>
+              <WhatsAppInlineButton
+                customMessage="Hola, me gustaría recibir más información sobre los servicios de Black Colors."
+                className="bg-emerald-500 hover:bg-emerald-400 shadow-lg text-lg py-3 px-8"
+                size="lg"
+              >
+                Contáctanos por WhatsApp
+              </WhatsAppInlineButton>
+            </div>
+          </div>
         </div>
 
         {/* Decorative bottom gradient */}
@@ -62,90 +54,183 @@ const Contacto = () => {
 
       {/* Main Content */}
       <div className="container mx-auto px-6 py-20">
-        {/* Asesores Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mb-20">
-          {asesores.map((asesor, index) => (
-            <Card 
-              key={index}
-              className="border-emerald-200/20 bg-white/10 backdrop-blur-md hover:bg-white/15 transition-all duration-300"
-            >
-              <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center bg-emerald-100">
-                  <User className="w-10 h-10 text-emerald-800" />
-                </div>
-                
-                <h3 className="text-2xl font-bold mb-2 text-white">
-                  {asesor.nombre}
-                </h3>
-                
-                <p className="text-lg font-medium mb-2 text-emerald-200">
-                  {asesor.cargo}
-                </p>
-                
-                <p className="text-sm mb-6 text-emerald-100">
-                  {asesor.especialidad}
-                </p>
-
-                <WhatsAppInlineButton
-                  customMessage={`Hola ${asesor.nombre}, me gustaría recibir más información sobre los servicios de Black Colors.`}
-                  className="w-full bg-emerald-500 hover:bg-emerald-400"
-                  size="lg"
-                >
-                  Contactar por WhatsApp
-                </WhatsAppInlineButton>
-              </CardContent>
-            </Card>
-          ))}
+        
+        {/* Sobre nosotros - Sección para foto de empresa */}
+        <div className="mb-24">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-6">CONÓCENOS</h2>
+            <div className="w-24 h-1 bg-emerald-400 mx-auto"></div>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Imagen de la empresa */}
+            <div className="relative">
+              <div className="rounded-2xl overflow-hidden shadow-2xl border-2 border-emerald-400/30">
+                <img 
+                  src="/images/nosotros2.jpg" 
+                  alt="Black Colors Eco Print" 
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-6 -right-6 bg-emerald-500 p-4 rounded-lg shadow-xl">
+                <Building className="w-10 h-10 text-white" />
+              </div>
+            </div>
+            
+            {/* Descripción */}
+            <div>
+              <h3 className="text-3xl font-bold text-emerald-300 mb-6">Impulsando la sostenibilidad en cada impresión</h3>
+              <p className="text-xl text-gray-200 leading-relaxed mb-8">
+                En Black Colors, combinamos tecnología avanzada con un compromiso inquebrantable por el medio ambiente.
+                Nuestro equipo de expertos está listo para transformar tu experiencia de impresión en una 
+                solución eficiente, económica y amigable con el planeta.
+              </p>
+              <div className="flex space-x-2">
+                <span className="inline-block px-4 py-2 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-medium">Calidad</span>
+                <span className="inline-block px-4 py-2 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-medium">Sostenibilidad</span>
+                <span className="inline-block px-4 py-2 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-medium">Innovación</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Información adicional */}
-        <div className="grid md:grid-cols-2 gap-8 mb-20">
-          {/* Horarios */}
-          <Card className="border-emerald-200/20 bg-white/10 backdrop-blur-md">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-6 text-white">
-                Horarios de atención
-              </h3>
-              <div className="space-y-3 text-lg text-emerald-100">
-                <p>Lunes a Viernes: 8:00 - 18:00</p>
-                <p>Sábados: 8:00 - 12:00</p>
-                <p>Domingos: Cerrado</p>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Ubicación */}
-          <Card className="border-emerald-200/20 bg-white/10 backdrop-blur-md">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-6 text-white">
-                Nuestra ubicación
-              </h3>
-              <div className="flex items-start space-x-4">
-                <MapPin className="w-6 h-6 text-emerald-300 flex-shrink-0 mt-1" />
-                <div>
-                  <p className="text-lg text-emerald-100">
-                    Av. Mariscal López 1234
+        <div className="mb-16">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-6">INFORMACIÓN DE CONTACTO</h2>
+            <div className="w-24 h-1 bg-emerald-400 mx-auto"></div>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-10">
+            {/* Contacto directo */}
+            <Card className="border-emerald-200/20 bg-white/10 backdrop-blur-md hover:bg-white/15 transition-all duration-300">
+              <CardContent className="p-8">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center bg-emerald-500/20 mb-6">
+                    <Phone className="w-8 h-8 text-emerald-300" />
+                  </div>
+                  
+                  <h3 className="text-2xl font-bold mb-6 text-white">
+                    Contacto directo
+                  </h3>
+                  
+                  <p className="text-3xl font-bold text-emerald-300 mb-3">
+                    +595 982 343 128
+                  </p>
+                  
+                  <WhatsAppInlineButton
+                    customMessage="Hola, me gustaría recibir más información sobre los servicios de Black Colors."
+                    className="bg-emerald-500 hover:bg-emerald-400 mt-4 shadow-lg"
+                    size="default"
+                  >
+                    Enviar mensaje
+                  </WhatsAppInlineButton>
+                  
+                  <p className="mt-6 text-emerald-100">
+                    También puedes escribirnos al correo:
                     <br />
-                    Asunción, Paraguay
+                    <a href="mailto:mkt@blackcolors.com.py" className="text-emerald-300 hover:underline">
+                      mkt@blackcolors.com.py
+                    </a>
                   </p>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+            
+            <div className="grid grid-rows-2 gap-6">
+              {/* Horarios */}
+              <Card className="border-emerald-200/20 bg-white/10 backdrop-blur-md hover:bg-white/15 transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center bg-emerald-500/20 flex-shrink-0">
+                      <Clock className="w-6 h-6 text-emerald-300" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold mb-3 text-white">
+                        Horarios de atención
+                      </h3>
+                      <div className="space-y-2 text-emerald-100">
+                        <p>Lunes a Viernes: 8:00 - 18:00</p>
+                        <p>Sábados: 8:00 - 12:00</p>
+                        <p>Domingos: Cerrado</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Ubicación */}
+              <Card className="border-emerald-200/20 bg-white/10 backdrop-blur-md hover:bg-white/15 transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center bg-emerald-500/20 flex-shrink-0">
+                      <MapPin className="w-6 h-6 text-emerald-300" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold mb-3 text-white">
+                        Nuestra ubicación
+                      </h3>
+                      <p className="text-emerald-100">
+                        Av Cacique Lambare & Av. Bonifacio Ovando, Lambaré, Paraguay
+                      </p>
+                      <a 
+                        href="https://maps.app.goo.gl/66zbM6BrGcKQqHaV6?g_st=ipc" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-block mt-2 text-emerald-300 hover:text-emerald-400 hover:underline"
+                      >
+                        Ver en Google Maps
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
         </div>
 
-        {/* Mapa */}
-        <div className="rounded-2xl overflow-hidden shadow-2xl border border-emerald-200/20">
+        {/* Mapa - OpenStreetMap (gratuito y sin restricciones) */}
+        <div className="rounded-2xl overflow-hidden shadow-2xl border border-emerald-200/20 mb-10">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.1885897755814!2d-57.575926!3d-25.2637399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945da5d6d7e3b6b7%3A0x8b8b8b8b8b8b8b8b!2sAv.%20Mariscal%20L%C3%B3pez%2C%20Asunci%C3%B3n%2C%20Paraguay!5e0!3m2!1ses!2sus!4v1234567890123"
             width="100%"
-            height="400"
+            height="500"
+            frameBorder="0"
+            scrolling="no"
+            marginHeight={0}
+            marginWidth={0}
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-57.61375904083252%2C-25.347103173544497%2C-57.59835243225098%2C-25.33630798882343&amp;layer=mapnik&amp;marker=-25.341705587703785%2C-57.6033648846568"
             style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
             title="Ubicación Black Colors"
+            allowFullScreen
           />
+          <div className="py-2 px-4 bg-emerald-800/30 text-center">
+            <a 
+              href="https://www.openstreetmap.org/?mlat=-25.341705587703785&amp;mlon=-57.6033648846568#map=17/-25.341705/-57.603364"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-emerald-300 hover:text-emerald-400 hover:underline"
+            >
+              Ver mapa más grande
+            </a>
+          </div>
+        </div>
+        
+        {/* CTA Final */}
+        <div className="text-center">
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
+            ¿Listo para transformar tu experiencia de impresión?
+          </h3>
+          <p className="text-lg text-emerald-100 mb-8 max-w-3xl mx-auto">
+            Nuestro equipo está disponible para ayudarte a encontrar la solución ideal para tu empresa.
+            Contáctanos hoy mismo y descubre la diferencia de Black Colors Eco Print.
+          </p>
+          <WhatsAppInlineButton
+            customMessage="Hola, me gustaría recibir más información sobre los servicios de Black Colors."
+            className="bg-emerald-500 hover:bg-emerald-400 shadow-lg px-8 py-3 text-lg"
+            size="lg"
+          >
+            Comienza ahora
+          </WhatsAppInlineButton>
         </div>
       </div>
       <Footer />

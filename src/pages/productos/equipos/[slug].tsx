@@ -1,7 +1,9 @@
 import { Link, useParams } from 'react-router-dom';
-import { Scissors, Trash2, Battery, Tag, Scan, Check, Phone, Mail, MapPin, ChevronLeft, ChevronRight, Wifi, Network } from 'lucide-react';
-import Footer from '@/components/Footer';
 import { useState } from 'react';
+import { Battery, Check, ChevronLeft, ChevronRight, Mail, MapPin, Network, Phone, Scan, Scissors, Tag, Trash2, Wifi } from 'lucide-react';
+import Footer from '@/components/Footer';
+import WhatsAppInlineButton from '@/components/WhatsAppInlineButton';
+import { useWhatsApp } from '@/hooks/useWhatsApp';
 
 // Datos de todos los equipos (mismos datos que en index.tsx)
 const todosEquipos = [
@@ -330,38 +332,55 @@ const todosEquipos = [
     id: 8,
     nombre: 'BROTHER ADS-1200',
     modelo: 'ADS-1200',
-    descripcion: 'Scanner de Documentos Portátil',
+    descripcion: 'Scanner de Documentos Portátil compacto con alimentación por USB',
+    descripcionLarga: 'Scanner compacto ideal para profesionales móviles y oficinas pequeñas. Alimentado por cable USB, permite escaneo directo a memoria USB. Compatible con documentos de diversos tamaños y materiales. Su diseño portátil de 1,36 kg lo hace perfecto para trabajar desde cualquier lugar.',
     slug: 'brother-ads-1200',
-    imagen: '/images/equipos/scanner-ads-1200.jpg',
+    imagen: '/images/scanners/ads-1200.png',
+    imagenes: [
+      '/images/scanners/ads-1200-3.png',
+      '/images/scanners/ads-1200.png',
+      '/images/scanners/ads-1200-2.png',
+      
+    ],
     categoria: 'Scanners',
-    tecnologia: 'Scanner de documentos',
-    resolucion: 'Hasta 600 DPI',
-    velocidad: 'Hasta 20 ppm',
+    tecnologia: 'Scanner de documentos portátil',
+    resolucion: '600 x 600 dpi (óptica) / hasta 1200 x 1200 dpi (interpolada)',
+    velocidad: 'Hasta 17 ppm (monocromo/color)',
     precio: 'Consultar precio',
-    compatibilidad: ['USB', 'WiFi', 'PC', 'Mac', 'Android', 'iOS'],
+    compatibilidad: ['USB 3.0', 'PC', 'Mac', 'Memoria USB', 'Diversos tipos de papel'],
+    memoria: '256 MB',
+    procesador: 'Controlador integrado',
+    bandeja: 'ADF de hasta 20 hojas',
+    cicloMensual: 'Hasta 1000 páginas diarias',
+    insumos: 'Cable USB incluido (alimentación y datos)',
     caracteristicas: {
-      escaneo: {
-        resolucion: 'Hasta 600 DPI',
-        velocidad: 'Hasta 20 ppm',
-        primeraPagina: 'Menos de 5 segundos',
-        formato: 'A4, A5, A6, Oficio'
+      escaneado: {
+        resolucionOptica: '600 x 600 dpi',
+        resolucionInterpolada: 'hasta 1200 x 1200 dpi',
+        profundidadColor: 'Entrada 48 bits / Salida 24 bits',
+        escalaGrises: '256 niveles',
+        velocidad: 'hasta 17 ppm (monocromo y color)'
       },
       conectividad: {
-        usb: 'Sí',
-        wifi: 'Sí',
-        ethernet: 'No',
-        movil: 'Brother Mobile Connect'
+        interfaz: 'USB 3.0 (alimentación por cable USB incluida)',
+        escaneoDirecto: 'a memoria USB (máx. 128 GB, FAT32/exFAT)',
+        controlRemoto: 'desde PC (no tiene pantalla propia)'
       },
-      funciones: {
-        adf: '20 hojas',
-        platina: 'Sí',
-        duplex: 'Manual',
-        memoria: '32 MB RAM'
+      documentos: {
+        tipos: 'papel normal, reciclado, grueso, tarjetas de presentación y plástico',
+        tamanoMinimo: '51 mm de ancho',
+        tamanoMaximo: '215,9 mm de ancho / hasta 863 mm de largo (una hoja)',
+        adf: 'hasta 20 hojas'
       },
-      capacidad: {
-        papel: 'Hasta 20 hojas',
-        memoria: '32 MB RAM',
-        ciclo: 'Hasta 1000 páginas'
+      consumo: {
+        escaneando: 'aprox. 8 W',
+        espera: '3,2 W',
+        apagado: '0,1 W'
+      },
+      fisicas: {
+        peso: '1,36 kg',
+        caracteristica: 'Compacto y portátil',
+        memoria: '256 MB'
       }
     }
   },
@@ -369,38 +388,67 @@ const todosEquipos = [
     id: 9,
     nombre: 'BROTHER ADS-1700W',
     modelo: 'ADS-1700W',
-    descripcion: 'Scanner de Documentos WiFi',
+    descripcion: 'Scanner de Documentos WiFi con pantalla táctil a color',
+    descripcionLarga: 'Scanner avanzado con conectividad WiFi y pantalla táctil a color de 2,8". Ideal para oficinas que requieren flexibilidad de conectividad y facilidad de uso. Permite escaneo directo a múltiples destinos sin necesidad de PC, incluyendo correo electrónico, FTP, carpetas de red y servicios en la nube.',
     slug: 'brother-ads-1700w',
-    imagen: '/images/equipos/scanner-ads-1700w.jpg',
+    imagen: '/images/scanners/ads-1700.png',
+    imagenes: [
+      '/images/scanners/ads-1700.png',
+      '/images/scanners/ads-1700-2.png'
+    ],
     categoria: 'Scanners',
-    tecnologia: 'Scanner de documentos',
-    resolucion: 'Hasta 600 DPI',
-    velocidad: 'Hasta 25 ppm',
+    tecnologia: 'Scanner de documentos con WiFi',
+    resolucion: '600 x 600 dpi (óptica) / hasta 1200 x 1200 dpi (interpolada)',
+    velocidad: 'Hasta 25 ppm (monocromo/color)',
     precio: 'Consultar precio',
-    compatibilidad: ['USB', 'WiFi', 'PC', 'Mac', 'Android', 'iOS', 'Cloud'],
+    compatibilidad: ['USB 3.0', 'WiFi', 'WiFi Direct', 'PC', 'Mac', 'Android', 'iOS', 'Cloud', 'Correo electrónico', 'FTP'],
+    memoria: '512 MB',
+    procesador: 'Controlador integrado con pantalla táctil',
+    bandeja: 'ADF de hasta 20 hojas',
+    cicloMensual: 'Hasta 2000 páginas diarias',
+    insumos: 'Cable USB incluido',
     caracteristicas: {
-      escaneo: {
-        resolucion: 'Hasta 600 DPI',
-        velocidad: 'Hasta 25 ppm',
-        primeraPagina: 'Menos de 4 segundos',
-        formato: 'A4, A5, A6, Oficio'
+      escaneado: {
+        resolucionOptica: '600 x 600 dpi',
+        resolucionInterpolada: 'hasta 1200 x 1200 dpi',
+        profundidadColor: 'Entrada 48 bits / Salida 24 bits',
+        escalaGrises: '256 niveles',
+        velocidad: 'hasta 25 ppm (monocromo y color)'
       },
       conectividad: {
-        usb: 'Sí',
-        wifi: 'Sí',
+        usb: 'USB 3.0',
+        wifi: 'WiFi (infraestructura y WiFi Direct)',
         ethernet: 'No',
-        movil: 'Brother Mobile Connect'
+        movil: 'Brother Mobile Connect',
+        escaneoDirecto: 'a PC, USB, correo electrónico, FTP, carpetas de red, nube',
+        pantalla: 'Táctil a color 2,8"'
+      },
+      documentos: {
+        tipos: 'papel normal, reciclado, grueso, tarjetas de presentación y plástico',
+        tamanoMinimo: '51 mm de ancho',
+        tamanoMaximo: '215,9 mm de ancho / hasta 863 mm de largo (una hoja)',
+        adf: 'hasta 20 hojas'
       },
       funciones: {
-        adf: '30 hojas',
-        platina: 'Sí',
+        adf: 'Hasta 20 hojas',
+        platina: 'No',
         duplex: 'Manual',
-        memoria: '64 MB RAM'
+        memoria: '512 MB'
       },
       capacidad: {
-        papel: 'Hasta 30 hojas',
-        memoria: '64 MB RAM',
+        papel: 'Hasta 20 hojas',
+        memoria: '512 MB',
         ciclo: 'Hasta 2000 páginas'
+      },
+      consumo: {
+        escaneando: 'aprox. 9 W',
+        espera: '4,5 W',
+        apagado: '0,1 W'
+      },
+      fisicas: {
+        peso: '1,41 kg',
+        caracteristica: 'Diseño compacto con controles táctiles',
+        memoria: '512 MB'
       }
     }
   },
@@ -408,38 +456,68 @@ const todosEquipos = [
     id: 10,
     nombre: 'BROTHER ADS-2200',
     modelo: 'ADS-2200',
-    descripcion: 'Scanner de Documentos de Alto Rendimiento',
+    descripcion: 'Scanner de Documentos de Alto Rendimiento con escaneo dúplex',
+    descripcionLarga: 'Scanner ADS-2200 de Brother ofrece alta velocidad de escaneo con funcionalidad dúplex para digitalizar documentos a doble cara en una sola pasada. Diseño compacto ideal para oficina y uso intensivo. Permite escaneo directo a PC, USB, email y archivo con OCR. Compatible con documentos de diversos tamaños y materiales.',
     slug: 'brother-ads-2200',
-    imagen: '/images/equipos/scanner-ads-2200.jpg',
+    imagen: '/images/scanners/ads-2200.png',
+    imagenes: [
+      '/images/scanners/ads-2200.png',
+      '/images/scanners/scanner-ads-2200.png',
+      
+    ],
     categoria: 'Scanners',
-    tecnologia: 'Scanner de documentos',
-    resolucion: 'Hasta 600 DPI',
-    velocidad: 'Hasta 30 ppm',
+    tecnologia: 'Scanner de documentos con dúplex automático',
+    resolucion: '600 x 600 dpi (óptica) / hasta 1200 x 1200 dpi (interpolada)',
+    velocidad: 'Hasta 35 ppm / 70 ipm (dúplex)',
     precio: 'Consultar precio',
-    compatibilidad: ['USB', 'WiFi', 'Red Ethernet', 'PC', 'Mac', 'Cloud'],
+    compatibilidad: ['USB 2.0 Hi-Speed', 'PC', 'USB (hasta 64 GB)', 'OCR', 'Email', 'Archivo'],
+    memoria: '512 MB',
+    procesador: 'Procesador integrado de alto rendimiento',
+    bandeja: 'ADF de 50 hojas',
+    cicloMensual: 'Para uso intensivo de oficina',
+    insumos: 'N/A',
     caracteristicas: {
-      escaneo: {
-        resolucion: 'Hasta 600 DPI',
-        velocidad: 'Hasta 30 ppm',
-        primeraPagina: 'Menos de 3 segundos',
-        formato: 'A4, A5, A6, Oficio'
+      escaneado: {
+        resolucionOptica: '600 x 600 dpi',
+        resolucionInterpolada: 'hasta 1200 x 1200 dpi',
+        profundidadColor: 'Entrada 48 bits / Salida 24 bits',
+        escalaGrises: '256 niveles',
+        velocidad: 'hasta 35 ppm / 70 ipm (dúplex)'
       },
       conectividad: {
-        usb: 'Sí',
-        wifi: 'Sí',
-        ethernet: 'Sí',
-        movil: 'Brother Mobile Connect'
+        usb: 'USB 2.0 Hi-Speed',
+        wifi: 'No',
+        ethernet: 'No',
+        escaneoDirecto: 'a PC, USB (hasta 64 GB), OCR, email, archivo'
+      },
+      documentos: {
+        tipos: 'papel normal, reciclado, grueso, tarjetas de presentación y plástico',
+        tamanoMinimo: '51 mm de ancho',
+        tamanoMaximo: '215,9 mm de ancho / hasta 355,6 mm de largo',
+        modoExtendido: 'hasta 5000 mm de largo',
+        adf: 'hasta 50 hojas'
       },
       funciones: {
         adf: '50 hojas',
-        platina: 'Sí',
-        duplex: 'Manual',
-        memoria: '128 MB RAM'
+        platina: 'No',
+        duplex: 'Automático',
+        memoria: '512 MB'
       },
       capacidad: {
         papel: 'Hasta 50 hojas',
-        memoria: '128 MB RAM',
-        ciclo: 'Hasta 5000 páginas'
+        memoria: '512 MB',
+        ciclo: 'Uso intensivo de oficina'
+      },
+      consumo: {
+        escaneando: 'aprox. 23 W',
+        espera: '5 W',
+        suspension: '1,6 W',
+        apagado: '0,1 W'
+      },
+      fisicas: {
+        peso: '2,6 kg',
+        dimensiones: '299 × 145 × 141 mm',
+        caracteristica: 'Diseño compacto para oficina y uso intensivo'
       }
     }
   }
@@ -449,6 +527,22 @@ const DetalleEquipo = () => {
   const { slug } = useParams();
   const equipo = todosEquipos.find(p => p.slug === slug);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const { isBusinessHours } = useWhatsApp();
+
+  // Obtener las imágenes del producto
+  const productImages = equipo?.imagenes || [equipo?.imagen].filter(Boolean);
+
+  const nextImage = () => {
+    if (productImages && productImages.length > 1) {
+      setCurrentImageIndex((prev) => (prev + 1) % productImages.length);
+    }
+  };
+
+  const prevImage = () => {
+    if (productImages && productImages.length > 1) {
+      setCurrentImageIndex((prev) => (prev - 1 + productImages.length) % productImages.length);
+    }
+  };
 
   if (!equipo) {
     return (
@@ -518,6 +612,17 @@ const DetalleEquipo = () => {
 
       {/* Contenido Principal */}
       <div className="container mx-auto px-6 pb-16">
+        {/* Botón para volver a equipos */}
+        <div className="mb-8">
+          <Link 
+            to="/productos/equipos"
+            className="inline-flex items-center space-x-2 bg-white/90 backdrop-blur-md text-[#2d472f] px-6 py-3 rounded-xl font-semibold hover:bg-white hover:shadow-lg transition-all duration-300 border border-[#2d472f]/20"
+          >
+            <ChevronLeft className="w-5 h-5" />
+            <span>Volver a Equipos</span>
+          </Link>
+        </div>
+
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Galería de Imágenes del Producto */}
@@ -525,11 +630,67 @@ const DetalleEquipo = () => {
               {/* Imagen Principal */}
               <div className="relative h-96 lg:h-full overflow-hidden rounded-lg">
                 <img 
-                  src={equipo.imagen} 
-                  alt={`${equipo.nombre} - Vista principal`}
+                  src={productImages && productImages.length > 0 ? productImages[currentImageIndex] : equipo.imagen} 
+                  alt={`${equipo.nombre} - Vista ${currentImageIndex + 1}`}
                   className="w-full h-full object-cover"
                 />
+                
+                {/* Controles de navegación si hay múltiples imágenes */}
+                {productImages && productImages.length > 1 && (
+                  <>
+                    <button
+                      onClick={prevImage}
+                      className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 rounded-full p-2 shadow-lg transition-all"
+                    >
+                      <ChevronLeft className="w-6 h-6" />
+                    </button>
+                    <button
+                      onClick={nextImage}
+                      className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 rounded-full p-2 shadow-lg transition-all"
+                    >
+                      <ChevronRight className="w-6 h-6" />
+                    </button>
+                    
+                    {/* Indicadores de imagen */}
+                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                      {productImages.map((_, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setCurrentImageIndex(index)}
+                          className={`w-3 h-3 rounded-full transition-all ${
+                            index === currentImageIndex 
+                              ? 'bg-white scale-125' 
+                              : 'bg-white/50 hover:bg-white/80'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  </>
+                )}
               </div>
+              
+              {/* Miniaturas si hay múltiples imágenes */}
+              {productImages && productImages.length > 1 && (
+                <div className="mt-4 flex space-x-2 overflow-x-auto">
+                  {productImages.map((imagen, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentImageIndex(index)}
+                      className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
+                        index === currentImageIndex 
+                          ? 'border-[#2d472f] scale-105' 
+                          : 'border-gray-200 hover:border-[#4b6d3b]'
+                      }`}
+                    >
+                      <img 
+                        src={imagen} 
+                        alt={`${equipo.nombre} - Miniatura ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Información del Producto */}
@@ -584,12 +745,12 @@ const DetalleEquipo = () => {
 
               {/* Botones de Acción */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="flex-1 bg-[#2d472f] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#4b6d3b] transition-colors">
+                <WhatsAppInlineButton 
+                  customMessage={`Hola, estoy interesado en obtener más información sobre ${equipo.nombre} (modelo ${equipo.modelo}). ¿Podrían enviarme una cotización?`}
+                  className="flex-1 justify-center py-3 px-6 rounded-xl font-semibold text-base"
+                >
                   Solicitar Cotización
-                </button>
-                <button className="flex-1 border-2 border-[#2d472f] text-[#2d472f] px-6 py-3 rounded-xl font-semibold hover:bg-[#2d472f] hover:text-white transition-colors">
-                  Más Información
-                </button>
+                </WhatsAppInlineButton>
               </div>
             </div>
           </div>
@@ -604,7 +765,7 @@ const DetalleEquipo = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
               {/* Sección principal según el tipo de equipo */}
-              {(equipo.caracteristicas.impresion || equipo.caracteristicas.destruccion || equipo.caracteristicas.proteccion || equipo.caracteristicas.escaneo || equipo.caracteristicas.portabilidad) && (
+              {(equipo.caracteristicas.impresion || equipo.caracteristicas.destruccion || equipo.caracteristicas.proteccion || equipo.caracteristicas.escaneado || equipo.caracteristicas.portabilidad) && (
                 <div>
                   <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
                     {equipo.categoria === 'Rotuladoras portátiles' || equipo.categoria === 'Etiquetadoras' ? (
@@ -621,11 +782,11 @@ const DetalleEquipo = () => {
                     {equipo.caracteristicas.impresion ? 'Impresión' : 
                      equipo.caracteristicas.destruccion ? 'Destrucción' :
                      equipo.caracteristicas.proteccion ? 'Protección' :
-                     equipo.caracteristicas.escaneo ? 'Escaneo' : 
+                     equipo.caracteristicas.escaneado ? 'Escaneo' :
                      equipo.caracteristicas.portabilidad ? 'Portabilidad' : 'Características'}
                   </h3>
                   <div className="space-y-3">
-                    {Object.entries(equipo.caracteristicas.impresion || equipo.caracteristicas.destruccion || equipo.caracteristicas.proteccion || equipo.caracteristicas.escaneo || equipo.caracteristicas.portabilidad || {}).map(([key, value]) => (
+                    {Object.entries(equipo.caracteristicas.impresion || equipo.caracteristicas.destruccion || equipo.caracteristicas.proteccion || equipo.caracteristicas.escaneado || equipo.caracteristicas.portabilidad || {}).map(([key, value]) => (
                       <div key={key}>
                         <span className="font-semibold block text-gray-700 capitalize">
                           {key === 'peso' ? 'Peso' : 
@@ -636,9 +797,14 @@ const DetalleEquipo = () => {
                            key === 'bateria' ? 'Batería' :
                            key === 'tipo' ? 'Tipo' :
                            key === 'tiempoRecarga' ? 'Tiempo de Recarga' :
+                           key === 'resolucionOptica' ? 'Resolución Óptica' :
+                           key === 'resolucionInterpolada' ? 'Resolución Interpolada' :
+                           key === 'profundidadColor' ? 'Profundidad de Color' :
+                           key === 'escalaGrises' ? 'Escala de Grises' :
+                           key === 'velocidad' ? 'Velocidad' :
                            key.replace(/([A-Z])/g, ' $1').trim()}
                         </span>
-                        <span className="text-gray-600">{value}</span>
+                        <span className="text-gray-600">{String(value)}</span>
                       </div>
                     ))}
                   </div>
@@ -718,6 +884,51 @@ const DetalleEquipo = () => {
                 </div>
               )}
 
+              {/* Documentos (para scanners) */}
+              {equipo.caracteristicas.documentos && (
+                <div>
+                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                    <Scan className="w-5 h-5 mr-2" />
+                    Documentos Soportados
+                  </h3>
+                  <div className="space-y-3">
+                    {Object.entries(equipo.caracteristicas.documentos).map(([key, value]) => (
+                      <div key={key}>
+                        <span className="font-semibold block text-gray-700 capitalize">
+                          {key === 'tipos' ? 'Tipos de Papel' : 
+                           key === 'tamanoMinimo' ? 'Tamaño Mínimo' : 
+                           key === 'tamanoMaximo' ? 'Tamaño Máximo' : 
+                           key === 'adf' ? 'ADF (Alimentador)' : key}
+                        </span>
+                        <span className="text-gray-600 text-sm">{value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Consumo (para scanners) */}
+              {equipo.caracteristicas.consumo && (
+                <div>
+                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                    <Battery className="w-5 h-5 mr-2" />
+                    Consumo Eléctrico
+                  </h3>
+                  <div className="space-y-3">
+                    {Object.entries(equipo.caracteristicas.consumo).map(([key, value]) => (
+                      <div key={key}>
+                        <span className="font-semibold block text-gray-700 capitalize">
+                          {key === 'escaneando' ? 'Escaneando' : 
+                           key === 'espera' ? 'En Espera' : 
+                           key === 'apagado' ? 'Apagado' : key}
+                        </span>
+                        <span className="text-gray-600">{value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {/* Conectividad */}
               {equipo.caracteristicas.conectividad && (
                 <div>
@@ -729,9 +940,15 @@ const DetalleEquipo = () => {
                     {Object.entries(equipo.caracteristicas.conectividad).map(([key, value]) => (
                       <div key={key}>
                         <span className="font-semibold block text-gray-700 capitalize">
-                          {key === 'wifi' ? 'WiFi' : key === 'ethernet' ? 'Ethernet' : key === 'usb' ? 'USB' : 'Móvil'}
+                          {key === 'wifi' ? 'WiFi' : 
+                           key === 'ethernet' ? 'Ethernet' : 
+                           key === 'usb' ? 'USB' : 
+                           key === 'movil' ? 'Móvil' :
+                           key === 'interfaz' ? 'Interfaz' :
+                           key === 'escaneoDirecto' ? 'Escaneo Directo' :
+                           key === 'controlRemoto' ? 'Control Remoto' : key}
                         </span>
-                        <span className="text-gray-600">{value}</span>
+                        <span className="text-gray-600 text-sm">{value}</span>
                       </div>
                     ))}
                   </div>
@@ -751,7 +968,7 @@ const DetalleEquipo = () => {
                         <span className="font-semibold block text-gray-700 capitalize">
                           {key === 'adf' ? 'ADF' : key === 'platina' ? 'Platina' : key === 'duplex' ? 'Dúplex' : key === 'memoria' ? 'Memoria' : key === 'bateria' ? 'Batería' : key === 'pantalla' ? 'Pantalla' : key === 'teclado' ? 'Teclado' : key === 'software' ? 'Software' : key === 'motor' ? 'Motor' : key === 'bandeja' ? 'Bandeja' : key === 'seguridad' ? 'Seguridad' : key === 'autoOff' ? 'Auto Off' : key === 'tiempoRespaldo' ? 'Tiempo Respaldo' : key === 'proteccion' ? 'Protección' : key === 'salidas' ? 'Salidas' : key === 'tiempo' ? 'Tiempo' : key === 'laminado' ? 'Laminado' : key === 'ciclo' ? 'Ciclo' : key}
                         </span>
-                        <span className="text-gray-600">{value}</span>
+                        <span className="text-gray-600">{String(value)}</span>
                       </div>
                     ))}
                   </div>
@@ -771,7 +988,7 @@ const DetalleEquipo = () => {
                         <span className="font-semibold block text-gray-700 capitalize">
                           {key === 'cintas' ? 'Cintas' : key === 'papel' ? 'Papel' : key === 'memoria' ? 'Memoria' : key === 'bateria' ? 'Batería' : key === 'bandeja' ? 'Bandeja' : key === 'ciclo' ? 'Ciclo' : key === 'salidas' ? 'Salidas' : key === 'tiempo' ? 'Tiempo' : key === 'laminado' ? 'Laminado' : key}
                         </span>
-                        <span className="text-gray-600">{value}</span>
+                        <span className="text-gray-600">{String(value)}</span>
                       </div>
                     ))}
                   </div>
@@ -795,7 +1012,7 @@ const DetalleEquipo = () => {
                            key === 'resistencia' ? 'Resistencia' : 
                            key === 'cintaInicial' ? 'Cinta Inicial' : key}
                         </span>
-                        <span className="text-gray-600">{value}</span>
+                        <span className="text-gray-600">{String(value)}</span>
                       </div>
                     ))}
                   </div>
@@ -817,7 +1034,7 @@ const DetalleEquipo = () => {
                            key === 'sobrecarga' ? 'Contra Sobrecarga' : 
                            key === 'restriccion' ? 'Restricción' : key}
                         </span>
-                        <span className="text-gray-600">{value}</span>
+                        <span className="text-gray-600">{String(value)}</span>
                       </div>
                     ))}
                   </div>
@@ -899,4 +1116,4 @@ const DetalleEquipo = () => {
   );
 };
 
-export default DetalleEquipo; 
+export default DetalleEquipo;
