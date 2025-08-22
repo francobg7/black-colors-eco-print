@@ -1,4 +1,3 @@
-import React from 'react';
 import { CheckCircle, Wrench, Headphones, Zap, Shield, TrendingUp } from 'lucide-react';
 import Footer from '@/components/Footer';
 

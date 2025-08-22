@@ -1,6 +1,5 @@
-import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Calendar, MapPin, Clock, Users, Star, Gift, Wrench, Camera, Tag, CheckCircle, Phone, Mail } from 'lucide-react';
+import { ArrowLeft, Calendar, MapPin, Clock, Users, Star, Gift, Wrench, Camera, Tag, CheckCircle, Mail } from 'lucide-react';
 import Footer from '@/components/Footer';
 
 // Datos detallados del evento

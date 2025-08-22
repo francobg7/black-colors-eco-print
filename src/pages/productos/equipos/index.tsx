@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Monitor, Printer, Server, Wifi, Shield, Zap, Scissors, Trash2, Battery, Tag, Scan } from 'lucide-react';
+import { Scissors, Trash2, Battery, Tag, Scan } from 'lucide-react';
 import Footer from '@/components/Footer';
 import { useState } from 'react';
 

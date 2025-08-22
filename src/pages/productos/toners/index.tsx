@@ -1,33 +1,10 @@
-import { Link } from 'react-router-dom';
-import { ArrowLeft, ChevronDown, ChevronUp, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronDown, ChevronUp, ChevronLeft, ChevronRight } from 'lucide-react';
 import Footer from '@/components/Footer';
 import WhatsAppInlineButton from '@/components/WhatsAppInlineButton';
 import { useWhatsApp } from '@/hooks/useWhatsApp';
 import { useState } from 'react';
 
-interface TonerProduct {
-  id: string;
-  name: string;
-  images: string[];
-}
 
-const toners: TonerProduct[] = [
-  {
-    id: '105A',
-    name: 'Toner 105A',
-    images: ['/images/toners/toner-105A.jpg']
-  },
-  {
-    id: '203U',
-    name: 'Toner 203U',
-    images: ['/images/toners/toner-203U.png', '/images/toners/toner-203U-2.png']
-  },
-  {
-    id: '32A',
-    name: 'Toner 32A',
-    images: ['/images/toners/toner-32A.png']
-  }
-];
 
 // Productos principales visibles
 const mainProducts = {

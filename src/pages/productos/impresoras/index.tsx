@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Printer } from 'lucide-react';
+import { Printer } from 'lucide-react';
 import Footer from '@/components/Footer';
 import { useState } from 'react';
+import SEO from '@/components/SEO';
 
 // Datos de impresoras Top Sales
 
@@ -514,6 +515,10 @@ const todasImpresoras = [
 
 const ProductosImpresoras = () => {
   const [selectedFilter, setSelectedFilter] = useState('all');
+  
+  // SEO variables
+  const seoTitle = "Impresoras Brother | Láser, Inkjet, Multifunción";
+  const seoDescription = "Amplia gama de impresoras Brother para oficina y hogar. Equipos láser, multifunción, tinta continua y más. Distribuidores oficiales con soporte técnico.";
 
   const filterCategories = {
     all: 'Todas las impresoras',
@@ -569,6 +574,41 @@ const ProductosImpresoras = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO 
+        title={seoTitle}
+        description={seoDescription}
+        keywords="impresoras, impresoras láser, impresoras multifunción, plotters, ScanNCut, Brother, impresoras tinta continua, impresoras para empresas, equipos de oficina, impresión"
+        ogImage="/images/impresoras/portada.jpg"
+        category="Impresoras"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "itemListElement": todasImpresoras.slice(0, 10).map((impresora, index) => ({
+            "@type": "ListItem",
+            "position": index + 1,
+            "item": {
+              "@type": "Product",
+              "name": impresora.nombre,
+              "description": impresora.descripcion,
+              "image": `https://blackcolors.com.py${impresora.imagen}`,
+              "brand": {
+                "@type": "Brand",
+                "name": "Brother"
+              },
+              "offers": {
+                "@type": "Offer",
+                "availability": "https://schema.org/InStock",
+                "priceCurrency": "PYG",
+                "price": "Consultar",
+                "seller": {
+                  "@type": "Organization",
+                  "name": "Black Colors Eco Print"
+                }
+              }
+            }
+          }))
+        }}
+      />
       {/* Hero Section with integrated search */}
       <div className="relative">
         {/* Hero Background */}

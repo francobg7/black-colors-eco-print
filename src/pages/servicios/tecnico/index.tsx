@@ -1,5 +1,4 @@
-import React from 'react';
-import { CheckCircle, Wrench, Headphones, Zap, Shield, TrendingUp, Search, Package, Settings, Users, FileText, Mail } from 'lucide-react';
+import { Wrench, Shield, Search, Package, Settings, Users, FileText } from 'lucide-react';
 import Footer from '@/components/Footer';
 
 const ServicioTecnico = () => {

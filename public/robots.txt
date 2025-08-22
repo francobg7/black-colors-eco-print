@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Excluir páginas no relevantes para SEO
+Disallow: /404
+
+# Sitemap
+Sitemap: https://blackcolors.com.py/sitemap.xml
