@@ -3,6 +3,7 @@ import { MapPin, User, Phone, Clock, Building } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import WhatsAppInlineButton from '@/components/WhatsAppInlineButton';
 import Footer from '@/components/Footer';
+import MapComponent from '@/components/MapComponent';
 
 const Contacto = () => {
 
@@ -189,20 +190,9 @@ const Contacto = () => {
           </div>
         </div>
 
-        {/* Mapa - OpenStreetMap (gratuito y sin restricciones) */}
+        {/* Mapa - Usando Leaflet (más confiable con marcadores) */}
         <div className="rounded-2xl overflow-hidden shadow-2xl border border-emerald-200/20 mb-10">
-          <iframe
-            width="100%"
-            height="500"
-            frameBorder="0"
-            scrolling="no"
-            marginHeight={0}
-            marginWidth={0}
-            src="https://www.openstreetmap.org/export/embed.html?bbox=-57.61375904083252%2C-25.347103173544497%2C-57.59835243225098%2C-25.33630798882343&amp;layer=mapnik&amp;marker=-25.341705587703785%2C-57.6033648846568"
-            style={{ border: 0 }}
-            title="Ubicación Black Colors"
-            allowFullScreen
-          />
+          <MapComponent />
           <div className="py-2 px-4 bg-emerald-800/30 text-center">
             <a 
               href="https://www.openstreetmap.org/?mlat=-25.341705587703785&amp;mlon=-57.6033648846568#map=17/-25.341705/-57.603364"
