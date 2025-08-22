@@ -1,6 +1,5 @@
-import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Calendar, MapPin, Clock, Users, Star, Gift, Wrench, Camera, Tag, CheckCircle, Phone, Mail } from 'lucide-react';
+import { ArrowLeft, Calendar, MapPin, Clock, Users, Star, Gift, Wrench, Camera, Tag, CheckCircle, Mail } from 'lucide-react';
 import Footer from '@/components/Footer';
 
 // Datos detallados del evento
@@ -15,10 +14,10 @@ const eventosDetallados = {
     descripcion: 'Este sábado 23 de agosto, Black Colors festeja sus 18 años de trayectoria en el mercado paraguayo con un evento especial en su local de Lambaré, donde además presentará la remodelación total de sus instalaciones.',
     categoria: 'Aniversario',
     destacado: true,
-    imagenPrincipal: '/images/eventos/1.jpg',
+    imagenPrincipal: '/images/eventos/black-colors2.png',
     imagenesGaleria: [
-      '/images/eventos/1.jpg',
-      '/images/eventos/2.jpg',
+      '/images/eventos/black-colors2.png ',
+      '/images/eventos/black-colors1.png',
       '/images/eventos/3.jpg'
     ],
     asistentes: 'Abierto al público',
@@ -150,6 +149,20 @@ const EventoDetalle = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contenido principal */}
           <div className="lg:col-span-2 space-y-8">
+            {/* Foto adicional del evento */}
+            <div className="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100">
+              <img 
+                src={evento.imagenesGaleria[1] || evento.imagenPrincipal} 
+                alt={`${evento.titulo} - Vista adicional`}
+                className="w-full h-[300px] object-contain bg-gray-50"
+              />
+              <div className="p-4 bg-gray-50 border-t border-gray-100">
+                <p className="text-center text-gray-600 font-medium">
+                  {evento.titulo} - Vista previa del evento
+                </p>
+              </div>
+            </div>
+            
             {/* Información del evento */}
             <div className="bg-white rounded-3xl shadow-lg p-8 border border-gray-100">
               <h2 className="text-3xl font-light text-gray-900 mb-6 tracking-tight">Información del Evento</h2>
@@ -254,9 +267,6 @@ const EventoDetalle = () => {
               <p className="text-gray-600 mb-6 leading-relaxed">
                 No te pierdas esta celebración especial. Ven y disfruta de todos los beneficios.
               </p>
-              <button className="w-full bg-[#2d472f] text-white py-3 rounded-lg hover:bg-[#4b6d3b] transition-colors font-semibold">
-                Confirmar Asistencia
-              </button>
             </div>
 
             {/* Información de contacto */}
@@ -265,20 +275,11 @@ const EventoDetalle = () => {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">
-                    <Phone className="w-5 h-5 text-emerald-600" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-600">Teléfono</p>
-                    <p className="font-semibold text-[#2d472f]">(021) 123-456</p>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">
                     <Users className="w-5 h-5 text-emerald-600" />
                   </div>
                   <div>
                     <p className="text-sm text-gray-600">WhatsApp</p>
-                    <p className="font-semibold text-[#2d472f]">+595 981 123 456</p>
+                    <p className="font-semibold text-[#2d472f]">+595 982 343 128</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">

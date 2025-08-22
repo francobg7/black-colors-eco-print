@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, MapPin, Clock, Users, Star } from 'lucide-react';
 import Footer from '@/components/Footer';
@@ -14,7 +13,7 @@ const eventos = [
     descripcion: 'Un evento especial para celebrar nuestros 18 años de trayectoria en el mercado paraguayo con la reinauguración de nuestro local totalmente renovado.',
     categoria: 'Aniversario',
     destacado: true,
-    imagen: '/images/eventos/1.jpg',
+    imagen: '/images/eventos/black-colors2.png',
     asistentes: 'Abierto al público',
     slug: 'aniversario-18-anos-black-colors',
     beneficios: [
@@ -36,7 +35,7 @@ const Eventos = () => {
         {/* Hero Background */}
         <div className="relative h-[500px] overflow-hidden">
           <img 
-            src="/images/eventos/1.jpg" 
+            src="/images/eventos/black-colors2.png" 
             alt="Eventos Hero"
             className="w-full h-full object-cover"
           />
@@ -82,13 +81,13 @@ const Eventos = () => {
               >
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                   {/* Imagen */}
-                  <div className="relative h-64 lg:h-auto overflow-hidden">
+                  <div className="relative h-64 lg:h-auto overflow-hidden flex items-center justify-center bg-gray-100">
                     <img 
                       src={evento.imagen} 
                       alt={evento.titulo}
-                      className="w-full h-full object-cover"
+                      className="w-full h-auto object-contain max-h-full"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent lg:hidden"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent lg:hidden pointer-events-none"></div>
                     
                     {/* Badge destacado */}
                     <div className="absolute top-6 right-6">
@@ -177,14 +176,11 @@ const Eventos = () => {
                       {evento.detallesCompletos && (
                         <Link 
                           to={`/eventos/${evento.slug}`}
-                          className="inline-flex items-center justify-center px-6 py-3 border-2 border-[#2d472f] text-[#2d472f] hover:bg-[#2d472f] hover:text-white transition-colors font-semibold rounded-lg"
+                          className="inline-flex items-center justify-center px-6 py-3 bg-[#2d472f] text-white hover:bg-[#4b6d3b] transition-colors font-semibold rounded-lg"
                         >
                           Ver detalles completos
                         </Link>
                       )}
-                      <button className="inline-flex items-center justify-center px-6 py-3 bg-[#2d472f] text-white hover:bg-[#4b6d3b] transition-colors font-semibold rounded-lg">
-                        Confirmar Asistencia
-                      </button>
                     </div>
                   </div>
                 </div>

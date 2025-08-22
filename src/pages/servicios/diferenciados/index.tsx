@@ -1,5 +1,4 @@
-import React from 'react';
-import { CheckCircle, Wrench, Headphones, Zap, Shield, TrendingUp } from 'lucide-react';
+import { CheckCircle, Wrench, Headphones, Zap, TrendingUp } from 'lucide-react';
 import Footer from '@/components/Footer';
 
 const ServiciosDiferenciados = () => {
@@ -278,7 +277,7 @@ const ServiciosDiferenciados = () => {
             <div className="relative">
               <div className="w-full h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="/images/nosotros2.jpg" 
+                  src="/images/soluciones-integrales.jpg" 
                   alt="Equipo de especialistas analizando soluciones personalizadas"
                   className="w-full h-full object-cover"
                 />

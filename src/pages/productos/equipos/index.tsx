@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Monitor, Printer, Server, Wifi, Shield, Zap, Scissors, Trash2, Battery, Tag, Scan } from 'lucide-react';
+import { Scissors, Trash2, Battery, Tag, Scan } from 'lucide-react';
 import Footer from '@/components/Footer';
 import { useState } from 'react';
 
@@ -276,58 +276,166 @@ const todosEquipos = [
     id: 8,
     nombre: 'BROTHER ADS-1200',
     modelo: 'ADS-1200',
-    descripcion: 'Scanner de Documentos Portátil',
+    descripcion: 'Scanner de Documentos Portátil compacto con alimentación por USB',
+    descripcionLarga: 'Scanner compacto ideal para profesionales móviles y oficinas pequeñas. Alimentado por cable USB, permite escaneo directo a memoria USB. Compatible con documentos de diversos tamaños y materiales. Su diseño portátil de 1,36 kg lo hace perfecto para trabajar desde cualquier lugar.',
     slug: 'brother-ads-1200',
-    imagen: '/images/equipos/scanner-ads-1200.jpg',
+    imagen: '/images/scanners/ads-1200.png',
+    imagenes: [
+      '/images/scanners/ads-1200.png',
+      '/images/scanners/ads-1200-2.png',
+      '/images/scanners/ads-1200-3.png'
+    ],
     categoria: 'Scanners',
-    tecnologia: 'Scanner de documentos',
-    resolucion: 'Hasta 600 DPI',
-    velocidad: 'Hasta 20 ppm',
+    tecnologia: 'Scanner de documentos portátil',
+    resolucion: '600 x 600 dpi (óptica) / hasta 1200 x 1200 dpi (interpolada)',
+    velocidad: 'Hasta 17 ppm (monocromo/color)',
     precio: 'Consultar precio',
-    compatibilidad: ['USB', 'WiFi', 'PC', 'Mac', 'Android', 'iOS'],
-    memoria: '32 MB RAM',
-    procesador: 'Procesador ARM',
-    bandeja: 'ADF de 20 hojas',
-    cicloMensual: 'Hasta 1000 páginas',
-    insumos: 'N/A'
+    compatibilidad: ['USB 3.0', 'PC', 'Mac', 'Memoria USB', 'Diversos tipos de papel'],
+    memoria: '256 MB',
+    procesador: 'Controlador integrado',
+    bandeja: 'ADF de hasta 20 hojas',
+    cicloMensual: 'Hasta 1000 páginas diarias',
+    insumos: 'Cable USB incluido (alimentación y datos)',
+    caracteristicas: {
+      escaneado: {
+        resolucionOptica: '600 x 600 dpi',
+        resolucionInterpolada: 'hasta 1200 x 1200 dpi',
+        profundidadColor: 'Entrada 48 bits / Salida 24 bits',
+        escalaGrises: '256 niveles',
+        velocidad: 'hasta 17 ppm (monocromo y color)'
+      },
+      conectividad: {
+        interfaz: 'USB 3.0 (alimentación por cable USB incluida)',
+        escaneoDirecto: 'a memoria USB (máx. 128 GB, FAT32/exFAT)',
+        controlRemoto: 'desde PC (no tiene pantalla propia)'
+      },
+      documentos: {
+        tipos: 'papel normal, reciclado, grueso, tarjetas de presentación y plástico',
+        tamanoMinimo: '51 mm de ancho',
+        tamanoMaximo: '215,9 mm de ancho / hasta 863 mm de largo (una hoja)',
+        adf: 'hasta 20 hojas'
+      },
+      consumo: {
+        escaneando: 'aprox. 8 W',
+        espera: '3,2 W',
+        apagado: '0,1 W'
+      },
+      fisicas: {
+        peso: '1,36 kg',
+        caracteristica: 'Compacto y portátil',
+        memoria: '256 MB'
+      }
+    }
   },
   {
     id: 9,
     nombre: 'BROTHER ADS-1700W',
     modelo: 'ADS-1700W',
-    descripcion: 'Scanner de Documentos WiFi',
+    descripcion: 'Scanner de Documentos WiFi con pantalla táctil a color',
+    descripcionLarga: 'Scanner avanzado con conectividad WiFi y pantalla táctil a color de 2,8". Ideal para oficinas que requieren flexibilidad de conectividad y facilidad de uso. Permite escaneo directo a múltiples destinos sin necesidad de PC, incluyendo correo electrónico, FTP, carpetas de red y servicios en la nube.',
     slug: 'brother-ads-1700w',
-    imagen: '/images/equipos/scanner-ads-1700w.jpg',
+    imagen: '/images/scanners/ads-1700.png',
+    imagenes: [
+      '/images/scanners/ads-1700.png',
+      '/images/scanners/ads-1700-2.png'
+    ],
     categoria: 'Scanners',
-    tecnologia: 'Scanner de documentos',
-    resolucion: 'Hasta 600 DPI',
-    velocidad: 'Hasta 25 ppm',
+    tecnologia: 'Scanner de documentos con WiFi',
+    resolucion: '600 x 600 dpi (óptica) / hasta 1200 x 1200 dpi (interpolada)',
+    velocidad: 'Hasta 25 ppm (monocromo/color)',
     precio: 'Consultar precio',
-    compatibilidad: ['USB', 'WiFi', 'PC', 'Mac', 'Android', 'iOS', 'Cloud'],
-    memoria: '64 MB RAM',
-    procesador: 'Procesador ARM',
-    bandeja: 'ADF de 30 hojas',
-    cicloMensual: 'Hasta 2000 páginas',
-    insumos: 'N/A'
+    compatibilidad: ['USB 3.0', 'WiFi', 'WiFi Direct', 'PC', 'Mac', 'Android', 'iOS', 'Cloud', 'Correo electrónico', 'FTP'],
+    memoria: '512 MB',
+    procesador: 'Controlador integrado con pantalla táctil',
+    bandeja: 'ADF de hasta 20 hojas',
+    cicloMensual: 'Hasta 2000 páginas diarias',
+    insumos: 'Cable USB incluido',
+    caracteristicas: {
+      escaneado: {
+        resolucionOptica: '600 x 600 dpi',
+        resolucionInterpolada: 'hasta 1200 x 1200 dpi',
+        profundidadColor: 'Entrada 48 bits / Salida 24 bits',
+        escalaGrises: '256 niveles',
+        velocidad: 'hasta 25 ppm (monocromo y color)'
+      },
+      conectividad: {
+        usb: 'USB 3.0',
+        wifi: 'WiFi (infraestructura y WiFi Direct)',
+        escaneoDirecto: 'a PC, USB, correo electrónico, FTP, carpetas de red, nube',
+        pantalla: 'Táctil a color 2,8"'
+      },
+      documentos: {
+        tipos: 'papel normal, reciclado, grueso, tarjetas de presentación y plástico',
+        tamanoMinimo: '51 mm de ancho',
+        tamanoMaximo: '215,9 mm de ancho / hasta 863 mm de largo (una hoja)',
+        adf: 'hasta 20 hojas'
+      },
+      consumo: {
+        escaneando: 'aprox. 9 W',
+        espera: '4,5 W',
+        apagado: '0,1 W'
+      },
+      fisicas: {
+        peso: '1,41 kg',
+        caracteristica: 'Diseño compacto con controles táctiles',
+        memoria: '512 MB'
+      }
+    }
   },
   {
     id: 10,
     nombre: 'BROTHER ADS-2200',
     modelo: 'ADS-2200',
-    descripcion: 'Scanner de Documentos de Alto Rendimiento',
+    descripcion: 'Scanner de Documentos de Alto Rendimiento con escaneo dúplex',
+    descripcionLarga: 'Scanner ADS-2200 de Brother ofrece alta velocidad de escaneo con funcionalidad dúplex para digitalizar documentos a doble cara en una sola pasada. Diseño compacto ideal para oficina y uso intensivo. Permite escaneo directo a PC, USB, email y archivo con OCR. Compatible con documentos de diversos tamaños y materiales.',
     slug: 'brother-ads-2200',
-    imagen: '/images/equipos/scanner-ads-2200.jpg',
+    imagen: '/images/scanners/ads-2200.png',
+    imagenes: [
+      '/images/scanners/ads-2200.png',
+      
+    ],
     categoria: 'Scanners',
-    tecnologia: 'Scanner de documentos',
-    resolucion: 'Hasta 600 DPI',
-    velocidad: 'Hasta 30 ppm',
+    tecnologia: 'Scanner de documentos con dúplex automático',
+    resolucion: '600 x 600 dpi (óptica) / hasta 1200 x 1200 dpi (interpolada)',
+    velocidad: 'Hasta 35 ppm / 70 ipm (dúplex)',
     precio: 'Consultar precio',
-    compatibilidad: ['USB', 'WiFi', 'Red Ethernet', 'PC', 'Mac', 'Cloud'],
-    memoria: '128 MB RAM',
-    procesador: 'Procesador ARM dual-core',
+    compatibilidad: ['USB 2.0 Hi-Speed', 'PC', 'USB (hasta 64 GB)', 'OCR', 'Email', 'Archivo'],
+    memoria: '512 MB',
+    procesador: 'Procesador integrado de alto rendimiento',
     bandeja: 'ADF de 50 hojas',
-    cicloMensual: 'Hasta 5000 páginas',
-    insumos: 'N/A'
+    cicloMensual: 'Para uso intensivo de oficina',
+    insumos: 'N/A',
+    caracteristicas: {
+      escaneado: {
+        resolucionOptica: '600 x 600 dpi',
+        resolucionInterpolada: 'hasta 1200 x 1200 dpi',
+        profundidadColor: 'Entrada 48 bits / Salida 24 bits',
+        escalaGrises: '256 niveles',
+        velocidad: 'hasta 35 ppm / 70 ipm (dúplex)'
+      },
+      conectividad: {
+        usb: 'USB 2.0 Hi-Speed',
+        escaneoDirecto: 'a PC, USB (hasta 64 GB), OCR, email, archivo'
+      },
+      documentos: {
+        tipos: 'papel normal, reciclado, grueso, tarjetas de presentación y plástico',
+        tamanoMinimo: '51 mm de ancho',
+        tamanoMaximo: '215,9 mm de ancho / hasta 355,6 mm de largo',
+        modoExtendido: 'hasta 5000 mm de largo',
+        adf: 'hasta 50 hojas'
+      },
+      consumo: {
+        escaneando: 'aprox. 23 W',
+        espera: '5 W',
+        suspension: '1,6 W',
+        apagado: '0,1 W'
+      },
+      fisicas: {
+        peso: '2,6 kg',
+        dimensiones: '299 × 145 × 141 mm',
+        caracteristica: 'Diseño compacto para oficina y uso intensivo'
+      }
+    }
   }
 ];
 
