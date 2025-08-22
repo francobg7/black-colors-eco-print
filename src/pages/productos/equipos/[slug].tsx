@@ -878,7 +878,7 @@ const DetalleEquipo = () => {
             <div className="text-center">
               <Phone className="w-8 h-8 mx-auto mb-2" />
               <h3 className="font-semibold mb-1">Teléfono</h3>
-              <p className="opacity-90">+595 21 123 456</p>
+              <p className="opacity-90">+595 982 343 128</p>
             </div>
             <div className="text-center">
               <Mail className="w-8 h-8 mx-auto mb-2" />
