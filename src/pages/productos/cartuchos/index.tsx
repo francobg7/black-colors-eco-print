@@ -32,7 +32,7 @@ const ProductosCartuchos = () => {
         {/* Hero Background */}
         <div className="relative h-[70vh] overflow-hidden">
           <img 
-            src="/images/cartuchos/portada.jpg" 
+            src="/images/hero-cartuchos.png" 
             alt="Cartuchos Hero"
             className="w-full h-full object-cover"
           />
