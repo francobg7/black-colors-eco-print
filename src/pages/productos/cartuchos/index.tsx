@@ -492,7 +492,7 @@ const ProductosCartuchos = () => {
                 <div>
                   <p className="text-gray-700 leading-relaxed">
                     En Black Colors nos encargamos de reciclarlos de manera responsable: transformamos los cartuchos 
-                    utilizados en carbón y gas, evitando que se conviertan en residuos contaminantes y aportando a un 
+                    utilizados en carbón, gas y combustible, evitando que se conviertan en residuos contaminantes y aportando a un 
                     futuro más limpio y sustentable.
                   </p>
                 </div>
