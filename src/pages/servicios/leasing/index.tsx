@@ -89,7 +89,7 @@ const Leasing = () => {
             <div className="space-y-6 bg-blue-50/30 rounded-3xl p-8 border border-blue-100/50 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer">
               <div className="w-full h-48 rounded-2xl overflow-hidden mb-6">
                 <img 
-                  src="/images/cartuchos/portada.jpg" 
+                  src="/images/servicios/leasing/box-medio.jpeg" 
                   alt="Insumos de Impresión" 
                   className="w-full h-full object-cover"
                 />
