@@ -37,21 +37,21 @@ const Footer = () => (
               { icon: Mail, text: "mkt@blackcolors.com.py" },
               { icon: MapPin, text: "Av Cacique Lambare &, Av. Bonifacio Ovando, Lambaré" }
             ].map((item, index) => (
-              <div key={index} className="flex items-center group hover:text-green-400 transition-colors cursor-pointer">
-                <item.icon className="w-5 h-5 mr-3 text-gray-400 group-hover:text-green-400 group-hover:scale-110 transition-all" />
-                {item.icon === MapPin ? (
-                  <a 
-                    href="https://www.google.com/maps/search/?api=1&query=Av+Cacique+Lambare+%26+Av.+Bonifacio+Ovando%2C+Lambaré%2C+Paraguay" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-gray-300 hover:text-green-400"
-                  >
-                    {item.text}
-                  </a>
-                ) : (
-                  <span className="text-gray-300 group-hover:text-green-400">{item.text}</span>
-                )}
-              </div>
+                              <div key={index} className="flex items-center group hover:text-green-400 transition-colors cursor-pointer">
+                  <item.icon className="w-5 h-5 mr-3 text-gray-400 group-hover:text-green-400 group-hover:scale-110 transition-all" />
+                  {item.icon === MapPin ? (
+                    <a 
+                      href="https://www.google.com/maps/place/Black+Colors+SRL/@-25.3418949,-57.6033821,20.33z/data=!4m15!1m8!3m7!1s0x945da9a8d88b295b:0x52aa616336df2a76!2sAv.+Bonifacio+Ovando+%26+Av.+Cacique+Lambare,+110718+Lambar%C3%A9!3b1!8m2!3d-25.3417216!4d-57.6033376!16s%2Fg%2F11hb88hyyy!3m5!1s0x945da97f3b363253:0x627551064c685d6c!8m2!3d-25.3418074!4d-57.6034078!16s%2Fg%2F11ghr6tk2c?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-gray-300 hover:text-green-400"
+                    >
+                      {item.text}
+                    </a>
+                  ) : (
+                    <span className="text-gray-300 group-hover:text-green-400">{item.text}</span>
+                  )}
+                </div>
             ))}
           </div>
         </div>
