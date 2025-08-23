@@ -35,11 +35,22 @@ const Footer = () => (
             {[
               { icon: Phone, text: "+595 982 343 128" },
               { icon: Mail, text: "mkt@blackcolors.com.py" },
-              { icon: MapPin, text: "Asunción, Paraguay" }
+              { icon: MapPin, text: "Av Cacique Lambare &, Av. Bonifacio Ovando, Lambaré" }
             ].map((item, index) => (
               <div key={index} className="flex items-center group hover:text-green-400 transition-colors cursor-pointer">
                 <item.icon className="w-5 h-5 mr-3 text-gray-400 group-hover:text-green-400 group-hover:scale-110 transition-all" />
-                <span className="text-gray-300 group-hover:text-green-400">{item.text}</span>
+                {item.icon === MapPin ? (
+                  <a 
+                    href="https://www.google.com/maps/search/?api=1&query=Av+Cacique+Lambare+%26+Av.+Bonifacio+Ovando%2C+Lambaré%2C+Paraguay" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-gray-300 hover:text-green-400"
+                  >
+                    {item.text}
+                  </a>
+                ) : (
+                  <span className="text-gray-300 group-hover:text-green-400">{item.text}</span>
+                )}
               </div>
             ))}
           </div>
