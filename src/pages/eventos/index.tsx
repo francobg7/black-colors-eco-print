@@ -7,8 +7,8 @@ const eventos = [
   {
     id: 1,
     titulo: 'Black Colors celebra sus 18 años',
-    fecha: '23 de Agosto, 2025',
-    hora: '09:00 - 16:00',
+    fecha: '30 de Agosto, 2025',
+    hora: '09:00 - 13:00',
     ubicacion: 'Black Colors Lambaré - Cacique Lambaré y Bonifacio Ovando',
     descripcion: 'Un evento especial para celebrar nuestros 18 años de trayectoria en el mercado paraguayo con la reinauguración de nuestro local totalmente renovado.',
     categoria: 'Aniversario',
