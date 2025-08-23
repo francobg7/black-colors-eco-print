@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 const Footer = () => (
   <footer className="py-16" style={{ backgroundColor: '#2d472f' }}>
     <div className="container mx-auto px-4 sm:px-6 md:px-8">
-      <div className="grid md:grid-cols-4 gap-8">
+      <div className="grid md:grid-cols-5 gap-8">
         <div className="md:col-span-2">
           <div className="mb-4">
             <img
@@ -14,7 +14,8 @@ const Footer = () => (
             />
           </div>
           <p className="mb-6 leading-relaxed text-lg text-gray-300">
-            Líderes en soluciones de impresión sustentable con 18 años de experiencia en el mercado.
+            Líderes en soluciones de impresión<br />
+            sustentable con 18 años de experiencia.
           </p>
           <div className="flex space-x-4">
             <a href="https://www.facebook.com/blackcolorssrl/?locale=es_LA" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-green-600 hover:bg-green-500 flex items-center justify-center hover:scale-110 transition-all duration-300 cursor-pointer shadow-lg">
@@ -44,15 +45,73 @@ const Footer = () => (
           </div>
         </div>
         <div>
-          <h4 className="text-xl font-semibold mb-4 text-white">Enlaces</h4>
+          <h4 className="text-xl font-semibold mb-4 text-white">Productos</h4>
           <ul className="space-y-2">
-            {['Productos', 'Leasing', 'Sustentabilidad', 'Contacto'].map((link, index) => (
-              <li key={index}>
-                <a href="#" className="text-gray-300 hover:text-green-400 transition-colors duration-300 hover:translate-x-2 transform inline-block">
-                  {link}
-                </a>
-              </li>
-            ))}
+            <li>
+              <a href="/productos/impresoras" className="text-gray-300 hover:text-green-400 transition-colors duration-300 hover:translate-x-2 transform inline-block">
+                Impresoras
+              </a>
+            </li>
+            <li>
+              <a href="/productos/cartuchos" className="text-gray-300 hover:text-green-400 transition-colors duration-300 hover:translate-x-2 transform inline-block">
+                Cartuchos y Tóner
+              </a>
+            </li>
+            <li>
+              <a href="/productos/resmas" className="text-gray-300 hover:text-green-400 transition-colors duration-300 hover:translate-x-2 transform inline-block">
+                Resmas Sustentables
+              </a>
+            </li>
+            <li>
+              <a href="/productos/equipos" className="text-gray-300 hover:text-green-400 transition-colors duration-300 hover:translate-x-2 transform inline-block">
+                Rotuladoras y Etiquetadoras
+              </a>
+            </li>
+            <li>
+              <a href="/productos/equipos" className="text-gray-300 hover:text-green-400 transition-colors duration-300 hover:translate-x-2 transform inline-block">
+                UPS y Accesorios
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="text-xl font-semibold mb-4 text-white">Servicios</h4>
+          <ul className="space-y-2">
+            <li>
+              <a href="/servicios/tecnico" className="text-gray-300 hover:text-green-400 transition-colors duration-300 hover:translate-x-2 transform inline-block">
+                Servicio Técnico
+              </a>
+            </li>
+            <li>
+              <a href="/servicios/leasing" className="text-gray-300 hover:text-green-400 transition-colors duration-300 hover:translate-x-2 transform inline-block">
+                Leasing de Equipos
+              </a>
+            </li>
+            <li>
+              <a href="/servicios/diferenciados" className="text-gray-300 hover:text-green-400 transition-colors duration-300 hover:translate-x-2 transform inline-block">
+                Servicios Diferenciados
+              </a>
+            </li>
+            <li>
+              <a href="/servicios/alquileres" className="text-gray-300 hover:text-green-400 transition-colors duration-300 hover:translate-x-2 transform inline-block">
+                Alquileres
+              </a>
+            </li>
+            <li>
+              <a href="/transformar" className="text-gray-300 hover:text-green-400 transition-colors duration-300 hover:translate-x-2 transform inline-block">
+                Proyecto Transformar
+              </a>
+            </li>
+            <li>
+              <a href="/eventos" className="text-gray-300 hover:text-green-400 transition-colors duration-300 hover:translate-x-2 transform inline-block">
+                Eventos
+              </a>
+            </li>
+            <li>
+              <a href="/contacto" className="text-gray-300 hover:text-green-400 transition-colors duration-300 hover:translate-x-2 transform inline-block">
+                Contacto
+              </a>
+            </li>
           </ul>
         </div>
       </div>
