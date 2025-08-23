@@ -247,22 +247,13 @@ const Alquileres = () => {
             y cómo podemos adaptar el servicio a las necesidades específicas de tu empresa.
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-green-50/40 rounded-2xl p-8 text-left border border-green-100/50">
-              <h3 className="text-2xl font-medium text-gray-900 mb-4 tracking-wide">
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-green-50/40 rounded-2xl p-10 text-center border border-green-100/50 shadow-lg hover:shadow-xl transition-all duration-300">
+              <h3 className="text-3xl font-medium text-gray-900 mb-6 tracking-wide">
                 ALQUILER DE IMPRESORAS
               </h3>
-              <p className="text-gray-600 leading-relaxed font-light">
+              <p className="text-lg text-gray-600 leading-relaxed font-light">
                 Equipos de impresión de alta calidad disponibles para alquiler a corto y largo plazo.
-              </p>
-            </div>
-            
-            <div className="bg-green-50/40 rounded-2xl p-8 text-left border border-green-100/50">
-              <h3 className="text-2xl font-medium text-gray-900 mb-4 tracking-wide">
-                ALQUILER DE EQUIPOS
-              </h3>
-              <p className="text-gray-600 leading-relaxed font-light">
-                Soluciones tecnológicas completas para eventos y proyectos temporales.
               </p>
             </div>
           </div>
