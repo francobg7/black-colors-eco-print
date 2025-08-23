@@ -152,7 +152,7 @@ const Contacto = () => {
                       </h3>
                       <div className="space-y-2 text-emerald-100">
                         <p>Lunes a Viernes: 8:00 - 18:00</p>
-                        <p>Sábados: 8:00 - 12:00</p>
+                        <p>Sábados: 9:00 - 13:00</p>
                         <p>Domingos: Cerrado</p>
                       </div>
                     </div>
