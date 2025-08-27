@@ -33,7 +33,7 @@ const Index = () => {
           "mainEntity": {
             "@type": "LocalBusiness",
             "name": "Black Colors Eco Print",
-            "image": "https://blackcolors.com.py/images/logos/logo-mejorado-removebg-preview.png",
+            "image": "https://blackcolors.com.py/images/logos/black_colors-negro_color.png",
             "telephone": "+595-982-343-128",
             "email": "mkt@blackcolors.com.py",
             "address": {
