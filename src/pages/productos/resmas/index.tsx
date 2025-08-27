@@ -14,7 +14,14 @@ const ProductosResmas = () => {
             alt="Resmas Sustentables BlackColors"
             className="w-full h-full object-cover"
           />
-          {/* Minimal overlay removido */}
+          {/* Hero Content */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
+            <h1 className="text-5xl lg:text-6xl font-bold mb-4" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), 4px 4px 8px rgba(0,0,0,0.6), 6px 6px 12px rgba(0,0,0,0.4)' }}>RESMAS</h1>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), 4px 4px 8px rgba(0,0,0,0.6)' }}>SUSTENTABLES</h2>
+            <p className="text-xl max-w-3xl text-center font-bold" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.9), 4px 4px 8px rgba(0,0,0,0.7), 6px 6px 12px rgba(0,0,0,0.5)' }}>
+              Papel Ecológico Certificado para un Futuro más Sostenible
+            </p>
+          </div>
         </div>
       </div>
 
