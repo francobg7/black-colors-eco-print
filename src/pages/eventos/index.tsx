@@ -96,7 +96,6 @@ const Eventos = () => {
               e.currentTarget.src = "/images/background-1.jpg";
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#2d472f]/80 via-[#2d472f]/40 to-gray-50" />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
             <h1 className="text-5xl font-bold mb-4">EVENTOS Y NOVEDADES</h1>
             <p className="text-xl max-w-2xl text-center mb-12">
