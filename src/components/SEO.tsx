@@ -79,7 +79,7 @@ const SEO = ({
     '@type': 'Organization',
     name: 'Black Colors',
     url: siteUrl,
-    logo: `${siteUrl}/images/logos/logo-mejorado-removebg-preview.png`,
+          logo: `${siteUrl}/images/logos/black_colors-negro_color.png`,
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+595-982-343-128',
