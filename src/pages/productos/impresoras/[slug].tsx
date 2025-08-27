@@ -1353,7 +1353,7 @@ const DetalleImpresora = () => {
                       key={index}
                       onClick={() => setCurrentImageIndex(index)}
                       className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-colors ${
-                        index === currentImageIndex ? 'border-[#2d472f]' : 'border-gray-200'
+                        index === currentImageIndex ? 'border-[#4e8759]' : 'border-gray-200'
                       }`}
                     >
                       <img 
@@ -1370,14 +1370,14 @@ const DetalleImpresora = () => {
             {/* Información del Producto */}
             <div className="p-8">
               <div className="mb-6">
-                <h2 className="text-3xl font-bold text-[#2d472f] mb-2">
+                <h2 className="text-3xl font-bold text-[#4e8759] mb-2">
                   {impresora.nombre}
                 </h2>
                 <div className="flex items-center space-x-2 mb-4">
                   <Printer className="w-5 h-5 text-[#4b6d3b]" />
                   <span className="text-[#4b6d3b] font-medium">{impresora.tecnologia}</span>
                 </div>
-                <div className="text-2xl font-bold text-[#2d472f]">
+                <div className="text-2xl font-bold text-[#4e8759]">
                   {impresora.precio}
                 </div>
               </div>
@@ -1399,12 +1399,12 @@ const DetalleImpresora = () => {
 
               {/* Compatibilidades */}
               <div className="mb-8">
-                <h3 className="text-xl font-bold text-[#2d472f] mb-4">Conectividad y Funciones</h3>
+                <h3 className="text-xl font-bold text-[#4e8759] mb-4">Conectividad y Funciones</h3>
                 <div className="flex flex-wrap gap-2">
                   {impresora.compatibilidad.map((comp, idx) => (
                     <span 
                       key={idx} 
-                      className="flex items-center space-x-2 bg-[#e8f5e9] text-[#2d472f] px-4 py-2 rounded-full font-medium"
+                      className="flex items-center space-x-2 bg-[#e8f5e9] text-[#4e8759] px-4 py-2 rounded-full font-medium"
                     >
                       <Check className="w-4 h-4" />
                       <span>{comp}</span>
@@ -1417,14 +1417,14 @@ const DetalleImpresora = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <WhatsAppInlineButton
                   customMessage={`Hola, me gustaría solicitar una cotización para la impresora ${impresora.nombre}.`}
-                  className="flex-1 bg-[#2d472f] text-white hover:bg-[#4b6d3b] transition-colors"
+                  className="flex-1 bg-[#4e8759] text-white hover:bg-[#4b6d3b] transition-colors"
                   size="default"
                 >
                   Solicitar Cotización
                 </WhatsAppInlineButton>
                 <WhatsAppInlineButton
                   customMessage={`Hola, necesito más información sobre la impresora ${impresora.nombre}.`}
-                  className="flex-1 border-2 border-[#2d472f] text-[#2d472f] hover:bg-[#2d472f] hover:text-white transition-colors"
+                  className="flex-1 border-2 border-[#4e8759] text-[#4e8759] hover:bg-[#4e8759] hover:text-white transition-colors"
                   size="default"
                 >
                   Más Información
@@ -1437,7 +1437,7 @@ const DetalleImpresora = () => {
         {/* Especificaciones Técnicas Detalladas */}
         {impresora.caracteristicas && (
           <div className="mt-12 bg-white rounded-2xl shadow-xl p-8">
-            <h2 className="text-2xl font-bold text-[#2d472f] mb-8 text-center">
+            <h2 className="text-2xl font-bold text-[#4e8759] mb-8 text-center">
               Especificaciones Técnicas Detalladas
             </h2>
 
@@ -1445,7 +1445,7 @@ const DetalleImpresora = () => {
               {/* Sección principal (Impresión o Corte) */}
               {(impresora.caracteristicas.impresion || impresora.caracteristicas.corte) && (
                 <div>
-                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                  <h3 className="text-lg font-bold text-[#4e8759] mb-4 flex items-center">
                     <Printer className="w-5 h-5 mr-2" />
                     {impresora.caracteristicas.impresion ? 'Impresión' : 'Corte'}
                   </h3>
@@ -1465,7 +1465,7 @@ const DetalleImpresora = () => {
               {/* Conectividad */}
               {impresora.caracteristicas.conectividad && (
                 <div>
-                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                  <h3 className="text-lg font-bold text-[#4e8759] mb-4 flex items-center">
                     <Wifi className="w-5 h-5 mr-2" />
                     Conectividad
                   </h3>
@@ -1485,7 +1485,7 @@ const DetalleImpresora = () => {
               {/* Funciones */}
               {impresora.caracteristicas.funciones && (
                 <div>
-                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                  <h3 className="text-lg font-bold text-[#4e8759] mb-4 flex items-center">
                     <Scan className="w-5 h-5 mr-2" />
                     Funciones
                   </h3>
@@ -1505,7 +1505,7 @@ const DetalleImpresora = () => {
               {/* Capacidad */}
               {impresora.caracteristicas.capacidad && (
                 <div>
-                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                  <h3 className="text-lg font-bold text-[#4e8759] mb-4 flex items-center">
                     <Network className="w-5 h-5 mr-2" />
                     Capacidad
                   </h3>
@@ -1525,7 +1525,7 @@ const DetalleImpresora = () => {
               {/* Funciones Especiales (para ScanNCut) */}
               {impresora.caracteristicas.especiales && (
                 <div>
-                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                  <h3 className="text-lg font-bold text-[#4e8759] mb-4 flex items-center">
                     <Check className="w-5 h-5 mr-2" />
                     Especiales
                   </h3>
@@ -1546,7 +1546,7 @@ const DetalleImpresora = () => {
         )}
 
         {/* Sección de Contacto */}
-        <div className="mt-12 bg-gradient-to-r from-[#2d472f] to-[#4b6d3b] rounded-2xl text-white p-8">
+        <div className="mt-12 bg-gradient-to-r from-[#4e8759] to-[#4b6d3b] rounded-2xl text-white p-8">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold mb-4">¿Interesado en este producto?</h2>
             <p className="text-lg opacity-90">

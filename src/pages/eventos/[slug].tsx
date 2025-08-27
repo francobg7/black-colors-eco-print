@@ -1,82 +1,40 @@
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, MapPin, Clock, Users, Star, Gift, Wrench, Camera, Tag, CheckCircle, Mail } from 'lucide-react';
 import Footer from '@/components/Footer';
+import { useState, useEffect } from 'react';
+import newsService from '@/services/NewsService';
+import SEO from '@/components/SEO';
 
-// Datos detallados del evento
-const eventosDetallados = {
-  'aniversario-18-anos-black-colors': {
-    id: 1,
-    titulo: 'Black Colors celebra sus 18 años',
-    subtitulo: 'Reinauguración de nuestro local totalmente renovado',
-    fecha: '30 de Agosto, 2025',
-    hora: '09:00 - 13:00',
-    ubicacion: 'Black Colors Lambaré - Cacique Lambaré y Bonifacio Ovando',
-    descripcion: 'Este sábado 30 de agosto, Black Colors festeja sus 18 años de trayectoria en el mercado paraguayo con un evento especial en su local de Lambaré, donde además presentará la remodelación total de sus instalaciones.',
-    categoria: 'Aniversario',
-    destacado: true,
-    imagenPrincipal: '/images/eventos/black-colors2.png',
-    imagenesGaleria: [
-      '/images/eventos/black-colors2.png ',
-      '/images/eventos/black-colors1.png',
-      '/images/eventos/3.jpg'
-    ],
-    asistentes: 'Abierto al público',
-    descripcionCompleta: `La renovación abarca todo el espacio de atención al cliente, pensado para brindar una experiencia más cómoda y ágil a quienes visitan la empresa. El área de servicio técnico también fue modernizada, con mayor capacidad para atender equipos de todas las marcas y ofrecer diagnósticos y mantenimientos de manera más eficiente.
-
-La fachada externa y el estacionamiento fueron completamente remodelados, logrando un acceso más seguro, práctico y atractivo para clientes y visitantes.
-
-Black Colors reafirma así su compromiso con la innovación, el servicio de calidad y la cercanía con sus clientes, en un año donde también impulsa fuertemente sus proyectos de sustentabilidad y leasing de impresoras.
-
-La empresa invita a toda su comunidad de clientes, aliados y amigos a participar de esta gran fiesta, donde el protagonista será el cliente.`,
-    
-    beneficios: [
-      {
-        icono: Gift,
-        titulo: 'Carga gratuita de cartuchos',
-        descripcion: 'Las 10 primeras personas en traer sus cartuchos recibirán una carga gratuita'
-      },
-      {
-        icono: Wrench,
-        titulo: 'Mantenimiento preventivo sin costo',
-        descripcion: 'Las 5 primeras en traer sus equipos accederán a un mantenimiento preventivo sin costo'
-      },
-      {
-        icono: Camera,
-        titulo: 'Demostraciones gratuitas',
-        descripcion: 'Demostraciones gratuitas de equipos, donde los asistentes podrán conocer de cerca las nuevas tecnologías en impresión'
-      },
-      {
-        icono: Tag,
-        titulo: 'Descuentos especiales',
-        descripcion: 'Descuentos de hasta el 70% en impresoras y equipos totalmente nuevos'
-      },
-      {
-        icono: Gift,
-        titulo: 'Sorteos y regalos',
-        descripcion: 'Durante toda la jornada se realizarán regalos, sorteos y entrega de cupones especiales'
-      }
-    ],
-
-    renovaciones: [
-      {
-        titulo: 'Área de Atención al Cliente',
-        descripcion: 'Espacio renovado para brindar una experiencia más cómoda y ágil'
-      },
-      {
-        titulo: 'Servicio Técnico Modernizado',
-        descripcion: 'Mayor capacidad para atender equipos de todas las marcas con diagnósticos eficientes'
-      },
-      {
-        titulo: 'Fachada y Estacionamiento',
-        descripcion: 'Acceso más seguro, práctico y atractivo para clientes y visitantes'
-      }
-    ]
-  }
+// Componente para mostrar imágenes en el cuerpo de la noticia
+const ImagenCuerpo = ({ imagen }) => {
+  return (
+    <div className={`mb-8 ${imagen.ancho === 'medio' ? 'lg:w-1/2 inline-block lg:pr-4' : 'w-full'}`}>
+      <div className="bg-white rounded-xl overflow-hidden shadow-md">
+        <img 
+          src={imagen.url} 
+          alt={imagen.caption}
+          className="w-full h-auto object-cover"
+        />
+        <div className="p-4 bg-gray-50 border-t border-gray-100">
+          <p className="text-center text-gray-600 font-medium text-sm">
+            {imagen.caption}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 const EventoDetalle = () => {
   const { slug } = useParams<{ slug: string }>();
-  const evento = slug ? eventosDetallados[slug as keyof typeof eventosDetallados] : null;
+  const [evento, setEvento] = useState(null);
+  
+  useEffect(() => {
+    if (slug) {
+      const eventoData = newsService.getEventoPorSlug(slug);
+      setEvento(eventoData);
+    }
+  }, [slug]);
 
   if (!evento) {
     return (
@@ -93,15 +51,50 @@ const EventoDetalle = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* SEO Component */}
+      <SEO 
+        title={evento.titulo}
+        description={evento.descripcion}
+        ogType="article"
+        ogImage={evento.imagenPrincipal}
+        keywords={`${evento.categoria}, eventos, black colors, ${evento.titulo.toLowerCase()}`}
+        category={evento.categoria}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Event",
+          "name": evento.titulo,
+          "description": evento.descripcion,
+          "image": evento.imagenPrincipal,
+          "startDate": evento.fecha,
+          "endDate": evento.fecha,
+          "location": {
+            "@type": "Place",
+            "name": evento.ubicacion,
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Asunción",
+              "addressRegion": "Central",
+              "addressCountry": "PY"
+            }
+          },
+          "organizer": {
+            "@type": "Organization",
+            "name": "Black Colors",
+            "url": "https://blackcolors.com.py"
+          }
+        }}
+      />
+
       {/* Hero Section */}
       <div className="relative">
-        {/* Hero Background */}
+        {/* Hero Background - Imagen única */}
         <div className="relative h-[600px] overflow-hidden">
           <img 
             src={evento.imagenPrincipal} 
-            alt={evento.titulo}
+            alt={`${evento.titulo}`}
             className="w-full h-full object-cover"
           />
+          
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-gray-50" />
           
           {/* Badge destacado */}
@@ -217,6 +210,19 @@ const EventoDetalle = () => {
                   </p>
                 ))}
               </div>
+              
+              {/* Imágenes del cuerpo de la noticia */}
+              {evento.imagenesCuerpo && evento.imagenesCuerpo.length > 0 && (
+                <div className="mt-8">
+                  <h3 className="text-2xl font-light text-gray-900 mb-6 tracking-tight">Imágenes del evento</h3>
+                  <div className="w-16 h-px bg-emerald-400 mb-6"></div>
+                  <div className="flex flex-wrap">
+                    {evento.imagenesCuerpo.map((imagen, index) => (
+                      <ImagenCuerpo key={index} imagen={imagen} />
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Beneficios exclusivos */}
@@ -254,6 +260,17 @@ const EventoDetalle = () => {
                       <p className="text-gray-700 leading-relaxed">{renovacion.descripcion}</p>
                     </div>
                   </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Imágenes del cuerpo de la noticia */}
+            <div className="bg-white rounded-3xl shadow-lg p-8 border border-gray-100">
+              <h2 className="text-3xl font-light text-gray-900 mb-6 tracking-tight">Galería del Evento</h2>
+              <div className="w-20 h-px bg-emerald-400 mb-6"></div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {evento.imagenesCuerpo.map((imagen, index) => (
+                  <ImagenCuerpo key={index} imagen={imagen} />
                 ))}
               </div>
             </div>

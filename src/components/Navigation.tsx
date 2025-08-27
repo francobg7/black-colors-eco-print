@@ -129,7 +129,7 @@ const Navigation = () => {
       isScrolled ? '' : 'bg-white/10 '
     }`}
     style={{
-      backgroundColor: isScrolled ? '#2d472f' : 'transparent',
+      backgroundColor: isScrolled ? '#4e8759' : 'transparent',
       minHeight: '3.5rem',
       width: '100vw',
       position: 'fixed'
@@ -287,7 +287,7 @@ const Navigation = () => {
             id="mobile-menu-panel"
             className="fixed inset-0 z-[60] flex flex-col items-center justify-start pt-16 sm:pt-20 backdrop-blur-lg animate-fade-in overflow-y-auto md:hidden"
             style={{
-              background: 'rgba(45, 71, 47, 0.98)',
+              background: 'rgba(78, 135, 89, 0.98)',
               top: '0',
               left: '0',
               right: '0',

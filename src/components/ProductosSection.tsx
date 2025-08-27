@@ -62,7 +62,7 @@ const ProductosSection = () => (
 				<div className="lg:col-span-2 space-y-8">
 					<h2
 						className="text-2xl sm:text-4xl lg:text-4xl font-bold mb-12 text-center lg:text-left"
-						style={{ color: '#2d472f' }}
+						style={{ color: '#4e8759' }}
 					>
 						Nuestros Productos
 					</h2>
@@ -74,7 +74,7 @@ const ProductosSection = () => (
 									index === 1 ? 'ml-0 md:ml-8' : index === 2 ? 'ml-0 md:ml-16' : ''
 								}`}
 								style={{
-									background: '#2d472f',
+									background: '#4e8759',
 									transform: `translateX(${index * 20}px)`,
 								}}
 							>
@@ -112,7 +112,7 @@ const ProductosSection = () => (
 			viewBox="0 0 100 100"
 			preserveAspectRatio="none"
 		>
-			<polygon fill="#2d472f" points="0,100 0,30 30,80 100,60 100,100" />
+			<polygon fill="#4e8759" points="0,100 0,30 30,80 100,60 100,100" />
 		</svg>
 	</section>
 );

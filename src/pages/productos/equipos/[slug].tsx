@@ -556,7 +556,7 @@ const DetalleEquipo = () => {
               alt="Equipos Hero"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-gray-50" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#4e8759]/80 via-[#4e8759]/40 to-gray-50" />
             <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-6">
               <h1 className="text-4xl font-bold mb-4">Producto no encontrado</h1>
               <p className="text-xl text-center mb-8">El producto que buscas no existe o ha sido removido</p>
@@ -596,7 +596,7 @@ const DetalleEquipo = () => {
             alt={`${equipo.nombre} Hero`}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-gray-50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#4e8759]/80 via-[#4e8759]/40 to-gray-50" />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-6">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center">
               {equipo.modelo}
@@ -616,7 +616,7 @@ const DetalleEquipo = () => {
         <div className="mb-8">
           <Link 
             to="/productos/equipos"
-            className="inline-flex items-center space-x-2 bg-white/90 backdrop-blur-md text-[#2d472f] px-6 py-3 rounded-xl font-semibold hover:bg-white hover:shadow-lg transition-all duration-300 border border-[#2d472f]/20"
+            className="inline-flex items-center space-x-2 bg-white/90 backdrop-blur-md text-[#4e8759] px-6 py-3 rounded-xl font-semibold hover:bg-white hover:shadow-lg transition-all duration-300 border border-[#4e8759]/20"
           >
             <ChevronLeft className="w-5 h-5" />
             <span>Volver a Equipos</span>
@@ -678,7 +678,7 @@ const DetalleEquipo = () => {
                       onClick={() => setCurrentImageIndex(index)}
                       className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
                         index === currentImageIndex 
-                          ? 'border-[#2d472f] scale-105' 
+                          ? 'border-[#4e8759] scale-105' 
                           : 'border-gray-200 hover:border-[#4b6d3b]'
                       }`}
                     >
@@ -696,21 +696,21 @@ const DetalleEquipo = () => {
             {/* Información del Producto */}
             <div className="p-8">
               <div className="mb-6">
-                <h2 className="text-3xl font-bold text-[#2d472f] mb-2">
+                <h2 className="text-3xl font-bold text-[#4e8759] mb-2">
                   {equipo.nombre}
                 </h2>
                 <div className="flex items-center space-x-2 mb-4">
                   {getCategoryIcon(equipo.categoria)}
                   <span className="text-[#4b6d3b] font-medium">{equipo.tecnologia}</span>
                 </div>
-                <div className="text-2xl font-bold text-[#2d472f]">
+                <div className="text-2xl font-bold text-[#4e8759]">
                   {equipo.precio}
                 </div>
               </div>
 
               {/* Características Principales */}
               <div className="mb-8">
-                <h3 className="text-xl font-bold text-[#2d472f] mb-4">Características Principales</h3>
+                <h3 className="text-xl font-bold text-[#4e8759] mb-4">Características Principales</h3>
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   {equipo.resolucion !== 'N/A' && (
                     <div>
@@ -729,12 +729,12 @@ const DetalleEquipo = () => {
 
               {/* Compatibilidades */}
               <div className="mb-8">
-                <h3 className="text-xl font-bold text-[#2d472f] mb-4">Conectividad y Funciones</h3>
+                <h3 className="text-xl font-bold text-[#4e8759] mb-4">Conectividad y Funciones</h3>
                 <div className="flex flex-wrap gap-2">
                   {equipo.compatibilidad.map((comp, idx) => (
                     <span 
                       key={idx} 
-                      className="flex items-center space-x-2 bg-[#e8f5e9] text-[#2d472f] px-4 py-2 rounded-full font-medium"
+                      className="flex items-center space-x-2 bg-[#e8f5e9] text-[#4e8759] px-4 py-2 rounded-full font-medium"
                     >
                       <Check className="w-4 h-4" />
                       <span>{comp}</span>
@@ -759,7 +759,7 @@ const DetalleEquipo = () => {
         {/* Especificaciones Técnicas Detalladas */}
         {equipo.caracteristicas && (
           <div className="mt-12 bg-white rounded-2xl shadow-xl p-8">
-            <h2 className="text-2xl font-bold text-[#2d472f] mb-8 text-center">
+            <h2 className="text-2xl font-bold text-[#4e8759] mb-8 text-center">
               Especificaciones Técnicas Detalladas
             </h2>
 
@@ -767,7 +767,7 @@ const DetalleEquipo = () => {
               {/* Sección principal según el tipo de equipo */}
               {(equipo.caracteristicas.impresion || equipo.caracteristicas.destruccion || equipo.caracteristicas.proteccion || equipo.caracteristicas.escaneado || equipo.caracteristicas.portabilidad) && (
                 <div>
-                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                  <h3 className="text-lg font-bold text-[#4e8759] mb-4 flex items-center">
                     {equipo.categoria === 'Rotuladoras portátiles' || equipo.categoria === 'Etiquetadoras' ? (
                       <Scissors className="w-5 h-5 mr-2" />
                     ) : equipo.categoria === 'Destructora de papel' ? (
@@ -814,7 +814,7 @@ const DetalleEquipo = () => {
               {/* Eléctrica (para UPS) */}
               {equipo.caracteristicas.electrica && (
                 <div>
-                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                  <h3 className="text-lg font-bold text-[#4e8759] mb-4 flex items-center">
                     <Battery className="w-5 h-5 mr-2" />
                     Especificaciones Eléctricas
                   </h3>
@@ -837,7 +837,7 @@ const DetalleEquipo = () => {
               {/* Indicadores (para UPS) */}
               {equipo.caracteristicas.indicadores && (
                 <div>
-                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                  <h3 className="text-lg font-bold text-[#4e8759] mb-4 flex items-center">
                     <Check className="w-5 h-5 mr-2" />
                     Indicadores y Alarmas
                   </h3>
@@ -859,7 +859,7 @@ const DetalleEquipo = () => {
               {/* Funcionalidad (para rotuladoras) */}
               {equipo.caracteristicas.funcionalidad && (
                 <div>
-                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                  <h3 className="text-lg font-bold text-[#4e8759] mb-4 flex items-center">
                     <Check className="w-5 h-5 mr-2" />
                     Funcionalidad
                   </h3>
@@ -887,7 +887,7 @@ const DetalleEquipo = () => {
               {/* Documentos (para scanners) */}
               {equipo.caracteristicas.documentos && (
                 <div>
-                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                  <h3 className="text-lg font-bold text-[#4e8759] mb-4 flex items-center">
                     <Scan className="w-5 h-5 mr-2" />
                     Documentos Soportados
                   </h3>
@@ -910,7 +910,7 @@ const DetalleEquipo = () => {
               {/* Consumo (para scanners) */}
               {equipo.caracteristicas.consumo && (
                 <div>
-                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                  <h3 className="text-lg font-bold text-[#4e8759] mb-4 flex items-center">
                     <Battery className="w-5 h-5 mr-2" />
                     Consumo Eléctrico
                   </h3>
@@ -932,7 +932,7 @@ const DetalleEquipo = () => {
               {/* Conectividad */}
               {equipo.caracteristicas.conectividad && (
                 <div>
-                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                  <h3 className="text-lg font-bold text-[#4e8759] mb-4 flex items-center">
                     <Wifi className="w-5 h-5 mr-2" />
                     Conectividad
                   </h3>
@@ -958,7 +958,7 @@ const DetalleEquipo = () => {
               {/* Funciones */}
               {equipo.caracteristicas.funciones && (
                 <div>
-                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                  <h3 className="text-lg font-bold text-[#4e8759] mb-4 flex items-center">
                     <Check className="w-5 h-5 mr-2" />
                     Funciones
                   </h3>
@@ -978,7 +978,7 @@ const DetalleEquipo = () => {
               {/* Capacidad */}
               {equipo.caracteristicas.capacidad && (
                 <div>
-                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                  <h3 className="text-lg font-bold text-[#4e8759] mb-4 flex items-center">
                     <Network className="w-5 h-5 mr-2" />
                     Capacidad
                   </h3>
@@ -998,7 +998,7 @@ const DetalleEquipo = () => {
               {/* Compatibilidad (para rotuladoras) */}
               {equipo.caracteristicas.compatibilidad && (
                 <div>
-                  <h3 className="text-lg font-bold text-[#2d472f] mb-4 flex items-center">
+                  <h3 className="text-lg font-bold text-[#4e8759] mb-4 flex items-center">
                     <Check className="w-5 h-5 mr-2" />
                     Compatibilidad
                   </h3>
@@ -1083,7 +1083,7 @@ const DetalleEquipo = () => {
         )}
 
         {/* Sección de Contacto */}
-        <div className="mt-12 bg-gradient-to-r from-[#2d472f] to-[#4b6d3b] rounded-2xl text-white p-8">
+        <div className="mt-12 bg-gradient-to-r from-[#4e8759] to-[#4b6d3b] rounded-2xl text-white p-8">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold mb-4">¿Interesado en este producto?</h2>
             <p className="text-lg opacity-90">

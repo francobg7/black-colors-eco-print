@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Calendar, MapPin, Star, ChevronRight } from 'lucide-react';
+import { ArrowLeft, Calendar, MapPin, Clock, Users, Star, ChevronRight } from 'lucide-react';
 import Footer from '@/components/Footer';
 import { useEffect, useState } from 'react';
 import newsService, { Evento } from '@/services/NewsService';
-import SEO from '@/components/SEO';
 
 // Componente para la tarjeta de cada evento
 const EventoCard = ({ evento }: { evento: Evento }) => {
@@ -76,45 +75,29 @@ const Eventos = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <SEO 
-        title="Eventos y Novedades"
-        description="Participa en nuestros eventos y mantente actualizado con las últimas novedades y tendencias en tecnología de impresión y soluciones sustentables"
-        ogType="website"
-        ogImage="/images/eventos/portada.jpg"
-        keywords="eventos, novedades, black colors, impresoras, tecnología, sustentabilidad, talleres, lanzamientos"
-        category="Eventos"
-      />
       {/* Hero Section */}
-      <div className="relative">
-        {/* Hero Background */}
-        <div className="relative h-[500px] overflow-hidden">
-          <img 
-            src="/images/eventos/portada.jpg" 
-            alt="Eventos Hero"
-            className="w-full h-full object-cover"
-            onError={(e) => {
-              e.currentTarget.src = "/images/background-1.jpg";
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#2d472f]/80 via-[#2d472f]/40 to-gray-50" />
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-            <h1 className="text-5xl font-bold mb-4">EVENTOS Y NOVEDADES</h1>
-            <p className="text-xl max-w-2xl text-center mb-12">
-              Participa en nuestros eventos y mantente actualizado con las últimas tendencias
-            </p>
-          </div>
+      <div className="relative bg-gradient-to-br from-[#2d472f] to-[#375935]">
+        <div className="absolute inset-0 overflow-hidden opacity-20">
+          <svg className="absolute left-0 top-0 h-full w-full" width="100%" height="100%">
+            <defs>
+              <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M0 40L40 0M0 0L40 40" stroke="white" strokeWidth="1" fill="none" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid-pattern)" />
+          </svg>
         </div>
-
-        {/* Floating Card */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 translate-y-1/2 w-full px-4">
-          <div className="max-w-3xl mx-auto bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl p-8 text-center">
-            <h2 className="text-2xl font-bold text-[#2d472f] mb-4">Descubre nuestros próximos eventos</h2>
-            <p className="text-gray-700">Mantente al día con las últimas actividades, talleres y lanzamientos de Black Colors</p>
-          </div>
+        <div className="relative max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
+            Eventos y Novedades
+          </h1>
+          <p className="max-w-2xl mx-auto text-xl text-emerald-50 font-light">
+            Participa en nuestros eventos y mantente actualizado con las últimas tendencias
+          </p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Navegación */}
         <div className="mb-8">
           <Link 

@@ -64,7 +64,7 @@ const SustentabilidadSection = () => {
 			viewBox="0 0 100 100"
 			preserveAspectRatio="none"
 		>
-			<polygon fill="#2d472f" points="0,0 100,0 100,70 70,20 0,30" />
+			<polygon fill="#4e8759" points="0,0 100,0 100,70 70,20 0,30" />
 		</svg>
 
 			{/* Imagen de fondo - sin superposición verde */}

@@ -618,7 +618,7 @@ const ProductosImpresoras = () => {
             alt="Impresoras Hero"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-gray-50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#4e8759]/80 via-[#4e8759]/40 to-gray-50" />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
             <h1 className="text-5xl font-bold mb-4">IMPRESORAS</h1>
             <p className="text-xl max-w-2xl text-center mb-12">
@@ -630,7 +630,7 @@ const ProductosImpresoras = () => {
         {/* Floating Filter Card */}
         <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 translate-y-1/2 w-full px-4">
           <div className="max-w-6xl mx-auto bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl p-8">
-            <h2 className="text-2xl font-bold text-[#2d472f] text-center mb-6">Filtrar Impresoras</h2>
+            <h2 className="text-2xl font-bold text-[#4e8759] text-center mb-6">Filtrar Impresoras</h2>
             
             {/* Categorías de tecnología */}
             <div className="flex flex-wrap gap-3 justify-center">
@@ -640,8 +640,8 @@ const ProductosImpresoras = () => {
                   onClick={() => setSelectedFilter(key)}
                   className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
                     selectedFilter === key
-                      ? 'bg-[#2d472f] text-white shadow-lg shadow-[#2d472f]/20 scale-105'
-                      : 'bg-white/80 text-[#2d472f] hover:bg-[#2d472f]/10 border-2 border-[#2d472f]/10 hover:scale-105'
+                      ? 'bg-[#4e8759] text-white shadow-lg shadow-[#4e8759]/20 scale-105'
+                      : 'bg-white/80 text-[#4e8759] hover:bg-[#4e8759]/10 border-2 border-[#4e8759]/10 hover:scale-105'
                   }`}
                 >
                   {label}
@@ -676,7 +676,7 @@ const ProductosImpresoras = () => {
 
               {/* Product Info */}
               <div className="p-6">
-                <h3 className="text-lg font-bold text-[#2d472f] mb-2 group-hover:text-[#4b6d3b] transition-colors">
+                <h3 className="text-lg font-bold text-[#4e8759] mb-2 group-hover:text-[#4b6d3b] transition-colors">
                   {impresora.nombre}
                 </h3>
                 
@@ -724,7 +724,7 @@ const ProductosImpresoras = () => {
 
                   {/* Price */}
                   <div className="mt-4">
-                    <span className="text-lg font-bold text-[#2d472f]">{impresora.precio}</span>
+                    <span className="text-lg font-bold text-[#4e8759]">{impresora.precio}</span>
                   </div>
 
                   {/* Features */}
@@ -732,7 +732,7 @@ const ProductosImpresoras = () => {
                     {impresora.compatibilidad.slice(0, 3).map((comp, idx) => (
                       <span 
                         key={idx} 
-                        className="text-xs bg-[#e8f5e9] text-[#2d472f] px-3 py-1 rounded-full font-medium"
+                        className="text-xs bg-[#e8f5e9] text-[#4e8759] px-3 py-1 rounded-full font-medium"
                       >
                         {comp}
                       </span>

@@ -2,7 +2,7 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 const Footer = () => (
-  <footer className="py-16" style={{ backgroundColor: '#2d472f' }}>
+  <footer className="py-16" style={{ backgroundColor: '#4e8759' }}>
     <div className="container mx-auto px-4 sm:px-6 md:px-8">
       <div className="grid md:grid-cols-5 gap-8">
         <div className="md:col-span-2">
