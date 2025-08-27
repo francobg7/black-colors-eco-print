@@ -141,7 +141,7 @@ const Navigation = () => {
             <Link to="/" className="block hover:scale-105 transition-transform duration-300">
               <span className="sr-only">Black Colors Home</span>
               <img
-                src="/images/logos/logo-mejorado-removebg-preview.png"
+                src="/images/logos/black_colors-negro_color.png"
                 alt="Black Colors Logo"
                 className="h-12 sm:h-14 md:h-16 w-auto"
               />
@@ -162,12 +162,12 @@ const Navigation = () => {
                               ? 'font-semibold border-b-2 border-current pb-1'
                               : 'hover:opacity-75'
                           }`}
-                          style={{
-                            color: isScrolled 
-                              ? (isActive(item.path) ? '#d7f2db' : '#c3e8a4')
-                              : (isActive(item.path) ? '#ffffff' : '#f3f4f6'),
-                            textShadow: isScrolled ? 'none' : '1px 1px 2px rgba(0,0,0,0.3)'
-                          }}
+                                                  style={{
+                          color: isScrolled 
+                            ? (isActive(item.path) ? '#ffffff' : '#ffffff')
+                            : (isActive(item.path) ? '#ffffff' : '#ffffff'),
+                          textShadow: isScrolled ? 'none' : '1px 1px 2px rgba(0,0,0,0.3)'
+                        }}
                         >
                           {item.name}
                           <svg 
@@ -240,8 +240,8 @@ const Navigation = () => {
                         }`}
                         style={{
                           color: isScrolled 
-                            ? (isActive(item.path) ? '#d7f2db' : '#c3e8a4')
-                            : (isActive(item.path) ? '#ffffff' : '#f3f4f6'),
+                            ? (isActive(item.path) ? '#ffffff' : '#ffffff')
+                            : (isActive(item.path) ? '#ffffff' : '#ffffff'),
                           textShadow: isScrolled ? 'none' : '1px 1px 2px rgba(0,0,0,0.3)'
                         }}
                       >
@@ -327,7 +327,7 @@ const Navigation = () => {
                             : ''
                         }`}
                         style={{
-                          color: isActive(item.path) ? '#d7f2db' : '#c3e8a4'
+                          color: isActive(item.path) ? '#ffffff' : '#ffffff'
                         }}
                       >
                         {item.name}
@@ -358,7 +358,7 @@ const Navigation = () => {
                                   : 'hover:bg-green-600/20'
                               }`}
                               style={{
-                                color: isActive(subItem.path) ? '#d7f2db' : '#a7f3d0'
+                                color: isActive(subItem.path) ? '#ffffff' : '#ffffff'
                               }}
                             >
                               {subItem.name}
@@ -382,7 +382,7 @@ const Navigation = () => {
                                   : 'hover:bg-green-600/20'
                               }`}
                               style={{
-                                color: isActive(subItem.path) ? '#d7f2db' : '#a7f3d0'
+                                color: isActive(subItem.path) ? '#ffffff' : '#ffffff'
                               }}
                             >
                               {subItem.name}
@@ -401,7 +401,7 @@ const Navigation = () => {
                           : 'hover:bg-green-600/20'
                       }`}
                       style={{
-                        color: isActive(item.path) ? '#d7f2db' : '#c3e8a4',
+                        color: isActive(item.path) ? '#ffffff' : '#ffffff',
                         borderColor: 'rgba(195,232,164,0.3)'
                       }}
                     >
