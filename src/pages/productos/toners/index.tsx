@@ -150,7 +150,7 @@ const ProductosToners = () => {
         {/* Hero Background */}
         <div className="relative h-[70vh] overflow-hidden">
           <img 
-            src="/images/toners/toner-32A-hero.png" 
+            src="/images/toners/toner-105A.jpg" 
             alt="Toners Hero"
             className="w-full h-full object-cover"
           />
@@ -627,7 +627,7 @@ const ProductosToners = () => {
                         ¿No encuentras el toner que necesitas?
                       </h4>
                       <p className="text-gray-600 mb-4 text-sm">
-                        Contamos con más de 200 modelos disponibles. Consulta por el tuyo.
+                        Contamos con más de 200 modelos y diversas marcas disponibles. Consulta por el tuyo.
                       </p>
                       <WhatsAppInlineButton
                         customMessage="Hola, no encuentro el toner que necesito. ¿Podrían ayudarme con la disponibilidad?"
