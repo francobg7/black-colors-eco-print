@@ -119,7 +119,7 @@ const Leasing = () => {
                 ♻️ Gestión Responsable de los Desechos
               </h4>
               <p className="text-gray-600 leading-relaxed font-bold text-center">
-                Uno de los pilares de nuestro servicio es el manejo sustentable de los residuos. Todo lo que utilizás —desde cartuchos hasta componentes— entra en un sistema de trazabilidad de desechos, con una gestión final adecuada y segura. Así, garantizamos que nada termine en vertederos sin tratamiento, contribuyendo activamente a una economía circular.
+                Uno de los pilares de nuestro servicio es el manejo sustentable de los residuos. Todo lo que utilizás desde cartuchos hasta componentes entra en un sistema de trazabilidad de desechos, con una gestión final adecuada y segura. Así, garantizamos que nada termine en vertederos sin tratamiento, contribuyendo activamente a una economía circular.
               </p>
             </div>
           </div>
