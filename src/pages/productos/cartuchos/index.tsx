@@ -36,7 +36,6 @@ const ProductosCartuchos = () => {
             alt="Cartuchos Hero"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-gray-50" />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
             <h1 className="text-5xl lg:text-6xl font-bold mb-4 text-white">CARTUCHOS</h1>
             <h2 className="text-2xl lg:text-3xl font-light text-green-100 mb-6">DE ALTA CALIDAD XXL</h2>
