@@ -94,10 +94,10 @@ const SustentabilidadSection = () => {
 							Compromiso con la <span className="text-green-700">Sustentabilidad</span>
 						</h2>
 						<div className="w-24 h-1 bg-green-700 mb-6 mx-auto lg:mx-0"></div>
-						<p className="text-xl md:text-2xl lg:text-2xl text-green-800 leading-relaxed max-w-md mb-6">
+						<p className="text-xl md:text-2xl lg:text-2xl font-bold text-green-800 leading-relaxed max-w-md mb-6">
 							En Black Colors nos comprometemos con prácticas sostenibles para cuidar el medio ambiente. Nuestro enfoque integral asegura que cada etapa de nuestro proceso sea ambientalmente responsable.
 						</p>
-						<p className="text-xl md:text-2xl lg:text-2xl text-green-800 leading-relaxed max-w-md">
+						<p className="text-xl md:text-2xl lg:text-2xl font-bold text-green-800 leading-relaxed max-w-md">
 							Trabajamos con nuestros clientes para implementar soluciones que reducen el impacto ambiental y promueven un futuro más verde para todos.
 						</p>
 					</div>
@@ -114,7 +114,7 @@ const SustentabilidadSection = () => {
 										</div>
 										<h3 className="text-lg font-bold text-green-800">{pilar.titulo}</h3>
 									</div>
-									<p className="text-sm text-green-700">{pilar.descripcion}</p>
+									<p className="text-sm font-bold text-green-700">{pilar.descripcion}</p>
 								</div>
 							))}
 						</div>
@@ -163,7 +163,7 @@ const SustentabilidadSection = () => {
 											}}
 										>
 											<h3 className="text-base md:text-lg font-bold mb-0 md:mb-1 group-hover:text-green-700 transition-colors drop-shadow-lg">{pilar.titulo}</h3>
-											<p className="text-[19px] md:text-m leading-tight md:leading-snug text-green-800 drop-shadow-lg hidden md:block">{pilar.descripcion}</p>
+											<p className="text-[19px] md:text-m font-bold leading-tight md:leading-snug text-green-800 drop-shadow-lg hidden md:block">{pilar.descripcion}</p>
 										</div>
 									</div>
 								</React.Fragment>
