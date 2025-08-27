@@ -29,14 +29,25 @@ const routes = [
 ];
 
 function generateSitemap() {
+  // Asegurarse de que las URLs en el sitemap sean consistentes
+  // y no tengan trailing slash (excepto la homepage)
+  const formattedRoutes = routes.map(route => {
+    // Conservar trailing slash solo para homepage
+    const formattedPath = route.path === '/' ? route.path : route.path.replace(/\/$/, '');
+    return {
+      ...route,
+      formattedPath
+    };
+  });
+
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-${routes.map(route => `  <url>
-    <loc>${domain}${route.path}</loc>
+${formattedRoutes.map(route => `  <url>
+    <loc>${domain}${route.formattedPath}</loc>
     <lastmod>${route.lastmod}</lastmod>
     <changefreq>${route.changefreq}</changefreq>
     <priority>${route.priority}</priority>

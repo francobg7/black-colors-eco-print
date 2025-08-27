@@ -56,9 +56,18 @@ const SEO = ({
     ? canonicalUrl.slice(0, -1) 
     : canonicalUrl;
 
-  const currentUrl = typeof window !== 'undefined' 
-    ? `${siteUrl}${window.location.pathname}`
-    : siteUrl;
+  // Asegurarnos que la URL canónica sea consistente y no tenga trailing slashes
+  let currentUrl = '';
+  
+  if (typeof window !== 'undefined') {
+    // Eliminar trailing slash si existe (excepto para la página principal)
+    const path = window.location.pathname === '/' 
+      ? '/' 
+      : window.location.pathname.replace(/\/$/, '');
+    currentUrl = `${siteUrl}${path}`;
+  } else {
+    currentUrl = siteUrl;
+  }
 
   // Generate JSON-LD structured data for the website
   const websiteSchema = {
