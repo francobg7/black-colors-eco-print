@@ -619,8 +619,8 @@ const ProductosImpresoras = () => {
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-            <h1 className="text-5xl font-bold mb-4">IMPRESORAS</h1>
-            <p className="text-xl max-w-2xl text-center mb-12">
+            <h1 className="text-5xl font-bold mb-4" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), 4px 4px 8px rgba(0,0,0,0.6), 6px 6px 12px rgba(0,0,0,0.4)' }}>IMPRESORAS</h1>
+            <p className="text-xl max-w-2xl text-center mb-12 font-bold" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.9), 4px 4px 8px rgba(0,0,0,0.7), 6px 6px 12px rgba(0,0,0,0.5)' }}>
               Descubre nuestra línea completa de impresoras Brother para todas tus necesidades
             </p>
           </div>
