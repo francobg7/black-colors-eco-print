@@ -32,7 +32,7 @@ const ClientesSection = () => (
       <h2 className="text-4xl sm:text-5xl lg:text-4xl font-bold mb-8 text-[#174C3C] text-center">
         Clientes que Confían en Nosotros
       </h2>
-      <p className="text-xl text-[#388E3C] text-center mb-8">
+      <p className="text-xl font-bold text-[#388E3C] text-center mb-8">
         Empresas líderes que han confiado en Black Colors para transformar su impresión en una acción sustentable.
       </p>
     </div>
