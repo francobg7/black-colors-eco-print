@@ -13,8 +13,6 @@ const ServicioTecnico = () => {
             alt="Servicio Técnico Hero"
             className="w-full h-full object-cover"
           />
-          {/* Gradient overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-gray-50" />
           
           {/* Hero Content */}
           <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-8 pt-20">
