@@ -9,9 +9,9 @@ const Contacto = () => {
 
 
   return (
-    <div className="min-h-screen bg-[#0f3d2e]">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="relative h-[90vh] flex items-center justify-center overflow-hidden">
+      <div className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -48,9 +48,6 @@ const Contacto = () => {
             </div>
           </div>
         </div>
-
-        {/* Decorative bottom gradient */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0f3d2e] to-transparent" />
       </div>
 
       {/* Main Content */}
@@ -59,7 +56,7 @@ const Contacto = () => {
         {/* Sobre nosotros - Sección para foto de empresa */}
         <div className="mb-24">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-6">CONÓCENOS</h2>
+            <h2 className="text-4xl font-bold text-gray-800 mb-6">CONÓCENOS</h2>
             <div className="w-24 h-1 bg-emerald-400 mx-auto"></div>
           </div>
           
@@ -80,16 +77,16 @@ const Contacto = () => {
             
             {/* Descripción */}
             <div>
-              <h3 className="text-3xl font-bold text-emerald-300 mb-6">Impulsando la sostenibilidad en cada impresión</h3>
-              <p className="text-xl text-gray-200 leading-relaxed mb-8">
+              <h3 className="text-3xl font-bold text-emerald-600 mb-6">Impulsando la sostenibilidad en cada impresión</h3>
+              <p className="text-xl text-gray-700 leading-relaxed mb-8">
                 En Black Colors, combinamos tecnología avanzada con un compromiso inquebrantable por el medio ambiente.
                 Nuestro equipo de expertos está listo para transformar tu experiencia de impresión en una 
                 solución eficiente, económica y amigable con el planeta.
               </p>
               <div className="flex space-x-2">
-                <span className="inline-block px-4 py-2 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-medium">Calidad</span>
-                <span className="inline-block px-4 py-2 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-medium">Sostenibilidad</span>
-                <span className="inline-block px-4 py-2 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-medium">Innovación</span>
+                <span className="inline-block px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium">Calidad</span>
+                <span className="inline-block px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium">Sostenibilidad</span>
+                <span className="inline-block px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium">Innovación</span>
               </div>
             </div>
           </div>
@@ -98,24 +95,24 @@ const Contacto = () => {
         {/* Información adicional */}
         <div className="mb-16">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-6">INFORMACIÓN DE CONTACTO</h2>
+            <h2 className="text-4xl font-bold text-gray-800 mb-6">INFORMACIÓN DE CONTACTO</h2>
             <div className="w-24 h-1 bg-emerald-400 mx-auto"></div>
           </div>
           
           <div className="grid md:grid-cols-2 gap-10">
             {/* Contacto directo */}
-            <Card className="border-emerald-200/20 bg-white/10 backdrop-blur-md hover:bg-white/15 transition-all duration-300">
+            <Card className="border-emerald-200 bg-white shadow-lg hover:shadow-xl transition-all duration-300">
               <CardContent className="p-8">
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center bg-emerald-500/20 mb-6">
-                    <Phone className="w-8 h-8 text-emerald-300" />
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center bg-emerald-100 mb-6">
+                    <Phone className="w-8 h-8 text-emerald-600" />
                   </div>
                   
-                  <h3 className="text-2xl font-bold mb-6 text-white">
+                  <h3 className="text-2xl font-bold mb-6 text-gray-800">
                     Contacto directo
                   </h3>
                   
-                  <p className="text-3xl font-bold text-emerald-300 mb-3">
+                  <p className="text-3xl font-bold text-emerald-600 mb-3">
                     +595 982 343 128
                   </p>
                   
@@ -127,10 +124,10 @@ const Contacto = () => {
                     Enviar mensaje
                   </WhatsAppInlineButton>
                   
-                  <p className="mt-6 text-emerald-100">
+                  <p className="mt-6 text-gray-600">
                     También puedes escribirnos al correo:
                     <br />
-                    <a href="mailto:mkt@blackcolors.com.py" className="text-emerald-300 hover:underline">
+                    <a href="mailto:mkt@blackcolors.com.py" className="text-emerald-600 hover:underline">
                       mkt@blackcolors.com.py
                     </a>
                   </p>
@@ -140,17 +137,17 @@ const Contacto = () => {
             
             <div className="grid grid-rows-2 gap-6">
               {/* Horarios */}
-              <Card className="border-emerald-200/20 bg-white/10 backdrop-blur-md hover:bg-white/15 transition-all duration-300">
+              <Card className="border-emerald-200 bg-white shadow-lg hover:shadow-xl transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center bg-emerald-500/20 flex-shrink-0">
-                      <Clock className="w-6 h-6 text-emerald-300" />
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center bg-emerald-100 flex-shrink-0">
+                      <Clock className="w-6 h-6 text-emerald-600" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold mb-3 text-white">
+                      <h3 className="text-xl font-bold mb-3 text-gray-800">
                         Horarios de atención
                       </h3>
-                      <div className="space-y-2 text-emerald-100">
+                      <div className="space-y-2 text-gray-600">
                         <p>Lunes a Viernes: 8:00 - 18:00</p>
                         <p>Sábados: 9:00 - 13:00</p>
                         <p>Domingos: Cerrado</p>
@@ -161,24 +158,24 @@ const Contacto = () => {
               </Card>
 
               {/* Ubicación */}
-              <Card className="border-emerald-200/20 bg-white/10 backdrop-blur-md hover:bg-white/15 transition-all duration-300">
+              <Card className="border-emerald-200 bg-white shadow-lg hover:shadow-xl transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center bg-emerald-500/20 flex-shrink-0">
-                      <MapPin className="w-6 h-6 text-emerald-300" />
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center bg-emerald-100 flex-shrink-0">
+                      <MapPin className="w-6 h-6 text-emerald-600" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold mb-3 text-white">
+                      <h3 className="text-xl font-bold mb-3 text-gray-800">
                         Nuestra ubicación
                       </h3>
-                      <p className="text-emerald-100">
+                      <p className="text-gray-600">
                         Av Cacique Lambare & Av. Bonifacio Ovando, Lambaré, Paraguay
                       </p>
                       <a 
                         href="https://maps.app.goo.gl/66zbM6BrGcKQqHaV6?g_st=ipc" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-block mt-2 text-emerald-300 hover:text-emerald-400 hover:underline"
+                        className="inline-block mt-2 text-emerald-600 hover:text-emerald-700 hover:underline"
                       >
                         Ver en Google Maps
                       </a>
@@ -191,14 +188,14 @@ const Contacto = () => {
         </div>
 
         {/* Mapa - Usando Leaflet (más confiable con marcadores) */}
-        <div className="rounded-2xl overflow-hidden shadow-2xl border border-emerald-200/20 mb-10">
+        <div className="rounded-2xl overflow-hidden shadow-2xl border border-emerald-200 mb-10">
           <MapComponent />
-          <div className="py-2 px-4 bg-emerald-800/30 text-center">
+          <div className="py-2 px-4 bg-emerald-100 text-center">
             <a 
               href="https://www.openstreetmap.org/?mlat=-25.341705587703785&amp;mlon=-57.6033648846568#map=17/-25.341705/-57.603364"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-emerald-300 hover:text-emerald-400 hover:underline"
+              className="text-emerald-700 hover:text-emerald-800 hover:underline"
             >
               Ver mapa más grande
             </a>
@@ -207,10 +204,10 @@ const Contacto = () => {
         
         {/* CTA Final */}
         <div className="text-center">
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
             ¿Listo para transformar tu experiencia de impresión?
           </h3>
-          <p className="text-lg text-emerald-100 mb-8 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
             Nuestro equipo está disponible para ayudarte a encontrar la solución ideal para tu empresa.
             Contáctanos hoy mismo y descubre la diferencia de Black Colors Eco Print.
           </p>
