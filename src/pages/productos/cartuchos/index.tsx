@@ -37,9 +37,9 @@ const ProductosCartuchos = () => {
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-            <h1 className="text-5xl lg:text-6xl font-bold mb-4 text-white">CARTUCHOS</h1>
-            <h2 className="text-2xl lg:text-3xl font-light text-green-100 mb-6">DE ALTA CALIDAD XXL</h2>
-            <p className="text-lg max-w-2xl text-center text-white/90 leading-relaxed">
+            <h1 className="text-5xl lg:text-6xl font-bold mb-4 text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), 4px 4px 8px rgba(0,0,0,0.6), 6px 6px 12px rgba(0,0,0,0.4)' }}>CARTUCHOS</h1>
+            <h2 className="text-2xl lg:text-3xl font-light text-green-100 mb-6" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), 4px 4px 8px rgba(0,0,0,0.6)' }}>DE ALTA CALIDAD XXL</h2>
+            <p className="text-lg max-w-2xl text-center text-white/90 leading-relaxed font-bold" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.9), 4px 4px 8px rgba(0,0,0,0.7), 6px 6px 12px rgba(0,0,0,0.5)' }}>
               Descubre nuestra selección especializada de cartuchos XXL premium para todas tus necesidades de impresión
             </p>
           </div>
