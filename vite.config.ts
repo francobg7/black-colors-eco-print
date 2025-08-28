@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { VitePWA } from "vite-plugin-pwa";
+import sitemap from "vite-plugin-sitemap";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -14,7 +15,7 @@ export default defineConfig(({ mode }) => ({
     VitePWA({
       registerType: "autoUpdate",
       manifest: {
-        name: "Black Colors Eco Print",
+        name: "Black Colors",
         short_name: "Black Colors",
         description: "Soluciones ecológicas en impresión y cartuchos remanufacturados",
         theme_color: "#2d472f",
@@ -34,6 +35,9 @@ export default defineConfig(({ mode }) => ({
           }
         ],
       },
+    }),
+    sitemap({
+      hostname: 'https://www.blackcolors.com.py',
     }),
   ].filter(Boolean),
   resolve: {

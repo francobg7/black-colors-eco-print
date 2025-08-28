@@ -1,4 +1,3 @@
-
 import { CheckCircle, Leaf, Recycle, Award, Shield, TreePine, FileText, Package, Users } from 'lucide-react';
 import Footer from '@/components/Footer';
 
@@ -39,7 +38,7 @@ const ProductosResmas = () => {
 
             {/* Introducción del producto */}
             <div className="max-w-4xl mx-auto text-center mb-16">
-              <p className="text-lg text-gray-600 leading-relaxed font-light">
+              <p className="text-lg text-gray-600 leading-relaxed font-bold">
                 En BlackColors, entendemos que cada elección cuenta. Por eso, desarrollamos una línea completa de resmas sustentables que combinan calidad premium con responsabilidad ambiental, para que tu empresa pueda operar de manera eficiente mientras contribuye a la preservación del planeta.
               </p>
             </div>
@@ -69,7 +68,7 @@ const ProductosResmas = () => {
                 <h4 className="text-2xl font-medium text-gray-900 text-center">
                   📄 Resma A4 Executive
                 </h4>
-                <p className="text-gray-600 leading-relaxed font-light text-center">
+                <p className="text-gray-600 leading-relaxed font-bold text-center">
                   Papel de alta calidad formato A4, ideal para documentos oficiales, presentaciones e impresiones de uso diario. Fabricado con fibras recicladas y procesos eco-friendly que garantizan excelente blancura y resistencia.
                 </p>
               </div>
@@ -89,7 +88,7 @@ const ProductosResmas = () => {
                 <h4 className="text-2xl font-medium text-gray-900 text-center">
                   📋 Resma Oficio Executive
                 </h4>
-                <p className="text-gray-600 leading-relaxed font-light text-center">
+                <p className="text-gray-600 leading-relaxed font-bold text-center">
                   Formato oficio perfecto para contratos, informes legales y documentación empresarial. Ofrece mayor superficie de impresión manteniendo los más altos estándares de calidad y sostenibilidad ambiental.
                 </p>
               </div>
@@ -109,7 +108,7 @@ const ProductosResmas = () => {
                 <h4 className="text-2xl font-medium text-gray-900 text-center">
                   🌱 Resmas NAT
                 </h4>
-                <p className="text-gray-600 leading-relaxed font-light text-center">
+                <p className="text-gray-600 leading-relaxed font-bold text-center">
                   Papel revolucionario 100% caña de azúcar, libre de fibra de árbol y blanqueadores químicos. Certificado por norma IRAM 3134 y Producto Yungas, con huella de carbono casi neutral. La misma calidad de impresión que las hojas convencionales, cuidando el medio ambiente.
                 </p>
               </div>
@@ -145,7 +144,7 @@ const ProductosResmas = () => {
                   <h4 className="text-xl font-medium text-gray-900 mb-3 flex items-center">
                     🌾 100% Caña de Azúcar
                   </h4>
-                  <p className="text-gray-600 leading-relaxed font-light">
+                  <p className="text-gray-600 leading-relaxed font-bold">
                     Papel completamente libre de fibra de árbol, elaborado exclusivamente con caña de azúcar. Una alternativa revolucionaria que preserva nuestros bosques.
                   </p>
                 </div>
@@ -154,7 +153,7 @@ const ProductosResmas = () => {
                   <h4 className="text-xl font-medium text-gray-900 mb-3 flex items-center">
                     🏆 Certificaciones de Excelencia
                   </h4>
-                  <p className="text-gray-600 leading-relaxed font-light">
+                  <p className="text-gray-600 leading-relaxed font-bold">
                     Certificado por norma <strong>IRAM 3134</strong> y con certificación <strong>Producto Yungas</strong>, garantizando los más altos estándares de calidad y sustentabilidad.
                   </p>
                 </div>
@@ -163,7 +162,7 @@ const ProductosResmas = () => {
                   <h4 className="text-xl font-medium text-gray-900 mb-3 flex items-center">
                     🌍 Huella de Carbono Casi Neutral
                   </h4>
-                  <p className="text-gray-600 leading-relaxed font-light">
+                  <p className="text-gray-600 leading-relaxed font-bold">
                     Libre de blanqueadores químicos y con un proceso de producción que minimiza el impacto ambiental, manteniendo la misma calidad de impresión que las hojas convencionales.
                   </p>
                 </div>
@@ -194,7 +193,7 @@ const ProductosResmas = () => {
                 </h4>
               </div>
               
-              <div className="space-y-6 text-lg text-gray-600 leading-relaxed font-light text-center">
+              <div className="space-y-6 text-lg text-gray-600 leading-relaxed font-bold text-center">
                 <p>
                   La producción del papel NAT se basa en una <strong>tecnología innovadora</strong> que transforma la industria papelera tradicional.
                 </p>
@@ -241,7 +240,7 @@ const ProductosResmas = () => {
                 <Recycle className="w-8 h-8 text-emerald-600" />
               </div>
               <h4 className="text-lg font-medium text-gray-900">100% Libre de Árboles</h4>
-              <p className="text-sm text-gray-600">NAT: fabricado exclusivamente con caña de azúcar, preservando nuestros bosques y reduciendo significativamente el impacto ambiental.</p>
+              <p className="text-sm text-gray-600 font-bold">NAT: fabricado exclusivamente con caña de azúcar, preservando nuestros bosques y reduciendo significativamente el impacto ambiental.</p>
             </div>
             
             <div className="text-center space-y-4">
@@ -249,7 +248,7 @@ const ProductosResmas = () => {
                 <Award className="w-8 h-8 text-emerald-600" />
               </div>
               <h4 className="text-lg font-medium text-gray-900">Certificación IRAM 3134</h4>
-              <p className="text-sm text-gray-600">Certificado por norma IRAM 3134 y Producto Yungas, garantizando procesos sustentables y calidad premium.</p>
+              <p className="text-sm text-gray-600 font-bold">Certificado por norma IRAM 3134 y Producto Yungas, garantizando procesos sustentables y calidad premium.</p>
             </div>
             
             <div className="text-center space-y-4">
@@ -257,7 +256,7 @@ const ProductosResmas = () => {
                 <Shield className="w-8 h-8 text-emerald-600" />
               </div>
               <h4 className="text-lg font-medium text-gray-900">Calidad Premium</h4>
-              <p className="text-sm text-gray-600">Excelente blancura, resistencia y compatibilidad con todo tipo de impresoras.</p>
+              <p className="text-sm text-gray-600 font-bold">Excelente blancura, resistencia y compatibilidad con todo tipo de impresoras.</p>
             </div>
           </div>
 
@@ -267,7 +266,7 @@ const ProductosResmas = () => {
                 <Leaf className="w-8 h-8 text-emerald-600" />
               </div>
               <h4 className="text-lg font-medium text-gray-900">Sin Blanqueadores Químicos</h4>
-              <p className="text-sm text-gray-600">NAT: proceso libre de blanqueadores químicos y cloro elemental, protegiendo ecosistemas acuáticos y la salud.</p>
+              <p className="text-sm text-gray-600 font-bold">NAT: proceso libre de blanqueadores químicos y cloro elemental, protegiendo ecosistemas acuáticos y la salud.</p>
             </div>
             
             <div className="text-center space-y-4">
@@ -275,7 +274,7 @@ const ProductosResmas = () => {
                 <CheckCircle className="w-8 h-8 text-emerald-600" />
               </div>
               <h4 className="text-lg font-medium text-gray-900">Larga Durabilidad</h4>
-              <p className="text-sm text-gray-600">Papel resistente al paso del tiempo, ideal para archivos y documentos importantes.</p>
+              <p className="text-sm text-gray-600 font-bold">Papel resistente al paso del tiempo, ideal para archivos y documentos importantes.</p>
             </div>
             
             <div className="text-center space-y-4">
@@ -283,7 +282,7 @@ const ProductosResmas = () => {
                 <Users className="w-8 h-8 text-emerald-600" />
               </div>
               <h4 className="text-lg font-medium text-gray-900">Responsabilidad Social</h4>
-              <p className="text-sm text-gray-600">Cada compra apoya cadenas de reciclaje y programas de sustentabilidad local.</p>
+              <p className="text-sm text-gray-600 font-bold">Cada compra apoya cadenas de reciclaje y programas de sustentabilidad local.</p>
             </div>
           </div>
         </div>

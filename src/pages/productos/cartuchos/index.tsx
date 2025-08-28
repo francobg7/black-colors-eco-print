@@ -199,9 +199,7 @@ const ProductosCartuchos = () => {
                       alt="Cartucho 662 XXL"
                       className="w-full h-full object-cover drop-shadow-lg transition-transform duration-500"
                     />
-                    <div className="absolute -top-4 -right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                      Popular
-                    </div>
+                    
                   </div>
                 </div>
 
