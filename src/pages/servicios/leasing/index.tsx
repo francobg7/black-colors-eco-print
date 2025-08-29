@@ -1,7 +1,7 @@
 
 import { CheckCircle, Shield, TrendingUp, Printer, Package, Recycle } from 'lucide-react';
 import Footer from '@/components/Footer';
-import WhatsAppInlineButton from '@/components/WhatsAppInlineButton';
+import WhatsAppButtonSecondary from '@/components/WhatsAppButtonSecondary';
 
 const Leasing = () => {
 
@@ -184,6 +184,14 @@ const Leasing = () => {
             <p className="text-lg text-gray-600 leading-relaxed font-bold mb-8">
               Contáctanos hoy y te asesoramos sin compromiso. Juntos, podemos lograr un modelo de trabajo más eficiente, económico y alineado con los desafíos ambientales de nuestro tiempo.
             </p>
+            
+            <WhatsAppButtonSecondary
+              customMessage="Hola, me interesa el servicio de leasing sustentable de impresoras."
+              className="bg-emerald-500 hover:bg-emerald-600 shadow-lg px-8 py-3 text-lg"
+              size="lg"
+            >
+              Solicitar Información de Leasing
+            </WhatsAppButtonSecondary>
           </div>
         </div>
       </section>
