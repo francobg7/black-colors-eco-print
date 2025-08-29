@@ -578,7 +578,7 @@ const ProductosImpresoras = () => {
         title={seoTitle}
         description={seoDescription}
         keywords="impresoras, impresoras láser, impresoras multifunción, plotters, ScanNCut, Brother, impresoras tinta continua, impresoras para empresas, equipos de oficina, impresión"
-        ogImage="/images/impresoras/portada.jpg"
+        ogImage="/images/hero-impresoras.png"
         category="Impresoras"
         structuredData={{
           "@context": "https://schema.org",
@@ -614,7 +614,7 @@ const ProductosImpresoras = () => {
         {/* Hero Background */}
         <div className="relative h-[500px] overflow-hidden">
           <img 
-            src="/images/impresoras/portada.jpg" 
+            src="/images/hero-impresoras.png" 
             alt="Impresoras Hero"
             className="w-full h-full object-cover"
           />
