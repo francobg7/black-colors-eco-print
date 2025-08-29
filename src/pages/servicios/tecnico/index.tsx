@@ -194,7 +194,7 @@ const ServicioTecnico = () => {
             <div className="space-y-6">
               <h4 className="text-2xl font-bold text-gray-900">Experiencia y Profesionalismo</h4>
               <p className="text-gray-600 leading-relaxed font-bold">
-                Más de 15 años de experiencia en el sector de impresión y tecnología, con un equipo de técnicos certificados y en constante formación.
+                Más de 18 años de experiencia en el sector de impresión y tecnología, con un equipo de técnicos certificados y en constante formación.
               </p>
               <p className="text-gray-600 leading-relaxed font-bold">
                 Trabajamos con las mejores marcas del mercado, especializándonos en equipos Brother para garantizar la máxima calidad en cada intervención.
