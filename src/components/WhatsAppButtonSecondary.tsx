@@ -27,6 +27,8 @@ const WhatsAppButtonSecondary: React.FC<WhatsAppButtonSecondaryProps> = ({
     const message = customMessage || 'Hola, me interesa obtener más información sobre sus productos y servicios de Black Colors Eco Print.';
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${secondaryPhoneNumber.replace(/[^0-9]/g, '')}?text=${encodedMessage}`;
+    console.log('WhatsAppButtonSecondary - Número:', secondaryPhoneNumber);
+    console.log('WhatsAppButtonSecondary - URL:', whatsappUrl);
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
 
@@ -47,13 +49,15 @@ const WhatsAppButtonSecondary: React.FC<WhatsAppButtonSecondaryProps> = ({
       size={size}
       className={`${buttonVariants[variant]} ${className} transition-all duration-200 gap-2`}
       aria-label="Contactar por WhatsApp"
+      title={`WhatsApp: ${secondaryPhoneNumber}`}
     >
       {showIcon && (
         <MessageCircle className={`${
           size === 'sm' ? 'w-4 h-4' : size === 'lg' ? 'w-6 h-6' : 'w-5 h-5'
         }`} />
       )}
-      {children || 'Contactar por WhatsApp'}
+      {children || 'WhatsApp SECUNDARIO'}
+      <span className="text-xs opacity-75">(+595986759882)</span>
       <ExternalLink className="w-3 h-3 opacity-60" />
     </Button>
   );
