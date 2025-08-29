@@ -150,7 +150,7 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:items-center md:gap-8 lg:gap-12">
             <nav aria-label="Global">
-              <ul className="flex items-center gap-4 lg:gap-6 text-xs lg:text-sm">
+              <ul className="flex items-center gap-4 lg:gap-6 text-sm lg:text-base">
                 {navItems.map((item) => (
                   <li key={item.name} className="relative">
                     {item.hasSubmenu ? (
