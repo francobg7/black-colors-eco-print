@@ -147,8 +147,8 @@ const Leasing = () => {
                 {/* Botón de descarga */}
                 <div className="flex-shrink-0">
                   <a 
-                    href="/pdf/Impresión Sustentable - Black Colors Brochure.pdf" 
-                    download="Impresión Sustentable - Black Colors Brochure.pdf"
+                    href="/pdf/Impresion-sustentable.pdf" 
+                    download="Impresion-sustentable.pdf"
                     className="inline-flex items-center gap-3 bg-white text-emerald-600 px-6 py-3 rounded-xl font-bold text-base transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-emerald-50 focus:outline-none focus:ring-4 focus:ring-white/30"
                   >
                     <Download className="w-5 h-5" />
