@@ -1,5 +1,5 @@
 
-import { CheckCircle, Shield, TrendingUp, Printer, Package, Recycle } from 'lucide-react';
+import { CheckCircle, Shield, TrendingUp, Printer, Package, Recycle, Download, FileText } from 'lucide-react';
 import Footer from '@/components/Footer';
 import WhatsAppButtonSecondary from '@/components/WhatsAppButtonSecondary';
 
@@ -121,6 +121,41 @@ const Leasing = () => {
               <p className="text-gray-600 leading-relaxed font-bold text-center">
                 Uno de los pilares de nuestro servicio es el manejo sustentable de los residuos. Todo lo que utilizás desde cartuchos hasta componentes entra en un sistema de trazabilidad de desechos, con una gestión final adecuada y segura. Así, garantizamos que nada termine en vertederos sin tratamiento, contribuyendo activamente a una economía circular.
               </p>
+            </div>
+          </div>
+
+          {/* Nueva sección de descarga de PDF */}
+          <div className="max-w-6xl mx-auto mb-20">
+            <div className="bg-gradient-to-r from-emerald-500 to-green-600 rounded-2xl p-6 text-white shadow-2xl border border-emerald-200/20">
+              <div className="flex items-center justify-between gap-8">
+                {/* Icono y contenido principal */}
+                <div className="flex items-center gap-6">
+                  <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm flex-shrink-0">
+                    <FileText className="w-8 h-8 text-white" />
+                  </div>
+                  
+                  <div className="text-left">
+                    <h4 className="text-2xl font-bold mb-2">
+                      📋 Descarga Nuestro Brochure Completo
+                    </h4>
+                    <p className="text-lg text-emerald-50 leading-relaxed">
+                      Obtené información detallada sobre nuestro servicio de leasing sustentable, beneficios y precios.
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Botón de descarga */}
+                <div className="flex-shrink-0">
+                  <a 
+                    href="/pdf/Impresión Sustentable - Black Colors Brochure.pdf" 
+                    download="Impresión Sustentable - Black Colors Brochure.pdf"
+                    className="inline-flex items-center gap-3 bg-white text-emerald-600 px-6 py-3 rounded-xl font-bold text-base transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-emerald-50 focus:outline-none focus:ring-4 focus:ring-white/30"
+                  >
+                    <Download className="w-5 h-5" />
+                    Descargar PDF
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
