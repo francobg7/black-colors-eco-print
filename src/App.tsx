@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Navigation from "./components/Navigation";
 
@@ -34,6 +34,26 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// Componente para manejar el WhatsApp Button con número dinámico
+const WhatsAppButtonWrapper = () => {
+  const location = useLocation();
+  
+  // Número secundario para páginas específicas
+  const secondaryPhoneNumber = '+595986759882';
+  
+  // Rutas que deben usar el número secundario
+  const secondaryPhoneRoutes = ['/servicios/leasing', '/servicios/alquileres'];
+  
+  // Verificar si la ruta actual requiere el número secundario
+  const shouldUseSecondaryNumber = secondaryPhoneRoutes.includes(location.pathname);
+  
+  return (
+    <WhatsAppButton 
+      customPhoneNumber={shouldUseSecondaryNumber ? secondaryPhoneNumber : undefined}
+    />
+  );
+};
+
 const App = () => (
   <HelmetProvider>
     <QueryClientProvider client={queryClient}>
@@ -63,7 +83,7 @@ const App = () => (
             <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
           </Routes>
         </div>
-        <WhatsAppButton />
+        <WhatsAppButtonWrapper />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

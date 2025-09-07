@@ -26,6 +26,14 @@
       "dest": "/$1"
     },
     {
+      "src": "/pdf/(.*\\.pdf)",
+      "dest": "/pdf/$1",
+      "headers": {
+        "content-type": "application/pdf",
+        "cache-control": "public, max-age=86400"
+      }
+    },
+    {
       "src": "/index.html",
       "status": 301,
       "headers": { "Location": "/" }

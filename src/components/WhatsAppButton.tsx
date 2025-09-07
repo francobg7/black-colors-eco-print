@@ -5,15 +5,17 @@ import { useWhatsApp } from '@/hooks/useWhatsApp';
 interface WhatsAppButtonProps {
   position?: 'bottom-right' | 'bottom-left';
   customMessage?: string;
+  customPhoneNumber?: string;
 }
 
 const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
   position = 'bottom-right',
-  customMessage
+  customMessage,
+  customPhoneNumber
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
-  const { isBusinessHours, openWhatsApp, config } = useWhatsApp();
+  const { isBusinessHours, openWhatsApp, config } = useWhatsApp(customPhoneNumber);
 
   const handleClick = () => {
     openWhatsApp(customMessage);

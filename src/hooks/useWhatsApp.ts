@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { whatsappConfig } from '@/config/whatsapp';
 
-export const useWhatsApp = () => {
+export const useWhatsApp = (customPhoneNumber?: string) => {
   const [isBusinessHours, setIsBusinessHours] = useState(true);
   const location = useLocation();
 
@@ -45,7 +45,9 @@ export const useWhatsApp = () => {
   const openWhatsApp = (customMessage?: string) => {
     const message = customMessage || getCurrentMessage();
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${whatsappConfig.phoneNumber.replace(/[^0-9]/g, '')}?text=${encodedMessage}`;
+    // Usar el número personalizado si se proporciona, sino usar el número de configuración
+    const phoneNumber = customPhoneNumber || whatsappConfig.phoneNumber;
+    const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, '')}?text=${encodedMessage}`;
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
 
