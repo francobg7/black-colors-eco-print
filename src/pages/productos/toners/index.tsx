@@ -411,7 +411,7 @@ const ProductosToners = () => {
                       HP Compatible
                     </span>
                     <h3 className="text-3xl font-light text-gray-900 mb-3">
-                      TONER 32A
+                      TONER 30A
                     </h3>
                     <p className="text-gray-600 leading-relaxed mb-6">
                       Toner premium con tecnología de última generación. Garantiza resultados excepcionales 

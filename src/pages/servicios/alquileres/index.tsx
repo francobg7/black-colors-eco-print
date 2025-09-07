@@ -1,5 +1,6 @@
 import { CheckCircle, Wrench, Headphones, Zap, Shield, TrendingUp } from 'lucide-react';
 import Footer from '@/components/Footer';
+import WhatsAppButtonSecondary from '@/components/WhatsAppButtonSecondary';
 
 const Alquileres = () => {
   return (
@@ -253,6 +254,14 @@ const Alquileres = () => {
               <p className="text-lg text-gray-600 leading-relaxed font-bold">
                 Equipos de impresión de alta calidad disponibles para alquiler a corto y largo plazo.
               </p>
+              
+              <WhatsAppButtonSecondary
+                customMessage="Hola, me interesa el servicio de alquiler de impresoras."
+                className="bg-emerald-500 hover:bg-emerald-600 shadow-lg px-8 py-3 text-lg mt-6"
+                size="lg"
+              >
+                Solicitar Información de Alquiler
+              </WhatsAppButtonSecondary>
             </div>
           </div>
         </div>
