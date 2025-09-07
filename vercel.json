@@ -5,7 +5,19 @@
   "routes": [
     {
       "src": "/sitemap.xml",
-      "dest": "/sitemap.xml"
+      "dest": "/sitemap.xml",
+      "headers": {
+        "content-type": "application/xml",
+        "cache-control": "public, max-age=3600"
+      }
+    },
+    {
+      "src": "/robots.txt", 
+      "dest": "/robots.txt",
+      "headers": {
+        "content-type": "text/plain",
+        "cache-control": "public, max-age=3600"
+      }
     },
     {
       "src": "/images/(.*)",

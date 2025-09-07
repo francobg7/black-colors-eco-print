@@ -1,12 +1,8 @@
-# *
 User-agent: *
 Allow: /
-Disallow: /admin
-Disallow: /private
-Disallow: /api/*
 
-# Host
-Host: https://www.blackcolors.com.py
+# Excluir páginas no relevantes para SEO
+Disallow: /404
 
-# Sitemaps
-Sitemap: https://www.blackcolors.com.py/sitemap.xml
+# Sitemap
+Sitemap: https://blackcolors.com.py/sitemap.xml
