@@ -83,7 +83,7 @@ const App = () => (
             <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
           </Routes>
         </div>
-        <WhatsAppButtonWrapper />
+        {/* <WhatsAppButtonWrapper /> */}
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
