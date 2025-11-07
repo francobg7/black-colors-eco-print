@@ -64,13 +64,39 @@ generateSitemap();
 
 // Also generate a robots.txt file with improved directives
 function generateRobotsTxt() {
-  const robotsTxt = `User-agent: *
+  const robotsTxt = `# ======================================================
+# Robots.txt para https://blackcolors.com.py
+# Optimizado para Vercel + Vite SPA
+# ======================================================
+
+User-agent: *
+# Permitir acceso normal a las páginas legítimas
 Allow: /
 
-# Excluir páginas no relevantes para SEO
+# Bloquear rutas falsas o extensiones usadas por bots
+Disallow: /*.htm$
+Disallow: /*.html$
+Disallow: /*.php$
+Disallow: /*.asp$
+Disallow: /*.aspx$
+Disallow: /*?
+Disallow: /*cgi-bin/
+Disallow: /*tmp/
+Disallow: /*admin/
 Disallow: /404
+Disallow: /error
 
-# Sitemap
+# Bloquear bots de scraping o spam
+User-agent: MJ12bot
+Disallow: /
+User-agent: AhrefsBot
+Disallow: /
+User-agent: DotBot
+Disallow: /
+User-agent: BLEXBot
+Disallow: /
+
+# Sitemap oficial
 Sitemap: ${domain}/sitemap.xml
 `;
 
