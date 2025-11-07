@@ -12,19 +12,16 @@ interface SEOProps {
   noIndex?: boolean; // For pages we don't want indexed
   category?: string; // For categorizing content
   lang?: string; // For specifying page language
-  // Product specific props
+  // Product specific props (without pricing - for catalog only)
   product?: {
     name: string;
     image: string;
     description: string;
     sku?: string;
     brand?: string;
-    price?: number;
-    priceCurrency?: string;
-    availability?: 'InStock' | 'OutOfStock' | 'PreOrder';
     category?: string;
   };
-  // Service specific props
+  // Service specific props (without pricing - for catalog only)
   service?: {
     name: string;
     image?: string;
@@ -32,8 +29,6 @@ interface SEOProps {
     provider?: string;
     serviceType?: string;
     areaServed?: string;
-    price?: number;
-    priceCurrency?: string;
   };
 }
 
@@ -114,16 +109,7 @@ const SEO = ({
     ...(product.brand && { brand: {
       '@type': 'Brand',
       name: product.brand
-    }}),
-    ...(product.price && { 
-      offers: {
-        '@type': 'Offer',
-        price: product.price,
-        priceCurrency: product.priceCurrency || 'PYG',
-        availability: `https://schema.org/${product.availability || 'InStock'}`,
-        url: currentUrl
-      }
-    })
+    }})
   } : null;
 
   // Service schema (if service data is provided)
@@ -141,13 +127,6 @@ const SEO = ({
     ...(service.areaServed && { areaServed: service.areaServed }),
     ...(service.image && { 
       image: service.image.startsWith('http') ? service.image : `${siteUrl}${service.image}` 
-    }),
-    ...(service.price && {
-      offers: {
-        '@type': 'Offer',
-        price: service.price,
-        priceCurrency: service.priceCurrency || 'PYG',
-      }
     })
   } : null;
 

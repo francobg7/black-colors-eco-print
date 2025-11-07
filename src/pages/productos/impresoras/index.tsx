@@ -594,16 +594,6 @@ const ProductosImpresoras = () => {
               "brand": {
                 "@type": "Brand",
                 "name": "Brother"
-              },
-              "offers": {
-                "@type": "Offer",
-                "availability": "https://schema.org/InStock",
-                "priceCurrency": "PYG",
-                "price": "Consultar",
-                "seller": {
-                  "@type": "Organization",
-                  "name": "Black Colors Eco Print"
-                }
               }
             }
           }))
