@@ -1,4 +1,4 @@
-import { LucideIcon, Calendar, MapPin, Clock, Users, Star, Gift, Wrench, Camera, Tag, CheckCircle, Mail } from 'lucide-react';
+import { LucideIcon, Gift, Wrench, Camera, Tag } from 'lucide-react';
 
 // Tipos de datos
 export interface Beneficio {
