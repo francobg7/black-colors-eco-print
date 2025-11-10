@@ -5,6 +5,20 @@
   "outputDirectory": "dist",
   "routes": [
     {
+      "src": "/sitemap\\.xml$",
+      "headers": {
+        "Content-Type": "application/xml",
+        "Cache-Control": "public, max-age=3600"
+      }
+    },
+    {
+      "src": "/robots\\.txt$",
+      "headers": {
+        "Content-Type": "text/plain",
+        "Cache-Control": "public, max-age=3600"
+      }
+    },
+    {
       "src": "/index.html",
       "status": 301,
       "headers": { "Location": "/" }
@@ -31,22 +45,6 @@
     { "src": "/wp-includes(.*)", "status": 410 },
     { "src": "/admin(.*)", "status": 410 },
     { "src": "/administrator(.*)", "status": 410 },
-    {
-      "src": "/sitemap.xml",
-      "dest": "/sitemap.xml",
-      "headers": {
-        "Content-Type": "application/xml",
-        "Cache-Control": "public, max-age=3600"
-      }
-    },
-    {
-      "src": "/robots.txt",
-      "dest": "/robots.txt",
-      "headers": {
-        "Content-Type": "text/plain",
-        "Cache-Control": "public, max-age=3600"
-      }
-    },
     {
       "src": "/images/(.*)",
       "dest": "/images/$1",
