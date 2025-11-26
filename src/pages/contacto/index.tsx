@@ -1,9 +1,11 @@
 
-import { MapPin, User, Phone, Clock, Building } from 'lucide-react';
+import { MapPin, Phone, Clock, Building } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import WhatsAppInlineButton from '@/components/WhatsAppInlineButton';
 import Footer from '@/components/Footer';
 import MapComponent from '@/components/MapComponent';
+import servicioDifImage from '/images/servicio-dif.webp';
+import nosotrosSectionImage from '/images/nosotros-section.webp';
 
 const Contacto = () => {
 
@@ -16,7 +18,7 @@ const Contacto = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/images/servicio-dif.webp)',
+            backgroundImage: `url(${servicioDifImage})`,
             filter: 'brightness(0.25)'
           }}
         />
@@ -65,7 +67,7 @@ const Contacto = () => {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl border-2 border-emerald-400/30">
                 <img 
-                  src="/images/nosotros-section.webp" 
+                  src={nosotrosSectionImage} 
                   alt="Black Colors Eco Print" 
                   className="w-full h-auto object-cover"
                 />
