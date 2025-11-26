@@ -5,6 +5,10 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
+      "source": "/feedback/((?!general).*)",
+      "destination": "/api/feedback/general"
+    },
+    {
       "source": "/((?!api|_next|_static|images|assets|pdf|sitemap\\.xml|robots\\.txt).*)",
       "destination": "/index.html"
     }
