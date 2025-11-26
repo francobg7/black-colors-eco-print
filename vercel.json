@@ -3,91 +3,192 @@
   "framework": "vite",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "routes": [
+  "rewrites": [
     {
-      "src": "/sitemap\\.xml$",
-      "headers": {
-        "Content-Type": "application/xml",
-        "Cache-Control": "public, max-age=3600"
-      }
+      "source": "/((?!api|_next|_static|images|assets|pdf|sitemap\\.xml|robots\\.txt).*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
     },
     {
-      "src": "/robots\\.txt$",
-      "headers": {
-        "Content-Type": "text/plain",
-        "Cache-Control": "public, max-age=3600"
-      }
+      "source": "/robots.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
     },
     {
-      "src": "/index.html",
-      "status": 301,
-      "headers": { "Location": "/" }
+      "source": "/images/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
     },
     {
-      "src": "/(.*)/index.html",
-      "status": 301,
-      "headers": { "Location": "/$1" }
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     },
     {
-      "src": "^/(.*)/+$",
-      "status": 301,
-      "headers": { "Location": "/$1" }
-    },
-    { "src": "/(.*)\\.htm$", "status": 410 },
-    { "src": "/(.*)\\.html$", "status": 410 },
-    { "src": "/(.*)\\.php$", "status": 410 },
-    { "src": "/(.*)\\.asp$", "status": 410 },
-    { "src": "/(.*)\\.aspx$", "status": 410 },
-    { "src": "/(.*)\\.jsp$", "status": 410 },
-    { "src": "/(.*)\\.cgi$", "status": 410 },
-    { "src": "/wp-admin(.*)", "status": 410 },
-    { "src": "/wp-content(.*)", "status": 410 },
-    { "src": "/wp-includes(.*)", "status": 410 },
-    { "src": "/admin(.*)", "status": 410 },
-    { "src": "/administrator(.*)", "status": 410 },
-    {
-      "src": "/images/(.*)",
-      "dest": "/images/$1",
-      "headers": {
-        "Cache-Control": "public, max-age=86400",
-        "Access-Control-Allow-Origin": "*"
-      }
+      "source": "/(.*\\.(js|css|woff|woff2|ttf|eot))",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     },
     {
-      "src": "/assets/(.*)",
-      "headers": {
-        "Cache-Control": "public, max-age=31536000, immutable"
-      }
+      "source": "/pdf/(.*\\.pdf)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/pdf"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
     },
     {
-      "src": "/(.*\\.(js|css|woff|woff2|ttf|eot))",
-      "headers": {
-        "Cache-Control": "public, max-age=31536000, immutable"
-      }
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000; includeSubDomains"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self' https:; media-src 'self' https:; object-src 'none'; base-uri 'self'; form-action 'self'"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
     },
     {
-      "src": "/pdf/(.*\\.pdf)",
-      "dest": "/pdf/$1",
-      "headers": {
-        "Content-Type": "application/pdf",
-        "Cache-Control": "public, max-age=86400"
-      }
+      "source": "/(.*)/index.html",
+      "destination": "/$1",
+      "permanent": true
     },
     {
-      "src": "/(.*)",
-      "headers": {
-        "X-Frame-Options": "DENY",
-        "X-Content-Type-Options": "nosniff",
-        "X-XSS-Protection": "1; mode=block",
-        "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
-        "Referrer-Policy": "strict-origin-when-cross-origin",
-        "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self' https:; media-src 'self' https:; object-src 'none'; base-uri 'self'; form-action 'self'",
-        "Permissions-Policy": "camera=(), microphone=(), geolocation=(), interest-cohort=()"
-      }
+      "source": "^/(.*)/+$",
+      "destination": "/$1",
+      "permanent": true
     },
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/(.*)\\.htm$",
+      "destination": "/404",
+      "statusCode": 410
+    },
+    {
+      "source": "/(.*)\\.html$",
+      "destination": "/404",
+      "statusCode": 410
+    },
+    {
+      "source": "/(.*)\\.php$",
+      "destination": "/404",
+      "statusCode": 410
+    },
+    {
+      "source": "/(.*)\\.asp$",
+      "destination": "/404",
+      "statusCode": 410
+    },
+    {
+      "source": "/(.*)\\.aspx$",
+      "destination": "/404",
+      "statusCode": 410
+    },
+    {
+      "source": "/(.*)\\.jsp$",
+      "destination": "/404",
+      "statusCode": 410
+    },
+    {
+      "source": "/(.*)\\.cgi$",
+      "destination": "/404",
+      "statusCode": 410
+    },
+    {
+      "source": "/wp-admin(.*)",
+      "destination": "/404",
+      "statusCode": 410
+    },
+    {
+      "source": "/wp-content(.*)",
+      "destination": "/404",
+      "statusCode": 410
+    },
+    {
+      "source": "/wp-includes(.*)",
+      "destination": "/404",
+      "statusCode": 410
+    },
+    {
+      "source": "/admin(.*)",
+      "destination": "/404",
+      "statusCode": 410
+    },
+    {
+      "source": "/administrator(.*)",
+      "destination": "/404",
+      "statusCode": 410
     }
   ],
   "public": true

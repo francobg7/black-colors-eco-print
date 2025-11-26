@@ -38,7 +38,7 @@ const SEO = ({
   canonicalUrl = 'https://blackcolors.com.py',
   ogType = 'website',
   ogImage = '/images/logos/logo-og.jpg',
-  keywords = 'impresoras, toners, cartuchos, leasing sustentable, alquileres, servicio técnico',
+  keywords = 'cartuchos remanufacturados Paraguay, impresoras Brother, toners, papel sustentable, leasing impresoras, servicio técnico Asunción, tintas ecológicas, papel NAT',
   structuredData,
   alternateUrls,
   noIndex = false,

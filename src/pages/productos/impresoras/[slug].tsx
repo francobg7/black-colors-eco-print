@@ -1236,7 +1236,7 @@ const DetalleImpresora = () => {
           {/* Hero Background */}
           <div className="relative h-[400px] overflow-hidden">
             <img 
-              src="/images/impresoras/portada.jpg" 
+              src="/images/impresoras/portada-hero.webp" 
               alt="Impresoras Hero"
               className="w-full h-full object-cover"
             />

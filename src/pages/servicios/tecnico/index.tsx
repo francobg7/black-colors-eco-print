@@ -9,7 +9,7 @@ const ServicioTecnico = () => {
         {/* Hero Background */}
         <div className="relative h-[600px] overflow-hidden">
           <img 
-            src="/images/servicios/tecnico/1.jpg" 
+            src="/images/servicios/tecnico/tecnico-hero.webp" 
             alt="Servicio Técnico Hero"
             className="w-full h-full object-cover"
           />
@@ -61,7 +61,7 @@ const ServicioTecnico = () => {
             <div className="space-y-6 bg-green-50/30 rounded-3xl p-8 border border-green-100/50 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-emerald-200/50 cursor-pointer group">
               <div className="w-full h-32 rounded-2xl overflow-hidden mb-6">
                 <img 
-                  src="/images/servicios/tecnico/a.jpg" 
+                  src="/images/servicios/tecnico/diagnostico-section.webp" 
                   alt="Diagnóstico Técnico de Impresoras" 
                   className="w-full h-full object-cover"
                 />
@@ -81,7 +81,7 @@ const ServicioTecnico = () => {
             <div className="space-y-6 bg-green-50/30 rounded-3xl p-8 border border-green-100/50 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-emerald-200/50 cursor-pointer group">
               <div className="w-full h-32 rounded-2xl overflow-hidden mb-6">
                 <img 
-                  src="/images/servicios/tecnico/b.jpg" 
+                  src="/images/servicios/tecnico/repuesto-section.webp" 
                   alt="Repuestos Originales Brother" 
                   className="w-full h-full object-cover"
                 />
@@ -101,7 +101,7 @@ const ServicioTecnico = () => {
             <div className="space-y-6 bg-green-50/30 rounded-3xl p-8 border border-green-100/50 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-emerald-200/50 cursor-pointer group">
               <div className="w-full h-32 rounded-2xl overflow-hidden mb-6">
                 <img 
-                  src="/images/servicios/tecnico/c.jpg" 
+                  src="/images/servicios/tecnico/mantenimiento-sect.webp" 
                   alt="Mantenimiento de Impresoras" 
                   className="w-full h-full object-cover"
                 />

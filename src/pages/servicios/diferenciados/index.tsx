@@ -9,7 +9,7 @@ const ServiciosDiferenciados = () => {
         {/* Hero Background */}
         <div className="relative h-[600px] overflow-hidden">
           <img 
-            src="/images/hero-servicio-diferenciado.jpg" 
+            src="/images/hero-servicio-diferenciado.webp" 
             alt="Servicios Diferenciados Hero"
             className="w-full h-full object-cover"
           />

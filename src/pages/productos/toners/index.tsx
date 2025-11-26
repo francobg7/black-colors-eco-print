@@ -111,12 +111,12 @@ const ProductosToners = () => {
   
   const toner203UImages = [
     {
-      src: '/images/toners/toner-203U.png',
+      src: '/images/toners/toner-203U.webp',
       alt: 'Toner 203U - Vista principal',
       label: 'Vista Principal'
     },
     {
-      src: '/images/toners/toner-203U-2.png',
+      src: '/images/toners/toner-203U-2.webp',
       alt: 'Toner 203U - Vista lateral',
       label: 'Vista Lateral'
     }
@@ -124,12 +124,12 @@ const ProductosToners = () => {
 
   const toner32AImages = [
     {
-      src: '/images/toners/toner-32A.png',
+      src: '/images/toners/toner-32A.webp',
       alt: 'Toner 32A - Vista principal',
       label: 'Vista Principal'
     },
     {
-      src: '/images/toners/toner-32A-2.png',
+      src: '/images/toners/toner-32A-2.webp',
       alt: 'Toner 32A - Vista adicional',
       label: 'Vista Adicional'
     }
@@ -150,7 +150,7 @@ const ProductosToners = () => {
         {/* Hero Background */}
         <div className="relative h-[70vh] overflow-hidden">
           <img 
-            src="/images/toners/toner-105A.jpg" 
+            src="/images/toners/toner-105A.webp" 
             alt="Toners Hero"
             className="w-full h-full object-cover"
           />
@@ -185,7 +185,7 @@ const ProductosToners = () => {
                 <div className="relative bg-white p-12 flex items-center justify-center">
                   <div className="relative w-full max-w-md h-80">
                     <img 
-                      src="/images/toners/toner-105A.jpg"
+                      src="/images/toners/toner-105A.webp"
                       alt="Toner 105A"
                       className="w-full h-full object-cover rounded-lg drop-shadow-lg"
                     />

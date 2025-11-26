@@ -67,7 +67,7 @@ const Leasing = () => {
             <div className="space-y-6 bg-green-50/30 rounded-3xl p-8 border border-green-100/50 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer">
               <div className="w-full h-48 rounded-2xl overflow-hidden mb-6">
                 <img 
-                  src="/images/servicios/alquileres/hero.jpg" 
+                  src="/images/servicios/alquileres/hero-alquileres.webp" 
                   alt="Impresora de Alta Calidad" 
                   className="w-full h-full object-cover"
                 />

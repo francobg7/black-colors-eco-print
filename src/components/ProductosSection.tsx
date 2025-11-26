@@ -54,7 +54,7 @@ const ProductosSection = () => (
 						}}
 					></div>
 					<img
-						src="/images/productos.png"
+						src="/images/productos-section.webp"
 						alt="Productos Black Colors - Impresora Brother y papel sustentable NAT"
 						className="w-full h-48 sm:h-72 md:h-96 lg:h-[600px] object-cover rounded-3xl shadow-2xl relative z-10"
 					/>

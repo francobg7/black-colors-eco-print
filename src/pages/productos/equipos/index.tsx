@@ -484,7 +484,7 @@ const ProductosEquipos = () => {
         {/* Hero Background */}
         <div className="relative h-[500px] overflow-hidden">
           <img 
-            src="/images/hero-equipos.png" 
+            src="/images/hero-equipos.webp" 
             alt="Equipos Hero"
             className="w-full h-full object-cover"
           />

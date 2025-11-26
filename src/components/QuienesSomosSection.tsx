@@ -25,7 +25,7 @@ const QuienesSomosSection = () => (
         <div className="relative">
           <div className="absolute -inset-3 rounded-2xl blur-xl" style={{ background: 'linear-gradient(135deg, rgba(195,232,164,0.2), rgba(47,158,68,0.2))' }}></div>
           <img 
-            src="/images/quienes-somos.png"
+            src="/images/quienes-somos.webp"
             alt="Equipo Black Colors"
             className="w-full h-80 md:h-96 lg:h-[28rem] object-cover rounded-2xl shadow-2xl relative z-10 transform hover:scale-105 transition-transform duration-500"
           />

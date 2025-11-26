@@ -16,7 +16,7 @@ const Contacto = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/images/servicio-dif.jpg)',
+            backgroundImage: 'url(/images/servicio-dif.webp)',
             filter: 'brightness(0.25)'
           }}
         />
@@ -65,7 +65,7 @@ const Contacto = () => {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl border-2 border-emerald-400/30">
                 <img 
-                  src="/images/nosotros2.jpg" 
+                  src="/images/nosotros-section.webp" 
                   alt="Black Colors Eco Print" 
                   className="w-full h-auto object-cover"
                 />

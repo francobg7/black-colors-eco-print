@@ -80,7 +80,7 @@ const Eventos = () => {
         title="Eventos y Novedades"
         description="Participa en nuestros eventos y mantente actualizado con las últimas novedades y tendencias en tecnología de impresión y soluciones sustentables"
         ogType="website"
-        ogImage="/images/eventos/hero-eventos.png"
+        ogImage="/images/eventos/hero-eventos.webp"
         keywords="eventos, novedades, black colors, impresoras, tecnología, sustentabilidad, talleres, lanzamientos"
         category="Eventos"
       />
@@ -89,7 +89,7 @@ const Eventos = () => {
         {/* Hero Background */}
         <div className="relative h-[500px] overflow-hidden">
           <img 
-            src="/images/eventos/hero-eventos.png" 
+            src="/images/eventos/hero-eventos.webp" 
             alt="Eventos Hero"
             className="w-full h-full object-cover"
             onError={(e) => {
