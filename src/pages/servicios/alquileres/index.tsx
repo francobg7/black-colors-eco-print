@@ -1,10 +1,46 @@
 import { CheckCircle, Wrench, Headphones, Zap, Shield, TrendingUp } from 'lucide-react';
 import Footer from '@/components/Footer';
 import WhatsAppButtonSecondary from '@/components/WhatsAppButtonSecondary';
+import SEO from '@/components/SEO';
 
 const Alquileres = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50/30 to-white">
+    <>
+      <SEO
+        title="Alquiler de Impresoras - Servicio Flexible y Económico"
+        description="Alquila impresoras Brother con servicio técnico incluido. Planes flexibles mensuales, mantenimiento y soporte técnico garantizado. Sin inversión inicial."
+        keywords="alquiler impresoras, renta impresoras, alquiler equipos oficina, impresoras Brother alquiler, servicio técnico incluido, planes mensuales, alquiler impresoras Asunción"
+        ogImage="/images/servicios/alquileres/hero-alquileres.webp"
+        category="Servicios"
+        includeNavigation={true}
+        navigationContext="servicios"
+        service={{
+          name: "Alquiler de Impresoras",
+          description: "Servicio de alquiler de impresoras con mantenimiento y soporte técnico incluido",
+          provider: "Black Colors",
+          serviceType: "Alquiler de equipos",
+          areaServed: "Paraguay"
+        }}
+        faqItems={[
+          {
+            question: '¿Cuánto cuesta alquilar una impresora por mes?',
+            answer: 'Los precios de alquiler varían según el modelo y funcionalidades. Tenemos planes desde impresoras básicas monocromáticas hasta multifuncionales a color. Incluyen mantenimiento, soporte técnico y consumibles básicos. Solicita tu cotización personalizada.'
+          },
+          {
+            question: '¿El alquiler incluye servicio técnico y mantenimiento?',
+            answer: 'Sí, todos nuestros planes de alquiler incluyen mantenimiento preventivo, servicio técnico especializado y soporte in-situ. Garantizamos el funcionamiento óptimo del equipo durante todo el período de alquiler.'
+          },
+          {
+            question: '¿Puedo alquilar impresoras por períodos cortos?',
+            answer: 'Ofrecemos alquileres flexibles desde 1 mes hasta contratos anuales. Para eventos especiales, proyectos temporales o necesidades estacionales, tenemos opciones de alquiler a corto plazo con entrega y retiro incluidos.'
+          },
+          {
+            question: '¿Qué pasa si la impresora alquilada se daña?',
+            answer: 'Como parte del servicio, nos hacemos cargo de todas las reparaciones sin costo adicional. Si el equipo requiere reparación mayor, proporcionamos un reemplazo inmediato para que no interrumpas tus operaciones.'
+          }
+        ]}
+      />
+      <div className="min-h-screen bg-gradient-to-br from-green-50/30 to-white">
       {/* Hero Section with integrated information */}
       <div className="relative">
         {/* Hero Background */}
@@ -269,6 +305,7 @@ const Alquileres = () => {
 
       <Footer />
     </div>
+    </>
   );
 };
 

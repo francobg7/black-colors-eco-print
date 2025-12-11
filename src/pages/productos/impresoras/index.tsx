@@ -580,6 +580,8 @@ const ProductosImpresoras = () => {
         keywords="impresoras, impresoras láser, impresoras multifunción, plotters, ScanNCut, Brother, impresoras tinta continua, impresoras para empresas, equipos de oficina, impresión"
         ogImage="/images/hero-impresoras.png"
         category="Impresoras"
+        includeNavigation={true}
+        navigationContext="productos"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "ItemList",

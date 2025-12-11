@@ -1,5 +1,29 @@
 import { Helmet } from 'react-helmet-async';
 
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface LocalBusinessInfo {
+  name?: string;
+  address?: {
+    streetAddress?: string;
+    addressLocality?: string;
+    addressRegion?: string;
+    postalCode?: string;
+    addressCountry?: string;
+  };
+  geo?: {
+    latitude?: number;
+    longitude?: number;
+  };
+  openingHours?: string[];
+  priceRange?: string;
+  paymentAccepted?: string[];
+  currenciesAccepted?: string;
+}
+
 interface SEOProps {
   title: string;
   description: string;
@@ -12,6 +36,10 @@ interface SEOProps {
   noIndex?: boolean; // For pages we don't want indexed
   category?: string; // For categorizing content
   lang?: string; // For specifying page language
+  includeNavigation?: boolean; // Whether to include site navigation schema
+  navigationContext?: 'home' | 'productos' | 'servicios' | 'page'; // Context for navigation
+  faqItems?: FAQItem[]; // FAQ schema data
+  localBusiness?: LocalBusinessInfo; // Enhanced local business data
   // Product specific props (without pricing - for catalog only)
   product?: {
     name: string;
@@ -38,12 +66,16 @@ const SEO = ({
   canonicalUrl = 'https://blackcolors.com.py',
   ogType = 'website',
   ogImage = '/images/logos/logo-og.jpg',
-  keywords = 'cartuchos remanufacturados Paraguay, impresoras Brother, toners, papel sustentable, leasing impresoras, servicio técnico Asunción, tintas ecológicas, papel NAT',
+  keywords = 'cartuchos, toners reciclables Paraguay, impresoras Brother, toners, papel sustentable, leasing impresoras, servicio técnico Asunción, tintas ecológicas, papel NAT',
   structuredData,
   alternateUrls,
   noIndex = false,
   category,
   lang = 'es-PY',
+  includeNavigation = false,
+  navigationContext = 'page',
+  faqItems,
+  localBusiness,
   product,
   service,
 }: SEOProps) => {
@@ -77,25 +109,128 @@ const SEO = ({
     }
   };
 
-  // Organization schema
-  const organizationSchema = {
+  // Enhanced Local Business schema
+  const localBusinessSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'Black Colors',
+    '@type': 'LocalBusiness',
+    '@id': `${siteUrl}#business`,
+    name: localBusiness?.name || 'Black Colors',
+    alternateName: 'Black Colors SRL',
+    description: 'Distribuidor oficial de impresoras Brother, toners ecológicos, cartuchos remanufacturados y servicios de impresión sustentable en Paraguay',
     url: siteUrl,
-          logo: `${siteUrl}/images/logos/black_colors-negro_color.png`,
-    contactPoint: {
-      '@type': 'ContactPoint',
-      telephone: '+595-982-343-128',
-      contactType: 'customer service',
-      email: 'mkt@blackcolors.com.py',
-      areaServed: 'PY',
-      availableLanguage: ['Spanish', 'English']
+    logo: `${siteUrl}/images/logos/black_colors-negro_color.png`,
+    image: [
+      `${siteUrl}/images/logos/black_colors-negro_color.png`,
+      `${siteUrl}/images/nosotros-section.webp`,
+      `${siteUrl}/images/hero-impresoras.png`
+    ],
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: localBusiness?.address?.streetAddress || 'Zona Centro',
+      addressLocality: localBusiness?.address?.addressLocality || 'Asunción',
+      addressRegion: localBusiness?.address?.addressRegion || 'Central',
+      addressCountry: localBusiness?.address?.addressCountry || 'PY'
     },
+    geo: localBusiness?.geo ? {
+      '@type': 'GeoCoordinates',
+      latitude: localBusiness.geo.latitude,
+      longitude: localBusiness.geo.longitude
+    } : undefined,
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        telephone: '+595-982-343-128',
+        contactType: 'customer service',
+        email: 'mkt@blackcolors.com.py',
+        areaServed: 'PY',
+        availableLanguage: ['Spanish', 'English'],
+        contactOption: 'TollFree'
+      },
+      {
+        '@type': 'ContactPoint',
+        telephone: '+595-986-759-882',
+        contactType: 'sales',
+        areaServed: 'PY',
+        availableLanguage: ['Spanish'],
+        serviceArea: {
+          '@type': 'AdministrativeArea',
+          name: 'Paraguay'
+        }
+      }
+    ],
+    openingHoursSpecification: localBusiness?.openingHours ? localBusiness.openingHours.map(hours => ({
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: hours
+    })) : [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '08:00',
+        closes: '18:00'
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: 'Saturday',
+        opens: '09:00',
+        closes: '13:00'
+      }
+    ],
+    priceRange: localBusiness?.priceRange || '$$',
+    paymentAccepted: localBusiness?.paymentAccepted || ['Cash', 'Credit Card', 'Bank Transfer', 'Check'],
+    currenciesAccepted: localBusiness?.currenciesAccepted || 'PYG,USD',
+    serviceArea: {
+      '@type': 'AdministrativeArea',
+      name: 'Paraguay'
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Catálogo de Productos y Servicios Black Colors',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Product',
+            name: 'Impresoras Brother',
+            category: 'Impresoras'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Product',
+            name: 'Toners Ecológicos',
+            category: 'Consumibles'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Alquiler de Impresoras',
+            category: 'Servicios'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Leasing Sustentable',
+            category: 'Servicios'
+          }
+        }
+      ]
+    },
+    keywords: 'alquiler de impresoras, tintas ecológicas, toners ecológicos, equipos de impresión, impresión ecológica, black colors, blackcolors, sustentabilidad impresora, Brother Paraguay, cartuchos remanufacturados',
     sameAs: [
       'https://www.facebook.com/blackcolorssrl/',
       'https://www.instagram.com/blackcolorssrl/'
-    ]
+    ],
+    foundingDate: '2010',
+    numberOfEmployees: {
+      '@type': 'QuantitativeValue',
+      value: 15
+    },
+    slogan: 'Soluciones Integrales de Impresión Sustentable'
   };
 
   // Product schema (if product data is provided)
@@ -128,6 +263,124 @@ const SEO = ({
     ...(service.image && { 
       image: service.image.startsWith('http') ? service.image : `${siteUrl}${service.image}` 
     })
+  } : null;
+
+  // Site Navigation schema (if navigation is included)
+  const navigationSchema = includeNavigation ? {
+    '@context': 'https://schema.org',
+    '@type': 'SiteNavigationElement',
+    name: 'Navegación Principal Black Colors',
+    url: siteUrl,
+    hasPart: [
+      {
+        '@type': 'SiteNavigationElement',
+        name: 'Inicio',
+        url: siteUrl,
+        description: 'Página principal de Black Colors - Soluciones integrales de impresión sustentable'
+      },
+      {
+        '@type': 'SiteNavigationElement',
+        name: 'Productos',
+        url: `${siteUrl}/productos`,
+        description: 'Catálogo completo de productos de impresión',
+        hasPart: [
+          {
+            '@type': 'SiteNavigationElement',
+            name: 'Impresoras',
+            url: `${siteUrl}/productos/impresoras`,
+            description: 'Impresoras láser, inkjet y multifuncionales para oficina y empresa'
+          },
+          {
+            '@type': 'SiteNavigationElement',
+            name: 'Toners',
+            url: `${siteUrl}/productos/toners`,
+            description: 'Toners originales y compatibles para todas las marcas de impresoras'
+          },
+          {
+            '@type': 'SiteNavigationElement',
+            name: 'Equipos',
+            url: `${siteUrl}/productos/equipos`,
+            description: 'Equipos de oficina: scanners, destructoras, etiquetadoras y UPS'
+          },
+          {
+            '@type': 'SiteNavigationElement',
+            name: 'Cartuchos',
+            url: `${siteUrl}/productos/cartuchos`,
+            description: 'Cartuchos de tinta originales y remanufacturados'
+          },
+          {
+            '@type': 'SiteNavigationElement',
+            name: 'Resmas Sustentables',
+            url: `${siteUrl}/productos/resmas`,
+            description: 'Papel ecológico y sustentable para oficina'
+          }
+        ]
+      },
+      {
+        '@type': 'SiteNavigationElement',
+        name: 'Servicios',
+        url: `${siteUrl}/servicios`,
+        description: 'Servicios profesionales de impresión y tecnología',
+        hasPart: [
+          {
+            '@type': 'SiteNavigationElement',
+            name: 'Alquileres',
+            url: `${siteUrl}/servicios/alquileres`,
+            description: 'Alquiler de impresoras y equipos de oficina'
+          },
+          {
+            '@type': 'SiteNavigationElement',
+            name: 'Leasing Sustentable',
+            url: `${siteUrl}/servicios/leasing`,
+            description: 'Financiamiento y leasing de equipos con enfoque sustentable'
+          },
+          {
+            '@type': 'SiteNavigationElement',
+            name: 'Servicio Técnico',
+            url: `${siteUrl}/servicios/tecnico`,
+            description: 'Reparación y mantenimiento especializado de impresoras y equipos'
+          },
+          {
+            '@type': 'SiteNavigationElement',
+            name: 'Servicios Diferenciados',
+            url: `${siteUrl}/servicios/diferenciados`,
+            description: 'Servicios personalizados y soluciones integrales'
+          }
+        ]
+      },
+      {
+        '@type': 'SiteNavigationElement',
+        name: 'Proyecto Transformar',
+        url: `${siteUrl}/transformar`,
+        description: 'Iniciativa de impresión sustentable y responsabilidad ambiental'
+      },
+      {
+        '@type': 'SiteNavigationElement',
+        name: 'Eventos',
+        url: `${siteUrl}/eventos`,
+        description: 'Eventos, ferias y actividades de Black Colors'
+      },
+      {
+        '@type': 'SiteNavigationElement',
+        name: 'Contacto',
+        url: `${siteUrl}/contacto`,
+        description: 'Información de contacto y ubicación'
+      }
+    ]
+  } : null;
+
+  // FAQ schema (if FAQ items are provided)
+  const faqSchema = faqItems && faqItems.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map(item => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer
+      }
+    }))
   } : null;
 
   return (
@@ -179,7 +432,7 @@ const SEO = ({
       </script>
       
       <script type="application/ld+json">
-        {JSON.stringify(organizationSchema)}
+        {JSON.stringify(localBusinessSchema)}
       </script>
       
       {/* Product Schema (if applicable) */}
@@ -193,6 +446,20 @@ const SEO = ({
       {serviceSchema && (
         <script type="application/ld+json">
           {JSON.stringify(serviceSchema)}
+        </script>
+      )}
+      
+      {/* Site Navigation Schema (if applicable) */}
+      {navigationSchema && (
+        <script type="application/ld+json">
+          {JSON.stringify(navigationSchema)}
+        </script>
+      )}
+      
+      {/* FAQ Schema (if applicable) */}
+      {faqSchema && (
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
         </script>
       )}
       
