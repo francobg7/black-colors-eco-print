@@ -27,7 +27,7 @@ const NotFound = () => {
               Página no encontrada
             </h1>
             <p className="text-gray-600 mb-8">
-              Lo sentimos, la página que estás buscando no existe o ha sido movida.
+              Lo sentimos, la página que estás buscando no se ha logrado encontrar.
             </p>
           </div>
           
@@ -40,7 +40,7 @@ const NotFound = () => {
             </Link>
             
             <div className="text-sm text-gray-500">
-              <p>Ruta solicitada: <code className="bg-gray-200 px-2 py-1 rounded text-xs">{location.pathname}</code></p>
+              <p>Ruta solicitada: <code className="bg-gray-200 px-2 py-1 rounded text-xs">Impresoras</code></p>
             </div>
           </div>
         </div>
